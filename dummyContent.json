@@ -1,0 +1,121 @@
+{
+    "categories": [
+      {
+        "id": 1,
+        "name": "Design Services",
+        "hasSubcategories": true,
+        "subcategories": [
+          {
+            "id": 101,
+            "name": "Logo Design"
+          },
+          {
+            "id": 102,
+            "name": "Letterhead Design"
+          },
+          {
+            "id": 103,
+            "name": "Invoice Design"
+          },
+          {
+            "id": 104,
+            "name": "Business Card Design"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Website Services",
+        "hasSubcategories": true,
+        "subcategories": [
+          {
+            "id": 201,
+            "name": "Websites"
+          },
+          {
+            "id": 202,
+            "name": "100 AED+ Websites"
+          },
+          {
+            "id": 203,
+            "name": "500 AED+ Websites"
+          },
+          {
+            "id": 204,
+            "name": "1000 AED+ Websites"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Website Maintenance",
+        "hasSubcategories": false
+      },
+      {
+        "id": 4,
+        "name": "Digital Marketing",
+        "hasSubcategories": false
+      },
+      {
+        "id": 5,
+        "name": "Social Media Management",
+        "hasSubcategories": false
+      }
+    ],
+    "packages": [
+      {
+        "id": 1,
+        "title": "Logo Design Basic",
+        "subtitle": "Basic Logo Design in Dubai",
+        "price": "From: 150.00 AED",
+        "image": "/images/logo-design-basic.jpg",
+        "categoryId": 101,
+        "description": "Choose a logo design package and place the order online. Your company logo softcopy will be ready within the time frame you choose! We will email you the logo design."
+      },
+      {
+        "id": 2,
+        "title": "Logo Design Business",
+        "subtitle": "Best Logo Design in Dubai",
+        "price": "From: 250.00 AED",
+        "image": "/images/logo-design-business.jpg",
+        "categoryId": 101,
+        "description": "Professional logo design for businesses looking to establish a strong brand identity. Multiple concepts and revisions included."
+      },
+      {
+        "id": 3,
+        "title": "Logo Design Corporate",
+        "subtitle": "Professional Logo Design",
+        "price": "From: 350.00 AED",
+        "image": "/images/logo-design-corporate.jpg",
+        "categoryId": 101,
+        "description": "Comprehensive logo design package for corporate clients. Includes multiple concepts, unlimited revisions, and full brand guidelines."
+      },
+      {
+        "id": 4,
+        "title": "Basic Website",
+        "subtitle": "Simple Static Website",
+        "price": "From: 500.00 AED",
+        "image": "/images/basic-website.jpg",
+        "categoryId": 201,
+        "description": "Simple static website with up to 5 pages. Perfect for small businesses looking to establish an online presence."
+      },
+      {
+        "id": 5,
+        "title": "Business Website",
+        "subtitle": "Dynamic Website with CMS",
+        "price": "From: 1200.00 AED",
+        "image": "/images/business-website.jpg",
+        "categoryId": 201,
+        "description": "Dynamic website with content management system. Includes up to 10 pages and basic SEO setup."
+      },
+      {
+        "id": 6,
+        "title": "Monthly Maintenance",
+        "subtitle": "Regular Website Updates",
+        "price": "From: 300.00 AED/month",
+        "image": "/images/website-maintenance.jpg",
+        "categoryId": 3,
+        "description": "Regular website updates, security patches, and content changes as needed. Keeps your website running smoothly."
+      }
+    ]
+  }
