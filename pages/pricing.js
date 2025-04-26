@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import PackageCard from './components/PackageCard';
-import data from '../dummyContent.json';
+import { packagesData as data } from '../dummyContent.js';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 

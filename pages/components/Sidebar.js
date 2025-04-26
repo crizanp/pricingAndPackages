@@ -12,9 +12,9 @@ const Sidebar = ({ categories, activeCategory, activeSubcategory }) => {
         <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-extrabold mb-6 text-gray-800">Product categories</h2>
             <div className="mb-6">
-                <div className="h-0.5 bg-red-500 w-32"></div>
-                <div className="h-0.5 bg-red-500 w-48 mt-1"></div>
-                <div className="h-0.5 bg-red-500 w-full mt-1"></div>
+                <div className="h-0.5 bg-red-500 w-32 "></div>
+                <div className="h-0.25 bg-red-500 w-48 my-1"></div>
+                <div className="h-0.5 bg-red-500 w-full "></div>
             </div>
             <p className="text-gray-600 mb-6">
                 {getHeaderDescription()}
