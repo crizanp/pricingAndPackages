@@ -93,16 +93,7 @@ export default function PricingPage() {
 
           {/* Package Cards - takes 3/4 of screen on medium screens and above */}
           <div className="md:col-span-3">
-            <div className="bg-white p-6 mb-6 rounded-lg shadow-md">
-              <h1 className="text-3xl font-bold text-gray-800 mb-2">
-                {getActiveCategoryName()}
-                {getActiveSubcategoryName() && ` - ${getActiveSubcategoryName()}`}
-              </h1>
-              <p className="text-gray-600 mb-4">
-                Choose a design package and place the order online. Your design will be ready 
-                within the time frame you choose! We will email you the final design.
-              </p>
-            </div>
+            
 
             {filteredPackages.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

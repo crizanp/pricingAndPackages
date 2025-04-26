@@ -13,17 +13,17 @@ const Layout = ({ children }) => {
 
       <header className="bg-white shadow-md">
         <div className="container mx-auto py-4 px-6">
-          <h1 className="text-2xl font-bold text-gray-800">Design Services</h1>
+          <h1 className="text-2xl font-bold text-gray-800 h-9"></h1>
         </div>
       </header>
 
       <main>{children}</main>
 
-      <footer className="bg-gray-800 text-white py-6">
+      {/* <footer className="bg-gray-800 text-white py-6">
         <div className="container mx-auto px-6">
           <p>&copy; {new Date().getFullYear()} Design Services. All rights reserved.</p>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 };
