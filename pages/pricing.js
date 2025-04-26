@@ -12,8 +12,10 @@ export default function PricingPage() {
   const { categoryId, subcategoryId } = router.query;
   
   const [filteredPackages, setFilteredPackages] = useState(packages);
+  const [displayedPackages, setDisplayedPackages] = useState(packages);
   const [activeCategory, setActiveCategory] = useState(null);
   const [activeSubcategory, setActiveSubcategory] = useState(null);
+  const [sortBy, setSortBy] = useState('default');
 
   useEffect(() => {
     if (subcategoryId) {
@@ -56,6 +58,43 @@ export default function PricingPage() {
       setActiveSubcategory(null);
     }
   }, [categoryId, subcategoryId, categories, packages]);
+
+  // Apply sorting whenever filteredPackages or sortBy changes
+  useEffect(() => {
+    let sorted = [...filteredPackages];
+    
+    switch (sortBy) {
+      case 'price-low-high':
+        sorted = sorted.sort((a, b) => {
+          // Extract numeric price values (assuming price format is "From: XXX.XX AED")
+          const priceA = parseFloat(a.price.match(/\d+(\.\d+)?/)[0]);
+          const priceB = parseFloat(b.price.match(/\d+(\.\d+)?/)[0]);
+          return priceA - priceB;
+        });
+        break;
+      case 'price-high-low':
+        sorted = sorted.sort((a, b) => {
+          // Extract numeric price values
+          const priceA = parseFloat(a.price.match(/\d+(\.\d+)?/)[0]);
+          const priceB = parseFloat(b.price.match(/\d+(\.\d+)?/)[0]);
+          return priceB - priceA;
+        });
+        break;
+      case 'latest':
+        // Assuming higher IDs are newer packages
+        sorted = sorted.sort((a, b) => b.id - a.id);
+        break;
+      case 'oldest':
+        // Assuming lower IDs are older packages
+        sorted = sorted.sort((a, b) => a.id - b.id);
+        break;
+      default:
+        // Default sorting (by id)
+        sorted = sorted.sort((a, b) => a.id - b.id);
+    }
+    
+    setDisplayedPackages(sorted);
+  }, [filteredPackages, sortBy]);
   
   // Find active category/subcategory names
   const getActiveCategoryName = () => {
@@ -76,6 +115,29 @@ export default function PricingPage() {
     }
     return '';
   };
+  
+  const getHeaderTitle = () => {
+    if (activeSubcategory) {
+      return getActiveSubcategoryName();
+    } else if (activeCategory) {
+      return getActiveCategoryName();
+    }
+    return 'All Design Packages';
+  };
+  
+  const getHeaderDescription = () => {
+    const categoryName = getActiveCategoryName();
+    const subcategoryName = getActiveSubcategoryName();
+  
+    if (activeSubcategory) {
+      return `Choose a ${categoryName} - ${subcategoryName} package and place the order online. Your ${categoryName} will be ready within the time frame you choose!`;
+    } else if (activeCategory) {
+      return `Choose a ${categoryName} package and place the order online. Your ${categoryName} will be ready within the time frame you choose!`;
+    } else {
+      return 'Choose a design package and place the order online. Your design will be ready within the time frame you choose! We will email you the final design.';
+    }
+  };
+  
 
   return (
     <>
@@ -93,11 +155,39 @@ export default function PricingPage() {
 
           {/* Package Cards - takes 3/4 of screen on medium screens and above */}
           <div className="md:col-span-3">
-            
+            {/* Category Header and Description */}
+            <div className="bg-white p-6 mb-6 rounded-lg shadow-md">
+              <h1 className="text-2xl font-extrabold text-center justify-between  text-gray-800 mb-3">
+                {getHeaderTitle()}
+              </h1>
+              
+              
+              {/* Filter/Sort Options */}
+              <div className="flex flex-wrap items-center justify-between border-t border-gray-200 pt-4">
+                <div className="text-gray-600 font-medium">
+                  {displayedPackages.length} packages found
+                </div>
+                <div className="flex items-center mt-2 sm:mt-0">
+                  <label htmlFor="sort-by" className="mr-2 text-gray-600">Sort by:</label>
+                  <select 
+                    id="sort-by" 
+                    className="border border-gray-300 rounded-md py-1 px-3 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value)}
+                  >
+                    <option value="default">Default</option>
+                    <option value="price-low-high">Price: Low to High</option>
+                    <option value="price-high-low">Price: High to Low</option>
+                    <option value="latest">Latest</option>
+                    <option value="oldest">Oldest</option>
+                  </select>
+                </div>
+              </div>
+            </div>
 
-            {filteredPackages.length > 0 ? (
+            {displayedPackages.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredPackages.map((pkg) => (
+                {displayedPackages.map((pkg) => (
                   <PackageCard
                     key={pkg.id}
                     title={pkg.title}
