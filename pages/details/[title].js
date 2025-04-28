@@ -84,7 +84,7 @@ export default function PackageDetail() {
  
   // Show loading state
   if (!debugInfo.routerReady || !debugInfo.packageData) {
-    return <div className="container mx-auto px-4 py-8">Loading package details...</div>;
+    return <div className="container mx-auto px-6 py-8">Loading package details...</div>;
   }
  
   // If everything is good, render the package detail

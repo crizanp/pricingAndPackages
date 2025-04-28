@@ -1,5 +1,8 @@
+import { useState } from 'react';
+
+// Updated data structure with enhanced pricing model and expanded to 8 packages
 export const packagesData = {
-  categories:   [
+  categories: [
     {
       "id": 1,
       "name": "Design Services",
@@ -38,7 +41,7 @@ export const packagesData = {
       "hasSubcategories": false
     }
   ],
-  packages:  [
+  packages: [
     {
       "id": 1,
       "title": "Logo Design Basic",
@@ -71,438 +74,453 @@ export const packagesData = {
         }
       ],
       "pricing": [
-        { "title": "Basic Package", "price": "150 USD" },
-        { "title": "Additional Revision Round", "price": "+25 USD" },
-        { "title": "Express Delivery (24 hours)", "price": "+50 USD" },
-        { "title": "Brand Guidelines Basic", "price": "+75 USD" }
-      ],
-      "domainOptions": [
-        { "title": "I have a domain", "price": "0 AED" },
-        { "title": "I need a .com or .net domain", "price": "+50 AED" },
-        { "title": "I need .ae domain", "price": "+150 AED" }
-      ],
-      "durationOptions": [
-        { "title": "3 Days - Normal", "price": "0 AED" },
-        { "title": "2 Days - Urgent", "price": "+100 AED" },
-        { "title": "1 Day - Super Fast", "price": "+200 AED" }
-      ],
-      "contentOptions": [
-        { "title": "Buyer provides full content/Generic website content writing by us", "price": "FREE" },
-        { "title": "Fresh, 100% Original & Unique Website Content by Us with On-Page SEO", "price": "+100 AED" }
+        {
+          "title": "Package Type",
+          "options": [
+            { "name": "Basic Package", "price": "150 USD" },
+            { "name": "Standard Package", "price": "250 USD" },
+            { "name": "Premium Package", "price": "350 USD" }
+          ]
+        },
+        {
+          "title": "Delivery Time",
+          "options": [
+            { "name": "Standard (3 days)", "price": "0 USD" },
+            { "name": "Express (48 hours)", "price": "+30 USD" },
+            { "name": "Rush (24 hours)", "price": "+50 USD" }
+          ]
+        },
+        {
+          "title": "Additional Services",
+          "options": [
+            { "name": "Extra Revision Round", "price": "+25 USD" },
+            { "name": "Brand Guidelines Basic", "price": "+75 USD" },
+            { "name": "Social Media Kit", "price": "+100 USD" }
+          ]
+        }
       ]
     },
     {
       "id": 2,
-      "title": "Logo Design Business",
-      "subtitle": "Best Logo Design in Dubai",
-      "price": "From: 250.00 USD",
+      "title": "Business Card Design",
+      "subtitle": "Professional Business Card Design",
+      "price": "From: 99.00 USD",
       "image": "https://www.dubaiwebsitecompany.com/mediaz/2022/01/basic-1-750x430.jpg",
-      "categoryId": 101,
-      "description": "Professional logo design for businesses looking to establish a strong brand identity. Multiple concepts and revisions included.",
-      "longDescription": "<div><p>Our <strong>Logo Design Business</strong> package provides comprehensive branding solutions for established businesses looking to refresh their visual identity or new ventures requiring a professional brand presence.</p><p>With this premium package, our senior design team creates multiple unique concepts tailored specifically to your industry, audience, and brand values. We conduct thorough market research to ensure your new logo stands out from competitors while appealing directly to your target customers.</p><p>Each concept undergoes multiple revision rounds based on your feedback, ensuring the final design perfectly captures your brand essence. The package includes all file formats needed for both print and digital applications, with dedicated support throughout the process.</p></div>",
+      "categoryId": 104,
+      "description": "Make a lasting impression with professionally designed business cards that reflect your brand identity. Our designers create eye-catching business cards tailored to your company's style.",
+      "longDescription": "<div><p>A well-designed business card is an essential marketing tool that creates a lasting first impression. Our <strong>Business Card Design</strong> package provides you with professionally crafted business cards that effectively represent your brand and help you network confidently.</p><p>Working with our experienced design team, you'll receive custom business card designs that stand out from the competition while maintaining professional standards. We focus on creating cards that not only look great but also communicate your business values and contact information clearly.</p><p>All designs are delivered in print-ready formats so you can easily get them produced at your preferred printing service.</p></div>",
       "features": [
-        "4 Initial Concepts",
-        "3 Revision Rounds",
-        "Vector File Format (AI, EPS, PDF)",
-        "High Resolution JPG/PNG Files",
-        "Original Source Files",
-        "Social Media Ready Files",
-        "Favicon Design",
-        "Business Card Mock-up"
+        "2 Unique Design Concepts",
+        "2 Revision Rounds",
+        "Front and Back Design",
+        "Print-Ready Files",
+        "High-Resolution PDFs",
+        "CMYK Color Profile for Printing"
       ],
       "faqs": [
         {
-          "question": "What's the difference between Basic and Business logo packages?",
-          "answer": "The Business package includes more initial concepts, additional revision rounds, and supplementary items like favicon design and a business card mock-up."
+          "question": "What size business cards do you design?",
+          "answer": "We design standard size business cards (3.5\" x 2\") by default, but can accommodate custom sizes upon request."
         },
         {
-          "question": "Can I request specific colors or styles?",
-          "answer": "Absolutely! We encourage you to share any preferences regarding colors, styles, or design elements you'd like to see in your logo."
+          "question": "Can I get business cards in different languages?",
+          "answer": "Yes, we can design bilingual or multilingual business cards with text in Arabic, English, and other languages."
         },
         {
-          "question": "Do you provide brand guidelines with this package?",
-          "answer": "Basic brand guidelines are available as an add-on to this package for an additional fee."
+          "question": "Do you offer printing services?",
+          "answer": "No, we provide design services only, but we can recommend quality printing services in Dubai."
         }
       ],
       "pricing": [
-        { "title": "Business Package", "price": "250 USD" },
-        { "title": "Additional Revision Round", "price": "+30 USD" },
-        { "title": "Express Delivery (24 hours)", "price": "+75 USD" },
-        { "title": "Brand Guidelines Standard", "price": "+100 USD" },
-        { "title": "Additional Logo Variations", "price": "+50 USD" }
-      ],
-      "domainOptions": [
-        { "title": "I have a domain", "price": "0 AED" },
-        { "title": "I need a .com or .net domain", "price": "+50 AED" },
-        { "title": "I need .ae domain", "price": "+150 AED" }
-      ],
-      "durationOptions": [
-        { "title": "3 Days - Normal", "price": "0 AED" },
-        { "title": "2 Days - Urgent", "price": "+100 AED" },
-        { "title": "1 Day - Super Fast", "price": "+200 AED" }
-      ],
-      "contentOptions": [
-        { "title": "Buyer provides full content/Generic website content writing by us", "price": "FREE" },
-        { "title": "Fresh, 100% Original & Unique Website Content by Us with On-Page SEO", "price": "+100 AED" }
+        {
+          "title": "Package Type",
+          "options": [
+            { "name": "Basic Design", "price": "99 USD" },
+            { "name": "Premium Design", "price": "149 USD" },
+            { "name": "Luxury Design", "price": "199 USD" }
+          ]
+        },
+        {
+          "title": "Delivery Time",
+          "options": [
+            { "name": "Standard (2 days)", "price": "0 USD" },
+            { "name": "Express (24 hours)", "price": "+30 USD" }
+          ]
+        },
+        {
+          "title": "Additional Services",
+          "options": [
+            { "name": "Extra Design Concept", "price": "+40 USD" },
+            { "name": "QR Code Integration", "price": "+15 USD" },
+            { "name": "Special Finishes Design", "price": "+50 USD" }
+          ]
+        }
       ]
     },
     {
       "id": 3,
-      "title": "Logo Design Corporate",
-      "subtitle": "Professional Logo Design",
-      "price": "From: 350.00 USD",
-      "image": "https://www.dubaiwebsitecompany.com/mediaz/2022/01/business1-750x430.jpg",
-      "categoryId": 101,
-      "description": "Comprehensive logo design package for corporate clients. Includes multiple concepts, unlimited revisions, and full brand guidelines.",
-      "longDescription": "<div><p>The <strong>Logo Design Corporate</strong> package is our premium offering designed for corporate entities and businesses requiring a comprehensive brand identity solution. This package delivers exceptional value with unlimited revisions until complete satisfaction.</p><p>Our design director personally oversees your project, ensuring the highest quality standards and strategic approach to your visual identity. We begin with an in-depth consultation to understand your company's vision, values, and objectives before creating multiple distinctive concepts.</p><p>This package includes a complete brand guidelines document that outlines logo usage, color palette, typography, and application examples - providing you with all the tools needed to maintain brand consistency across all touchpoints.</p></div>",
-      "features": [
-        "6 Initial Concepts",
-        "Unlimited Revision Rounds",
-        "Vector File Format (AI, EPS, PDF, SVG)",
-        "High Resolution JPG/PNG/TIFF Files",
-        "Original Source Files",
-        "Social Media Ready Files",
-        "Favicon Design",
-        "Business Card Design",
-        "Letterhead Design",
-        "Email Signature Design",
-        "Comprehensive Brand Guidelines"
-      ],
-      "faqs": [
-        {
-          "question": "What does 'unlimited revisions' mean?",
-          "answer": "We'll continue refining your logo design until you're completely satisfied, with no limit on the number of revision rounds."
-        },
-        {
-          "question": "What's included in the brand guidelines?",
-          "answer": "Our comprehensive brand guidelines include logo usage rules, color palette with codes, typography guidelines, spacing requirements, and application examples."
-        },
-        {
-          "question": "Can I trademark the logo you design?",
-          "answer": "Yes, our logo designs are original and can be trademarked. However, we recommend consulting with a legal expert for the trademark registration process."
-        }
-      ],
-      "pricing": [
-        { "title": "Corporate Package", "price": "350 USD" },
-        { "title": "Express Delivery (48 hours)", "price": "+100 USD" },
-        { "title": "Additional Logo Variations", "price": "+75 USD" },
-        { "title": "Social Media Profile Design", "price": "+125 USD" },
-        { "title": "Presentation Template Design", "price": "+150 USD" }
-      ],
-      "domainOptions": [
-        { "title": "I have a domain", "price": "0 AED" },
-        { "title": "I need a .com or .net domain", "price": "+50 AED" },
-        { "title": "I need .ae domain", "price": "+150 AED" }
-      ],
-      "durationOptions": [
-        { "title": "3 Days - Normal", "price": "0 AED" },
-        { "title": "2 Days - Urgent", "price": "+100 AED" },
-        { "title": "1 Day - Super Fast", "price": "+200 AED" }
-      ],
-      "contentOptions": [
-        { "title": "Buyer provides full content/Generic website content writing by us", "price": "FREE" },
-        { "title": "Fresh, 100% Original & Unique Website Content by Us with On-Page SEO", "price": "+100 AED" }
-      ]
-    },
-    {
-      "id": 4,
-      "title": "Basic Website",
-      "subtitle": "Simple Static Website",
-      "price": "From: 500.00 USD",
+      "title": "Basic Website Package",
+      "subtitle": "Simple Website Solution",
+      "price": "From: 399.00 USD",
       "image": "https://www.dubaiwebsitecompany.com/mediaz/2022/01/Profile-Demo-min-1-750x430.png",
       "categoryId": 201,
-      "description": "Simple static website with up to 5 pages. Perfect for small businesses looking to establish an online presence.",
-      "longDescription": "<div><p>Our <strong>Basic Website</strong> package is designed for small businesses and startups looking to establish their online presence with a professional, mobile-responsive website. This package provides everything you need to get your business online quickly and affordably.</p><p>We create clean, modern designs that reflect your brand identity and are optimized for both desktop and mobile viewing. Each site is built with SEO best practices in mind to help improve your visibility in search engines.</p><p>While this is our entry-level website package, there's nothing basic about the quality. You'll receive a professionally designed website that loads quickly, functions flawlessly, and presents your business in the best possible light.</p></div>",
+      "description": "Get your business online with our affordable Basic Website Package. Perfect for small businesses and startups looking to establish their digital presence quickly.",
+      "longDescription": "<div><h2>Professional Personal Profile / Online Resume Website Design</h2><p>This elegant and modern personal website design is ideal for showcasing your resume, creative portfolio, or personal brand. It is perfectly suited for artists, designers, freelancers, and professionals who want a sleek online presence. The layout is also flexible enough to be adapted for similar profile websites.</p><p>Click the <strong>‘Live Preview’</strong> button above to view how your finished website will look. Read the <strong>‘FAQ’</strong> section to understand more about the design process, customization options, and what’s included.</p><p>Once your order is placed, we will install the pre-built WordPress website on your domain and replace the demo content with your images and text. The color scheme and font style can be customized to match your brand, while the overall layout remains consistent with the demo. If you provide your own content and images, they will be used in place of the defaults. Be sure to select the right content-creation option during checkout.</p><p>After placing your order, please send the following within 3 to 4 hours as a reply to the order confirmation email: your logo (or name/business name), domain login details (if already registered), available images and text content (if any). If you don't have a logo, you can order our logo design service separately.</p><p>We provide up to 2 rounds of revisions before the final website is launched, and the site will be completed within the timeframe selected during the order.</p><h3>Features:</h3><ul><li>Single-page sliding website in English</li><li>Up to 6 customizable navigation tabs (e.g., Home, About, Achievements, Works, Skills, Contact)</li><li>Optional 3 sliding banners using Slider Revolution</li><li>Portfolio/Gallery section (up to 12 items)</li><li>12 months free website hosting</li><li>Lifetime free SSL certificate (if hosted with us)</li><li>6 months free maintenance and content updates</li><li>Dynamic and fully mobile-responsive design</li><li>WhatsApp and Google Maps integration</li><li>Powered by WordPress, compatible with Elementor</li><li>Easy content editing — no coding required</li></ul><p>We will email you all website admin login credentials, allowing you to manage and update the site independently. If you’d like to learn how to edit your WordPress site, you can book our online training service and gain hands-on skills in managing your content.</p><h3>Website Package Includes:</h3><ul><li>Premium WordPress Theme</li><li>All required plugins</li><li>One IMAP email (20 MB storage)</li><li>Basic on-page SEO (meta tags and meta descriptions)</li><li>Up to 2 revisions within project timeline</li><li>24/7 online support</li></ul><h3>Yearly Renewal Fees:</h3><p>Renewal fees only apply if hosting and services continue with us beyond the first year. You will receive an annual invoice for renewal payments. Services can be canceled at any time.</p><ul><li>Free hosting for the first year</li><li>150 AED/year hosting fee from the second year</li><li>100 AED/year for .com/.net domain renewal</li><li>200 AED/year for .ae domain renewal</li></ul><p><strong>Note:</strong> A copy of this product and service description will be shared with you as an official website contract at the end of the project. All support is provided online only.</p></div>",
       "features": [
-        "Up to 5 Pages",
-        "Mobile Responsive Design",
-        "Contact Form",
-        "Google Maps Integration",
-        "Social Media Links",
-        "Image Gallery",
+        "5-Page Responsive Website",
+        "Mobile-Friendly Design",
+        "Contact Form Integration",
         "Basic SEO Setup",
-        "Google Analytics Integration",
-        "Website Hosting for 1 Year",
-        "30 Days Support"
+        "Social Media Integration",
+        "Content Management System",
+        "3 Months Free Hosting"
       ],
       "faqs": [
         {
           "question": "How long does it take to build my website?",
-          "answer": "Standard delivery is 3 days once we have all your content. We also offer urgent (2 days) and super fast (1 day) options for additional fees."
+          "answer": "Our standard delivery time is 7 business days after receiving all required content and information."
         },
         {
           "question": "Can I update the website myself?",
-          "answer": "The Basic Website package is a static website. While small text changes can be made easily, significant updates would require our assistance."
+          "answer": "Yes, we provide a user-friendly content management system that allows you to make basic updates without technical knowledge."
         },
         {
-          "question": "Is hosting included?",
-          "answer": "Yes, we include one year of website hosting with this package. After the first year, hosting can be renewed at our standard rates."
+          "question": "Do you provide domain name registration?",
+          "answer": "Domain registration is not included in the package, but we can assist you with purchasing and setting up your domain for an additional fee."
         }
       ],
       "pricing": [
-        { "title": "Basic Website Package", "price": "500 USD" },
-        { "title": "Additional Page", "price": "+50 USD" },
-        { "title": "Basic SEO Package", "price": "+200 USD" },
-        { "title": "Logo Design", "price": "+150 USD" },
-        { "title": "Additional Year of Hosting", "price": "+100 USD" }
+        {
+          "title": "How much pages website you want?",
+          "options": [
+            { "name": "Basic (5 Pages)", "price": "399 USD" },
+            { "name": "Standard (8 Pages)", "price": "599 USD" },
+            { "name": "Premium (12 Pages)", "price": "799 USD" }
+          ]
+        },
+        {
+          "title": "When should be delivered?",
+          "options": [
+            { "name": "Standard (7 days)", "price": "0 USD" },
+            { "name": "Express (5 days)", "price": "+100 USD" },
+            { "name": "Rush (3 days)", "price": "+200 USD" }
+          ]
+        },
+        {
+          "title": "Domain Status",
+          "options": [
+            { "name": "I have a domain", "price": "0 USD" },
+            { "name": "I need Domain (.com)", "price": "+13 USD" },
+          ]
+        },
+        {
+          "title": "additional features?",
+          "options": [
+            { "name": "Additional Page", "price": "+50 USD" },
+            { "name": "Blog Setup", "price": "+100 USD" },
+            { "name": "Newsletter Integration", "price": "+75 USD" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "E-Commerce Website",
+      "subtitle": "Complete Online Store Solution",
+      "price": "From: 899.00 USD",
+      "image": "https://www.dubaiwebsitecompany.com/mediaz/2023/06/hero-image-750x430.png",
+      "categoryId": 203,
+      "description": "Launch your online store with our comprehensive E-Commerce Website package. Sell products or services online with a secure, user-friendly, and fully-featured online store.",
+      "longDescription": "<div><p>Our <strong>E-Commerce Website</strong> package provides everything you need to start selling products or services online. We create custom, secure, and user-friendly online stores that help you reach customers worldwide.</p><p>This comprehensive solution includes product catalog management, secure payment gateway integration, inventory management, and order processing capabilities. The responsive design ensures your store looks and works great on all devices, maximizing your potential customer base.</p><p>With built-in SEO features and marketing tools, we help you attract customers and grow your online sales efficiently.</p></div>",
+      "features": [
+        "Responsive E-Commerce Website",
+        "Up to 100 Products Setup",
+        "Secure Payment Gateway Integration",
+        "Order Management System",
+        "Customer Account Management",
+        "Product Categories and Filters",
+        "Inventory Management",
+        "SEO-Friendly Structure",
+        "6 Months Free Hosting"
       ],
-      "domainOptions": [
-        { "title": "I have a domain", "price": "0 AED" },
-        { "title": "I need a .com or .net domain", "price": "+50 AED" },
-        { "title": "I need .ae domain", "price": "+150 AED" }
+      "faqs": [
+        {
+          "question": "Which payment gateways do you support?",
+          "answer": "We support major payment gateways including PayPal, Stripe, and local UAE payment processors like Network International."
+        },
+        {
+          "question": "Can I add more products later?",
+          "answer": "Yes, you can easily add more products yourself or we can help you with batch product uploads for an additional fee."
+        },
+        {
+          "question": "Do you offer training on managing the online store?",
+          "answer": "Yes, our package includes a 1-hour training session on managing your online store, with additional training available if needed."
+        }
       ],
-      "durationOptions": [
-        { "title": "3 Days - Normal", "price": "0 AED" },
-        { "title": "2 Days - Urgent", "price": "+100 AED" },
-        { "title": "1 Day - Super Fast", "price": "+200 AED" }
-      ],
-      "contentOptions": [
-        { "title": "Buyer provides full content/Generic website content writing by us", "price": "FREE" },
-        { "title": "Fresh, 100% Original & Unique Website Content by Us with On-Page SEO", "price": "+100 AED" }
+      "pricing": [
+        {
+          "title": "Package Type",
+          "options": [
+            { "name": "Starter Store", "price": "899 USD" },
+            { "name": "Business Store", "price": "1299 USD" },
+            { "name": "Enterprise Store", "price": "1799 USD" }
+          ]
+        },
+        {
+          "title": "Delivery Time",
+          "options": [
+            { "name": "Standard (14 days)", "price": "0 USD" },
+            { "name": "Express (10 days)", "price": "+200 USD" },
+            { "name": "Rush (7 days)", "price": "+350 USD" }
+          ]
+        },
+        {
+          "title": "Additional Services",
+          "options": [
+            { "name": "Additional 100 Products Setup", "price": "+150 USD" },
+            { "name": "Multi-language Support", "price": "+250 USD" },
+            { "name": "Product Import from Existing Store", "price": "+200 USD" }
+          ]
+        }
       ]
     },
     {
       "id": 5,
-      "title": "Business Website",
-      "subtitle": "Dynamic Website with CMS",
-      "price": "From: 1200.00 USD",
-      "image": "https://www.dubaiwebsitecompany.com/mediaz/2022/01/Technical-Services-Demo-min-750x430.png",
-      "categoryId": 201,
-      "description": "Dynamic website with content management system. Includes up to 10 pages and basic SEO setup.",
-      "longDescription": "<div><p>The <strong>Business Website</strong> package provides a complete digital solution for growing businesses. Built on a powerful content management system (CMS), this dynamic website gives you the flexibility to easily update and manage your own content without technical knowledge.</p><p>Our Business Website package includes custom design tailored to your brand, with advanced features like product/service catalogs, blog functionality, newsletter integration, and more. Each site is fully responsive, ensuring perfect display across all devices from desktop to mobile.</p><p>We implement comprehensive on-page SEO best practices to help improve your search engine rankings, and provide training so you can confidently manage your website moving forward. This solution is perfect for businesses looking for more functionality than a basic static site can provide.</p></div>",
+      "title": "Website Maintenance",
+      "subtitle": "Keep Your Website Running Smoothly",
+      "price": "From: 99.00 USD/month",
+      "image": "https://www.dubaiwebsitecompany.com/mediaz/2022/01/web-maintenance.jpg",
+      "categoryId": 3,
+      "description": "Ensure your website stays secure, updated, and performing optimally with our comprehensive Website Maintenance package. Let us handle the technical aspects while you focus on your business.",
+      "longDescription": "<div><p>Our <strong>Website Maintenance</strong> package provides peace of mind by ensuring your website remains secure, up-to-date, and functioning properly at all times. Regular maintenance is essential for preventing security breaches, maintaining performance, and providing the best user experience for your visitors.</p><p>We handle all technical aspects including security updates, plugin maintenance, performance optimization, and regular backups. Our team monitors your website for issues and resolves them promptly to minimize downtime.</p><p>With different plans available, you can choose the level of support that best fits your website's needs and your budget.</p></div>",
       "features": [
-        "Up to 10 Pages",
-        "Custom Design",
-        "Content Management System",
-        "Mobile Responsive Design",
-        "Advanced Contact Form",
-        "Blog/News Section",
-        "Product/Service Catalog",
-        "Newsletter Integration",
-        "Social Media Integration",
-        "Google Maps Integration",
-        "Basic SEO Setup",
-        "Google Analytics & Search Console Setup",
-        "Website Hosting for 1 Year",
-        "60 Days Support",
-        "CMS Training Session"
+        "Regular Software Updates",
+        "Security Monitoring",
+        "Weekly Backups",
+        "Uptime Monitoring",
+        "Performance Optimization",
+        "Technical Support",
+        "Monthly Reports"
       ],
       "faqs": [
         {
-          "question": "What CMS do you use?",
-          "answer": "We primarily use WordPress, the world's most popular CMS, but can also work with other systems like Joomla or custom solutions if required."
+          "question": "What happens if my website goes down?",
+          "answer": "We monitor your website's uptime and will work to restore service as quickly as possible if any issues occur."
         },
         {
-          "question": "Will I be able to add new pages myself?",
-          "answer": "Yes, the CMS allows you to easily add new pages, blog posts, products, and other content without technical knowledge."
+          "question": "Do you make content updates as part of maintenance?",
+          "answer": "Basic content updates are included in our Premium plan. For other plans, content updates are available at additional hourly rates."
         },
         {
-          "question": "Is e-commerce functionality included?",
-          "answer": "Basic product/service catalog functionality is included, but full e-commerce capabilities with payment processing would require our E-commerce Website package or an add-on to this package."
+          "question": "Can I upgrade or downgrade my plan?",
+          "answer": "Yes, you can change your maintenance plan with 30 days' notice before the next billing cycle."
         }
       ],
       "pricing": [
-        { "title": "Business Website Package", "price": "1200 USD" },
-        { "title": "Additional Page", "price": "+75 USD" },
-        { "title": "E-commerce Functionality", "price": "+500 USD" },
-        { "title": "Advanced SEO Package", "price": "+350 USD" },
-        { "title": "Additional Training Session", "price": "+100 USD" },
-        { "title": "Multilingual Support", "price": "+300 USD" }
-      ],
-      "domainOptions": [
-        { "title": "I have a domain", "price": "0 AED" },
-        { "title": "I need a .com or .net domain", "price": "+50 AED" },
-        { "title": "I need .ae domain", "price": "+150 AED" }
-      ],
-      "durationOptions": [
-        { "title": "3 Days - Normal", "price": "0 AED" },
-        { "title": "2 Days - Urgent", "price": "+100 AED" },
-        { "title": "1 Day - Super Fast", "price": "+200 AED" }
-      ],
-      "contentOptions": [
-        { "title": "Buyer provides full content/Generic website content writing by us", "price": "FREE" },
-        { "title": "Fresh, 100% Original & Unique Website Content by Us with On-Page SEO", "price": "+100 AED" }
+        {
+          "title": "Plan Type",
+          "options": [
+            { "name": "Basic Maintenance", "price": "99 USD/month" },
+            { "name": "Standard Maintenance", "price": "149 USD/month" },
+            { "name": "Premium Maintenance", "price": "249 USD/month" }
+          ]
+        },
+        {
+          "title": "Contract Length",
+          "options": [
+            { "name": "Monthly (No Commitment)", "price": "0 USD" },
+            { "name": "6 Months", "price": "-5% discount" },
+            { "name": "12 Months", "price": "-10% discount" }
+          ]
+        },
+        {
+          "title": "Additional Services",
+          "options": [
+            { "name": "Daily Backups", "price": "+30 USD/month" },
+            { "name": "Content Updates (2 hours)", "price": "+75 USD/month" },
+            { "name": "Performance Audit", "price": "+150 USD/quarter" }
+          ]
+        }
       ]
     },
     {
       "id": 6,
-      "title": "Monthly Maintenance",
-      "subtitle": "Regular Website Updates",
-      "price": "From: 300.00 USD/month",
-      "image": "https://www.dubaiwebsitecompany.com/mediaz/2022/01/Event-Management-Demo-min-750x430.png",
-      "categoryId": 3,
-      "description": "Regular website updates, security patches, and content changes as needed. Keeps your website running smoothly.",
-      "longDescription": "<div><p>Our <strong>Monthly Maintenance</strong> package ensures your website remains secure, up-to-date, and performing optimally. Regular maintenance is crucial for any business website to protect against security threats, fix bugs, and implement necessary updates.</p><p>With this service, our technical team handles all aspects of website maintenance, including security updates, plugin updates, regular backups, performance optimization, and content updates as needed. We monitor your website's health and address any issues before they impact your business.</p><p>This proactive approach to website maintenance gives you peace of mind knowing your online presence is professionally managed, allowing you to focus on running your business rather than worrying about website technicalities.</p></div>",
+      "title": "SEO Package",
+      "subtitle": "Improve Your Website's Search Engine Rankings",
+      "price": "From: 299.00 USD/month",
+      "image": "https://www.dubaiwebsitecompany.com/mediaz/2024/01/basic-seo-750x430.jpg",
+      "categoryId": 4,
+      "description": "Enhance your website's visibility in search engines with our comprehensive SEO package. Drive more organic traffic and increase your online presence with proven optimization strategies.",
+      "longDescription": "<div><p>Our <strong>SEO Package</strong> is designed to improve your website's visibility in search engine results, driving more organic traffic to your business. We implement proven strategies to optimize your website structure, content, and online presence to help you rank higher for relevant search terms.</p><p>Our comprehensive approach includes thorough keyword research, on-page optimization, technical SEO improvements, and content strategy development. We continuously monitor your website's performance and adapt our strategy to achieve the best possible results in your industry.</p><p>Regular reporting keeps you informed about your progress and the impact of our optimization efforts on your business's online visibility.</p></div>",
       "features": [
-        "Regular Security Updates",
-        "Plugin & CMS Updates",
-        "Weekly Website Backups",
-        "Uptime Monitoring",
-        "Performance Optimization",
-        "Monthly Content Updates (up to 4 hours)",
-        "Technical Support",
+        "Keyword Research & Analysis",
+        "Competitor Analysis",
+        "On-Page SEO Optimization",
+        "Technical SEO Audit & Fixes",
+        "Content Optimization",
         "Monthly Performance Reports",
-        "Malware Scanning & Removal",
-        "Form & Functionality Testing"
+        "Local SEO Optimization",
+        "Google Business Profile Management"
       ],
       "faqs": [
         {
-          "question": "What types of content updates are included?",
-          "answer": "Content updates include text changes, image replacements, adding new products/services, blog posts, and other minor content adjustments up to 4 hours per month."
+          "question": "How long does it take to see results from SEO?",
+          "answer": "SEO is a long-term strategy. Initial improvements may be visible within 2-3 months, but significant results typically take 4-6 months or longer."
         },
         {
-          "question": "How quickly do you respond to issues?",
-          "answer": "We aim to respond to all maintenance requests within 24 hours during business days. Critical issues like website downtime are addressed immediately."
+          "question": "Do you guarantee first page rankings?",
+          "answer": "No reputable SEO company can guarantee specific rankings, as search algorithms are constantly changing. We focus on sustainable improvements and best practices."
         },
         {
-          "question": "Can I upgrade or downgrade my maintenance package?",
-          "answer": "Yes, you can upgrade or downgrade your maintenance package with 30 days notice before the next billing cycle."
+          "question": "Do I need to sign a long-term contract?",
+          "answer": "We recommend a minimum 6-month commitment for SEO services to see meaningful results, but we offer flexible contract options."
         }
       ],
       "pricing": [
-        { "title": "Standard Maintenance Package", "price": "300 USD/month" },
-        { "title": "Additional Content Update Hours", "price": "+75 USD/hour" },
-        { "title": "Daily Backup Option", "price": "+100 USD/month" },
-        { "title": "Premium Support (4-hour response time)", "price": "+150 USD/month" },
-        { "title": "SEO Performance Monitoring", "price": "+200 USD/month" }
-      ],
-      "domainOptions": [
-        { "title": "I have a domain", "price": "0 AED" },
-        { "title": "I need a .com or .net domain", "price": "+50 AED" },
-        { "title": "I need .ae domain", "price": "+150 AED" }
-      ],
-      "durationOptions": [
-        { "title": "3 Days - Normal", "price": "0 AED" },
-        { "title": "2 Days - Urgent", "price": "+100 AED" },
-        { "title": "1 Day - Super Fast", "price": "+200 AED" }
-      ],
-      "contentOptions": [
-        { "title": "Buyer provides full content/Generic website content writing by us", "price": "FREE" },
-        { "title": "Fresh, 100% Original & Unique Website Content by Us with On-Page SEO", "price": "+100 AED" }
+        {
+          "title": "Package Level",
+          "options": [
+            { "name": "Basic SEO", "price": "299 USD/month" },
+            { "name": "Business SEO", "price": "499 USD/month" },
+            { "name": "Premium SEO", "price": "799 USD/month" }
+          ]
+        },
+        {
+          "title": "Contract Length",
+          "options": [
+            { "name": "Monthly (No Commitment)", "price": "0 USD" },
+            { "name": "6 Months", "price": "-5% discount" },
+            { "name": "12 Months", "price": "-10% discount" }
+          ]
+        },
+        {
+          "title": "Additional Services",
+          "options": [
+            { "name": "Competitor Analysis Report", "price": "+150 USD" },
+            { "name": "Content Creation (4 articles)", "price": "+200 USD/month" },
+            { "name": "Link Building Campaign", "price": "+300 USD/month" }
+          ]
+        }
       ]
     },
     {
       "id": 7,
-      "title": "Digital Marketing Package",
-      "subtitle": "Boost your online presence",
-      "price": "From: 800.00 USD",
+      "title": "Social Media Management",
+      "subtitle": "Professional Social Media Marketing",
+      "price": "From: 349.00 USD/month",
       "image": "https://www.dubaiwebsitecompany.com/mediaz/2024/02/google-ads-service-provider-dubai-750x430.jpg",
-      "categoryId": 4,
-      "description": "Full-service digital marketing including SEO, Google Ads, and email marketing campaigns to help grow your brand online.",
-      "longDescription": "<div><p>Our <strong>Digital Marketing Package</strong> is a comprehensive solution designed to boost your online visibility, drive targeted traffic to your website, and increase conversions. This integrated approach combines multiple digital marketing channels for maximum impact.</p><p>Our digital marketing specialists develop a customized strategy tailored to your business goals, target audience, and industry. We implement proven techniques across search engine optimization (SEO), pay-per-click advertising (PPC), social media marketing, and email campaigns to create a cohesive marketing presence.</p><p>With regular performance reports and continuous optimization, we ensure your marketing budget delivers the best possible return on investment. This package is ideal for businesses looking to establish or expand their digital footprint and reach new customers online.</p></div>",
+      "categoryId": 5,
+      "description": "Build and maintain a strong social media presence with our comprehensive Social Media Management package. We handle content creation, posting, and engagement to grow your online community.",
+      "longDescription": "<div><p>Our <strong>Social Media Management</strong> package helps businesses establish and grow their presence across major social media platforms. We develop a tailored strategy that aligns with your business goals and target audience, creating engaging content that resonates with your followers.</p><p>Our team handles everything from content creation and scheduling to community management and engagement, ensuring consistent activity and growth across your social channels. We monitor performance metrics and adjust strategies to maximize reach and engagement.</p><p>Let us manage your social media presence professionally, allowing you to focus on running your business while building your online community.</p></div>",
       "features": [
-        "Comprehensive Digital Marketing Strategy",
-        "Keyword Research & Analysis",
-        "On-Page SEO Optimization",
-        "Google Ads Campaign Setup & Management",
-        "Social Media Marketing (2 platforms)",
-        "Content Creation (4 posts per month)",
-        "Email Marketing Campaign (1 per month)",
+        "Social Media Strategy Development",
+        "Content Calendar Creation",
+        "Custom Graphics Design",
+        "Regular Post Scheduling",
+        "Community Management",
+        "Audience Engagement",
         "Monthly Performance Reports",
-        "Competitor Analysis",
-        "Local SEO Optimization",
-        "Google My Business Management",
-        "Conversion Rate Optimization",
-        "Monthly Strategy Call"
+        "Hashtag Research & Strategy"
       ],
       "faqs": [
         {
-          "question": "How long until I see results from digital marketing?",
-          "answer": "While some channels like Google Ads can produce immediate results, SEO typically takes 3-6 months to show significant improvements. We provide monthly reports to track progress across all channels."
-        },
-        {
-          "question": "Is ad spend included in the package price?",
-          "answer": "No, the package price covers strategy, setup, management, and reporting. Ad spend for Google Ads, Facebook Ads, etc. is separate and determined based on your budget."
-        },
-        {
           "question": "Which social media platforms do you manage?",
-          "answer": "The standard package includes management of 2 platforms of your choice (Facebook, Instagram, LinkedIn, Twitter, etc.). Additional platforms can be added for an extra fee."
+          "answer": "We manage all major platforms including Instagram, Facebook, Twitter, LinkedIn, and TikTok. Platform selection depends on your package and business needs."
+        },
+        {
+          "question": "How many posts per week are included?",
+          "answer": "This varies by package. Basic includes 3 posts per week, Business includes 5 posts per week, and Premium includes daily posts."
+        },
+        {
+          "question": "Who creates the content for social media posts?",
+          "answer": "Our team creates custom content based on your brand guidelines. You can also provide content ideas or materials for us to adapt."
         }
       ],
       "pricing": [
-        { "title": "Standard Digital Marketing Package", "price": "800 USD/month" },
-        { "title": "Additional Social Media Platform", "price": "+200 USD/month" },
-        { "title": "Additional Content Creation", "price": "+25 USD/post" },
-        { "title": "Video Marketing Add-on", "price": "+350 USD/month" },
-        { "title": "Advanced Analytics Package", "price": "+250 USD/month" },
-        { "title": "Reputation Management", "price": "+300 USD/month" }
-      ],
-      "domainOptions": [
-        { "title": "I have a domain", "price": "0 AED" },
-        { "title": "I need a .com or .net domain", "price": "+50 AED" },
-        { "title": "I need .ae domain", "price": "+150 AED" }
-      ],
-      "durationOptions": [
-        { "title": "3 Days - Normal", "price": "0 AED" },
-        { "title": "2 Days - Urgent", "price": "+100 AED" },
-        { "title": "1 Day - Super Fast", "price": "+200 AED" }
-      ],
-      "contentOptions": [
-        { "title": "Buyer provides full content/Generic website content writing by us", "price": "FREE" },
-        { "title": "Fresh, 100% Original & Unique Website Content by Us with On-Page SEO", "price": "+100 AED" }
+        {
+          "title": "Package Level",
+          "options": [
+            { "name": "Basic (2 platforms)", "price": "349 USD/month" },
+            { "name": "Business (3 platforms)", "price": "549 USD/month" },
+            { "name": "Premium (4 platforms)", "price": "849 USD/month" }
+          ]
+        },
+        {
+          "title": "Contract Length",
+          "options": [
+            { "name": "Monthly (No Commitment)", "price": "0 USD" },
+            { "name": "6 Months", "price": "-5% discount" },
+            { "name": "12 Months", "price": "-10% discount" }
+          ]
+        },
+        {
+          "title": "Additional Services",
+          "options": [
+            { "name": "Paid Social Ads Management", "price": "+200 USD/month" },
+            { "name": "Additional Platform", "price": "+150 USD/month" },
+            { "name": "Monthly Strategy Meeting", "price": "+100 USD/month" }
+          ]
+        }
       ]
     },
     {
       "id": 8,
-      "title": "Social Media Management",
-      "subtitle": "Engage your audience effectively",
-      "price": "From: 650.00 USD/month",
-      "image": "https://www.dubaiwebsitecompany.com/mediaz/2022/01/social-media-750x430.jpg",
-      "categoryId": 5,
-      "description": "Comprehensive social media management to build your brand presence, engage with your audience, and drive traffic to your website.",
-      "longDescription": "<div><p>Our <strong>Social Media Management</strong> package helps businesses establish and grow their presence across key social media platforms. In today's digital landscape, effective social media management is essential for brand awareness, customer engagement, and driving website traffic.</p><p>Our social media specialists develop a customized content strategy aligned with your brand voice and business objectives. We create engaging, platform-optimized content including graphics, copy, and hashtag research to maximize reach and engagement.</p><p>Beyond content creation and scheduling, we actively manage your community by responding to comments and messages, monitoring brand mentions, and identifying opportunities for engagement. Regular performance analysis ensures continuous improvement of your social media strategy.</p></div>",
+      "title": "Letterhead & Invoice Design",
+      "subtitle": "Professional Business Stationery Design",
+      "price": "From: 120.00 USD",
+      "image": "https://www.dubaiwebsitecompany.com/mediaz/2022/01/1-1-750x430.jpg",
+      "categoryId": 102,
+      "description": "Create a professional business image with our custom letterhead and invoice design. Maintain brand consistency across all your business communications.",
+      "longDescription": "<div><p>Our <strong>Letterhead & Invoice Design</strong> package helps businesses maintain a consistent and professional brand image across all written communications. Well-designed stationery enhances your business credibility and reinforces your brand identity with every interaction.</p><p>Our experienced designers create custom letterheads and invoice templates that reflect your company's visual identity while maintaining professional standards. All designs are created with both digital and print use in mind, ensuring versatility for all your business needs.</p><p>We provide files in multiple formats so you can easily use your new stationery for both electronic communications and professional printing.</p></div>",
       "features": [
-        "Social Media Strategy Development",
-        "Management of 3 Social Platforms",
-        "12 Posts Per Month (4 per platform)",
-        "Custom Graphics Creation",
-        "Content Calendar Planning",
-        "Hashtag Research & Strategy",
-        "Community Management",
-        "Comment & Message Responses",
-        "Monthly Performance Reports",
-        "Competitor Analysis",
-        "Content Curation",
-        "Monthly Strategy Call"
+        "Custom Letterhead Design",
+        "Matching Invoice Design",
+        "Brand Color Integration",
+        "Logo Incorporation",
+        "Print-Ready Files",
+        "Digital-Use Files",
+        "2 Revision Rounds"
       ],
       "faqs": [
         {
-          "question": "Which social media platforms do you manage?",
-          "answer": "We can manage any combination of Facebook, Instagram, Twitter, LinkedIn, TikTok, and Pinterest based on your business needs and target audience."
+          "question": "Can I edit the text on the letterhead and invoice myself?",
+          "answer": "Yes, we provide editable versions (usually Word or PDF templates) that allow you to customize text while maintaining the design."
         },
         {
-          "question": "Do you create the content for posts?",
-          "answer": "Yes, we create all content including copywriting and graphics. We may request some basic materials from you like product photos or company information."
+          "question": "Do you provide envelope designs to match?",
+          "answer": "Envelope design is available as an add-on service or included in our Premium package."
         },
         {
-          "question": "Is paid social media advertising included?",
-          "answer": "The standard package includes organic social media management. Paid advertising strategy and management can be added as a supplementary service."
+          "question": "Can you match the design to my existing logo?",
+          "answer": "Yes, we design all stationery to complement your existing brand identity, including your logo and color scheme."
         }
       ],
       "pricing": [
-        { "title": "Standard Social Media Package", "price": "650 USD/month" },
-        { "title": "Additional Social Platform", "price": "+200 USD/month" },
-        { "title": "Additional Posts (4 per platform)", "price": "+150 USD/month" },
-        { "title": "Social Media Advertising Management", "price": "+300 USD/month" },
-        { "title": "Video Content Creation", "price": "+75 USD/video" },
-        { "title": "Influencer Outreach & Management", "price": "+400 USD/month" }
-      ],
-      "domainOptions": [
-        { "title": "I have a domain", "price": "0 AED" },
-        { "title": "I need a .com or .net domain", "price": "+50 AED" },
-        { "title": "I need .ae domain", "price": "+150 AED" }
-      ],
-      "durationOptions": [
-        { "title": "3 Days - Normal", "price": "0 AED" },
-        { "title": "2 Days - Urgent", "price": "+100 AED" },
-        { "title": "1 Day - Super Fast", "price": "+200 AED" }
-      ],
-      "contentOptions": [
-        { "title": "Buyer provides full content/Generic website content writing by us", "price": "FREE" },
-        { "title": "Fresh, 100% Original & Unique Website Content by Us with On-Page SEO", "price": "+100 AED" }
+        {
+          "title": "Package Type",
+          "options": [
+            { "name": "Basic (Letterhead & Invoice)", "price": "120 USD" },
+            { "name": "Standard (+ Email Signature)", "price": "180 USD" },
+            { "name": "Premium (+ Envelope & Folder)", "price": "250 USD" }
+          ]
+        },
+        {
+          "title": "Delivery Time",
+          "options": [
+            { "name": "Standard (3 days)", "price": "0 USD" },
+            { "name": "Express (48 hours)", "price": "+25 USD" },
+            { "name": "Rush (24 hours)", "price": "+40 USD" }
+          ]
+        },
+        {
+          "title": "Additional Services",
+          "options": [
+            { "name": "MS Word Template", "price": "+30 USD" },
+            { "name": "Additional Revision Round", "price": "+20 USD" },
+            { "name": "Complete Stationery Guidelines", "price": "+75 USD" }
+          ]
+        }
       ]
     }
   ]
 };
-export default packagesData;
-
