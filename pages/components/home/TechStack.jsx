@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
+import SoftwareTeamBanner from './SoftwareTeamBanner';
 
-export default function TechShowcase() {
+export default function EnhancedTechShowcase() {
   const [activeCategory, setActiveCategory] = useState('Web Development');
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const tabsContainerRef = useRef(null);
@@ -39,81 +40,161 @@ export default function TechShowcase() {
   ];
     
   const technologies = {
-    'Web Development': [
-      { name: 'React', icon: '⚛️', color: 'blue' },
-      { name: 'Next.js', icon: '▲', color: 'gray' },
-      { name: 'Vue', icon: '🟢', color: 'green' },
-      { name: 'Angular', icon: '🅰️', color: 'red' },
-      { name: 'TypeScript', icon: '🔷', color: 'blue' },
-      { name: 'Tailwind', icon: '🌊', color: 'cyan' }
-    ],
-    'Mobile Development': [
-      { name: 'React Native', icon: '📱', color: 'blue' },
-      { name: 'Flutter', icon: '🦋', color: 'cyan' },
-      { name: 'Swift', icon: '🐦', color: 'orange' },
-      { name: 'Kotlin', icon: '🟣', color: 'purple' },
-      { name: 'Ionic', icon: '⚡', color: 'blue' },
-      { name: 'Xamarin', icon: '📊', color: 'indigo' }
-    ],
-    'Cloud Solutions': [
-      { name: 'AWS', icon: '☁️', color: 'orange' },
-      { name: 'Azure', icon: '🔵', color: 'blue' },
-      { name: 'GCP', icon: '🌐', color: 'red' },
-      { name: 'Serverless', icon: '⚡', color: 'yellow' },
-      { name: 'Firebase', icon: '🔥', color: 'amber' },
-      { name: 'Digital Ocean', icon: '🌊', color: 'cyan' }
-    ],
-    'DevOps & CI/CD': [
-      { name: 'Docker', icon: '🐳', color: 'blue' },
-      { name: 'Kubernetes', icon: '⎈', color: 'sky' },
-      { name: 'GitHub Actions', icon: '⚙️', color: 'gray' },
-      { name: 'Jenkins', icon: '🤖', color: 'red' },
-      { name: 'CircleCI', icon: '🔄', color: 'green' },
-      { name: 'ArgoCD', icon: '🚀', color: 'purple' }
-    ],
-    'Data Science': [
-      { name: 'Python', icon: '🐍', color: 'yellow' },
-      { name: 'TensorFlow', icon: '🧠', color: 'orange' },
-      { name: 'PyTorch', icon: '🔥', color: 'red' },
-      { name: 'Pandas', icon: '🐼', color: 'blue' },
-      { name: 'Scikit-learn', icon: '📊', color: 'orange' },
-      { name: 'Jupyter', icon: '📓', color: 'amber' }
-    ],
-    'Blockchain': [
-      { name: 'Ethereum', icon: '💎', color: 'purple' },
-      { name: 'Solidity', icon: '📝', color: 'gray' },
-      { name: 'Web3.js', icon: '🌐', color: 'indigo' },
-      { name: 'Hardhat', icon: '🎩', color: 'yellow' },
-      { name: 'Polygon', icon: '⬡', color: 'purple' },
-      { name: 'NFT', icon: '🖼️', color: 'green' }
-    ]
-  };
-  
-  // Color mapper for tech cards
-  const colorMap = {
-    blue: 'from-blue-600 to-blue-800 shadow-blue-500/20',
-    red: 'from-red-600 to-red-800 shadow-red-500/20',
-    green: 'from-green-600 to-green-800 shadow-green-500/20',
-    purple: 'from-purple-600 to-purple-800 shadow-purple-500/20',
-    yellow: 'from-yellow-600 to-yellow-800 shadow-yellow-500/20',
-    orange: 'from-orange-600 to-orange-800 shadow-orange-500/20',
-    cyan: 'from-cyan-600 to-cyan-800 shadow-cyan-500/20',
-    amber: 'from-amber-600 to-amber-800 shadow-amber-500/20',
-    indigo: 'from-indigo-600 to-indigo-800 shadow-indigo-500/20',
-    sky: 'from-sky-600 to-sky-800 shadow-sky-500/20',
-    gray: 'from-gray-600 to-gray-800 shadow-gray-500/20'
+    'Web Development': {
+      subcategories: ['Frontend', 'Backend', 'CMS'],
+      technologies: {
+        'Frontend': [
+          { name: 'React', icon: '⚛️' },
+          { name: 'Vue', icon: '🟢' },
+          { name: 'Angular', icon: '🅰️' },
+          { name: 'Next.js', icon: '▲' }
+        ],
+        'Backend': [
+          { name: 'Node.js', icon: '🟩' },
+          { name: 'Django', icon: '🐍' },
+          { name: 'Laravel', icon: '🔸' },
+          { name: 'Express', icon: '⚡' }
+        ],
+        'CMS': [
+          { name: 'WordPress', icon: '📝' },
+          { name: 'Strapi', icon: '🔷' },
+          { name: 'Contentful', icon: '📊' },
+          { name: 'Sanity', icon: '🧩' }
+        ]
+      }
+    },
+    'Mobile Development': {
+      subcategories: ['iOS', 'Android', 'Cross-Platform'],
+      technologies: {
+        'iOS': [
+          { name: 'Swift', icon: '🐦' },
+          { name: 'UI Kit', icon: '📱' },
+          { name: 'RxSwift', icon: '⚛️' },
+          { name: 'Combine', icon: '🔄' },
+          { name: 'MVVM', icon: '🏗️' },
+          { name: 'Core Data', icon: '💾' },
+          { name: 'Alamofire', icon: '🔥' }
+        ],
+        'Android': [
+          { name: 'Kotlin', icon: '🟣' },
+          { name: 'MVVM', icon: '🏗️' },
+          { name: 'RxJava', icon: '⚡' },
+          { name: 'Java', icon: '☕' },
+          { name: 'Retrofit', icon: '🔄' },
+          { name: 'Jetpack', icon: '🚀' }
+        ],
+        'Cross-Platform': [
+          { name: 'React Native', icon: '⚛️' },
+          { name: 'Flutter', icon: '🦋' },
+          { name: 'Ionic', icon: '⚡' },
+          { name: 'Xamarin', icon: '📊' }
+        ]
+      }
+    },
+    'Cloud Solutions': {
+      subcategories: ['Providers', 'Services', 'Tools'],
+      technologies: {
+        'Providers': [
+          { name: 'AWS', icon: '☁️' },
+          { name: 'Azure', icon: '🔵' },
+          { name: 'GCP', icon: '🌐' },
+          { name: 'Digital Ocean', icon: '🌊' }
+        ],
+        'Services': [
+          { name: 'Lambda', icon: 'λ' },
+          { name: 'S3', icon: '📦' },
+          { name: 'EC2', icon: '🖥️' },
+          { name: 'DynamoDB', icon: '🗄️' }
+        ],
+        'Tools': [
+          { name: 'Terraform', icon: '🏗️' },
+          { name: 'Serverless', icon: '⚡' },
+          { name: 'Firebase', icon: '🔥' },
+          { name: 'Pulumi', icon: '🧰' }
+        ]
+      }
+    },
+    'DevOps & CI/CD': {
+      subcategories: ['Containerization', 'CI/CD', 'Monitoring'],
+      technologies: {
+        'Containerization': [
+          { name: 'Docker', icon: '🐳' },
+          { name: 'Kubernetes', icon: '⎈' },
+          { name: 'Helm', icon: '⛵' },
+          { name: 'Podman', icon: '📦' }
+        ],
+        'CI/CD': [
+          { name: 'GitHub Actions', icon: '⚙️' },
+          { name: 'Jenkins', icon: '🤖' },
+          { name: 'CircleCI', icon: '🔄' },
+          { name: 'ArgoCD', icon: '🚀' }
+        ],
+        'Monitoring': [
+          { name: 'Prometheus', icon: '📊' },
+          { name: 'Grafana', icon: '📈' },
+          { name: 'ELK Stack', icon: '🔍' },
+          { name: 'Datadog', icon: '🐶' }
+        ]
+      }
+    },
+    'Data Science': {
+      subcategories: ['ML/AI', 'Data Processing', 'Visualization'],
+      technologies: {
+        'ML/AI': [
+          { name: 'TensorFlow', icon: '🧠' },
+          { name: 'PyTorch', icon: '🔥' },
+          { name: 'Scikit-learn', icon: '📊' },
+          { name: 'NLTK', icon: '📝' }
+        ],
+        'Data Processing': [
+          { name: 'Python', icon: '🐍' },
+          { name: 'Pandas', icon: '🐼' },
+          { name: 'Spark', icon: '⚡' },
+          { name: 'Dask', icon: '🧮' }
+        ],
+        'Visualization': [
+          { name: 'Matplotlib', icon: '📈' },
+          { name: 'D3.js', icon: '📊' },
+          { name: 'Tableau', icon: '📉' },
+          { name: 'Jupyter', icon: '📓' }
+        ]
+      }
+    },
+    'Blockchain': {
+      subcategories: ['Platforms', 'Development', 'Tools'],
+      technologies: {
+        'Platforms': [
+          { name: 'Ethereum', icon: '💎' },
+          { name: 'Polygon', icon: '⬡' },
+          { name: 'Solana', icon: '☀️' },
+          { name: 'Binance', icon: '🔶' }
+        ],
+        'Development': [
+          { name: 'Solidity', icon: '📝' },
+          { name: 'Web3.js', icon: '🌐' },
+          { name: 'Hardhat', icon: '🎩' },
+          { name: 'Truffle', icon: '🍫' }
+        ],
+        'Tools': [
+          { name: 'MetaMask', icon: '🦊' },
+          { name: 'Ganache', icon: '🧪' },
+          { name: 'Etherscan', icon: '🔍' },
+          { name: 'NFT', icon: '🖼️' }
+        ]
+      }
+    }
   };
 
   return (
-    <div className="w-full bg-gray-900 bg-gradient-to-b from-black to-gray-900 text-white py-16 px-4 md:px-12 min-h-screen">
+    <div className="w-full bg-black text-white py-16 px-4 md:px-12">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-blue-400 to-green-400 bg-clip-text text-transparent">
-            Technologies We Master
+        <div className="text-left mb-18">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+            Technologies We Use
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl">
             Access our network of 400+ specialized experts in cutting-edge technologies and frameworks, 
             ready to elevate your digital projects to the next level.
           </p>
@@ -123,16 +204,16 @@ export default function TechShowcase() {
         {isSmallScreen && (
           <div 
             ref={tabsContainerRef}
-            className="flex overflow-x-auto py-2 px-1 mb-8 hide-scrollbar"
+            className="flex overflow-x-auto py-2 px-1 mb-8"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {categories.map((category) => (
               <div
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`flex-shrink-0 py-3 px-5 mr-2 rounded-full transition-all duration-300 whitespace-nowrap text-center cursor-pointer
+                className={`flex-shrink-0 py-2 px-4 mr-2 rounded-full transition-all duration-300 whitespace-nowrap text-center cursor-pointer
                   ${activeCategory === category 
-                    ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg shadow-purple-500/20 active-tab'
+                    ? 'bg-purple-600 text-white shadow-lg active-tab'
                     : 'bg-gray-800 text-gray-300 hover:text-white hover:bg-gray-700'}`}
               >
                 {category}
@@ -145,14 +226,14 @@ export default function TechShowcase() {
         <div className="flex flex-col md:flex-row">
           {/* Desktop Sidebar Navigation */}
           {!isSmallScreen && (
-            <div className="md:w-1/4 mb-8 md:mb-0 md:sticky md:top-0">
+            <div className="md:w-1/4 mb-8 md:mb-0 md:pr-8">
               {categories.map((category) => (
                 <div
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`py-4 px-6 mb-3 rounded-lg transition-all duration-300 cursor-pointer font-medium text-lg
+                  className={`py-3 px-5 mb-3 rounded-lg transition-all duration-300 cursor-pointer font-medium text-lg
                     ${activeCategory === category
-                      ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg shadow-purple-500/30'
+                      ? 'bg-purple-600 text-white shadow-lg'
                       : 'bg-gray-800 text-gray-300 hover:text-white hover:bg-gray-700'}`}
                 >
                   {category}
@@ -161,33 +242,39 @@ export default function TechShowcase() {
             </div>
           )}
           
-          {/* Technology Cards */}
-          <div className={`${isSmallScreen ? 'w-full' : 'md:w-3/4 md:pl-12'}`}>
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+          {/* Technology Cards with Subcategories */}
+          <div className={`${isSmallScreen ? 'w-full' : 'md:w-3/4'}`}>
+            {/* <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white">
               {activeCategory}
-            </h2>
+            </h2> */}
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {technologies[activeCategory].map((tech, index) => (
-                <div
-                  key={tech.name}
-                  className={`bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-md rounded-xl p-5 border border-gray-700 hover:border-blue-500 
-                    transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 transform hover:-translate-y-1
-                    hover:scale-102 overflow-hidden relative group`}
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${colorMap[tech.color]} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
+            {/* Subcategory Sections */}
+            <div className="space-y-12">
+              {technologies[activeCategory].subcategories.map((subcategory) => (
+                <div key={subcategory} className="mb-8">
+                  <h3 className="text-xl font-bold mb-4 text-gray-200 border-b border-gray-700 pb-2">
+                    {subcategory}
+                  </h3>
                   
-                  <div className="flex items-center space-x-4">
-                    <div className={`flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center text-2xl
-                      bg-gradient-to-br ${colorMap[tech.color]}`}>
-                      {tech.icon}
-                    </div>
-                    
-                    <div>
-                      <span className="font-semibold text-lg">{tech.name}</span>
-                      <div className="h-1.5 w-12 mt-2 rounded-full bg-gradient-to-r from-purple-400 to-blue-400 transform origin-left scale-0 group-hover:scale-100 transition-transform duration-300"></div>
-                    </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                    {technologies[activeCategory].technologies[subcategory].map((tech, index) => (
+                      <div
+                        key={tech.name}
+                        className="bg-gray-800 rounded-lg p-1 border border-gray-700 hover:border-white 
+                          transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
+                        style={{ animationDelay: `${index * 100}ms` }}
+                      >
+                        <div className="flex items-center space-x-3">
+                          <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-2xl ">
+                            {tech.icon}
+                          </div>
+                          
+                          <div>
+                            <span className="font-medium text-white">{tech.name}</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               ))}

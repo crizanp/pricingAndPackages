@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronRight, Car, BarChart4, Building2, Utensils, GraduationCap, Heart } from 'lucide-react';
+import SoftwareTeamBanner from './SoftwareTeamBanner';
 
 export default function IndustriesWeServe() {
   const [activeIndustry, setActiveIndustry] = useState('');
@@ -95,6 +96,8 @@ export default function IndustriesWeServe() {
           </button>
         </div> */}
       </div>
+      <SoftwareTeamBanner/>
+
     </div>
   );
 }

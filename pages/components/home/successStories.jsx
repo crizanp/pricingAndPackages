@@ -10,11 +10,11 @@ export default function SuccessStories() {
         const handleScroll = () => {
             setAnimateSection(true);
         };
-        
+
         window.addEventListener('scroll', handleScroll);
         // Trigger animation after component mounts
         setTimeout(() => setAnimateSection(true), 500);
-        
+
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -45,33 +45,36 @@ export default function SuccessStories() {
         },
         {
             id: 4,
-            logo: "/api/placeholder/120/60",
+            logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT59ECUashts6AUud70xgEIyNjD4QaDR0kmoQ&s",
             title: "Nepmate - Dating & Hookups",
             description: "A free dating app offering features for both casual hookups and serious relationships with a fun experience.",
             image: "https://ighdigital.ae/wp-content/uploads/2024/01/epmate.png",
             stats: "500K+ matches made"
         }
     ];
-    
+
     return (
         <div className="w-full bg-white py-16 md:py-32 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className={`flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-32 transition-all duration-1000 ${animateSection ? 'opacity-100' : 'opacity-0 translate-y-8'}`}>
-                    <div className="max-w-2xl">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className={`flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-12 ...`}>
+            <div className="max-w-2xl">
                         <h2 className="text-4xl md:text-6xl font-bold text-black mb-6 tracking-tight leading-tight">
-                            Success Stories 
+                            Success Stories
                             <span className="block text-lg md:text-xl font-normal text-gray-600 mt-4">
                                 Real results. Real impact.
                             </span>
                         </h2>
                     </div>
-                    <a
-                        href="/case-studies"
-                        className="group flex items-center text-xl font-medium text-black hover:text-black transition-colors border-b-2 border-transparent hover:border-black pb-1"
-                    >
-                        Explore all case studies
-                        <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />
-                    </a>
+                    <div className="flex items-center justify-center h-full">
+                        <a
+                            href="/case-studies"
+                            className="group flex items-center text-xl font-medium text-black hover:text-black transition-colors border-b-2 border-transparent hover:border-black pb-1"
+                        >
+                            Explore all case studies
+                            <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+                        </a>
+                    </div>
+
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-24">
@@ -103,8 +106,8 @@ export default function SuccessStories() {
                                         <img src={study.logo} alt="Logo" className="h-10" />
                                     </div>
 
-                                    <a 
-                                        href={`/case-study/${study.id}`} 
+                                    <a
+                                        href={`/case-study/${study.id}`}
                                         className="block mb-4"
                                     >
                                         <h3 className="text-2xl md:text-4xl font-bold tracking-tight transition-colors duration-300 border-b-2 border-transparent group-hover:border-black inline-block">
@@ -114,7 +117,7 @@ export default function SuccessStories() {
 
                                     <p className="text-lg md:text-xl text-gray-700 mb-8">{study.description}</p>
 
-                                    <a 
+                                    <a
                                         href={`/case-study/${study.id}`}
                                         className="flex items-center text-lg font-semibold text-black transition-colors duration-300 group-hover:translate-x-1 transition-transform"
                                     >
@@ -154,8 +157,8 @@ export default function SuccessStories() {
                                         <img src={study.logo} alt="Logo" className="h-10" />
                                     </div>
 
-                                    <a 
-                                        href={`/case-study/${study.id}`} 
+                                    <a
+                                        href={`/case-study/${study.id}`}
                                         className="block mb-4"
                                     >
                                         <h3 className="text-2xl md:text-4xl font-bold tracking-tight transition-colors duration-300 border-b-2 border-transparent group-hover:border-black inline-block">
@@ -165,7 +168,7 @@ export default function SuccessStories() {
 
                                     <p className="text-lg md:text-xl text-gray-700 mb-8">{study.description}</p>
 
-                                    <a 
+                                    <a
                                         href={`/case-study/${study.id}`}
                                         className="flex items-center text-lg font-semibold text-black transition-colors duration-300 group-hover:translate-x-1 transition-transform"
                                     >

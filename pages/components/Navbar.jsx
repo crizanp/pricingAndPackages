@@ -32,30 +32,57 @@ const Navbar = () => {
             hasDropdown: true,
             sections: [
                 {
+                    title: 'Website Development',
+                    items: [
+                        { name: 'WordPress Development', href: '/services/wordpress-development' },
+                        { name: 'Ecommerce Development', href: '/services/ecommerce-development' },
+                        { name: 'Business Website', href: '/services/business-development' },
+                        { name: 'Educational Website', href: '/services/educational-development' },
+                        { name: 'Healthcare Website', href: '/services/healthcare-development' },
+                        { name: 'News and Media Website', href: '/services/news-media-development' },
+                        { name: 'Manufacturing Website', href: '/services/manufacturing-development' },
+                    ]
+                },                
+                {
+                    title: 'Video Editing',
+                    items: [
+                        { name: 'YouTube Video Editing', href: '/services/youtube-editing' },
+                        { name: 'Ads & Commercial Editing', href: '/services/ads-commercial-editing' },
+                        { name: 'Social Media Video Editing', href: '/services/social-media-editing' },
+                        { name: 'Corporate Video Editing', href: '/services/corporate-editing' },
+                        { name: 'Event Video Editing', href: '/services/event-editing' },
+                        { name: 'Whiteboard Animation', href: '/services/whiteboard-animation' }
+                    ]
+                },
+                {
+                    title: 'Digital Marketing',
+                    items: [
+                        { name: 'Facebook Ads', href: '/services/facebook-ads' },
+                        { name: 'Instagram Marketing', href: '/services/instagram-marketing' },
+                        { name: 'Google & YouTube Ads', href: '/services/google-youtube-ads' },
+                        { name: 'SEO', href: '/services/seo' },
+                        { name: 'Telegram Promotion', href: '/services/telegram-marketing' },
+                        { name: 'Social Media Management', href: '/services/social-media-management' },
+                        { name: 'Email Marketing', href: '/services/email-marketing' }
+                    ]
+                },
+                
+                {
+                    title: 'Blockchain Development',
+                    items: [
+                        { name: 'NFT Marketplace Development', href: '/services/nft-marketplace-development' },
+                        { name: 'DApp Development', href: '/services/dapp-development' },
+                        { name: 'Web3 Development', href: '/services/web3-development' },
+                        { name: 'Telegram Mini Apps', href: '/services/tma-development' },
+                    ]
+                }
+                ,
+                {
                     title: 'Mobile Application',
                     items: [
                         { name: 'iOS App Development', href: '/services/ios-app-development' },
                         { name: 'Android App Development', href: '/services/android-app-development' },
-                        { name: 'Ecommerce App Development', href: '/services/ecommerce-app-development' },
-                        { name: 'visionOS Development', href: '/services/visionos-development' },
-                        { name: 'Enterprise App Development', href: '/services/enterprise-app-development' },
-                    ]
-                },
-                {
-                    title: 'Game Development',
-                    items: [
-                        { name: '2D Game Development', href: '/services/2d-game-development' },
-                        { name: '3D Game Development', href: '/services/3d-game-development' },
-                        { name: 'NFT Game Development', href: '/services/nft-game-development' },
-                        { name: 'Unity Game Development', href: '/services/unity-game-development' },
-                    ]
-                },
-                {
-                    title: 'AR/VR',
-                    items: [
-                        { name: 'AR Development', href: '/services/ar-development' },
-                        { name: 'VR Development', href: '/services/vr-development' },
-                        { name: 'Metaverse Development', href: '/services/metaverse-development' },
+                        
                     ]
                 },
                 {
@@ -65,27 +92,7 @@ const Navbar = () => {
                         { name: 'Big Data Development', href: '/services/big-data-development' },
                     ]
                 },
-                {
-                    title: 'Blockchain Development',
-                    items: [
-                        { name: 'NFT Marketplace Development', href: '/services/nft-marketplace-development' },
-                        { name: 'DApp Development', href: '/services/dapp-development' },
-                        { name: 'Web3 Development', href: '/services/web3-development' },
-                    ]
-                },
-                {
-                    title: 'Web and MVP',
-                    items: [
-                        { name: 'MVP Development', href: '/services/mvp-development' },
-                        { name: 'Website Development', href: '/services/website-development' },
-                    ]
-                },
-                {
-                    title: 'SharePoint',
-                    items: [
-                        { name: 'SharePoint Development', href: '/services/sharepoint-development' },
-                    ]
-                },
+                
             ]
         },
         {

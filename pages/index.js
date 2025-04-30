@@ -1,4 +1,5 @@
 import BrandSlider from "./components/home/companySponsered";
+import DevelopmentProcess from "./components/home/developmentProccess";
 import HeroSection from "./components/home/hero";
 import IndustriesWeServe from "./components/home/industries";
 import CompanyMetrics from "./components/home/Matrics";
@@ -15,6 +16,7 @@ export default function Home() {
       <IndustriesWeServe/>
       <SuccessStories/>
       <TechShowcase/>
+      <DevelopmentProcess/>
 
     </div>
   );
