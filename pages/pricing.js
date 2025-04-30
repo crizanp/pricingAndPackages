@@ -5,13 +5,14 @@ import PackageCard from './components/PackageCard';
 import { packagesData as data } from '../dummyContent.js';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import Navbar from './components/Navbar';
 
 export default function PricingPage() {
   const { categories, packages } = data;
   const router = useRouter();
   const { categoryId, subcategoryId } = router.query;
-  
-  const [filteredPackages, setFilteredPackages] = useState(packages);
+
+  const [filtepurplePackages, setFiltepurplePackages] = useState(packages);
   const [displayedPackages, setDisplayedPackages] = useState(packages);
   const [activeCategory, setActiveCategory] = useState(null);
   const [activeSubcategory, setActiveSubcategory] = useState(null);
@@ -21,8 +22,8 @@ export default function PricingPage() {
     if (subcategoryId) {
       const subCatId = parseInt(subcategoryId);
       setActiveSubcategory(subCatId);
-      setFilteredPackages(packages.filter(pkg => pkg.categoryId === subCatId));
-      
+      setFiltepurplePackages(packages.filter(pkg => pkg.categoryId === subCatId));
+
       // Find parent category
       for (const category of categories) {
         if (category.hasSubcategories) {
@@ -37,32 +38,32 @@ export default function PricingPage() {
       const catId = parseInt(categoryId);
       setActiveCategory(catId);
       setActiveSubcategory(null);
-      
+
       // Find category
       const category = categories.find(cat => cat.id === catId);
-      
+
       if (category) {
         if (category.hasSubcategories) {
           // Get all packages from all subcategories
           const subCategoryIds = category.subcategories.map(sub => sub.id);
-          setFilteredPackages(packages.filter(pkg => subCategoryIds.includes(pkg.categoryId)));
+          setFiltepurplePackages(packages.filter(pkg => subCategoryIds.includes(pkg.categoryId)));
         } else {
           // Direct category
-          setFilteredPackages(packages.filter(pkg => pkg.categoryId === catId));
+          setFiltepurplePackages(packages.filter(pkg => pkg.categoryId === catId));
         }
       }
     } else {
       // No filter, show all packages
-      setFilteredPackages(packages);
+      setFiltepurplePackages(packages);
       setActiveCategory(null);
       setActiveSubcategory(null);
     }
   }, [categoryId, subcategoryId, categories, packages]);
 
-  // Apply sorting whenever filteredPackages or sortBy changes
+  // Apply sorting whenever filtepurplePackages or sortBy changes
   useEffect(() => {
-    let sorted = [...filteredPackages];
-    
+    let sorted = [...filtepurplePackages];
+
     switch (sortBy) {
       case 'price-low-high':
         sorted = sorted.sort((a, b) => {
@@ -92,10 +93,10 @@ export default function PricingPage() {
         // Default sorting (by id)
         sorted = sorted.sort((a, b) => a.id - b.id);
     }
-    
+
     setDisplayedPackages(sorted);
-  }, [filteredPackages, sortBy]);
-  
+  }, [filtepurplePackages, sortBy]);
+
   // Find active category/subcategory names
   const getActiveCategoryName = () => {
     if (activeCategory) {
@@ -104,7 +105,7 @@ export default function PricingPage() {
     }
     return 'All Categories';
   };
-  
+
   const getActiveSubcategoryName = () => {
     if (activeSubcategory && activeCategory) {
       const category = categories.find(cat => cat.id === activeCategory);
@@ -115,7 +116,7 @@ export default function PricingPage() {
     }
     return '';
   };
-  
+
   const getHeaderTitle = () => {
     if (activeSubcategory) {
       return getActiveSubcategoryName();
@@ -124,11 +125,11 @@ export default function PricingPage() {
     }
     return 'All Design Packages';
   };
-  
+
   const getHeaderDescription = () => {
     const categoryName = getActiveCategoryName();
     const subcategoryName = getActiveSubcategoryName();
-  
+
     if (activeSubcategory) {
       return `Choose a ${categoryName} - ${subcategoryName} package and place the order online. Your ${categoryName} will be ready within the time frame you choose!`;
     } else if (activeCategory) {
@@ -137,7 +138,7 @@ export default function PricingPage() {
       return 'Choose a design package and place the order online. Your design will be ready within the time frame you choose! We will email you the final design.';
     }
   };
-  
+
 
   return (
     <>
@@ -146,7 +147,7 @@ export default function PricingPage() {
         <meta name="description" content="Choose from our range of design packages and pricing options" />
       </Head>
 
-      <div className="container mx-auto py-10 px-4">
+      <div className="container mx-auto pt-4 pb-10 px-4"> 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Sidebar - takes 1/4 of screen on medium screens and above */}
           <div className="md:col-span-1">
@@ -160,8 +161,8 @@ export default function PricingPage() {
               <h1 className="text-2xl font-extrabold text-center justify-between  text-gray-800 mb-3">
                 {getHeaderTitle()}
               </h1>
-              
-              
+
+
               {/* Filter/Sort Options */}
               <div className="flex flex-wrap items-center justify-between border-t border-gray-200 pt-4">
                 <div className="text-gray-600 font-medium">
@@ -169,9 +170,9 @@ export default function PricingPage() {
                 </div>
                 <div className="flex items-center mt-2 sm:mt-0">
                   <label htmlFor="sort-by" className="mr-2 text-gray-600">Sort by:</label>
-                  <select 
-                    id="sort-by" 
-                    className="border border-gray-300 rounded-md py-1 px-3 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
+                  <select
+                    id="sort-by"
+                    className="border border-gray-300 rounded-md py-1 px-3 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value)}
                   >

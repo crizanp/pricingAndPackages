@@ -289,7 +289,7 @@ const PackageDetailPage = ({ packageData }) => {
                             id={`option-${categoryIndex}-${optionIndex}`}
                             checked={isSelected}
                             onChange={() => toggleAdditionalService(categoryIndex, optionIndex)}
-                            className="h-4 w-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
+                            className="h-4 w-4 text-purple-600 border-gray-300 cursor-pointer rounded focus:ring-purple-500"
                           />
                         ) : (
                           // Radio buttons for other categories
@@ -299,7 +299,7 @@ const PackageDetailPage = ({ packageData }) => {
                             name={`category-${categoryIndex}`}
                             checked={isSelected}
                             onChange={() => handleRadioChange(categoryIndex, optionIndex)}
-                            className="h-4 w-4 text-purple-600 border-gray-300 rounded-full focus:ring-purple-500"
+                            className="h-4 w-4 text-purple-600 border-gray-300 cursor-pointer rounded-full focus:ring-purple-500"
                           />
                         )}
                         <label 

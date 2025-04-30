@@ -1,30 +1,28 @@
-// components/Layout.js
 import React from 'react';
 import Head from 'next/head';
+import Navbar from './Navbar';
 
 const Layout = ({ children }) => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
       <Head>
-        <title>Design Services</title>
-        <meta name="description" content="Professional design services for your business" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>FoxBeep - Tech Solutions</title>
+        <meta name="description" content="FoxBeep provides innovative tech solutions and services" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-
-      <header className="bg-white shadow-md">
-        <div className="container mx-auto py-4 px-6">
-          <h1 className="text-2xl font-bold text-gray-800 h-9"></h1>
-        </div>
-      </header>
-
-      <main>{children}</main>
-
-      {/* <footer className="bg-gray-800 text-white py-6">
-        <div className="container mx-auto px-6">
-          <p>&copy; {new Date().getFullYear()} Design Services. All rights reserved.</p>
+      
+      <Navbar />
+      
+      <main className="pt-20">
+        {children}
+      </main>
+      
+      {/* <footer className="bg-gray-100 py-6 mt-10 border-t border-gray-200">
+        <div className="container mx-auto px-4 text-center text-gray-600 text-sm">
+          © {new Date().getFullYear()} FoxBeep. All rights reserved.
         </div>
       </footer> */}
-    </div>
+    </>
   );
 };
 
