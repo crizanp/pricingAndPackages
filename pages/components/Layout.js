@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Navbar from './Navbar';
+import Footer from './home/footer';
 
 const Layout = ({ children }) => {
   return (
@@ -17,11 +18,7 @@ const Layout = ({ children }) => {
         {children}
       </main>
       
-      {/* <footer className="bg-gray-100 py-6 mt-10 border-t border-gray-200">
-        <div className="container mx-auto px-4 text-center text-gray-600 text-sm">
-          © {new Date().getFullYear()} FoxBeep. All rights reserved.
-        </div>
-      </footer> */}
+      <Footer/>
     </>
   );
 };

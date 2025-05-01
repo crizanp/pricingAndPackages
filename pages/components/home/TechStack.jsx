@@ -5,19 +5,19 @@ export default function EnhancedTechShowcase() {
   const [activeCategory, setActiveCategory] = useState('Web Development');
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const tabsContainerRef = useRef(null);
-  
+
   // Check screen size on mount and window resize
   useEffect(() => {
     const checkScreenSize = () => {
       setIsSmallScreen(window.innerWidth < 768);
     };
-    
+
     checkScreenSize();
     window.addEventListener('resize', checkScreenSize);
-    
+
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
-  
+
   // Scroll active tab into view on mobile
   useEffect(() => {
     if (isSmallScreen && tabsContainerRef.current) {
@@ -34,11 +34,11 @@ export default function EnhancedTechShowcase() {
     'Web Development',
     'Mobile Development',
     'Cloud Solutions',
-    'DevOps & CI/CD',
+    'Video and Media',
     'Data Science',
     'Blockchain'
   ];
-    
+
   const technologies = {
     'Web Development': {
       subcategories: ['Frontend', 'Backend', 'CMS'],
@@ -114,27 +114,25 @@ export default function EnhancedTechShowcase() {
         ]
       }
     },
-    'DevOps & CI/CD': {
-      subcategories: ['Containerization', 'CI/CD', 'Monitoring'],
-      technologies: {
-        'Containerization': [
-          { name: 'Docker', icon: '🐳' },
-          { name: 'Kubernetes', icon: '⎈' },
-          { name: 'Helm', icon: '⛵' },
-          { name: 'Podman', icon: '📦' }
+    "Video and Media": {
+      "subcategories": ["Video Editing", "Audio Editing", "Photo Editing"],
+      "technologies": {
+        "Video Editing": [
+          { "name": "Adobe Premiere Pro", "icon": "🎬" },
+          { "name": "Final Cut Pro", "icon": "✂️" },
+          { "name": "DaVinci Resolve", "icon": "🎞️" },
+          { "name": "Adobe After Effects", "icon": "✨" }],
+        "Audio Editing": [
+          { "name": "Audacity", "icon": "🎧" },
+          { "name": "Adobe Audition", "icon": "🎚️" },
+          { "name": "FL Studio", "icon": "🎼" },
+          { "name": "Logic Pro", "icon": "🎵" }
         ],
-        'CI/CD': [
-          { name: 'GitHub Actions', icon: '⚙️' },
-          { name: 'Jenkins', icon: '🤖' },
-          { name: 'CircleCI', icon: '🔄' },
-          { name: 'ArgoCD', icon: '🚀' }
-        ],
-        'Monitoring': [
-          { name: 'Prometheus', icon: '📊' },
-          { name: 'Grafana', icon: '📈' },
-          { name: 'ELK Stack', icon: '🔍' },
-          { name: 'Datadog', icon: '🐶' }
-        ]
+        "Photo Editing": [
+          { "name": "Adobe Photoshop", "icon": "🖼️" },
+          { "name": "Adobe Illustrator", "icon": "✏️" },
+          { "name": "Affinity Photo", "icon": "🌈" },
+          { "name": "Canva", "icon": "📐" }]
       }
     },
     'Data Science': {
@@ -186,23 +184,23 @@ export default function EnhancedTechShowcase() {
   };
 
   return (
-    <div className="w-full bg-black text-white py-16 px-4 md:px-12">
+    <div className="w-full bg-white text-gray-800 py-16 px-4 md:px-12">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-left mb-18">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
             Technologies We Use
           </h1>
-          
-          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl">
-            Access our network of 400+ specialized experts in cutting-edge technologies and frameworks, 
+
+          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl">
+            Access our network of 400+ specialized experts in cutting-edge technologies and frameworks,
             ready to elevate your digital projects to the next level.
           </p>
         </div>
-        
+
         {/* Mobile Tab Navigation */}
         {isSmallScreen && (
-          <div 
+          <div
             ref={tabsContainerRef}
             className="flex overflow-x-auto py-2 px-1 mb-8"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
@@ -212,16 +210,16 @@ export default function EnhancedTechShowcase() {
                 key={category}
                 onClick={() => setActiveCategory(category)}
                 className={`flex-shrink-0 py-2 px-4 mr-2 rounded-full transition-all duration-300 whitespace-nowrap text-center cursor-pointer
-                  ${activeCategory === category 
-                    ? 'bg-purple-600 text-white shadow-lg active-tab'
-                    : 'bg-gray-800 text-gray-300 hover:text-white hover:bg-gray-700'}`}
+                  ${activeCategory === category
+                    ? 'bg-indigo-600 text-white shadow-lg active-tab'
+                    : 'bg-gray-100 text-gray-700 hover:text-gray-900 hover:bg-gray-200'}`}
               >
                 {category}
               </div>
             ))}
           </div>
         )}
-        
+
         {/* Main Content */}
         <div className="flex flex-col md:flex-row">
           {/* Desktop Sidebar Navigation */}
@@ -233,44 +231,44 @@ export default function EnhancedTechShowcase() {
                   onClick={() => setActiveCategory(category)}
                   className={`py-3 px-5 mb-3 rounded-lg transition-all duration-300 cursor-pointer font-medium text-lg
                     ${activeCategory === category
-                      ? 'bg-purple-600 text-white shadow-lg'
-                      : 'bg-gray-800 text-gray-300 hover:text-white hover:bg-gray-700'}`}
+                      ? 'bg-indigo-600 text-white shadow-lg'
+                      : 'bg-gray-100 text-gray-700 hover:text-gray-900 hover:bg-gray-200'}`}
                 >
                   {category}
                 </div>
               ))}
             </div>
           )}
-          
+
           {/* Technology Cards with Subcategories */}
           <div className={`${isSmallScreen ? 'w-full' : 'md:w-3/4'}`}>
-            {/* <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white">
+            {/* <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
               {activeCategory}
             </h2> */}
-            
+
             {/* Subcategory Sections */}
             <div className="space-y-12">
               {technologies[activeCategory].subcategories.map((subcategory) => (
                 <div key={subcategory} className="mb-8">
-                  <h3 className="text-xl font-bold mb-4 text-gray-200 border-b border-gray-700 pb-2">
+                  <h3 className="text-xl font-bold mb-4 text-gray-800 border-b border-gray-200 pb-2">
                     {subcategory}
                   </h3>
-                  
+
                   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
                     {technologies[activeCategory].technologies[subcategory].map((tech, index) => (
                       <div
                         key={tech.name}
-                        className="bg-gray-800 rounded-lg p-1 border border-gray-700 hover:border-white 
+                        className="bg-gray-50 rounded-lg p-1 border border-gray-200 hover:border-indigo-500 
                           transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
                         style={{ animationDelay: `${index * 100}ms` }}
                       >
                         <div className="flex items-center space-x-3">
-                          <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-2xl ">
+                          <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-2xl">
                             {tech.icon}
                           </div>
-                          
+
                           <div>
-                            <span className="font-medium text-white">{tech.name}</span>
+                            <span className="font-medium text-gray-800">{tech.name}</span>
                           </div>
                         </div>
                       </div>
