@@ -105,7 +105,7 @@ export default function VideoEditingShowcase() {
                   <div className="relative">
                     <div 
                       className={`w-40 h-40 rounded-full overflow-hidden border-4 shadow-lg transition-all duration-300 ${
-                        activeCategory === index ? 'border-yellow-400 scale-125' : 'border-white hover:scale-110'
+                        activeCategory === index ? 'border-purple-400 scale-125' : 'border-white hover:scale-110'
                       }`}
                     >
                       <img src={category.image} alt={category.title} className="w-full h-full object-cover" />
@@ -145,7 +145,7 @@ export default function VideoEditingShowcase() {
             
             <p className="text-xl mb-6 text-purple-100">{categories[activeCategory].description}</p>
             
-            <h3 className="text-2xl font-bold mb-3 text-yellow-300">Key Features</h3>
+            <h3 className="text-2xl font-bold mb-3 text-purple-300">Key Features</h3>
             <div className="flex flex-wrap gap-3">
               {categories[activeCategory].features.map((feature, idx) => (
                 <span key={idx} className="bg-purple-900 bg-opacity-50 text-purple-100 px-4 py-2 rounded-xl text-lg">

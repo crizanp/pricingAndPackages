@@ -1,0 +1,44 @@
+const ServiceBanner = ({ 
+    title = "iPhone App Development Services",
+    description = "We build custom iPhone app solutions that boost engagement, brand value, and revenue while delivering experiences that ensure users keep coming back.",
+    rating = "4.9",
+    platform = "ON CLUTCH",
+    reviewCount = "52",
+    reviewLabel = "REVIEWS"
+  }) => {
+    return (
+      <div className="flex flex-col lg:flex-row justify-between items-center w-full py-24 px-4 bg-white max-w-7xl mx-auto">
+        <div className="w-full lg:w-3/4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-black mb-6">
+            {title}
+          </h1>
+          <p className="text-2xl text-black">
+            {description}
+          </p>
+        </div>
+        
+        <div className="w-full lg:w-1/4 flex justify-end mt-6 lg:mt-0">
+          <div className="flex flex-col items-end">
+            <div className="flex items-center">
+              <div className="w-12 h-12 rounded-full bg-gray-800 mr-2 flex items-center justify-center">
+                <div className="w-6 h-6 rounded-full bg-red-500"></div>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-bold">{rating} {platform}</span>
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-red-500 fill-current" viewBox="0 0 24 24">
+                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                  ))}
+                </div>
+                <span>{reviewCount} {reviewLabel}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+  
+  export default ServiceBanner;

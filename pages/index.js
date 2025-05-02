@@ -9,7 +9,6 @@ import SuccessStories from "./components/home/successStories";
 import TechShowcase from "./components/home/TechStack";
 import TextHeroSection from "./components/home/textHero";
 
-// pages/index.js or app/page.js (depending on your setup)
 export default function Home() {
   return (
     <div>

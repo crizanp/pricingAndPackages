@@ -124,7 +124,7 @@ export default function BlogShowcase() {
                 {categories.map(category => (
                     <button
                         key={category}
-                        className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${activeTab === category
+                        className={`px-4 py-2 rounded-full text-lg font-medium transition-colors ${activeTab === category
                                 ? "bg-purple-600 text-white"
                                 : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                             }`}
