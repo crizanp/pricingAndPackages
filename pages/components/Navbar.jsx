@@ -36,11 +36,11 @@ const Navbar = () => {
                     items: [
                         { name: 'WordPress Development', href: '/services/wordpress-development' },
                         { name: 'Ecommerce Development', href: '/services/ecommerce-development' },
-                        { name: 'Business Website', href: '/services/business-development' },
-                        { name: 'Educational Website', href: '/services/educational-development' },
-                        { name: 'Healthcare Website', href: '/services/healthcare-development' },
-                        { name: 'News and Media Website', href: '/services/news-media-development' },
-                        { name: 'Manufacturing Website', href: '/services/manufacturing-development' },
+                        { name: 'Business Website', href: '/services/business-website' },
+                        { name: 'Educational Website', href: '/services/educational-website' },
+                        { name: 'Healthcare Website', href: '/services/healthcare-website' },
+                        { name: 'News and Media Website', href: '/services/news-media-website' },
+                        { name: 'Manufacturing Website', href: '/services/manufacturing-website' },
                     ]
                 },                
                 {
