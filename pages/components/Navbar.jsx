@@ -1,4 +1,3 @@
-// components/Navbar.jsx
 "use client";
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -10,7 +9,6 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
 
-    // Handle scroll effect for navbar
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 20) {
@@ -23,12 +21,10 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Navigation items with dropdowns
     const navItems = [
         {
             name: 'Services',
             href: '/services',
-            // active: true,
             hasDropdown: true,
             sections: [
                 {
@@ -174,7 +170,7 @@ const Navbar = () => {
             className={`fixed top-0 left-0 w-full bg-white z-50 transition-all duration-300 ${scrolled ? 'shadow-md' : ''}`}
             onMouseLeave={closeAllDropdowns}
         >
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto max-w-7xl ">
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
                     <div className="flex items-center">

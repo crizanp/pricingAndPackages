@@ -8,7 +8,7 @@ export default function TextHeroSection() {
           Pull the Trigger!
         </p>
         
-        <h1 className="text-6xl md:text-8xl font-bold text-black mb-12 md:mb-16 leading-tight">
+        <h1 className="text-6xl md:text-8xl font-bold text-black mb-12 md:mb-16 ">
           Let's bring your<br />vision to life
         </h1>
         

@@ -185,7 +185,7 @@ export default function EnhancedTechShowcase() {
 
   return (
     <div className="w-full bg-white text-gray-800 py-16 px-4 md:px-12">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-left mb-18">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">

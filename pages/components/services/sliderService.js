@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function IndustrySlider({ 
   title = "Serving a variety of industry", 
@@ -9,8 +10,43 @@ export default function IndustrySlider({
   const sliderRef = useRef(null);
   const startXRef = useRef(0);
   const isDraggingRef = useRef(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [slidesPerView, setSlidesPerView] = useState(4);
 
-  const totalSlides = Math.max(1, industries.length - 3); // Show 3 at once, so total slides is length - 3
+  // Calculate total slides based on screen size
+  const totalSlides = Math.max(0, industries.length - slidesPerView);
+
+  // Handle responsive layout
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      setIsMobile(width < 768);
+      
+      if (width < 640) {
+        setSlidesPerView(1);
+      } else if (width < 1024) {
+        setSlidesPerView(2);
+      } else if (width < 1280) {
+        setSlidesPerView(3);
+      } else {
+        setSlidesPerView(4);
+      }
+    };
+
+    handleResize(); // Initial call
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // When slidesPerView changes, ensure currentSlide is still valid
+  useEffect(() => {
+    if (currentSlide > totalSlides) {
+      setCurrentSlide(totalSlides);
+    }
+  }, [slidesPerView, totalSlides, currentSlide]);
 
   const handleTouchStart = (e) => {
     startXRef.current = e.touches[0].clientX;
@@ -24,7 +60,6 @@ export default function IndustrySlider({
 
   const handleTouchMove = (e) => {
     if (!isDraggingRef.current) return;
-    e.preventDefault();
     handleMove(e.touches[0].clientX);
   };
 
@@ -40,12 +75,11 @@ export default function IndustrySlider({
       if (diff > 0 && currentSlide < totalSlides) {
         // Swiped left
         setCurrentSlide(currentSlide + 1);
-        isDraggingRef.current = false;
       } else if (diff < 0 && currentSlide > 0) {
         // Swiped right
         setCurrentSlide(currentSlide - 1);
-        isDraggingRef.current = false;
       }
+      isDraggingRef.current = false;
       startXRef.current = clientX;
     }
   };
@@ -80,21 +114,26 @@ export default function IndustrySlider({
     }
   };
 
+  // Calculate slide width based on slidesPerView
+  const slideWidth = 100 / slidesPerView;
+
   return (
-    <div className="w-full bg-black py-24 px-4">
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="mb-16 text-left">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
+    <div className="w-full bg-black py-12 sm:py-16 md:py-24 px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        <div className="mb-8 sm:mb-12 md:mb-16 text-left">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-white">
             {title}
           </h1>
-          <p className="text-2xl md:text-2xl text-gray-400 max-w-3xl">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-400 max-w-3xl">
             {subtitle}
           </p>
         </div>
       </div>
-      <div className="relative overflow-hidden w-full mb-10 pl-38">
-        <div
-          className="relative"
+
+      {/* Slider container with proper padding for all screen sizes */}
+      <div className="relative overflow-hidden w-full mb-6 sm:pl-0 md:pl-0 lg:pl-26 sm:mb-10">
+      <div
+          className="relative px-4 sm:px-6 md:px-8"
           ref={sliderRef}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
@@ -103,20 +142,22 @@ export default function IndustrySlider({
         >
           <div
             className="flex transition-transform duration-500 ease-out cursor-grab active:cursor-grabbing"
-            style={{ transform: `translateX(-${currentSlide * 33.33}%)` }}
+            style={{ transform: `translateX(-${currentSlide * slideWidth}%)` }}
           >
             {industries.map((industry, index) => (
               <div
                 key={index}
-                className={`flex-shrink-0 ${index > 0 ? 'pl-8' : ''}`}
-                style={{ width: 'calc(25%)' }}
+                className="flex-shrink-0 pr-4 sm:pr-6 md:pr-8"
+                style={{ width: `${slideWidth}%` }}
               >
-                <div className="h-full bg-gradient-to-br from-black to-gray-800 rounded-2xl overflow-hidden shadow-2xl border " style={{ minHeight: '320px' }}>
-                  <div className="p-5 md:p-12 h-full flex flex-col">
-                    {/* All boxes now have left-aligned content */}
+                <div 
+                  className="h-full bg-gradient-to-br from-black to-gray-800 rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-2xl border border-gray-800" 
+                  style={{ minHeight: isMobile ? '250px' : '320px' }}
+                >
+                  <div className="p-4 sm:p-6 md:p-8 lg:p-12 h-full flex flex-col">
                     <div className="flex flex-col items-start text-left">
-                      <h2 className="text-4xl font-bold text-white mb-6">{industry.title}</h2>
-                      <p className="text-xl text-gray-500">{industry.description}</p>
+                      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-6">{industry.title}</h2>
+                      <p className="text-base sm:text-lg md:text-xl text-gray-500">{industry.description}</p>
                     </div>
                   </div>
                 </div>
@@ -126,37 +167,40 @@ export default function IndustrySlider({
         </div>
       </div>
 
-      {/* Navigation controls */}
-      <div className="flex justify-center space-x-6 mt-10">
+      {/* Navigation controls - Improved for mobile */}
+      <div className="flex justify-center space-x-4 sm:space-x-6 mt-6 sm:mt-8 md:mt-10">
         <button
           onClick={goToPrev}
           disabled={currentSlide === 0}
-          className={`p-4 rounded-full ${currentSlide === 0 ? 'bg-gray-800 text-gray-600' : 'bg-purple-700 text-white hover:bg-purple-600'} transition duration-300`}
+          className={`p-3 sm:p-4 rounded-full ${
+            currentSlide === 0 ? 'bg-gray-800 text-gray-600' : 'bg-purple-700 text-white hover:bg-purple-600'
+          } transition duration-300`}
+          aria-label="Previous slide"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
+          <ChevronLeft size={isMobile ? 20 : 24} />
         </button>
 
         <button
           onClick={goToNext}
           disabled={currentSlide === totalSlides}
-          className={`p-4 rounded-full ${currentSlide === totalSlides ? 'bg-gray-800 text-gray-600' : 'bg-purple-700 text-white hover:bg-purple-600'} transition duration-300`}
+          className={`p-3 sm:p-4 rounded-full ${
+            currentSlide === totalSlides ? 'bg-gray-800 text-gray-600' : 'bg-purple-700 text-white hover:bg-purple-600'
+          } transition duration-300`}
+          aria-label="Next slide"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
+          <ChevronRight size={isMobile ? 20 : 24} />
         </button>
       </div>
 
-      {/* Pagination dots */}
-      <div className="flex justify-center mt-8">
+      {/* Pagination dots - Improved for mobile */}
+      <div className="flex justify-center mt-6 sm:mt-8 overflow-x-auto px-4 gap-2">
         {Array.from({ length: totalSlides + 1 }).map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`mx-2 w-3 h-3 rounded-full transition-all duration-300 ${currentSlide === index ? 'bg-white w-8' : 'bg-gray-600 hover:bg-gray-500'
-              }`}
+            className={`mx-1 h-2 sm:h-3 rounded-full transition-all duration-300 ${
+              currentSlide === index ? 'bg-white w-6 sm:w-8' : 'bg-gray-600 w-2 sm:w-3 hover:bg-gray-500'
+            }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}

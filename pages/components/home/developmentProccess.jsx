@@ -3,7 +3,9 @@ import { Brain, Code, BarChart3, Rocket, Workflow, Settings } from 'lucide-react
 
 export default function DevelopmentProcess() {
     const [scrollProgress, setScrollProgress] = useState(0);
+    const [activeStep, setActiveStep] = useState(0);
     const sectionRef = useRef(null);
+    const stepsRef = useRef([]);
 
     const steps = [
         {
@@ -66,6 +68,17 @@ export default function DevelopmentProcess() {
             // Calculate scroll progress as a percentage
             const progress = Math.min(Math.max(scrollPosition / totalScrollable, 0), 1) * 100;
             setScrollProgress(progress);
+
+            // Calculate which step should be active based on scroll position
+            const stepHeight = totalScrollable / steps.length;
+            const currentStep = Math.min(
+                Math.floor(scrollPosition / stepHeight),
+                steps.length - 1
+            );
+            
+            if (currentStep >= 0) {
+                setActiveStep(currentStep);
+            }
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -74,13 +87,14 @@ export default function DevelopmentProcess() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, [steps.length]);
 
     return (
-        <div ref={sectionRef} className="bg-black text-white min-h-[300vh] w-full py-16 relative overflow-hidden">
-            <div className="max-w-6xl mx-auto px-4">
+        <div ref={sectionRef} className="bg-black text-white min-h-[150vh] md:min-h-[200vh] lg:min-h-[300vh] w-full py-16 relative overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4">
+                {/* Header Section - maintain original desktop styling */}
                 <div className="mb-20 space-y-4">
-                    <h2 className="text-6xl font-bold tracking-tight">
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
                         Our product
                         <span className="block text-purple-400">development process</span>
                     </h2>
@@ -100,7 +114,7 @@ export default function DevelopmentProcess() {
                     </div>
                 </div>
 
-                {/* Gallery container */}
+                {/* Desktop Scroll Experience - keeping original layout */}
                 <div className="gallery-wrapper relative hidden lg:flex flex-col min-h-[200vh]">
                     {/* Progress bar - moved to left side */}
                     <div className="slider-progress-bar-container absolute left-0 top-0 bottom-0 w-1 bg-gray-800">
@@ -135,7 +149,7 @@ export default function DevelopmentProcess() {
                                 </div>
                             </div>
 
-                            {/* Right column with icon */}
+                            {/* Right column with icon - keeping original design */}
                             <div className="w-2/4 flex">
                                 <div className="h-96 w-96 ml-20 mt-4 rounded-2xl overflow-hidden bg-black/50 backdrop-blur-md flex justify-center">
                                     <div className="transform transition-all duration-300 hover:scale-110 mt-6">
@@ -143,23 +157,46 @@ export default function DevelopmentProcess() {
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     ))}
                 </div>
 
-                {/* Mobile view */}
-                <div className="lg:hidden mt-16">
+                {/* Tablet View */}
+                <div className="hidden md:block lg:hidden mt-16">
+                    <div className="space-y-16">
+                        {steps.map((step) => (
+                            <div key={step.id} className="flex flex-col md:flex-row">
+                                <div className="md:w-3/5 mb-6 md:mb-0 md:pr-6">
+                                    <p className="text-white text-sm font-mono opacity-60 mb-1">
+                                        {String(step.id).padStart(2, '0')}/06
+                                    </p>
+                                    <div className="text-purple-400 text-4xl font-bold mb-4">{step.title}</div>
+                                    <p className="text-gray-300 text-lg leading-relaxed">{step.description}</p>
+                                </div>
+                                <div className="md:w-2/5">
+                                    <div className="rounded-xl overflow-hidden h-64 w-full bg-black/30 flex items-center justify-center">
+                                        <div className="transform transition-all duration-300 hover:scale-110">
+                                            {step.largeIcon}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Mobile view - with larger icons */}
+                <div className="md:hidden mt-12">
                     <div className="space-y-16">
                         {steps.map((step) => (
                             <div key={step.id} className="relative">
                                 <p className="text-white text-sm font-mono opacity-60 mb-1">
                                     {String(step.id).padStart(2, '0')}/06
                                 </p>
-                                <div className="text-purple-400 text-4xl font-bold">{step.title}</div>
-                                <p className="text-gray-300 text-lg leading-relaxed mb-6">{step.description}</p>
-                                <div className="rounded-xl overflow-hidden h-64 w-full bg-black/30 flex items-center justify-center">
-                                    <div className="transform transition-all duration-300 hover:scale-110 my-auto">
+                                <div className="text-purple-400 text-3xl sm:text-4xl font-bold mb-3">{step.title}</div>
+                                <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-12">{step.description}</p>
+                                <div className="rounded-xl overflow-hidden h-14 w-full bg-black/30 flex items-center justify-center">
+                                    <div className="transform transition-all duration-300 hover:scale-110">
                                         {step.icon}
                                     </div>
                                 </div>

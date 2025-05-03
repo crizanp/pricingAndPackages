@@ -1,10 +1,23 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { X } from "lucide-react";
 
 export default function VideoEditingShowcase() {
   // Initialize with Film Production (index 1) by default
   const [activeCategory, setActiveCategory] = useState(1);
   const [hoverCategory, setHoverCategory] = useState(null);
+  const detailsRef = useRef(null);
+  
+  // Effect to scroll to details when activeCategory changes on mobile
+  useEffect(() => {
+    if (activeCategory !== null && window.innerWidth < 768) {
+      // Small delay to ensure the DOM has updated
+      setTimeout(() => {
+        if (detailsRef.current) {
+          detailsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [activeCategory]);
  
   // Categories data
   const categories = [
@@ -52,42 +65,121 @@ export default function VideoEditingShowcase() {
     }
   ];
   
-
-  // Handle category click to show details
+  // Handle category click to show details and scroll to view
   const handleCategoryClick = (index) => {
+    const previousActive = activeCategory;
     setActiveCategory(index === activeCategory ? null : index);
+    
+    // If on mobile and selecting a new category (not deselecting), scroll to details after render
+    if (window.innerWidth < 768 && index !== previousActive && index !== null) {
+      // Use setTimeout to ensure state update completes first
+      setTimeout(() => {
+        if (detailsRef.current) {
+          detailsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  };
+
+  // Responsive orbital layout calculation
+  const calculatePosition = (index, total) => {
+    // Calculate position on the circle
+    const angle = (index * (2 * Math.PI / total)) - Math.PI / 2; // Start from top
+    const radius = 240; // Default distance from center for desktop
+    const x = radius * Math.cos(angle);
+    const y = radius * Math.sin(angle);
+    
+    return { x, y };
   };
 
   return (
-    <div className="w-full bg-black text-gray-800 py-16 px-4 md:px-12">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+    <div className="w-full bg-black text-gray-800 py-8 md:py-16 px-4 md:px-12">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-3xl md:text-6xl font-bold mb-4 md:mb-6 text-white">
           Video and Media
         </h1>
-        <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl">
+        <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-8 max-w-3xl">
           Access our network of 400+ specialized experts in cutting-edge technologies and frameworks,
           ready to elevate your digital projects to the next level.
         </p>
       </div>
         
-      <div className="flex flex-col md:flex-row h-screen">
+      {/* Mobile View - Category Grid & Details */}
+      <div className="md:hidden">
+        {/* Category thumbnails in grid */}
+        <div className="grid grid-cols-2 gap-4 mb-6">
+          {categories.map((category, index) => (
+            <div 
+              key={index}
+              className={`rounded-xl overflow-hidden cursor-pointer border-2 transition-all duration-300 ${
+                activeCategory === index ? 'border-purple-400 ring-2 ring-purple-400' : 'border-gray-700'
+              }`}
+              onClick={() => handleCategoryClick(index)}
+            >
+              <div className="aspect-square overflow-hidden">
+                <img 
+                  src={category.image} 
+                  alt={category.title} 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-2 bg-gray-900">
+                <h3 className="text-sm font-bold text-white truncate">{category.title}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Category details panel */}
+        {activeCategory !== null && (
+          <div ref={detailsRef} className="bg-gray-900 bg-opacity-80 rounded-2xl w-full p-4 overflow-hidden text-white shadow-2xl">
+            <div className="flex justify-between items-start mb-3">
+              <h2 className="text-2xl font-bold text-white">{categories[activeCategory].title}</h2>
+              <button 
+                onClick={() => setActiveCategory(null)}
+                className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-full p-1"
+              >
+                <X size={20} />
+              </button>
+            </div>
+            
+            <div className="mb-4 rounded-xl overflow-hidden h-48">
+              <img 
+                src={categories[activeCategory].image} 
+                alt={categories[activeCategory].title} 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            
+            <p className="text-base mb-4 text-purple-100">{categories[activeCategory].description}</p>
+            
+            <h3 className="text-xl font-bold mb-2 text-purple-300">Key Features</h3>
+            <div className="flex flex-wrap gap-2">
+              {categories[activeCategory].features.map((feature, idx) => (
+                <span key={idx} className="bg-purple-900 bg-opacity-50 text-purple-100 px-3 py-1 rounded-xl text-sm">
+                  {feature}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Desktop View - Orbital Layout */}
+      <div className="hidden md:flex flex-col md:flex-row min-h-[600px] lg:h-[800px]">
         {/* Left side - Circle showcase */}
         <div className="w-full md:w-1/2 h-full flex items-center justify-center relative">
           <div className="relative w-full max-w-3xl aspect-square">
             {/* Central circle with company logo */}
-            <div className="absolute left-1/2 top-1/2 w-64 h-64 -ml-32 -mt-32 rounded-full bg-purple-700 shadow-xl flex items-center justify-center z-0">
+            <div className="absolute left-1/2 top-1/2 w-64 h-64 -ml-32 -mt-32 rounded-full bg-purple-700 shadow-xl flex items-center justify-center z-10">
               <div className="rounded-full overflow-hidden w-56 h-56 border-4 border-white">
-                <img src="https://p16-capcut-cms-sg.ibyteimg.com/tos-alisg-i-6rr7idwo9f-sg/14f5b7847ee1420fa025f752250c3945~tplv-6rr7idwo9f-image.image" alt="Company Logo" className="w-full h-full object-cover" />
+                <img src="https://cdn.prod.website-files.com/65e72116758ee0365601bcec/6627c057d2411e6f100bf278_Professional-Editing-Business.jpg" alt="Company Logo" className="w-full h-full object-cover" />
               </div>
             </div>
 
             {/* Orbital categories */}
             {categories.map((category, index) => {
-              // Calculate position on the circle
-              const angle = (index * (2 * Math.PI / categories.length)) - Math.PI / 2; // Start from top
-              const radius = 240; // Distance from center
-              const x = radius * Math.cos(angle);
-              const y = radius * Math.sin(angle);
+              const { x, y } = calculatePosition(index, categories.length);
               
               return (
                 <div
@@ -96,7 +188,7 @@ export default function VideoEditingShowcase() {
                   style={{
                     left: `calc(50% + ${x}px)`,
                     top: `calc(50% + ${y}px)`,
-                    zIndex: hoverCategory === index || activeCategory === index ? 5 : 0
+                    zIndex: hoverCategory === index || activeCategory === index ? 20 : 5
                   }}
                   onMouseEnter={() => setHoverCategory(index)}
                   onMouseLeave={() => setHoverCategory(null)}
@@ -111,7 +203,7 @@ export default function VideoEditingShowcase() {
                       <img src={category.image} alt={category.title} className="w-full h-full object-cover" />
                     </div>
                     {hoverCategory === index && activeCategory !== index && (
-                      <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 bg-gray-900 bg-opacity-90 rounded-lg p-2 shadow-lg w-72 z-51 text-center pointer-events-none">
+                      <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 bg-gray-900 bg-opacity-90 rounded-lg p-2 shadow-lg w-72 text-center pointer-events-none">
                         <h4 className="font-bold text-lg text-white">{category.title}</h4>
                       </div>
                     )}

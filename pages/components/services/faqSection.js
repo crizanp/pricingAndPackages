@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
 
-export default function FAQSection({ 
+export default function FAQSection({
   title = "Common questions about web development",
   faqItems = [
     {
@@ -28,40 +28,52 @@ export default function FAQSection({
   backgroundColor = "bg-white",
   textColor = "text-gray-700",
   headingSize = "text-4xl md:text-5xl lg:text-6xl",
-  questionSize = "text-4xl",
-  answerSize = "text-2xl"
+  questionSize = "text-xl sm:text-2xl md:text-3xl",
+  answerSize = "text-base sm:text-lg md:text-xl"
 }) {
   const [openIndex, setOpenIndex] = useState(null);
-
+  
   const toggleQuestion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-
+  
   return (
-    <div className={`max-w-7xl mx-auto py-16 ${backgroundColor} px-4`}>
-      <h1 className={`${headingSize} font-bold mb-16`}>{title}</h1>
+    <div className={`max-w-7xl mx-auto py-8 sm:py-12 md:py-16 ${backgroundColor} px-4 sm:px-6 md:px-8`}>
+      <h1 className={`${headingSize} font-bold mb-8 sm:mb-12 md:mb-16 text-left`}>{title}</h1>
       
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6">
         {faqItems.map((item, index) => (
-          <div key={index} className="border-t border-gray-200 pt-6">
+          <div 
+            key={index} 
+            className="border-t border-gray-200 pt-4 sm:pt-6 transition-all duration-300"
+          >
             <button
-              className="flex justify-between items-center w-full text-left focus:outline-none"
+              className="flex justify-between items-start w-full text-left focus:outline-none group"
               onClick={() => toggleQuestion(index)}
+              aria-expanded={openIndex === index}
+              aria-controls={`faq-answer-${index}`}
             >
-              <h2 className={`${questionSize} cursor-pointer`}>{item.question}</h2>
-              <span className="ml-4">
+              <h2 className={`${questionSize} cursor-pointer pr-4 sm:pr-6 md:pr-8 font-medium leading-tight`}>
+                {item.question}
+              </h2>
+              <span className="ml-2 sm:ml-4 mt-1 sm:mt-0 flex-shrink-0 text-gray-500 group-hover:text-gray-700 transition-colors duration-200">
                 {openIndex === index ? 
-                  <Minus size={28} strokeWidth={2} /> :
-                  <Plus size={28} strokeWidth={2} />
+                  <Minus size={24} strokeWidth={2.5} className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" /> :
+                  <Plus size={24} strokeWidth={2.5} className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
                 }
               </span>
             </button>
             
-            {openIndex === index && (
-              <div className={`mt-6 ${answerSize} ${textColor}`}>
+            <div 
+              id={`faq-answer-${index}`}
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+              }`}
+            >
+              <div className={`mt-4 sm:mt-6 ${answerSize} ${textColor} pb-2 sm:pb-4 pr-4 sm:pr-8 md:pr-16`}>
                 <p>{item.answer}</p>
               </div>
-            )}
+            </div>
           </div>
         ))}
       </div>

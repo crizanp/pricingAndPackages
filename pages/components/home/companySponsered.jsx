@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 
 export default function BrandSlider() {
   const [isHovering, setIsHovering] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const sliderRef = useRef(null);
   
   const brands = [
@@ -26,15 +27,35 @@ export default function BrandSlider() {
   
   const duplicatedBrands = [...brands, ...brands];
   
+  // Check for mobile viewport on mount and resize
   useEffect(() => {
-    if (isHovering) return;
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Initial check
+    checkMobile();
+    
+    // Add resize listener
+    window.addEventListener('resize', checkMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isHovering && !isMobile) return; // Only pause on hover for non-mobile devices
     
     const slider = sliderRef.current;
     let animationFrameId;
     let position = 0;
     
+    // Adjust animation speed based on device
+    const speedMultiplier = isMobile ? 0.75 : 1;
+    
     const animate = () => {
-      position += 0.01; 
+      position += 0.01 * speedMultiplier;
       
       if (position >= brands.length) {
         position = 0;
@@ -54,37 +75,62 @@ export default function BrandSlider() {
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
-  }, [isHovering, brands.length]);
-  
+  }, [isHovering, brands.length, isMobile]);
+
+  // Calculate how many logos to show at once based on screen size
+  const getLogoWidthClass = () => {
+    // For phones (extra small)
+    if (typeof window !== 'undefined' && window.innerWidth < 640) {
+      return 'w-1/3'; // 3 logos per row
+    }
+    // For small tablets
+    else if (typeof window !== 'undefined' && window.innerWidth < 768) {
+      return 'w-1/4'; // 4 logos per row
+    }
+    // For tablets (medium)
+    else if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+      return 'w-1/5'; // 5 logos per row
+    }
+    // For laptops (large)
+    else if (typeof window !== 'undefined' && window.innerWidth < 1280) {
+      return 'w-1/6'; // 6 logos per row
+    }
+    // For desktops (extra large)
+    return 'w-1/8'; // 8 logos per row
+  };
+
   return (
-    <div 
-      className="w-full bg-white py-6 border-b border-solid overflow-hidden"
+    <div
+      className="w-full bg-white py-3 sm:py-4 md:py-6 border-b border-solid overflow-hidden"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
+      onTouchStart={() => setIsHovering(true)}
+      onTouchEnd={() => setIsHovering(false)}
     >
-      <div className="max-w-full mx-auto px-4">
+      <div className="max-w-full mx-auto px-2 sm:px-3 md:px-4">
         <div className="relative overflow-hidden">
           {/* Logo Slider */}
-          <div 
+          <div
             ref={sliderRef}
             className="flex items-center"
           >
             {duplicatedBrands.map((brand, index) => (
               <div
                 key={`${brand.id}-${index}`}
-                className="flex-none w-1/5 md:w-1/6 lg:w-1/8 px-4 flex justify-center items-center opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className={`flex-none w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/6 xl:w-1/8 px-2 sm:px-3 md:px-4 flex justify-center items-center opacity-70 hover:opacity-100 transition-opacity duration-300`}
               >
                 <img
                   src={brand.logo}
                   alt={`${brand.name} logo`}
-                  className="h-12 object-contain"
+                  className="h-8 sm:h-10 md:h-12 object-contain"
                 />
               </div>
             ))}
           </div>
           
-          <div className="absolute top-0 left-0 h-full w-16 bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
-          <div className="absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
+          {/* Edge fade effects */}
+          <div className="absolute top-0 left-0 h-full w-8 sm:w-12 md:w-16 bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
+          <div className="absolute top-0 right-0 h-full w-8 sm:w-12 md:w-16 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
         </div>
       </div>
     </div>

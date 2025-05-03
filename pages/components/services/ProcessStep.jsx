@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const ProcessStep = ({ number, title, description }) => {
   return (
-    <div className="bg-gray-100 rounded-lg p-6 mb-4">
+    <div className="bg-gray-100 rounded-lg p-4 sm:p-5 md:p-6 mb-4 sm:mb-6 md:mb-8">
       <div className="flex flex-col">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 text-black">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-1 sm:mb-2 text-black">
           {number.toString().padStart(2, '0')}
         </h2>
-        <h3 className="text-4xl mb-1 text-black">{title}</h3>
-        <p className="text-2xl mt-2 text-gray-700">{description}</p>
+        <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-1 text-black">{title}</h3>
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl mt-1 sm:mt-2 text-gray-700">{description}</p>
       </div>
     </div>
   );
@@ -17,23 +17,42 @@ const ProcessStep = ({ number, title, description }) => {
 export default function DevProcess({
   title = "How we make your vision a reality",
   description = "We follow a tried-and-tested approach to build feature-rich, and secure WordPress websites that enhance users' experience with multiple optimization layers.",
-  processSteps = defaultProcessSteps
+  processSteps = defaultProcessSteps 
 }) {
+  // Track if we should apply sticky positioning based on screen width
+  const [isDesktop, setIsDesktop] = useState(true);
+
+  // Check if the screen is desktop size whenever the window resizes
+  useEffect(() => {
+    const checkDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768); // md breakpoint
+    };
+    
+    // Initial check
+    checkDesktop();
+    
+    // Add event listener
+    window.addEventListener('resize', checkDesktop);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', checkDesktop);
+  }, []);
+
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Sticky left side */}
-        <div className="md:sticky top-24 h-fit self-start">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mt-8 mb-12 text-black">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10 md:py-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        {/* Left side - sticky on desktop only */}
+        <div className={`${isDesktop ? 'md:sticky top-24 h-fit self-start' : ''}`}>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold mt-4 sm:mt-6 md:mt-8 mb-6 sm:mb-8 md:mb-10 lg:mb-12 text-black">
             {title}
           </h1>
-          <p className="text-2xl mb-6 text-gray-700">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 text-gray-700">
             {description}
           </p>
         </div>
         
         {/* Right side steps */}
-        <div className="py-8">
+        <div className="py-4 sm:py-6 md:py-8">
           {processSteps.map(step => (
             <ProcessStep
               key={step.number}
