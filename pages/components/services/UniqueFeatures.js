@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export default function UniqueFeatures() {
-  const [activeFeature, setActiveFeature] = useState("royalty");
+  const [activeFeature, setActiveFeature] = useState("customization");
   
   const features = [
     {
@@ -39,7 +39,7 @@ export default function UniqueFeatures() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
-      <h1 className="max-w-4xl text-6xl font-bold mb-12">Unique features of Foxbeep Wordpress development services</h1>
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-12">Unique features of Foxbeep Wordpress development services</h1>
       
       <div className="border-t border-gray-200"></div>
       
@@ -54,7 +54,7 @@ export default function UniqueFeatures() {
               }`}
             >
               {activeFeature === feature.id && (
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-purple-400 rounded-l"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-black rounded-l"></div>
               )}
               <h3 className="text-2xl pl-3 font-medium">{feature.title}</h3>
             </div>

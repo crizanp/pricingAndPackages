@@ -9,7 +9,7 @@ const ServiceBanner = ({
     return (
       <div className="flex flex-col lg:flex-row justify-between items-center w-full py-24 px-4 bg-white max-w-7xl mx-auto">
         <div className="w-full lg:w-3/4">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-black mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl  font-semibold text-black mb-6">
             {title}
           </h1>
           <p className="text-2xl text-black">

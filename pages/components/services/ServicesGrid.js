@@ -29,17 +29,17 @@ const ServicesGrid = ({
 }) => {
   return (
     <div className="max-w-7xl mx-auto py-24 px-4">
-      <h2 className="text-4xl md:text-5xl font-bold text-black mb-16">
+      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-16">
         {title}
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
         {services.map((service, index) => (
           <div key={index} className="flex flex-col">
-            <h3 className="text-3xl md:text-3xl font-bold text-black mb-4">
+            <h3 className="text-4xl md:text-4xl font-bold text-black mb-4">
               {service.title}
             </h3>
-            <p className="text-2xl text-black">
+            <p className="text-2xl pt-4 text-black">
               {service.description}
             </p>
           </div>

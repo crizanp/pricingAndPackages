@@ -1,7 +1,11 @@
+import TextHeroSection from "../components/home/textHero";
 import BenefitsSection from "../components/services/BenefitsSection";
+import FAQSection from "../components/services/faqSection";
 import DevProcess from "../components/services/ProcessStep";
 import ServiceCardSlider from "../components/services/ServiceCardSlider";
 import ServicesGrid from "../components/services/ServicesGrid";
+import TeamBanner from "../components/services/shortQuickBanner";
+import IndustrySlider from "../components/services/sliderService";
 import UniqueFeatures from "../components/services/UniqueFeatures";
 import MVPServicesBanner from "../components/services/upperHero";
 
@@ -91,26 +95,26 @@ export default function Wordpress() {
       </div>
       <ServicesGrid {...servicesGridData} />
       <BenefitsSection {...benefitsData} />
-      <ServiceCardSlider 
+      <ServiceCardSlider
         cards={[
           {
             id: 1,
             title: "Custom WordPress Themes",
-            description: "We create beautiful, responsive WordPress themes tailored to your brand identity with clean code and optimized performance.",
+            description: "Responsive themes tailored to your brand with clean, optimized code.",
             image: "https://www.cloudways.com/blog/wp-content/uploads/Main-Image_750x394-32.jpg",
             accentColor: "bg-purple-500"
           },
           {
             id: 2,
-            title: "WordPress Plugin Development",
-            description: "Extend your site's functionality with custom plugins built specifically for your business needs and seamlessly integrated with your WordPress setup.",
+            title: "Plugin Development",
+            description: "Custom plugins to extend functionality and fit your business needs.",
             image: "https://embed-ssl.wistia.com/deliveries/558fe5180e0e8fc922d31c23ef84d240.jpg",
             accentColor: "bg-blue-500"
           },
           {
             id: 3,
             title: "WooCommerce Solutions",
-            description: "Launch powerful e-commerce stores with customized WooCommerce implementations, payment gateways, and shopping experiences.",
+            description: "Custom e-commerce stores with seamless shopping experiences.",
             image: "https://mobrilz.com/assets/img/woocommerce.png",
             accentColor: "bg-pink-500"
           }
@@ -120,8 +124,14 @@ export default function Wordpress() {
         darkMode={true}
         accentColor="purple"
       />
-      <DevProcess/>
-      <UniqueFeatures/>
+
+      <DevProcess />
+      <UniqueFeatures />
+      <TeamBanner />
+      <IndustrySlider />
+      <FAQSection />
+      <TextHeroSection />
+
     </div>
   );
 }

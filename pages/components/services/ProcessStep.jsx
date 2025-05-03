@@ -4,11 +4,11 @@ const ProcessStep = ({ number, title, description }) => {
   return (
     <div className="bg-gray-100 rounded-lg p-6 mb-4">
       <div className="flex flex-col">
-        <h2 className="text-5xl font-bold mb-2 text-black">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl  font-bold mb-2 text-black">
           {number.toString().padStart(2, '0')}
         </h2>
-        <h3 className="text-3xl font-bold mb-1 text-black">{title}</h3>
-        <p className="text-2xl text-gray-700">{description}</p>
+        <h3 className="text-4xl mb-1 text-black">{title}</h3>
+        <p className="text-2xl mt-2 text-gray-700">{description}</p>
       </div>
     </div>
   );
@@ -58,10 +58,10 @@ export default function DevProcess() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Sticky left side */}
         <div className="md:sticky top-24 h-fit self-start">
-          <h1 className="text-6xl font-semibold mt-8 mb-12 text-black">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl  font-semibold mt-8 mb-12 text-black">
             How we make your vision a reality
           </h1>
-          <p className="text-lg mb-6 text-gray-700">
+          <p className="text-2xl mb-6 text-gray-700">
             We follow a tried-and-tested approach to build feature-rich, and secure WordPress websites that enhance users' experience with multiple optimization layers.
           </p>
         </div>

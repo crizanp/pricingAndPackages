@@ -21,8 +21,8 @@ const BenefitsSection = ({
     ctaText = "Let's Discuss"
   }) => {
     return (
-      <div className="max-w-7xl mx-auto py-16 px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-black mb-16">
+      <div className="max-w-7xl mx-auto py-16">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl px-4 font-bold text-black mb-16">
           {title}
         </h2>
         
@@ -37,11 +37,11 @@ const BenefitsSection = ({
                     </svg>
                   </div>
                 </div>
-                <p className="ml-4 text-lg">{benefit}</p>
+                <p className="ml-4 text-2xl">{benefit}</p>
               </div>
             ))}
             
-            <button className="mt-8 px-8 py-3 bg-black text-white rounded-full font-medium">
+            <button className="mt-8 px-8 py-3 text-lg cursor-pointer bg-black text-white rounded-full font-medium">
               {ctaText}
             </button>
           </div>
@@ -59,7 +59,7 @@ const BenefitsSection = ({
                     icon.isDark ? 'text-white' : 'text-gray-700'
                   }`}>
                     {/* Placeholder for tech icons */}
-                    <span className="font-bold text-sm">{icon.name}</span>
+                    <span className="font-bold text-lg">{icon.name}</span>
                   </div>
                 </div>
               ))}
