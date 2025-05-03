@@ -1,8 +1,7 @@
-// components/Sidebar.js
 import React from 'react';
 import Link from 'next/link';
 
-const Sidebar = ({ categories, activeCategory, activeSubcategory }) => {
+const Sidebar = ({ categories = [], activeCategory, activeSubcategory }) => {
     // Simplified description function that doesn't rely on category/subcategory names
     const getHeaderDescription = () => {
         return 'Browse our product categories and find the perfect design package for your needs.';
@@ -33,7 +32,7 @@ const Sidebar = ({ categories, activeCategory, activeSubcategory }) => {
                         </div>
 
                         {/* Subcategories (if any) with left indentation */}
-                        {category.hasSubcategories && (
+                        {category.hasSubcategories && category.subcategories && (
                             <>
                                 {category.subcategories.map((subcategory) => (
                                     <div key={subcategory.id} className="border-b border-gray-200 py-3 pl-6">
