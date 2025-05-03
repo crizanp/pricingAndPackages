@@ -1,37 +1,14 @@
 import { useState, useRef, useEffect } from 'react';
 
-export default function IndustrySlider() {
+export default function IndustrySlider({ 
+  title = "Serving a variety of industry", 
+  subtitle = "FoxBeep provides industry-leading solutions that transform how businesses operate and engage with customers.",
+  industries = defaultIndustries 
+}) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef(null);
   const startXRef = useRef(0);
   const isDraggingRef = useRef(false);
-
-  const industries = [
-    {
-      title: "Finance",
-      description: "Secure WordPress sites for banks, financial advisors, and investment firms.",
-    },
-    {
-      title: "Healthcare",
-      description: "HIPAA-compliant WordPress solutions for medical practices and healthcare providers.",
-    },
-    {
-      title: "Media",
-      description: "Fast WordPress sites for content publishers, news outlets, and entertainment brands.",
-    },
-    {
-      title: "Telecom",
-      description: "Custom WordPress portals for telecom service providers and customer support.",
-    },
-    {
-      title: "Retail",
-      description: "WooCommerce and WordPress solutions for online stores and retail businesses.",
-    },
-    {
-      title: "Education",
-      description: "Learning management systems built on WordPress for schools and online courses.",
-    }
-  ];
 
   const totalSlides = Math.max(1, industries.length - 3); // Show 3 at once, so total slides is length - 3
 
@@ -108,11 +85,10 @@ export default function IndustrySlider() {
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="mb-16 text-left">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
-          Serving a variety of industry
-
+            {title}
           </h1>
           <p className="text-2xl md:text-2xl text-gray-400 max-w-3xl">
-            FoxBeep provides industry-leading solutions that transform how businesses operate and engage with customers.
+            {subtitle}
           </p>
         </div>
       </div>
@@ -188,3 +164,31 @@ export default function IndustrySlider() {
     </div>
   );
 }
+
+// Default industries if none are provided
+const defaultIndustries = [
+  {
+    title: "Finance",
+    description: "Secure WordPress sites for banks, financial advisors, and investment firms.",
+  },
+  {
+    title: "Healthcare",
+    description: "HIPAA-compliant WordPress solutions for medical practices and healthcare providers.",
+  },
+  {
+    title: "Media",
+    description: "Fast WordPress sites for content publishers, news outlets, and entertainment brands.",
+  },
+  {
+    title: "Telecom",
+    description: "Custom WordPress portals for telecom service providers and customer support.",
+  },
+  {
+    title: "Retail",
+    description: "WooCommerce and WordPress solutions for online stores and retail businesses.",
+  },
+  {
+    title: "Education",
+    description: "Learning management systems built on WordPress for schools and online courses.",
+  }
+];

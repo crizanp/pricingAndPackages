@@ -1,14 +1,9 @@
 import { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
 
-export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggleQuestion = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
-  const faqItems = [
+export default function FAQSection({ 
+  title = "Common questions about web development",
+  faqItems = [
     {
       question: "How much does web development cost?",
       answer: "Web development costs vary widely based on project complexity, features required, and design needs. Simple informational websites may range from $3,000-$10,000, while e-commerce sites or web applications with custom functionality can cost $10,000-$50,000+. Enterprise solutions typically start at $50,000 and can exceed $200,000."
@@ -29,30 +24,41 @@ export default function FAQSection() {
       question: "Do you provide ongoing maintenance?",
       answer: "Yes, we offer comprehensive maintenance packages to ensure your website remains secure, up-to-date, and performing optimally. Our maintenance services include security updates, performance optimization, content updates, technical support, and regular backups."
     }
-  ];
+  ],
+  backgroundColor = "bg-white",
+  textColor = "text-gray-700",
+  headingSize = "text-4xl md:text-5xl lg:text-6xl",
+  questionSize = "text-4xl",
+  answerSize = "text-2xl"
+}) {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleQuestion = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
-    <div className="max-w-7xl mx-auto py-16 bg-white px-4">
-      <h1 className="text-4xl md:text-5xl lg:text-6xl  font-bold mb-16">Common questions about web development</h1>
+    <div className={`max-w-7xl mx-auto py-16 ${backgroundColor} px-4`}>
+      <h1 className={`${headingSize} font-bold mb-16`}>{title}</h1>
       
       <div className="space-y-6">
         {faqItems.map((item, index) => (
           <div key={index} className="border-t border-gray-200 pt-6">
-            <button 
+            <button
               className="flex justify-between items-center w-full text-left focus:outline-none"
               onClick={() => toggleQuestion(index)}
             >
-              <h2 className="text-4xl cursor-pointer">{item.question}</h2>
+              <h2 className={`${questionSize} cursor-pointer`}>{item.question}</h2>
               <span className="ml-4">
                 {openIndex === index ? 
-                  <Minus size={28} strokeWidth={2} /> : 
+                  <Minus size={28} strokeWidth={2} /> :
                   <Plus size={28} strokeWidth={2} />
                 }
               </span>
             </button>
             
             {openIndex === index && (
-              <div className="mt-6 text-2xl text-gray-700">
+              <div className={`mt-6 ${answerSize} ${textColor}`}>
                 <p>{item.answer}</p>
               </div>
             )}
