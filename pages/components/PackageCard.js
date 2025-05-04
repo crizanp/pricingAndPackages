@@ -41,7 +41,7 @@ const PackageCard = ({ title, subtitle, price, image, link }) => {
             {/* Hover Button */}
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300 bg-gray-900 backdrop-blur-sm">
                 <Link href={`/details/${encodeURIComponent(title)}`}>
-                    <button className="flex items-center gap-2 border border-gray-100 cursor-pointer text-gray-100 px-6 py-2 rounded-full text-lg font-semibold hover:bg-red-500 hover:text-white transition-all duration-300 ease-in-out">
+                    <button className="flex items-center gap-2 border border-gray-100 cursor-pointer text-gray-100 px-6 py-2 rounded-full text-lg font-semibold hover:bg-purple-500 hover:text-white transition-all duration-300 ease-in-out">
                         <Info className="w-5 h-5" />
                         Details
                     </button>

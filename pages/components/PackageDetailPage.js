@@ -122,7 +122,7 @@ const PackageDetailPage = ({ packageData }) => {
   }
   
   return (
-    <div className="container mx-auto max-w-6xl px-2 py-4">
+    <div className="container mx-auto max-w-7xl px-2 py-4">
       {/* Header Section - Hero Style */}
       <div className="relative bg-gradient-to-r from-purple-700 to-purple-900 rounded-lg overflow-hidden mb-4 shadow-md">
         <div className="absolute inset-0 bg-black/50 z-10"></div>
@@ -137,8 +137,8 @@ const PackageDetailPage = ({ packageData }) => {
         </div>
         <div className="absolute bottom-0 left-0 right-0 p-4 z-20 text-white">
           <div className="max-w-3xl">
-            <h1 className="text-2xl md:text-3xl font-bold">{packageData.title}</h1>
-            <p className="text-base md:text-lg mt-1 text-gray-100">{packageData.subtitle}</p>
+            <h1 className="text-4xl md:text-5xl font-bold">{packageData.title}</h1>
+            <p className="text-2xl md:text-xl mt-1 text-gray-100">{packageData.subtitle}</p>
             <div className="flex items-center mt-2">
               <span className="inline-flex bg-black text-white px-3 py-1 rounded-full text-base font-bold">
                 {packageData.price}
@@ -192,7 +192,7 @@ const PackageDetailPage = ({ packageData }) => {
                     line-height: 1.3;
                   }
                   .description-content p {
-                    margin-bottom: 0.75rem;
+                    margin-bottom: 1rem;
                     color: #4b5563;
                     line-height: 1.5;
                   }

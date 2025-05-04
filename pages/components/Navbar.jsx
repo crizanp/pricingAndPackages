@@ -69,7 +69,7 @@ const Navbar = () => {
                         { name: 'NFT Marketplace Development', href: '/services/nft-marketplace-development' },
                         { name: 'DApp Development', href: '/services/dapp-development' },
                         { name: 'Web3 Development', href: '/services/web3-development' },
-                        { name: 'Telegram Mini Apps', href: '/services/tma-development' },
+                        { name: 'Telegram Mini Apps', href: '/services/telegram-mini-apps-development' },
                     ]
                 }
                 ,
@@ -113,21 +113,17 @@ const Navbar = () => {
             ]
         },
         {
-            name: 'Solutions',
-            href: '/solutions',
-            hasDropdown: true,
+            name: 'Pricing',
+            href: '/pricing',
+            hasDropdown: false,
             flatMenu: true,
             items: [
-                { name: 'Beep HappyForce', href: '/solutions/Beep-happyforce' },
-                { name: 'Beep Hero', href: '/solutions/Beep-hero' },
-                { name: 'Beep Shop', href: '/solutions/Beep-shop' },
-                { name: 'Beep Messenger', href: '/solutions/Beep-messenger' },
-                { name: 'On-Demand Delivery', href: '/solutions/on-demand-delivery' },
-                { name: 'Chat Bot', href: '/solutions/chat-bot' },
-                { name: 'Beep Chain', href: '/solutions/Beep-chain' },
-                { name: 'Social Platform', href: '/solutions/social-platform' },
-                { name: 'Beep Insight Machine', href: '/solutions/Beep-insight-machine' },
-                { name: 'Event Management', href: '/solutions/event-management' },
+                { name: 'Web Development', href: '/solutions/Beep-happyforce' },
+                { name: 'Android Development', href: '/solutions/Beep-hero' },
+                { name: 'Graphics Design', href: '/solutions/Beep-shop' },
+                { name: 'Blockchain', href: '/solutions/Beep-messenger' },
+                { name: 'Digital Marketing', href: '/solutions/on-demand-delivery' },
+                
             ]
         },
         { name: 'Work', href: '/work', hasDropdown: false },
