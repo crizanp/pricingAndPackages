@@ -48,7 +48,7 @@ export default function IndustriesWeServe() {
     <div className="w-full bg-black text-white py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="mb-8 sm:mb-12 md:mb-16 text-center sm:text-left">
+        <div className="mb-8 sm:mb-12 md:mb-16 text-left">
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6 text-white">
             Industries We Serve
           </h2>

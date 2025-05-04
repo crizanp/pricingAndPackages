@@ -180,7 +180,7 @@ const Navbar = () => {
                                     src="/logo.png"
                                     alt="FoxBeep Logo"
                                     fill
-                                    className="object-contain"
+                                    className="object-contain ml-[-30px]"
                                     priority
                                 />
                             </div>

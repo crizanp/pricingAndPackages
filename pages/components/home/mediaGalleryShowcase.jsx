@@ -3,21 +3,30 @@ import { X } from "lucide-react";
 
 export default function VideoEditingShowcase() {
   // Initialize with Film Production (index 1) by default
-  const [activeCategory, setActiveCategory] = useState(1);
-  const [hoverCategory, setHoverCategory] = useState(null);
+  const [activeCategory, setActiveCategory] = useState(null);
+    const [hoverCategory, setHoverCategory] = useState(null);
   const detailsRef = useRef(null);
   
   // Effect to scroll to details when activeCategory changes on mobile
   useEffect(() => {
-    if (activeCategory !== null && window.innerWidth < 768) {
-      // Small delay to ensure the DOM has updated
-      setTimeout(() => {
-        if (detailsRef.current) {
-          detailsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, 100);
-    }
-  }, [activeCategory]);
+    // Check if it's desktop view and set default category only if on desktop
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && activeCategory === null) {
+        setActiveCategory(1); // Set default category for desktop
+      } else if (window.innerWidth < 768) {
+        setActiveCategory(null); // Ensure no active category on mobile
+      }
+    };
+    
+    // Run once on component mount
+    handleResize();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
  
   // Categories data
   const categories = [
@@ -215,11 +224,12 @@ export default function VideoEditingShowcase() {
         </div>
 
         {/* Right side - Details Panel */}
-        <div className="w-full md:w-1/2 h-full flex items-center justify-center p-4">
-          <div className="bg-gray-900 bg-opacity-80 rounded-2xl w-full h-[90%] p-6 overflow-hidden text-white shadow-2xl">
-            <div className="flex justify-between items-start mb-4">
-              <h2 className="text-4xl font-bold text-white">{categories[activeCategory].title}</h2>
-              <button 
+        {activeCategory !== null ? (
+  <div className="w-full md:w-1/2 h-full flex items-center justify-center p-4">
+    <div className="bg-gray-900 bg-opacity-80 rounded-2xl w-full h-[90%] p-6 overflow-hidden text-white shadow-2xl">
+      <div className="flex justify-between items-start mb-4">
+        <h2 className="text-4xl font-bold text-white">{categories[activeCategory].title}</h2>
+        <button 
                 onClick={() => setActiveCategory(null)}
                 className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-full p-2"
               >
@@ -246,7 +256,11 @@ export default function VideoEditingShowcase() {
               ))}
             </div>
           </div>
-        </div>
+        </div>) : (<div className="w-full md:w-1/2 h-full flex items-center justify-center p-4">
+    <div className="bg-gray-900 bg-opacity-80 rounded-2xl w-full h-[90%] p-6 flex items-center justify-center text-white shadow-2xl">
+      <h2 className="text-3xl font-bold text-white">Select a category to view details</h2>
+    </div>
+  </div>)}
       </div>
     </div>
   );
