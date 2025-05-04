@@ -297,7 +297,7 @@ const Navbar = () => {
                     {/* Mobile menu button */}
                     <div className="lg:hidden flex items-center">
                         <button
-                            className="text-gray-600 hover:text-purple-500 focus:outline-none"
+                            className="text-gray-600 hover:text-purple-500 focus:outline-none mr-4"
                             onClick={() => setIsOpen(!isOpen)}
                         >
                             {isOpen ? <X size={24} /> : <Menu size={24} />}
