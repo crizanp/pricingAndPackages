@@ -38,7 +38,7 @@ const Navbar = () => {
                         { name: 'News and Media Website', href: '/services/news-media-website' },
                         { name: 'Manufacturing Website', href: '/services/manufacturing-website' },
                     ]
-                },                
+                },
                 {
                     title: 'Video Editing',
                     items: [
@@ -62,7 +62,7 @@ const Navbar = () => {
                         { name: 'Email Marketing', href: '/services/email-marketing' }
                     ]
                 },
-                
+
                 {
                     title: 'Blockchain Development',
                     items: [
@@ -78,7 +78,7 @@ const Navbar = () => {
                     items: [
                         { name: 'iOS App Development', href: '/services/ios-app-development' },
                         { name: 'Android App Development', href: '/services/android-app-development' },
-                        
+
                     ]
                 },
                 {
@@ -88,7 +88,7 @@ const Navbar = () => {
                         { name: 'Big Data Development', href: '/services/big-data-development' },
                     ]
                 },
-                
+
             ]
         },
         {
