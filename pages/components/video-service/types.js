@@ -1,7 +1,52 @@
 import { useState, useEffect } from 'react';
 import { BookOpen, Video, Film, Mic, Plus, ChevronRight } from 'lucide-react';
 
-const TypesVideo = () => {
+const TypesVideo = ({ 
+  title = "YouTube Video Editing",
+  backgroundColor = "bg-black",
+  textColor = "text-white",
+  accentColor = "#0ea5e9",
+  showCTA = false,
+  ctaText = "Get Started Today",
+  ctaLink = "#",
+  services = [
+    {
+      title: "Courses Editing / E-Learning",
+      icon: "BookOpen",
+      color: "#0ea5e9",
+      features: ["Interactive learning elements", "Chapter markers & knowledge checks", "Engagement-optimized pacing"],
+      videoId: "jYTZ9U_R_Y0"
+    },
+    {
+      title: "Faceless Channels (AI)",
+      icon: "Video",
+      color: "#8b5cf6",
+      features: ["AI voice synthesis & narration", "Dynamic motion graphics", "Data-driven content creation"],
+      videoId: "b5NQy0IqMIY"
+    },
+    {
+      title: "YouTube Shorts Editing",
+      icon: "Film",
+      color: "#ef4444",
+      features: ["Vertical format optimization", "Hook-focused opening sequences", "Trending effects & transitions"],
+      videoId: "IhrBmx78ZO0"
+    },
+    {
+      title: "Interviews/Podcasts",
+      icon: "Mic",
+      color: "#22c55e",
+      features: ["Multi-camera switching", "Audio enhancement & noise reduction", "Visual highlight segments"],
+      videoId: "nuTtFw6EvGM"
+    },
+    {
+      title: "Explanatory Videos",
+      icon: "BookOpen",
+      color: "#f59e0b",
+      features: ["Complex concept visualization", "Step-by-step visual breakdowns", "Annotation & emphasis techniques"],
+      videoId: "Aeb4SfWmkXU"
+    }
+  ]
+}) => {
   const [activeService, setActiveService] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [particles, setParticles] = useState([]);
@@ -37,52 +82,22 @@ const TypesVideo = () => {
     setActiveService(index);
   };
 
-  const services = [
-    {
-      title: "Courses Editing / E-Learning",
-      icon: BookOpen,
-      color: "#0ea5e9",
-      features: ["Interactive learning elements", "Chapter markers & knowledge checks", "Engagement-optimized pacing"],
-      videoId: "jYTZ9U_R_Y0"
-    },
-    {
-      title: "Faceless Channels (AI)",
-      icon: Video,
-      color: "#8b5cf6",
-      features: ["AI voice synthesis & narration", "Dynamic motion graphics", "Data-driven content creation"],
-      videoId: "b5NQy0IqMIY"
-    },
-    {
-      title: "YouTube Shorts Editing",
-      icon: Film,
-      color: "#ef4444",
-      features: ["Vertical format optimization", "Hook-focused opening sequences", "Trending effects & transitions"],
-      videoId: "IhrBmx78ZO0"
-    },
-    {
-      title: "Interviews/Podcasts",
-      icon: Mic,
-      color: "#22c55e",
-      features: ["Multi-camera switching", "Audio enhancement & noise reduction", "Visual highlight segments"],
-      videoId: "nuTtFw6EvGM"
-    },
-    {
-      title: "Explanatory Videos",
-      icon: BookOpen,
-      color: "#f59e0b",
-      features: ["Complex concept visualization", "Step-by-step visual breakdowns", "Annotation & emphasis techniques"],
-      videoId: "Aeb4SfWmkXU"
-    }
-  ];
+  // Icon mapping
+  const iconMap = {
+    "BookOpen": BookOpen,
+    "Video": Video,
+    "Film": Film,
+    "Mic": Mic
+  };
 
   // Render the appropriate icon component based on the service index
   const renderIcon = (index) => {
-    const IconComponent = services[index].icon;
+    const IconComponent = iconMap[services[index].icon] || BookOpen;
     return <IconComponent className="w-5 h-5" />;
   };
 
   return (
-    <div className="bg-black text-white min-h-screen w-full p-4 lg:p-12 relative overflow-hidden">
+    <div className={`${backgroundColor} ${textColor} min-h-screen w-full p-4 lg:p-12 relative overflow-hidden`}>
       {/* Animated particles background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {particles.map(particle => (
@@ -103,7 +118,7 @@ const TypesVideo = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 md:mb-16 text-center md:text-left">
-          YouTube Video Editing
+          {title}
         </h1>
         
         {/* Mobile View - Only Videos */}
@@ -226,7 +241,16 @@ const TypesVideo = () => {
         )}
         
         {/* Call to Action */}
-       
+        {showCTA && (
+          <div className="mt-16 text-center">
+            <a 
+              href={ctaLink}
+              className="inline-block px-8 py-4 bg-white text-black font-semibold rounded-md hover:bg-gray-200 transition-all duration-300"
+            >
+              {ctaText}
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );

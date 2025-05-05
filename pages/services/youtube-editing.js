@@ -31,14 +31,69 @@ export default function Home() {
     }
   ];
   
+  const heroFeatures = [
+    "Professional Editing",
+    "4K & 8K Support",
+    "Visual Effects"
+  ];
+  
+  // Define all properties for TypesVideo including services with videoIds
+  const videoTypesProps = {
+    title: "YouTube Video Editing",
+    backgroundColor: "bg-black",
+    textColor: "text-white",
+    accentColor: "#0ea5e9",
+    showCTA: true,
+    ctaText: "Start Your Video Project",
+    ctaLink: "#contact",
+    services: [
+      {
+        title: "Courses Editing / E-Learning",
+        icon: "BookOpen",
+        color: "#0ea5e9",
+        features: ["Interactive learning elements", "Chapter markers & knowledge checks", "Engagement-optimized pacing"],
+        videoId: "jYTZ9U_R_Y0"
+      },
+      {
+        title: "Faceless Channels (AI)",
+        icon: "Video",
+        color: "#8b5cf6",
+        features: ["AI voice synthesis & narration", "Dynamic motion graphics", "Data-driven content creation"],
+        videoId: "b5NQy0IqMIY"
+      },
+      {
+        title: "YouTube Shorts Editing",
+        icon: "Film",
+        color: "#ef4444",
+        features: ["Vertical format optimization", "Hook-focused opening sequences", "Trending effects & transitions"],
+        videoId: "IhrBmx78ZO0"
+      },
+      {
+        title: "Interviews/Podcasts",
+        icon: "Mic",
+        color: "#22c55e",
+        features: ["Multi-camera switching", "Audio enhancement & noise reduction", "Visual highlight segments"],
+        videoId: "nuTtFw6EvGM"
+      },
+      {
+        title: "Explanatory Videos",
+        icon: "BookOpen",
+        color: "#f59e0b",
+        features: ["Complex concept visualization", "Step-by-step visual breakdowns", "Annotation & emphasis techniques"],
+        videoId: "Aeb4SfWmkXU"
+      }
+    ]
+  };
+
   return (
     <div>
-      <HeroSection 
+      <HeroSection
         tagline="Edit. Inspire. Deliver."
-        subtitle="Professional Video Editing" 
+        subtitle="Professional Video Editing"
         description="We create amazing visual experiences that captivate your audience, crafted with precision and creativity for maximum impact."
         videoSrc="/vdoEditing.mp4"
         buttonText="Transform Your Footage"
+        features={heroFeatures}
       />
       <TextHero
         tagline="Edit. Inspire. Deliver."
@@ -52,23 +107,22 @@ export default function Home() {
       <VideoMatrics
         accentColor="gray" // Purple color
         buttonText="Get Started Today"
-        />
-        <HowWeMakeSection
+      />
+      <HowWeMakeSection
         accentColor="#ed90ed"
         videoSrc="/vdoEditing.mp4"
         buttonText="See Our Process"
       />
       <VideoEditingWorkflow/>
-      <TypesVideo/>
+      <TypesVideo {...videoTypesProps} />
       <FAQSection
-              title="Frequently Asked Questions"
-              faqItems={faqItems}
-              backgroundColor="bg-white"
-              textColor="text-gray-700"
-              questionSize="text-3xl"
-            />     
-                  <TextHeroSection />
-            
+        title="Frequently Asked Questions"
+        faqItems={faqItems}
+        backgroundColor="bg-white"
+        textColor="text-gray-700"
+        questionSize="text-3xl"
+      />
+      <TextHeroSection />
     </div>
   );
 }

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 const TextHero = ({
-  tagline = "Welcome to",
-  subtitle = "Professional Video Editing Services",
-  description = "Transform your raw footage into stunning visual stories",
-  imageSrc = "https://www.brandbeavers.com/wp-content/uploads/2021/07/Video-editing-services-in-mumbai.jpg",
-  buttonText,
+  tagline = "Edit. Inspire. Deliver.",
+  subtitle = "Youtube Video Editing",
+  description = "We create amazing visual experiences that captivate your audience, crafted with precision and creativity for maximum impact. Our team of expert editors transforms raw footage into compelling stories that engage and inspire. From color grading to motion graphics, we handle every aspect of post-production with meticulous attention to detail.",
+  imageSrc = "https://d9pfvpeevxz0y.cloudfront.net/blog/wp-content/uploads/2021/06/061121_iMovie-1200x673.jpg",
+  buttonText = "Transform Your Footage",
   location = "Bhaktapur",
   companyName = "FoxBeep"
 }) => {
@@ -44,7 +44,7 @@ const TextHero = ({
       {/* Cursor blinking effect */}
       <div className="absolute top-6 left-6 z-10 flex items-center">
         <div className="w-3 h-6 bg-white animate-pulse mr-2"></div>
-        <span className="font-mono text-sm opacity-70">editor://foxbeep</span>
+        <span className="font-mono text-sm opacity-70">editor://{companyName.toLowerCase()}</span>
       </div>
 
       {/* Content */}
@@ -64,11 +64,11 @@ const TextHero = ({
             {description}
           </p>
           
-          {/* {buttonText && (
+          {buttonText && (
             <button className="mt-6 mb-12 px-8 py-4 bg-white text-black hover:bg-gray-200 text-lg md:text-xl font-mono border border-white transition-all duration-300 hover:tracking-wider focus:outline-none focus:ring-2 focus:ring-white">
               {buttonText}
             </button>
-          )} */}
+          )}
           
           {/* Location and company info with code-like formatting */}
           {(location || companyName) && (
