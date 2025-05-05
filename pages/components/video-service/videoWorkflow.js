@@ -60,7 +60,7 @@ export default function VideoEditingWorkflow({
       {/* Description */}
       <div className="mb-12 text-2xl text-gray-700">
         <p className="mb-4">
-          Our <span className="font-semibold">video editing studio</span> ensures a streamlined, transparent process from the initial contact to the delivery of your final video. Here's how we work in four essential steps to transform your raw footage into a professionally edited video, utilizing our top <span className="font-semibold">video editing services</span> and <span className="font-semibold">post production services</span>.
+          Our <span className="font-semibold">video editing studio</span> ensures a streamlined, transparent process from the initial contact to the delivery of your final video. Here&apos;s how we work in four essential steps to transform your raw footage into a professionally edited video, utilizing our top <span className="font-semibold">video editing services</span> and <span className="font-semibold">post production services</span>.
         </p>
       </div>
       

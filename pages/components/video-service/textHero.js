@@ -74,8 +74,8 @@ const TextHero = ({
           {(location || companyName) && (
             <div className="mt-6 font-mono text-gray-300">
               <p className="text-sm md:text-base">
-                <span className="opacity-70">// </span>
-                {companyName}{location ? ` @ ${location}` : ''}
+                <span className="opacity-70">{"//"}</span>
+                {" " + companyName}{location ? ` @ ${location}` : ''}
               </p>
             </div>
           )}
