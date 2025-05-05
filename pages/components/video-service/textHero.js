@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 const TextHero = ({
-  tagline,
-  subtitle,
-  description,
+  tagline = "Welcome to",
+  subtitle = "Professional Video Editing Services",
+  description = "Transform your raw footage into stunning visual stories",
   imageSrc = "https://www.brandbeavers.com/wp-content/uploads/2021/07/Video-editing-services-in-mumbai.jpg",
   buttonText,
   location = "Bhaktapur",
@@ -55,7 +55,7 @@ const TextHero = ({
           </p>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-            {subtitle.split(' ').map((word, i) => (
+            {subtitle && subtitle.split(' ').map((word, i) => (
               <span key={i} className="inline-block mr-4 mb-2">{word}</span>
             ))}
           </h1>
