@@ -9,7 +9,7 @@ export default function HowWeMakeSection({
   videoSrc = "/vdoEditing.mp4",
   accentColor = "#4ecdc4",
   buttonText = "See How It Works",
-  posterImage = "https://d9pfvpeevxz0y.cloudfront.net/blog/wp-content/uploads/2021/06/061121_iMovie-1200x673.jpg"
+  posterImage = "/api/placeholder/640/360"
 }) {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -83,7 +83,7 @@ export default function HowWeMakeSection({
 
         {/* Video Container - Simplified */}
         <div className="relative w-full overflow-hidden rounded-lg border-8 border-gray-800 shadow-xl aspect-video bg-black">
-          {/* Direct video display - no background image overlay */}
+          {/* Direct video display - with loop attribute added */}
           <video
             ref={videoRef}
             className="w-full h-full object-cover"
@@ -91,8 +91,8 @@ export default function HowWeMakeSection({
             muted={isMuted}
             playsInline
             autoPlay
+            loop
             preload="auto"
-            onEnded={() => setIsPlaying(false)}
             src={videoSrc}
           >
             Your browser does not support the video tag.
@@ -133,8 +133,8 @@ export default function HowWeMakeSection({
         {/* CTA Button */}
         <div className="mt-8 text-center">
           <button
-            className="px-8 py-3 rounded-lg font-medium text-white hover:opacity-90 transition-all"
-            style={{ backgroundColor: accentColor }}
+            className="px-8 py-3 rounded-lg font-medium  hover:opacity-90 transition-all bg-white hover:bg-gray-300 text-black "
+            
           >
             {buttonText}
           </button>

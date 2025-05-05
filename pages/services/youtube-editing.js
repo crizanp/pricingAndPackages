@@ -1,9 +1,36 @@
+import TextHeroSection from "../components/home/textHero";
+import FAQSection from "../components/services/faqSection";
 import HeroSection from "../components/video-service/hero";
 import VideoMatrics from "../components/video-service/matrics";
 import TextHero from "../components/video-service/textHero";
+import TypesVideo from "../components/video-service/types";
 import HowWeMakeSection from "../components/video-service/videoHighlight";
+import VideoEditingWorkflow from "../components/video-service/videoWorkflow";
 
 export default function Home() {
+  const faqItems = [
+    {
+      question: "How much does YouTube video editing cost?",
+      answer: "Pricing typically ranges from $100 for simple edits to $1,000+ for advanced, high-end production."
+    },
+    {
+      question: "How long does it take to edit a YouTube video?",
+      answer: "Turnaround time is usually 2 to 7 days, depending on video length and complexity."
+    },
+    {
+      question: "What type of editing software do you use?",
+      answer: "We use professional tools like Adobe Premiere Pro, Final Cut Pro, and After Effects."
+    },
+    {
+      question: "Do you offer thumbnail design and SEO optimization?",
+      answer: "Yes, we can design custom thumbnails and optimize video titles, descriptions, and tags for better reach."
+    },
+    {
+      question: "Can you edit videos for a specific niche or style?",
+      answer: "Absolutely! We tailor our edits to match your brand, niche, and content style preferences."
+    }
+  ];
+  
   return (
     <div>
       <HeroSection 
@@ -27,10 +54,21 @@ export default function Home() {
         buttonText="Get Started Today"
         />
         <HowWeMakeSection
-        accentColor="#4ecdc4"
+        accentColor="#ed90ed"
         videoSrc="/vdoEditing.mp4"
         buttonText="See Our Process"
       />
+      <VideoEditingWorkflow/>
+      <TypesVideo/>
+      <FAQSection
+              title="Frequently Asked Questions"
+              faqItems={faqItems}
+              backgroundColor="bg-white"
+              textColor="text-gray-700"
+              questionSize="text-3xl"
+            />     
+                  <TextHeroSection />
+            
     </div>
   );
 }

@@ -30,7 +30,7 @@ export default function VideoMetrics({
         </div>
         
         {/* Tagline */}
-        <p className="text-2xl font-medium text-black mb-16">{tagline}</p>
+        <p className="text-lg md:text-xl lg:text-2xl font-medium text-black mb-16">{tagline}</p>
         
         {/* Clean Stats Display */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -44,12 +44,12 @@ export default function VideoMetrics({
         
         {/* Description */}
         <div className="mb-16">
-          <h2 className="text-2xl font-bold text-black mb-4">{subtitle}</h2>
-          <p className="text-xl text-black">{description}</p>
+          <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-black mb-4">{subtitle}</h2>
+          <p className="text-lg md:text-xl lg:text-2xl text-black">{description}</p>
         </div>
         
         {/* Benefits as Simple List */}
-        <div className="mb-16 bg-gray-50 p-8 rounded-lg">
+        <div className=" bg-gray-50 p-8 rounded-lg">
           <h3 className="text-2xl font-bold mb-6">Key Benefits</h3>
           <div className="space-y-4">
             {benefits.map((benefit, index) => (
@@ -57,19 +57,19 @@ export default function VideoMetrics({
                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-sm">
                   {index + 1}
                 </div>
-                <p className="text-lg text-black">{benefit}</p>
+                <p className="text-lg md:text-xl lg:text-2xl text-black">{benefit}</p>
               </div>
             ))}
           </div>
         </div>
         
-        {/* Simple CTA Button */}
+        {/* Simple CTA Button
         <div className="flex justify-center">
           <button className="flex items-center gap-2 bg-black text-white text-lg px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors">
             <Play className="w-5 h-5" />
             {buttonText}
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
