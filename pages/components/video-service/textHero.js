@@ -64,11 +64,11 @@ const TextHero = ({
             {description}
           </p>
           
-          {buttonText && (
+          {/* {buttonText && (
             <button className="mt-6 mb-12 px-8 py-4 bg-white text-black hover:bg-gray-200 text-lg md:text-xl font-mono border border-white transition-all duration-300 hover:tracking-wider focus:outline-none focus:ring-2 focus:ring-white">
               {buttonText}
             </button>
-          )}
+          )} */}
           
           {/* Location and company info with code-like formatting */}
           {(location || companyName) && (

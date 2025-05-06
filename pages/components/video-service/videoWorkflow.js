@@ -53,7 +53,7 @@ export default function VideoEditingWorkflow({
   }, [steps.length]);
   
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 py-16 text-left">
+    <div className="w-full max-w-6xl mx-auto px-4 py-16 text-center"id="process">
       {/* Title */}
       <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">{title}</h1>
       
@@ -112,13 +112,13 @@ export default function VideoEditingWorkflow({
         </p>
       </div>
       
-      {/* CTA Button */}
+      {/* CTA Button
       <div className="flex justify-center">
         <button className="group bg-gray-900 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors duration-300 flex items-center space-x-2">
           <span>{ctaText}</span>
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

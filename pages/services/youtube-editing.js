@@ -1,6 +1,7 @@
 import TextHeroSection from "../components/home/textHero";
 import FAQSection from "../components/services/faqSection";
 import HeroSection from "../components/video-service/hero";
+import VideoMetrics from "../components/video-service/matrics";
 import VideoMatrics from "../components/video-service/matrics";
 import TextHero from "../components/video-service/textHero";
 import TypesVideo from "../components/video-service/types";
@@ -30,13 +31,13 @@ export default function Home() {
       answer: "Absolutely! We tailor our edits to match your brand, niche, and content style preferences."
     }
   ];
-  
+
   const heroFeatures = [
     "Professional Editing",
     "4K & 8K Support",
     "Visual Effects"
   ];
-  
+
   // Define all properties for TypesVideo including services with videoIds
   const videoTypesProps = {
     title: "YouTube Video Editing",
@@ -104,16 +105,45 @@ export default function Home() {
         location="Bhaktapur"
         companyName="FoxBeep"
       />
-      <VideoMatrics
-        accentColor="gray" // Purple color
-        buttonText="Get Started Today"
+      <VideoMetrics
+        title="Why Video Content is Essential"
+        tagline="Capture attention in seconds"
+        stats={[
+          { percentage: "85%", label: "HIGHER CONVERSION" },
+          { percentage: "70%", label: "RETENTION RATE" },
+          { percentage: "40%", label: "CLICK-THROUGH" }
+        ]}
+        description="Videos are now the primary way users consume content online. Without video, your digital presence is incomplete."
+        benefits={[
+          "Videos increase time on site by 88%",
+          "Viewers retain 95% of a message when watching video",
+          "Social videos generate 1200% more shares than text and images combined"
+        ]}
+        subtitle="The video advantage is undeniable"
+        buttonText="Start Your Video Journey"
+        accentColor="black"
+        backgroundColor="bg-gray-50"
+        showCTA={true}
+        ctaLink="#contact"
       />
       <HowWeMakeSection
-        accentColor="#ed90ed"
-        videoSrc="/vdoEditing.mp4"
+        primaryText="Watch how we transform"
+        highlightedText="YOUR"
+        secondaryText="content"
+        description="Our team of professional editors takes your raw footage and turns it into captivating content that resonates with your audience."
         buttonText="See Our Process"
+        videoSrc="/vdoEditing.mp4"
+        posterImage="/thumbnail.jpg"
+        accentColor="purple"
+        backgroundColor="bg-black"
+        headingColor="text-white"
+        descriptionColor="text-gray-300"
+        buttonBgColor="bg-white"
+        buttonTextColor="text-black"
+        showCTA={true}
+        ctaLink="#process"
       />
-      <VideoEditingWorkflow/>
+      <VideoEditingWorkflow />
       <TypesVideo {...videoTypesProps} />
       <FAQSection
         title="Frequently Asked Questions"
