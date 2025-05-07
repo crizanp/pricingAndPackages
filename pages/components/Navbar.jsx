@@ -42,12 +42,12 @@ const Navbar = () => {
                 {
                     title: 'Video Editing',
                     items: [
-                        { name: 'YouTube Video Editing', href: '/services/youtube-editing' },
-                        { name: 'Ads & Commercial Editing', href: '/services/ads-commercial-editing' },
-                        { name: 'Social Media Video Editing', href: '/services/social-media-editing' },
-                        { name: 'Corporate Video Editing', href: '/services/corporate-editing' },
-                        { name: 'Event Video Editing', href: '/services/event-editing' },
-                        { name: 'Whiteboard Animation', href: '/services/whiteboard-animation' }
+                        { name: 'YouTube Video Editing', href: '/services/video-editing#youtube-video-editing' },
+                        { name: 'Ads & Commercial Editing', href: '/services/video-editing#ads-and-commercial' },
+                        { name: 'Social Media Video Editing', href: '/services/video-editing#social-media-video-editing' },
+                        { name: 'Corporate Video Editing', href: '/services/video-editing#corporate-video-editing' },
+                        { name: 'Event Video Editing', href: '/services/video-editing#event-video-editing' },
+                        { name: 'Whiteboard Animation', href: '/services/video-editing#whiteboard-video-editing' }
                     ]
                 },
                 {
