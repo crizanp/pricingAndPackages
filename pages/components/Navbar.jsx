@@ -29,6 +29,7 @@ const Navbar = () => {
             sections: [
                 {
                     title: 'Website Development',
+                    href: null,
                     items: [
                         { name: 'WordPress Development', href: '/services/wordpress-development' },
                         { name: 'Ecommerce Development', href: '/services/ecommerce-development' },
@@ -41,6 +42,7 @@ const Navbar = () => {
                 },
                 {
                     title: 'Video Editing',
+                    href: '/services/video-editing',
                     items: [
                         { name: 'YouTube Video Editing', href: '/services/video-editing#youtube-video-editing' },
                         { name: 'Ads & Commercial Editing', href: '/services/video-editing#ads-and-commercial' },
@@ -52,6 +54,7 @@ const Navbar = () => {
                 },
                 {
                     title: 'Digital Marketing',
+                    href: '/services/digital-marketing',
                     items: [
                         { name: 'Facebook Ads', href: '/services/facebook-ads' },
                         { name: 'Instagram Marketing', href: '/services/instagram-marketing' },
@@ -62,33 +65,32 @@ const Navbar = () => {
                         { name: 'Email Marketing', href: '/services/email-marketing' }
                     ]
                 },
-
                 {
                     title: 'Blockchain Development',
+                    href: null,
                     items: [
                         { name: 'NFT Marketplace Development', href: '/services/nft-marketplace-development' },
                         { name: 'DApp Development', href: '/services/dapp-development' },
                         { name: 'Web3 Development', href: '/services/web3-development' },
                         { name: 'Telegram Mini Apps', href: '/services/telegram-mini-apps-development' },
                     ]
-                }
-                ,
+                },
                 {
                     title: 'Mobile Application',
+                    href: null,
                     items: [
                         { name: 'iOS App Development', href: '/services/ios-app-development' },
                         { name: 'Android App Development', href: '/services/android-app-development' },
-
                     ]
                 },
                 {
                     title: 'AI and Big Data',
+                    href: null,
                     items: [
                         { name: 'AI Development', href: '/services/ai-development' },
                         { name: 'Big Data Development', href: '/services/big-data-development' },
                     ]
                 },
-
             ]
         },
         {
@@ -242,15 +244,23 @@ const Navbar = () => {
                                                         </h2>
                                                     </div>
 
-
                                                     {/* Right side sections */}
                                                     <div className="flex-1 pl-12">
                                                         <div className="grid grid-cols-3 gap-y-8 gap-x-8">
                                                             {item.sections.map((section, sectionIndex) => (
                                                                 <div key={sectionIndex}>
-                                                                    <h3 className="font-semibold text-lg mb-4">
-                                                                        {section.title}
-                                                                    </h3>
+                                                                    {section.href ? (
+                                                                        <Link
+                                                                            href={section.href}
+                                                                            className="font-semibold text-lg mb-4 block hover:text-purple-500 transition-colors duration-200"
+                                                                        >
+                                                                            {section.title}
+                                                                        </Link>
+                                                                    ) : (
+                                                                        <h3 className="font-semibold text-lg mb-4">
+                                                                            {section.title}
+                                                                        </h3>
+                                                                    )}
                                                                     <div className="space-y-3">
                                                                         {section.items && section.items.map((subItem, subIndex) => (
                                                                             <Link
@@ -344,7 +354,19 @@ const Navbar = () => {
                                                         <div className="space-y-4 py-2">
                                                             {item.sections.map((section, sectionIndex) => (
                                                                 <div key={sectionIndex}>
-                                                                    <h4 className="font-semibold text-sm mb-2">{section.title}</h4>
+                                                                    {section.href ? (
+                                                                        <Link
+                                                                            href={section.href}
+                                                                            className="font-semibold text-sm mb-2 block hover:text-purple-500"
+                                                                            onClick={() => setIsOpen(false)}
+                                                                        >
+                                                                            {section.title}
+                                                                        </Link>
+                                                                    ) : (
+                                                                        <h4 className="font-semibold text-sm mb-2">
+                                                                            {section.title}
+                                                                        </h4>
+                                                                    )}
                                                                     <div className="grid grid-cols-1 gap-y-1 pl-2">
                                                                         {section.items && section.items.map((subItem, subIndex) => (
                                                                             <Link
