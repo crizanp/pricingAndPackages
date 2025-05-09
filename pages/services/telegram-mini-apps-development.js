@@ -161,7 +161,7 @@ export default function TelegramMiniAppsDevelopment() {
       {/* Full-screen image section below the banner */}
       <div className="w-full relative h-screen">
         <img
-          src="https://images.unsplash.com/photo-1611746869696-b0fcc16b3a3c"
+          src="https://repository-images.githubusercontent.com/699527302/cb7cf801-4956-45fc-b835-38a5b0495cf4"
           alt="Telegram Mini Apps Development"
           className="w-full h-full object-cover"
         />

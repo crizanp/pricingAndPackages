@@ -1,3 +1,4 @@
+import { handleHashScroll, useSmoothScroll } from "@/hook/scrolling";
 import BrandSlider from "../components/home/companySponsered";
 import TextHeroSection from "../components/home/textHero";
 import FAQSection from "../components/services/faqSection";
@@ -9,6 +10,8 @@ import HowWeMakeSection from "../components/video-service/videoHighlight";
 import VideoEditingWorkflow from "../components/video-service/videoWorkflow";
 
 export default function Home() {
+  useSmoothScroll();
+  handleHashScroll();
   // Creating a contact section id for consistent linking
   const contactSectionId = "contact";
   const processSectionId = "process";

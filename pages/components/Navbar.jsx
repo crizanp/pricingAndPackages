@@ -3,12 +3,13 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDown, Menu, X, Phone, ArrowRight } from 'lucide-react';
-
+import { useSmoothScroll, handleHashScroll } from '../../hook/scrolling'; 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
-
+    useSmoothScroll();
+    handleHashScroll();
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 20) {
@@ -20,6 +21,7 @@ const Navbar = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
 
     const navItems = [
         {
@@ -162,6 +164,7 @@ const Navbar = () => {
     const closeAllDropdowns = () => {
         setActiveDropdown(null);
     };
+
 
     return (
         <nav
