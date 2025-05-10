@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export default function SpecificMarketingBanner({
   backgroundColor = "",
@@ -13,6 +13,17 @@ export default function SpecificMarketingBanner({
   bgImageOverlay = "bg-black opacity-30",
   showOverlay = true
 }) {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="relative w-full overflow-hidden py-24">
       {/* Background image covering the entire component */}
@@ -20,17 +31,19 @@ export default function SpecificMarketingBanner({
         <img
           src={bgImageSrc}
           alt={bgImageAlt}
-          className="w-full h-full object-cover"
+          className={`w-full h-full object-cover transition-transform duration-[3000ms] ease-out ${
+            isScrolled ? "scale-110" : "scale-100"
+          }`}
         />
         {/* Optional overlay */}
         {showOverlay && (
           <div className={`absolute inset-0 ${bgImageOverlay}`}></div>
         )}
       </div>
-      
+
       {/* Content container */}
       <div className={`${backgroundColor} bg-opacity-0 relative z-10`}>
-        <div className={`flex flex-col md:flex-row py-16  relative w-full max-w-7xl mx-auto ${textColor}`}>
+        <div className={`flex flex-col md:flex-row py-16 relative w-full max-w-7xl mx-auto ${textColor}`}>
           {/* Left content area */}
           <div className="w-full md:w-3/5 py-8 md:py-12 px-6 md:px-10">
             <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 ${headingColor}`}>

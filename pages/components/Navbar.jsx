@@ -58,15 +58,15 @@ const Navbar = () => {
                     title: 'Digital Marketing',
                     href: '/services/digital-marketing',
                     items: [
-                        { name: 'Facebook Ads', href: '/services/facebook-ads' },
-                        { name: 'Instagram Marketing', href: '/services/instagram-marketing' },
-                        { name: 'Google & YouTube Ads', href: '/services/google-youtube-ads' },
-                        { name: 'SEO', href: '/services/seo' },
-                        { name: 'Telegram Promotion', href: '/services/telegram-marketing' },
-                        { name: 'Social Media Management', href: '/services/social-media-management' },
-                        { name: 'Email Marketing', href: '/services/email-marketing' }
+                      { name: 'Facebook Ads', href: '/services/digital-marketing#facebook-ads' },
+                      { name: 'Instagram Marketing', href: '/services/digital-marketing#instagram-marketing' },
+                      { name: 'Google & YouTube Ads', href: '/services/digital-marketing#google-youtube-ads' },
+                      { name: 'SEO', href: '/services/digital-marketing#seo' },
+                      { name: 'Telegram Promotion', href: '/services/digital-marketing#telegram-promotion' },
+                      { name: 'Social Media Management', href: '/services/digital-marketing#social-media-management' },
+                      { name: 'Email Marketing', href: '/services/digital-marketing#email-marketing' }
                     ]
-                },
+                  },                  
                 {
                     title: 'Blockchain Development',
                     href: null,
