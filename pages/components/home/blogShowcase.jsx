@@ -93,7 +93,7 @@ export default function BlogShowcase() {
 
   return (
     <div
-    className="w-full bg-white py-3 sm:py-4 md:py-6  overflow-hidden px-4 sm:px-6 md:px-8"
+    className="w-full bg-white py-3 sm:py-4 md:py-6  overflow-hidden px-4 sm:px-6 md:px-8 text-black"
 >
     <div className="max-w-7xl mx-auto  py-12 ">
       <div className="mb-16 space-y-4 ">

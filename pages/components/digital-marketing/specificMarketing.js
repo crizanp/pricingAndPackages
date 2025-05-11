@@ -70,7 +70,7 @@ export default function SpecificMarketingBanner({
   
   return (
     <div className={`${backgroundColor} py-16 md:py-24`} id={id || `title`}>
-      <div className={`flex flex-col md:flex-row ${compactMode ? 'py-8' : 'py-16'} border ${borderColor} relative ${fullWidth ? 'w-full' : 'max-w-7xl mx-auto'} ${textColor} overflow-hidden rounded-xl shadow-lg`}>
+      <div className={`flex flex-col md:flex-row ${compactMode ? 'sm:py-8' : 'sm:py-16'} sm:border ${borderColor} relative ${fullWidth ? 'w-full' : 'max-w-7xl mx-auto'} ${textColor} overflow-hidden rounded-xl sm:shadow-lg`}>
         {/* Left content area */}
         <div className={`w-full ${showFeatures ? 'md:w-3/5' : 'md:w-1/2'} py-8 md:py-12 px-6 md:px-10 z-10`}>
           {showBadge && (
@@ -79,11 +79,11 @@ export default function SpecificMarketingBanner({
             </div>
           )}
           
-          <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 ${headingColor}`}>
+          <h1 className={`text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 ${headingColor}`}>
             <span className={accentColor || headingColor}>{firstWord}</span> {restOfTitle}
           </h1>
           
-          <p className={`text-sm sm:text-base md:text-lg leading-relaxed ${paragraphColor} mb-6`}>
+          <p className={`text-lg md:text-lg leading-relaxed ${paragraphColor} mb-6`}>
             {content}
           </p>
           
@@ -95,7 +95,7 @@ export default function SpecificMarketingBanner({
                     <div className={`${featureIconColor || accentColor || headingColor} mr-2`}>
                       <Check size={18} />
                     </div>
-                    <span className={`text-sm md:text-base ${featureTextColor || ''}`}>{feature}</span>
+                    <span className={`text-lg ${featureTextColor || ''}`}>{feature}</span>
                   </div>
                 ))}
               </div>

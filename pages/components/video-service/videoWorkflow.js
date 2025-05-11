@@ -53,7 +53,7 @@ export default function VideoEditingWorkflow({
   }, [steps.length]);
   
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 py-16 text-center"id="process">
+    <div className="w-full max-w-6xl mx-auto px-4 py-16 text-center bg-white text-black text-left sm:text-center"id="process ">
       {/* Title */}
       <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">{title}</h1>
       
@@ -85,7 +85,7 @@ export default function VideoEditingWorkflow({
               <h3 className="text-2xl font-bold mb-2 text-gray-800">{step.title}</h3>
               
               {/* Step Description (visible on hover or on mobile) */}
-              <div className={`${isWideScreen ? 'opacity-0 group-hover:opacity-100 absolute top-full mt-2' : ''} text-sm text-gray-600 max-w-xs transition-opacity duration-300`}>
+              <div className={`${isWideScreen ? 'opacity-0 group-hover:opacity-100 absolute top-full mt-2 text-center' : ''} text-sm text-gray-600 max-w-xs transition-opacity duration-300 text-center pb-6`}>
                 {step.description}
               </div>
               

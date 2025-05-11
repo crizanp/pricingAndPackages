@@ -38,8 +38,8 @@ export default function UniqueFeatures({ title = "Unique features of Foxbeep Wor
   const activeFeatureObject = features.find(f => f.id === activeFeature);
   
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
-      <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 md:mb-12">{title}</h1>
+    <div className="max-w-7xl mx-auto px-4 py-8 md:py-12 bg-white text-black">
+      <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 md:mb-12 text-black">{title}</h1>
       
       <div className="border-t border-gray-200"></div>
       

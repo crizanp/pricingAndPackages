@@ -129,7 +129,7 @@ const TypesVideo = ({
         ))}
       </div>
       
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10 py-8">
         {/* Header */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 md:mb-16 text-center md:text-left">
           {title}

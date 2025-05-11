@@ -28,7 +28,7 @@ const ServicesGrid = ({
   ]
 }) => {
   return (
-    <div className="max-w-7xl mx-auto py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+    <div className="max-w-7xl mx-auto py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white">
       <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8 sm:mb-12 lg:mb-16">
         {title}
       </h2>

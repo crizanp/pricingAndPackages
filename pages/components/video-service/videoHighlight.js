@@ -106,7 +106,7 @@ export default function HowWeMakeSection({
     <div className={`w-full ${backgroundColor} ${paddingY} ${paddingX}`}>
       <div className={`relative z-10 ${maxWidth} mx-auto px-4 md:px-8`}>
         {/* Heading Section */}
-        <div className="text-center mb-12">
+        <div className="text-left sm:text-center mb-12">
           <h2 className={`${headingSize} font-bold ${headingColor} mb-6`}>
             {primaryText}{' '}
             <span style={{ color: accentColor }} className="font-bold text-left">
@@ -114,7 +114,7 @@ export default function HowWeMakeSection({
             </span>{' '}
             {secondaryText}
           </h2>
-          <p className={` text-center ${descriptionSize} ${descriptionColor} leading-relaxed`}>
+          <p className={` text-left sm:text-center ${descriptionSize} ${descriptionColor} leading-relaxed`}>
             {description}
           </p>
         </div>
@@ -172,7 +172,7 @@ export default function HowWeMakeSection({
         
         {/* CTA Button - Only show if showCTA is true */}
         {showCTA && (
-          <div className="mt-8 text-center">
+          <div className="mt-8 text-left sm:text-center">
             <a
               href={ctaLink}
               className={`px-8 py-3 ${roundedCorners} font-medium ${buttonBgColor} ${buttonTextColor} ${buttonHoverColor} ${buttonHoverAnimation}`}

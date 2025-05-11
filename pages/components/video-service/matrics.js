@@ -33,10 +33,7 @@ export default function VideoMetrics({
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Header with Icon */}
         <div className="flex items-center gap-4 mb-10">
-          {React.createElement(headerIcon, { 
-            className: "w-10 h-10", 
-            style: { color: accentColor } 
-          })}
+          
           <h1 className={`text-4xl md:text-5xl font-bold ${textColor} tracking-tight`}>
             {title}
           </h1>

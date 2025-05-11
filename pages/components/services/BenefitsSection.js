@@ -21,7 +21,7 @@ const BenefitsSection = ({
   ctaText = "Let's Discuss"
 }) => {
   return (
-    <div className="max-w-7xl mx-auto py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8">
+    <div className="max-w-7xl mx-auto py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-white">
       <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black mb-6 sm:mb-8 md:mb-12 lg:mb-16">
         {title}
       </h2>
@@ -37,7 +37,7 @@ const BenefitsSection = ({
                   </svg>
                 </div>
               </div>
-              <p className="ml-3 sm:ml-4 text-base sm:text-lg md:text-xl lg:text-2xl">{benefit}</p>
+              <p className="ml-3 sm:ml-4 text-base sm:text-lg md:text-xl lg:text-2xl text-gray-800">{benefit}</p>
             </div>
           ))}
           

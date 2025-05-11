@@ -15,7 +15,7 @@ export default function TeamBanner({
   const [isHovered, setIsHovered] = useState(false);
   
   return (
-    <div className="w-full flex justify-center px-4 sm:px-6 py-6 sm:py-8 mb-8 sm:mb-12 md:mb-16">
+    <div className="w-full flex justify-center px-4 sm:px-6 py-6 sm:py-8 mb-8 sm:mb-12 md:mb-16 bg-white">
       <div 
         className={`w-full max-w-7xl ${backgroundColor} border border-gray-200 rounded-2xl sm:rounded-3xl md:rounded-full 
         flex flex-col sm:flex-row items-center justify-between 

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 export default function HeroSection() {
   return (
-    <div className="relative bg-gradient-to-br from-blue-50 to-green-50 min-h-screen flex items-center justify-center overflow-hidden">
+    <div className="relative bg-gradient-to-br from-blue-50 to-green-50 min-h-screen flex items-center justify-center overflow-hidden text-black">
       {/* Decorative dashed circle */}
       <div className="absolute w-4/5 h-4/5 border-dashed border-2 border-gray-300 rounded-full"></div>
       

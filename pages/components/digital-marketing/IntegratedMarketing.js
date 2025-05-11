@@ -45,11 +45,11 @@ export default function SpecificMarketingBanner({
       <div className={`${backgroundColor} bg-opacity-0 relative z-10`}>
         <div className={`flex flex-col md:flex-row py-16 relative w-full max-w-7xl mx-auto ${textColor}`}>
           {/* Left content area */}
-          <div className="w-full md:w-3/5 py-8 md:py-12 px-6 md:px-10">
-            <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 ${headingColor}`}>
+          <div className="w-full md:w-3/5 py-8 md:py-12 ">
+            <h1 className={`text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 ${headingColor}`}>
               {title}
             </h1>
-            <p className={`text-sm sm:text-base md:text-lg leading-relaxed ${paragraphColor}`}>
+            <p className={`text-lg  md:text-lg leading-relaxed ${paragraphColor}`}>
               {content}
             </p>
           </div>

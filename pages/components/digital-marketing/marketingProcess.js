@@ -50,10 +50,10 @@ const DigitalMarketingProcess = () => {
     ];
 
     return (
-        <div className='bg-white py-12'>
+        <div className='bg-white py-12 text-black'>
             <div className="max-w-7xl mx-auto p-6 text-gray-800">
-                <div className="text-center mb-10">
-                    <h1 className="text-5xl font-bold mb-8 text-gray-900">DIGITAL MARKETING PROCESS</h1>
+                <div className="text-left sm:text-center mb-10">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 text-gray-900">DIGITAL MARKETING PROCESS</h1>
                 </div>
 
                 <div className="flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0">
