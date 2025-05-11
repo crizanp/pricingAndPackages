@@ -158,7 +158,7 @@ export default function NewsMediaWebsite() {
       <ServiceBanner {...serviceData} />
 
       {/* Full-screen image section below the banner */}
-      <div className="w-full relative h-screen">
+      <div className="w-full relative sm:h-screen">
         <img
           src="https://dxlm84u5gf2hs.cloudfront.net/wp-content/uploads/2018/01/Fotolia_104752853_S.jpg"
           alt="News Media Website Development"

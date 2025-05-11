@@ -27,9 +27,9 @@ export default function FAQSection({
   ],
   backgroundColor = "bg-white",
   textColor = "text-gray-700",
-  headingSize = "text-4xl md:text-5xl lg:text-6xl",
-  questionSize = "text-xl sm:text-2xl md:text-3xl",
-  answerSize = "text-base sm:text-lg md:text-xl"
+  headingSize = "text-3xl md:text-5xl lg:text-6xl",
+  questionSize = "text-lg sm:text-2xl md:text-3xl",
+  answerSize = "text-lg sm:text-lg md:text-xl"
 }) {
   const [openIndex, setOpenIndex] = useState(null);
   

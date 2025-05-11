@@ -158,7 +158,7 @@ export default function AndroidAppDevelopment() {
       <ServiceBanner {...serviceData} />
 
       {/* Full-screen image section below the banner */}
-      <div className="w-full relative h-screen">
+      <div className="w-full relative sm:h-screen">
         <img
           src="https://wayspire.in/wp-content/uploads/2022/11/Android-App-Development-1.jpg"
           alt="Android App Development"

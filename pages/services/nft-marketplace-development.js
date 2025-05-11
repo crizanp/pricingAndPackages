@@ -158,7 +158,7 @@ export default function NFTMarketplaceDevelopment() {
       <ServiceBanner {...serviceData} />
 
       {/* Full-screen image section below the banner */}
-      <div className="relative w-full h-screen max-h-screen overflow-hidden">
+      <div className="relative w-full sm:h-screen max-h-screen overflow-hidden">
   <img
     src="https://5.imimg.com/data5/SELLER/Default/2024/12/477004869/EI/FS/EN/79533529/nft-marketplace-development-service-500x500.jpg"
     alt="NFT Marketplace Development"

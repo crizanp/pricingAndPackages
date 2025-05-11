@@ -159,7 +159,7 @@ export default function TelegramMiniAppsDevelopment() {
       <ServiceBanner {...serviceData} />
 
       {/* Full-screen image section below the banner */}
-      <div className="w-full relative h-screen">
+      <div className="w-full relative sm:h-screen">
         <img
           src="https://repository-images.githubusercontent.com/699527302/cb7cf801-4956-45fc-b835-38a5b0495cf4"
           alt="Telegram Mini Apps Development"

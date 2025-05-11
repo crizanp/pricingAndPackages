@@ -54,8 +54,8 @@ export default function SuccessStories() {
     ];
 
     return (
-        <div className="w-full bg-white py-16 md:py-32 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full bg-white py-16 md:py-32 overflow-hidden px-4 sm:px-6 md:px-8">
+            <div className="max-w-7xl mx-auto ">
                 <div className={`flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-12 ...`}>
                     <div className="max-w-2xl">
                         <h2 className="text-4xl md:text-6xl font-bold text-black mb-6 tracking-tight leading-tight">

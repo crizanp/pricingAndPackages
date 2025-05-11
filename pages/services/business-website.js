@@ -158,7 +158,7 @@ export default function BusinessWebsite() {
       <ServiceBanner {...serviceData} />
 
       {/* Full-screen image section below the banner */}
-      <div className="w-full relative h-screen">
+      <div className="w-full relative sm:h-screen">
         <img
           src="https://www.graffiti9.com/wp-content/uploads/2019/10/Website-Banner.jpg"
           alt="Business Website Development"

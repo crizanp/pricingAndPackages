@@ -216,7 +216,7 @@ export default function BigDataDevelopment() {
       <ServiceBanner {...serviceData} />
 
       {/* Full-screen image section below the banner */}
-      <div className="w-full relative h-screen">
+      <div className="w-full relative sm:h-screen">
         <img
           src="https://img.freepik.com/free-vector/big-data-center-server-room-rack-engineering-process-teamwork-computer-technology-cloud-storage_39422-1032.jpg"
           alt="Big Data Development"

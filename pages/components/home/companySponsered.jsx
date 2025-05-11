@@ -4,6 +4,8 @@ export default function BrandSlider() {
   const [isHovering, setIsHovering] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const sliderRef = useRef(null);
+  const positionRef = useRef(0);
+  const animationRef = useRef(null);
   
   const brands = [
     { id: 1, name: "Michael's", logo: "/images/svg/1.svg" },
@@ -27,7 +29,6 @@ export default function BrandSlider() {
   
   const duplicatedBrands = [...brands, ...brands];
   
-  // Check for mobile viewport on mount and resize
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -45,37 +46,44 @@ export default function BrandSlider() {
   }, []);
 
   useEffect(() => {
-    if (isHovering && !isMobile) return; // Only pause on hover for non-mobile devices
-    
     const slider = sliderRef.current;
-    let animationFrameId;
-    let position = 0;
     
     // Adjust animation speed based on device
-    const speedMultiplier = isMobile ? 0.75 : 1;
+    const speedMultiplier = isMobile ? 0.5 : 0.8;
+    const frameRate = 1000 / 60; // 60fps
     
     const animate = () => {
-      position += 0.01 * speedMultiplier;
-      
-      if (position >= brands.length) {
-        position = 0;
-        slider.style.transition = 'none';
-        slider.style.transform = `translateX(0px)`;
-        void slider.offsetHeight;
+      if (isHovering && !isMobile) {
+        // On hover, just keep the current position
+        animationRef.current = requestAnimationFrame(animate);
+        return;
       }
       
-      slider.style.transition = 'transform 2000ms linear';
-      slider.style.transform = `translateX(-${position * (100 / brands.length)}%)`;
+      // Increment position
+      positionRef.current += 0.002 * speedMultiplier;
       
-      animationFrameId = requestAnimationFrame(animate);
+      // Reset position when we reach the end of the first set
+      if (positionRef.current >= 1) {
+        positionRef.current = 0;
+      }
+      
+      // Apply transform based on current position - smooth transition
+      slider.style.transform = `translateX(-${positionRef.current * 100}%)`;
+      
+      // Continue animation
+      animationRef.current = requestAnimationFrame(animate);
     };
     
-    animationFrameId = requestAnimationFrame(animate);
+    // Start animation
+    animationRef.current = requestAnimationFrame(animate);
     
+    // Cleanup animation on unmount
     return () => {
-      cancelAnimationFrame(animationFrameId);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
     };
-  }, [isHovering, brands.length, isMobile]);
+  }, [isHovering, isMobile]);
 
   // Calculate how many logos to show at once based on screen size
   const getLogoWidthClass = () => {
@@ -113,6 +121,7 @@ export default function BrandSlider() {
           <div
             ref={sliderRef}
             className="flex items-center"
+            style={{ willChange: 'transform' }}
           >
             {duplicatedBrands.map((brand, index) => (
               <div

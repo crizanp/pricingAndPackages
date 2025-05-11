@@ -158,7 +158,7 @@ export default function EducationalWebsite() {
       <ServiceBanner {...serviceData} />
 
       {/* Full-screen image section below the banner */}
-      <div className="w-full relative h-screen">
+      <div className="w-full relative sm:h-screen">
         <img
           src="https://ezranking.s3.eu-west-2.amazonaws.com/blog/wp-content/uploads/2021/10/07105852/website-development-process.jpg"
           alt="Educational Website Development"

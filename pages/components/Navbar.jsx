@@ -3,13 +3,15 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDown, Menu, X, Phone, ArrowRight } from 'lucide-react';
-import { useSmoothScroll, handleHashScroll } from '../../hook/scrolling'; 
+import { useSmoothScroll, handleHashScroll } from '../../hook/scrolling';
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
     useSmoothScroll();
     handleHashScroll();
+
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 20) {
@@ -21,7 +23,6 @@ const Navbar = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
 
     const navItems = [
         {
@@ -58,15 +59,15 @@ const Navbar = () => {
                     title: 'Digital Marketing',
                     href: '/services/digital-marketing',
                     items: [
-                      { name: 'Facebook Ads', href: '/services/digital-marketing#facebook-ads' },
-                      { name: 'Instagram Marketing', href: '/services/digital-marketing#instagram-marketing' },
-                      { name: 'Google & YouTube Ads', href: '/services/digital-marketing#google-youtube-ads' },
-                      { name: 'SEO', href: '/services/digital-marketing#seo' },
-                      { name: 'Telegram Promotion', href: '/services/digital-marketing#telegram-promotion' },
-                      { name: 'Social Media Management', href: '/services/digital-marketing#social-media-management' },
-                      { name: 'Email Marketing', href: '/services/digital-marketing#email-marketing' }
+                        { name: 'Facebook Ads', href: '/services/digital-marketing#facebook-ads' },
+                        { name: 'Instagram Marketing', href: '/services/digital-marketing#instagram-marketing' },
+                        { name: 'Google & YouTube Ads', href: '/services/digital-marketing#google-youtube-ads' },
+                        { name: 'SEO', href: '/services/digital-marketing#seo' },
+                        { name: 'Telegram Promotion', href: '/services/digital-marketing#telegram-promotion' },
+                        { name: 'Social Media Management', href: '/services/digital-marketing#social-media-management' },
+                        { name: 'Email Marketing', href: '/services/digital-marketing#email-marketing' }
                     ]
-                  },                  
+                },
                 {
                     title: 'Blockchain Development',
                     href: null,
@@ -127,7 +128,6 @@ const Navbar = () => {
                 { name: 'Graphics Design', href: '/solutions/Beep-shop' },
                 { name: 'Blockchain', href: '/solutions/Beep-messenger' },
                 { name: 'Digital Marketing', href: '/solutions/on-demand-delivery' },
-                
             ]
         },
         { name: 'Work', href: '/work', hasDropdown: false },
@@ -165,67 +165,66 @@ const Navbar = () => {
         setActiveDropdown(null);
     };
 
-
     return (
         <nav
             className={`fixed top-0 left-0 w-full bg-white z-50 transition-all duration-300 ${scrolled ? 'shadow-md' : ''}`}
             onMouseLeave={closeAllDropdowns}
         >
-            <div className="container mx-auto max-w-7xl ">
-                <div className="flex justify-between items-center h-20">
+            <div className="container mx-auto pr-8 xl:px-8 2xl:max-w-7xl">
+                <div className="flex justify-between items-center h-16 md:h-18 lg:h-20">
                     {/* Logo */}
                     <div className="flex items-center">
                         <Link href="/" className="flex items-center" onClick={closeAllDropdowns}>
-                            <div className="relative w-30 h-20">
+                            <div className="relative w-30 h-20 md:w-28 md:h-16 lg:w-30 lg:h-20 ml-[-14] lg:ml-[-48px]">
                                 <Image
                                     src="/logo.png"
                                     alt="FoxBeep Logo"
                                     fill
-                                    className="object-contain ml-[-30px]"
+                                    className="object-contain ml-[-10px] md:ml-[-20px] lg:ml-[-30px]"
                                     priority
                                 />
                             </div>
                         </Link>
                     </div>
 
-                    {/* Desktop Navigation */}
-                    <div className="hidden lg:flex items-center space-x-8">
+                    {/* Desktop Navigation - hidden on mobile, shown on medium and up */}
+                    <div className="hidden md:flex items-center space-x-1 lg:space-x-4 xl:space-x-8">
                         {navItems.map((item, index) => (
                             <div key={index} className="relative group">
                                 <Link
                                     href={item.href}
-                                    className={`font-medium text-lg hover:text-purple-500 transition-colors duration-200 flex items-center ${item.active ? 'text-purple-500' : 'text-gray-800'}`}
+                                    className={`font-medium text-sm lg:text-base xl:text-lg hover:text-purple-500 transition-colors duration-200 flex items-center ${item.active ? 'text-purple-500' : 'text-gray-800'}`}
                                     onMouseEnter={() => item.hasDropdown && setActiveDropdown(index)}
                                 >
                                     {item.name}
                                     {item.hasDropdown && (
-                                        <ChevronDown size={16} className="ml-1 transition-transform group-hover:rotate-180 duration-200" />
+                                        <ChevronDown size={14} className="ml-1 transition-transform group-hover:rotate-180 duration-200" />
                                     )}
                                 </Link>
 
                                 {item.hasDropdown && activeDropdown === index && (
                                     <div className="fixed left-0 w-full bg-white border-t border-gray-100 shadow-lg z-20"
-                                        style={{ top: '5rem' }}>
-                                        <div className="container mx-auto py-8">
+                                        style={{ top: '4rem' }}>
+                                        <div className="container mx-auto py-4 md:py-6 lg:py-8 px-4">
                                             {/* Industries/Solutions/Company Style Menu */}
                                             {item.flatMenu && (
-                                                <div className="flex">
+                                                <div className="flex flex-col md:flex-row">
                                                     {/* Left side title */}
-                                                    <div className="w-108 pr-8 border-r border-gray-200 flex justify-center items-center">
-                                                        <h2 className="text-3xl font-bold flex items-center text-black">
-                                                            {item.name}
-                                                            <ArrowRight size={24} className="ml-2 text-purple-500" />
+                                                    <div className="md:w-32 lg:w-40 xl:w-48 pr-0 md:pr-4 lg:pr-8 border-b md:border-b-0  border-gray-200 flex justify-start md:justify-center items-center pb-4 md:pb-0">
+                                                        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold flex items-center text-black">
+                                                            {/* {item.name}
+                                                            <ArrowRight size={20} className="ml-2 text-purple-500" /> */}
                                                         </h2>
                                                     </div>
 
                                                     {/* Right side grid of items */}
-                                                    <div className="flex-1 pl-12">
-                                                        <div className="grid grid-cols-4 gap-y-6 gap-x-8">
+                                                    <div className="flex-1 pt-4 md:pt-0 md:pl-4 lg:pl-8 xl:pl-12">
+                                                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-3 lg:gap-y-6 gap-x-4 lg:gap-x-8">
                                                             {item.items.map((subItem, subIndex) => (
                                                                 <Link
                                                                     key={subIndex}
                                                                     href={subItem.href}
-                                                                    className="text-gray-700 hover:text-purple-500 transition-colors duration-200"
+                                                                    className="text-sm lg:text-base text-gray-700 hover:text-purple-500 transition-colors duration-200"
                                                                     onClick={closeAllDropdowns}
                                                                 >
                                                                     {subItem.name}
@@ -238,38 +237,38 @@ const Navbar = () => {
 
                                             {/* Services Style Menu */}
                                             {!item.flatMenu && item.name === 'Services' && (
-                                                <div className="flex">
+                                                <div className="flex flex-col md:flex-row">
                                                     {/* Left side title */}
-                                                    <div className="w-108 pr-8 border-r border-gray-200 flex justify-center items-center">
-                                                        <h2 className="text-3xl font-bold flex items-center text-black">
-                                                            {item.name}
-                                                            <ArrowRight size={24} className="ml-2 text-purple-500" />
+                                                    <div className="md:w-32 lg:w-40 xl:w-48 pr-0 md:pr-4 lg:pr-8 border-b md:border-b-0 border-gray-200 flex justify-start md:justify-center items-center pb-4 md:pb-0">
+                                                        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold flex items-center text-black">
+                                                            {/* {item.name}
+                                                            <ArrowRight size={20} className="ml-2 text-purple-500" /> */}
                                                         </h2>
                                                     </div>
 
                                                     {/* Right side sections */}
-                                                    <div className="flex-1 pl-12">
-                                                        <div className="grid grid-cols-3 gap-y-8 gap-x-8">
+                                                    <div className="flex-1 pt-4 md:pt-0 md:pl-4 lg:pl-8 xl:pl-12">
+                                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 lg:gap-y-8 gap-x-4 lg:gap-x-8">
                                                             {item.sections.map((section, sectionIndex) => (
                                                                 <div key={sectionIndex}>
                                                                     {section.href ? (
                                                                         <Link
                                                                             href={section.href}
-                                                                            className="font-semibold text-lg mb-4 block hover:text-purple-500 transition-colors duration-200"
+                                                                            className="font-semibold text-sm lg:text-base xl:text-lg mb-2 lg:mb-4 block hover:text-purple-500 transition-colors duration-200"
                                                                         >
                                                                             {section.title}
                                                                         </Link>
                                                                     ) : (
-                                                                        <h3 className="font-semibold text-lg mb-4">
+                                                                        <h3 className="font-semibold text-sm lg:text-base xl:text-lg mb-2 lg:mb-4">
                                                                             {section.title}
                                                                         </h3>
                                                                     )}
-                                                                    <div className="space-y-3">
+                                                                    <div className="space-y-2 lg:space-y-3">
                                                                         {section.items && section.items.map((subItem, subIndex) => (
                                                                             <Link
                                                                                 key={subIndex}
                                                                                 href={subItem.href}
-                                                                                className="block text-gray-700 hover:text-purple-500 transition-colors duration-200"
+                                                                                className="block text-xs lg:text-sm text-gray-700 hover:text-purple-500 transition-colors duration-200"
                                                                                 onClick={closeAllDropdowns}
                                                                             >
                                                                                 {subItem.name}
@@ -289,24 +288,25 @@ const Navbar = () => {
                         ))}
                     </div>
 
-                    {/* Contact & CTA */}
-                    <div className="hidden lg:flex items-center space-x-4">
-                        <Link href="tel:977-9810570201" className="flex items-center text-gray-800 hover:text-purple-600 transition-colors">
-                            <Phone size={18} className="mr-2" />
-                            <span>+977-9810570201</span>
+                    {/* Contact & CTA - hidden on mobile, visible on medium screens and up */}
+                    <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
+                        <Link href="tel:977-9810570201" className="flex items-center text-xs lg:text-sm text-gray-800 hover:text-purple-600 transition-colors">
+                            <Phone size={14} className="mr-1 lg:mr-2" />
+                            <span className="hidden lg:inline">+977-9810570201</span>
+                            <span className="lg:hidden">Call</span>
                         </Link>
                         <Link
                             href="/contact"
-                            className="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-colors"
+                            className="bg-black text-white px-3 lg:px-6 py-2 lg:py-3 text-xs lg:text-sm rounded-full hover:bg-gray-800 transition-colors"
                         >
                             Get in Touch
                         </Link>
                     </div>
 
-                    {/* Mobile menu button */}
-                    <div className="lg:hidden flex items-center">
+                    {/* Mobile menu button - visible on mobile, hidden on medium screens and up */}
+                    <div className="md:hidden flex items-center">
                         <button
-                            className="text-gray-600 hover:text-purple-500 focus:outline-none mr-4"
+                            className="text-gray-600 hover:text-purple-500 focus:outline-none"
                             onClick={() => setIsOpen(!isOpen)}
                         >
                             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -315,9 +315,9 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Mobile Navigation */}
+            {/* Mobile Navigation - Only visible on mobile */}
             {isOpen && (
-                <div className="lg:hidden bg-white border-t border-gray-200 overflow-hidden max-h-screen overflow-y-auto">
+                <div className="md:hidden bg-white border-t border-gray-200 overflow-hidden max-h-screen overflow-y-auto">
                     <div className="container mx-auto px-4 py-3">
                         <ul className="space-y-1">
                             {navItems.map((item, index) => (

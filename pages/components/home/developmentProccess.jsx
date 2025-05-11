@@ -90,8 +90,8 @@ export default function DevelopmentProcess() {
     }, [steps.length]);
 
     return (
-        <div ref={sectionRef} className="bg-black text-white min-h-[150vh] md:min-h-[200vh] lg:min-h-[300vh] w-full py-16 relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4">
+        <div ref={sectionRef} className="bg-black text-white min-h-[150vh] md:min-h-[200vh] lg:min-h-[300vh] w-full py-16 relative overflow-hidden px-6 sm:px-6 md:px-8">
+            <div className="max-w-7xl mx-auto ">
                 {/* Header Section - maintain original desktop styling */}
                 <div className="mb-20 space-y-4">
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">

@@ -164,7 +164,7 @@ export default function VideoEditingShowcase() {
             <h3 className="text-xl font-bold mb-2 text-purple-300">Key Features</h3>
             <div className="flex flex-wrap gap-2">
               {categories[activeCategory].features.map((feature, idx) => (
-                <span key={idx} className="bg-gray-100 bg-opacity-50 text-purple-100 px-3 py-1 rounded-xl text-sm">
+                <span key={idx} className="bg-gray-100 bg-opacity-50 text-gray-800 px-3 py-1 rounded-xl text-sm">
                   {feature}
                 </span>
               ))}

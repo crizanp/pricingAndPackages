@@ -158,7 +158,7 @@ export default function IOSAppDevelopment() {
       <ServiceBanner {...serviceData} />
 
       {/* Full-screen image section below the banner */}
-      <div className="w-full relative h-screen">
+      <div className="w-full relative sm:h-screen">
         <img
           src="https://webandcrafts.com/_next/image?url=https%3A%2F%2Fadmin.wac.co%2Fuploads%2F10_Best_i_OS_Development_Tools_bdf3e41836.png&w=4500&q=90"
           alt="iOS App Development"

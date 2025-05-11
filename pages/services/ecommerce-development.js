@@ -160,7 +160,7 @@ export default function ECommerce() {
       <ServiceBanner {...serviceData} />
 
       {/* Full-screen image section below the banner */}
-      <div className="w-full relative h-screen">
+      <div className="w-full relative sm:h-screen">
         <img
           src="https://img.freepik.com/free-photo/online-shopping-concept-shopping-cart-with-bags-keyboard_23-2148521553.jpg?w=740"
           alt="eCommerce Development"

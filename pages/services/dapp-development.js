@@ -158,7 +158,7 @@ export default function DappDevelopment() {
       <ServiceBanner {...serviceData} />
 
       {/* Full-screen image section below the banner */}
-      <div className="w-full relative h-screen">
+      <div className="w-full relative sm:h-screen">
         <img
           src="https://images.unsplash.com/photo-1639322537228-f710d846310a"
           alt="dApp Development"

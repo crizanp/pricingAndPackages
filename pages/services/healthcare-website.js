@@ -158,7 +158,7 @@ export default function HealthcareWebsite() {
       <ServiceBanner {...serviceData} />
 
       {/* Full-screen image section below the banner */}
-      <div className="w-full relative h-screen">
+      <div className="w-full relative sm:h-screen">
         <img
           src="https://i0.wp.com/practis.com/wp-content/uploads/2022/12/shutterstock_1753066349.jpeg?fit=1000%2C667&ssl=1"
           alt="Healthcare Website Development"

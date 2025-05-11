@@ -158,7 +158,7 @@ export default function ManufacturingWebsite() {
       <ServiceBanner {...serviceData} />
 
       {/* Full-screen image section below the banner */}
-      <div className="w-full relative h-screen">
+      <div className="w-full relative sm:h-screen">
         <img
           src="https://inter-web.co/wp-content/uploads/2021/10/website-development.jpg"
           alt="Manufacturing Facility"

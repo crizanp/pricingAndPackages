@@ -49,7 +49,7 @@ const BlogCard = ({ post, featured = false }) => {
 
   return (
     <div
-      className={`group rounded-xl overflow-hidden shadow-md transition-all duration-300 h-full flex flex-col bg-white ${
+      className={`group rounded-xl overflow-hidden shadow-md transition-all duration-300 h-full flex flex-col bg-white  ${
         featured ? "md:col-span-2 md:row-span-1" : ""
       } ${isHovered ? "shadow-xl scale-[1.01]" : ""}`}
       onMouseEnter={() => setIsHovered(true)}
@@ -92,7 +92,10 @@ export default function BlogShowcase() {
     activeTab === "All" ? blogPosts : blogPosts.filter((post) => post.category === activeTab);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div
+    className="w-full bg-white py-3 sm:py-4 md:py-6  overflow-hidden px-4 sm:px-6 md:px-8"
+>
+    <div className="max-w-7xl mx-auto  py-12 ">
       <div className="mb-16 space-y-4 ">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">Our Blog</h1>
         <div className="flex ">
@@ -130,6 +133,6 @@ export default function BlogShowcase() {
           />
         ))}
       </div>
-    </div>
+    </div></div>
   );
 }

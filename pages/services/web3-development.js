@@ -158,7 +158,7 @@ export default function Web3Development() {
       <ServiceBanner {...serviceData} />
 
       {/* Full-screen image section below the banner */}
-      <div className="w-full relative h-screen">
+      <div className="w-full relative sm:h-screen">
         <img
           src="https://images.unsplash.com/photo-1642104704074-907c0698cbd9"
           alt="Web3 Development"

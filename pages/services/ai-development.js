@@ -216,7 +216,7 @@ export default function AIDevelopment() {
       <ServiceBanner {...serviceData} />
 
       {/* Full-screen image section below the banner */}
-      <div className="w-full relative h-screen">
+      <div className="w-full relative sm:h-screen">
         <img
           src="https://img.freepik.com/free-photo/ai-nuclear-energy-background-future-innovation-disruptive-technology_53876-129783.jpg"
           alt="AI Development"
@@ -265,7 +265,7 @@ export default function AIDevelopment() {
         faqItems={faqItems}
         backgroundColor="bg-white"
         textColor="text-gray-700"
-        questionSize="text-3xl"
+        questionSize="text-2xl"
       />     
       <TextHeroSection />
     </div>
