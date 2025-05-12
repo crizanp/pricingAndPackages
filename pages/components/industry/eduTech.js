@@ -12,15 +12,15 @@ export const EdtechServices = ({
   highlightColor = 'bg-lime-300'
 }) => {
   return (
-    <div className="max-w-7xl mx-auto py-12 px-4 md:px-12 bg-white">
-      <div className="container mx-auto">
+    <div className="max-w-7xl mx-auto py-12 px-4 xl:px-0  bg-white">
+      <div className=" mx-auto">
         {/* Main heading with highlight */}
         
        
         {/* Featured service section */}
         <div className="mb-8">
-          <div className={`${highlightColor} py-4 px-6 mb-8`}>
-            <h3 className="text-2xl md:text-3xl font-bold">{featuredService}</h3>
+          <div className={`${highlightColor} py-4 mb-8 px-2`}>
+            <h3 className="text-3xl md:text-5xl ">{featuredService}</h3>
           </div>
          
           <div className="flex flex-col md:flex-row gap-8">
@@ -45,8 +45,8 @@ export const EdtechServices = ({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featureDetails.map((feature, index) => (
               <div key={index} className="mb-8">
-                <h4 className="text-xl font-bold mb-4">{feature.title}</h4>
-                <p className="text-base">{feature.description}</p>
+                <h4 className="text-2xl font-bold mb-4">{feature.title}</h4>
+                <p className="text-lg">{feature.description}</p>
               </div>
             ))}
           </div>

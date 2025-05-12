@@ -69,7 +69,7 @@ export default function SpecificMarketingBanner({
   const restOfTitle = titleWords.slice(1).join(' ');
   
   return (
-    <div className={`${backgroundColor} py-16 md:py-24`} id={id || `title`}>
+    <div className={`${backgroundColor} py-16 md:py-24 `} id={id || `title`}>
       <div className={`flex flex-col md:flex-row ${compactMode ? 'sm:py-8' : 'sm:py-16'} sm:border ${borderColor} relative ${fullWidth ? 'w-full' : 'max-w-7xl mx-auto'} ${textColor} overflow-hidden rounded-xl sm:shadow-lg`}>
         {/* Left content area */}
         <div className={`w-full ${showFeatures ? 'md:w-3/5' : 'md:w-1/2'} py-8 md:py-12 px-6 md:px-10 z-10`}>

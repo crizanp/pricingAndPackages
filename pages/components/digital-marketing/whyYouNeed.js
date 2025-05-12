@@ -60,7 +60,7 @@ const DigitalMarketingShowcase = () => {
         }]
 
     return (
-        <div className="max-w-7xl mx-auto  py-16 bg-white text-black">
+        <div className="max-w-7xl mx-auto px-4 py-16 bg-white text-black">
             <div className="text-left sm:text-center mb-10">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">
                     <span className="text-black">RESULT DRIVEN</span> <span className="text-black">DIGITAL MARKETING COMPANY</span>

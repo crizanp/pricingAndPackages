@@ -6,6 +6,17 @@ export default function VideoEditingShowcase() {
   const [activeCategory, setActiveCategory] = useState(null);
   const [hoverCategory, setHoverCategory] = useState(null);
   const detailsRef = useRef(null);
+  
+  // Sample YouTube video IDs corresponding to each category
+  const videoIds = [
+    "dQw4w9WgXcQ", // YouTube Video Editing
+    "2EIeUlvHAiM", // Ads & Commercial Editing
+    "jNQXAC9IVRw", // Social Media Video Editing
+    "pTQnwB8UoTI", // Corporate Video Editing
+    "k1BneeJTDcU", // Event Video Editing
+    "XqZsoesa55w", // Short Video Creation
+    "U9t-slLl30E"  // Whiteboard Animation
+  ];
 
   // Effect to scroll to details when activeCategory changes on mobile
   useEffect(() => {
@@ -33,43 +44,43 @@ export default function VideoEditingShowcase() {
     {
       title: "YouTube Video Editing",
       description: "Tailored editing for YouTube creators to enhance watch time, engagement, and subscriber growth.",
-      image: "https://media.screenpal.com/blog/wp-content/uploads/2023/03/Free_Video_Editor.webp",
+      image: "/images/videoIcon/youtube.png",
       features: ["Engaging Intros/Outros", "Jump Cuts", "On-screen Text & Effects"]
     },
     {
       title: "Ads & Commercial Editing",
       description: "High-impact editing for advertisements and commercials designed to convert and captivate.",
-      image: "https://wp.disruptiveadvertising.com/wp-content/uploads/2017/11/video-ad-editing-blog.jpg",
+      image: "/images/videoIcon/commercial.png",
       features: ["Brand Messaging", "Product Highlighting", "Call-To-Action Overlays"]
     },
     {
       title: "Social Media Video Editing",
       description: "Optimized video formats for platforms like Instagram, TikTok, and Facebook to boost shares and reach.",
-      image: "https://cdn.prod.website-files.com/603f5d1df4ee236b69719ff2/659436b59d95556184643b68_role%20of%20video%20editing%20specialist.webp",
+      image: "/images/videoIcon/social-media.png",
       features: ["Vertical Formats", "Trendy Transitions", "Platform-Specific Captions"]
     },
     {
       title: "Corporate Video Editing",
       description: "Professional editing for corporate content like promos, training videos, and internal communications.",
-      image: "https://cdn.prod.website-files.com/65e72116758ee0365601bcec/6627c057d2411e6f100bf278_Professional-Editing-Business.jpg",
+      image: "/images/videoIcon/corporate.png",
       features: ["Clean Transitions", "Branded Graphics", "Subtle Background Music"]
     },
     {
       title: "Event Video Editing",
       description: "Dynamic editing for weddings, conferences, and live events to preserve the energy and emotion.",
-      image: "https://www.adobe.com/content/dam/cc/uk/products/professional-corporate-and-events-video-editing/corporate_marquee-uk-seo-1200x676.jpg",
+      image: "/images/videoIcon/event.png",
       features: ["Highlight Reels", "Multi-Cam Syncing", "Emotion-Driven Cuts"]
     },
     {
       title: "Short Video Creation",
       description: "Dynamic editing for weddings, conferences, and live events to preserve the energy and emotion.",
-      image: "https://static-cse.canva.com/blob/1145855/create_short-video-maker_hero_desktop-min.jpg",
+      image: "/images/videoIcon/short-video.png",
       features: ["Highlight Reels", "Multi-Cam Syncing", "Emotion-Driven Cuts"]
     },
     {
       title: "Whiteboard Animation",
       description: "Clear and creative whiteboard-style animations to explain concepts or pitch ideas visually.",
-      image: "https://img.freepik.com/free-psd/3d-illustration-cartoon-character-young-working-woman-standing-point-white-board-present-work-white_1150-52374.jpg",
+      image: "/images/videoIcon/whiteboard.png",
       features: ["Hand-Drawn Effects", "Voiceover Syncing", "Script-Based Flow"]
     }
   ];
@@ -99,6 +110,16 @@ export default function VideoEditingShowcase() {
     const y = radius * Math.sin(angle);
 
     return { x, y };
+  };
+
+  // Get current YouTube embed URL
+  const getYouTubeEmbedUrl = () => {
+    if (activeCategory !== null) {
+      const videoId = videoIds[activeCategory];
+      return `https://www.youtube.com/embed/${videoId}?autoplay=0&controls=1&rel=0`;
+    }
+    // Default video when no category is selected
+    return `https://www.youtube.com/embed/${videoIds[0]}?autoplay=0&controls=1&rel=0`;
   };
 
   return (
@@ -152,11 +173,14 @@ export default function VideoEditingShowcase() {
             </div>
 
             <div className="mb-4 rounded-xl overflow-hidden h-48">
-              <img
-                src={categories[activeCategory].image}
-                alt={categories[activeCategory].title}
-                className="w-full h-full object-cover"
-              />
+              <iframe 
+                className="w-full h-full"
+                src={getYouTubeEmbedUrl()}
+                title={`${categories[activeCategory].title} video`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
 
             <p className="text-base mb-4 text-gray-100">{categories[activeCategory].description}</p>
@@ -175,14 +199,13 @@ export default function VideoEditingShowcase() {
 
       {/* Desktop View - Orbital Layout */}
       <div className="hidden md:flex flex-col md:flex-row min-h-[600px] lg:h-[800px]">
-        {/* Left side - Circle showcase */}
+        {/* Left side - Circle showcase with YouTube embed in center */}
         <div className="w-full md:w-1/2 h-full flex items-center justify-center relative">
           <div className="relative w-full max-w-3xl aspect-square">
-            {/* Central circle with company logo */}
-            <div className="absolute left-1/2 top-1/2 w-64 h-64 -ml-32 -mt-32 rounded-full bg-purple-700 shadow-xl flex items-center justify-center z-10">
-              <div className="rounded-full overflow-hidden w-56 h-56 border-4 border-white">
-                <img src="https://cdn.prod.website-files.com/65e72116758ee0365601bcec/6627c057d2411e6f100bf278_Professional-Editing-Business.jpg" alt="Company Logo" className="w-full h-full object-cover" />
-              </div>
+            {/* Central circle with YouTube embed */}
+            <div className="absolute left-1/2 top-1/2 w-64 h-64 -ml-32 -mt-32 rounded-full bg-purple-700 shadow-xl flex items-center justify-center z-10 overflow-hidden">
+            <img src="/images/videoIcon/main-video.png" alt="Company Logo" className="w-full h-full object-cover" />
+
             </div>
 
             {/* Orbital categories */}
@@ -227,15 +250,17 @@ export default function VideoEditingShowcase() {
             <div className="bg-gray-900 bg-opacity-80 rounded-2xl w-full h-[90%] p-6 overflow-hidden text-white shadow-2xl">
               <div className="flex justify-between items-start mb-4">
                 <h2 className="text-4xl font-bold text-white py-4">{categories[activeCategory].title}</h2>
-                
               </div>
 
               <div className="mb-6 rounded-xl overflow-hidden h-72">
-                <img
-                  src={categories[activeCategory].image}
-                  alt={categories[activeCategory].title}
-                  className="w-full h-full object-cover"
-                />
+                <iframe 
+                  className="w-full h-full"
+                  src={getYouTubeEmbedUrl()}
+                  title={`${categories[activeCategory].title} video`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </div>
 
               <p className="text-xl mb-6 text-purple-100">{categories[activeCategory].description}</p>

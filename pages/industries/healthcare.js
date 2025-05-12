@@ -192,11 +192,11 @@ const Healthcare = () => {
       <Hero {...heroContent} />
       <TextHighlight {...textHeroContent} />
       <BrandSlider />
-      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-12 my-16">
+      <div className="max-w-7xl mx-auto px-4 xl:px-0 my-16">
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold relative inline-block mb-6">
+        <h2 className="text-4xl md:text-5xl relative inline-block mb-6">
           <span className="bg-blue-300 absolute -bottom-1 left-0 w-full h-4 -z-10 rounded-sm"></span>
-          Foxbeep services we offer
+          Foxbeep services
         </h2>
 
         {/* Intro Text */}

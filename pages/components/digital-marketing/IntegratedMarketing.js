@@ -25,7 +25,7 @@ export default function SpecificMarketingBanner({
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden py-24">
+    <div className="relative w-full overflow-hidden py-24 sm:px-0 px-4">
       {/* Background image covering the entire component */}
       <div className="absolute inset-0 w-full h-full">
         <img

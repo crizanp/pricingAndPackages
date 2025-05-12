@@ -9,7 +9,7 @@ export const EducationalServicesDetail = ({
   
   return (
     <div className="w-full py-12 px-4 md:px-12 bg-white">
-      <div className="container mx-auto">
+      <div className=" mx-auto">
         {/* Services tabs */}
         <div className="flex flex-wrap gap-2 mb-8">
           {services.map((service, index) => (
