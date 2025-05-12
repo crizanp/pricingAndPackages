@@ -65,13 +65,13 @@ export default function AboutPage() {
         },
         {
             "name": "Srijan Pokhrel",
-            "role": "CTO",
+            "role": "Co-Founder & CTO",
             "specialty": "Software Developer",
             "quote": "Every line of code is a step toward smarter, more intuitive technology."
         },
         {
             "name": "Suwani Baral",
-            "role": "Design Director",
+            "role": "Co-Founder and Design Director",
             "specialty": "Video and Production",
             "quote": "Visual storytelling transforms ideas into experiences people remember."
         }
@@ -218,37 +218,36 @@ export default function AboutPage() {
                 ref={(el) => registerRef('team', el)}
                 className="max-w-7xl mx-auto px-4 py-24 bg-gray-50 -mx-4 px-8"
             >
-                <h2 className="text-5xl font-black mb-16 tracking-tight">THE TEAM</h2>
+                <h2 className="text-5xl font-black mb-16 tracking-tight">THE Board TEAM</h2>
 
                 <div className="flex flex-wrap -mx-4">
                     {teamMembers.map((member, index) => (
-  <div 
-    key={index} 
-    className={`w-full md:w-1/2 lg:w-1/3 px-4 mb-16 transform transition-all duration-700 ${
-      isIntersecting.team ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-    }`}
-    style={{ transitionDelay: `${index * 150}ms` }}
-    onMouseEnter={() => handleMouseEnter(member.specialty)}
-    onMouseLeave={handleMouseLeave}
-  >
-    <div className="relative group aspect-w-1 aspect-h-1 bg-gray-900 overflow-hidden rounded-2xl shadow-lg">
-      <img 
-        src={`/images/teams/${member.name}.jpg`} 
-        alt={member.name} 
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-      />
-      {/* Overlay */}
-<div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent transition duration-300"></div>
+                        <div
+                            key={index}
+                            className={`w-full md:w-1/2 lg:w-1/3 px-4 mb-16 transform transition-all duration-700 ${isIntersecting.team ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+                                }`}
+                            style={{ transitionDelay: `${index * 150}ms` }}
+                            onMouseEnter={() => handleMouseEnter(member.specialty)}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <div className="relative group aspect-w-1 aspect-h-1 bg-gray-900 overflow-hidden rounded-2xl shadow-lg">
+                                <img
+                                    src={`/images/teams/${member.name}.jpg`}
+                                    alt={member.name}
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                />
+                                {/* Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent transition duration-300"></div>
 
-      {/* Text content */}
-      <div className="absolute bottom-0 left-0 right-0 p-4 text-white transition-opacity duration-500 opacity-100 group-hover:opacity-100">
-        <h3 className="text-xl font-semibold">{member.name}</h3>
-        <p className="text-sm">{member.role}</p>
-        <p className="text-xs italic mt-1">{member.quote}</p>
-      </div>
-    </div>
-  </div>
-))}
+                                {/* Text content */}
+                                <div className="absolute bottom-0 left-0 right-0 p-4 text-white transition-opacity duration-500 opacity-100 group-hover:opacity-100">
+                                    <h3 className="text-xl font-semibold">{member.name}</h3>
+                                    <p className="text-sm">{member.role}</p>
+                                    <p className="text-xs italic mt-1">{member.quote}</p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
 
                 </div>
             </div>
