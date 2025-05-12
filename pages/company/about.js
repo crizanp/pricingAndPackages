@@ -1,4 +1,5 @@
 import TextHeroSection from '@/components/home/textHero';
+import Image from 'next/image';
 import React, { useState, useEffect, useRef } from 'react';
 
 export default function AboutPage() {
@@ -55,13 +56,13 @@ export default function AboutPage() {
         sectionRefs.current[id] = element;
     };
 
-    const teamMembers = [
-
+    {
+    teamMembers: [
         {
             "name": "Krish Khadka",
             "role": "Founder & CEO",
             "specialty": "Strategic Vision",
-            "quote": "Great leadership means seeing the future clearly—and building the path to get there."
+            "quote": "Great leadership means seeing the future clearly&mdash;and building the path to get there."
         },
         {
             "name": "Srijan Pokhrel",
@@ -75,8 +76,8 @@ export default function AboutPage() {
             "specialty": "Video and Production",
             "quote": "Visual storytelling transforms ideas into experiences people remember."
         }
-
-    ];
+    ]
+}
 
     const clientLogos = [
         "ACME", "GLOBEX", "INITECH", "STARK", "WAYNE", "HOOLI", "DUNDER", "PIED"
@@ -232,10 +233,12 @@ export default function AboutPage() {
                             onMouseLeave={handleMouseLeave}
                         >
                             <div className="relative group aspect-w-1 aspect-h-1 bg-gray-900 overflow-hidden rounded-2xl shadow-lg">
-                                <img
+                                <Image
                                     src={`/images/teams/${member.name}.jpg`}
                                     alt={member.name}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="transition-transform duration-500 group-hover:scale-105"
                                 />
                                 {/* Overlay */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent transition duration-300"></div>
@@ -244,7 +247,7 @@ export default function AboutPage() {
                                 <div className="absolute bottom-0 left-0 right-0 p-4 text-white transition-opacity duration-500 opacity-100 group-hover:opacity-100">
                                     <h3 className="text-xl font-semibold">{member.name}</h3>
                                     <p className="text-sm">{member.role}</p>
-                                    <p className="text-xs italic mt-1">"{member.quote}"</p>
+                                    <p className="text-xs italic mt-1">{`"${member.quote}"`}</p>
                                 </div>
                             </div>
                         </div>
