@@ -1,11 +1,11 @@
 // pages/pricing.js
 import React, { useState, useEffect } from 'react';
-import Sidebar from './components/Sidebar';
-import PackageCard from './components/PackageCard';
+import Sidebar from '../components/Sidebar';
+import PackageCard from '../components/PackageCard';
 import { packagesData as data } from '../dummyContent.js';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import Navbar from './components/Navbar';
+import Navbar from '../components/Navbar';
 
 export default function PricingPage() {
   const { categories, packages } = data;
