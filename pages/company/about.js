@@ -218,7 +218,7 @@ export default function AboutPage() {
                 ref={(el) => registerRef('team', el)}
                 className="max-w-7xl mx-auto px-4 py-24 bg-gray-50 -mx-4 px-8"
             >
-                <h2 className="text-5xl font-black mb-16 tracking-tight">THE Board TEAM</h2>
+                <h2 className="text-5xl font-black mb-16 tracking-tight">THE BOARD TEAM</h2>
 
                 <div className="flex flex-wrap -mx-4">
                     {teamMembers.map((member, index) => (
