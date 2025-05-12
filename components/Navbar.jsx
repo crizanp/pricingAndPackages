@@ -167,7 +167,7 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`fixed top-0 left-0 w-full bg-white z-50 text-black transition-all duration-300 ${scrolled ? 'shadow-md' : ''}`}
+            className={`fixed top-0 left-0 px-0 lg:px-4 w-full bg-white z-50 text-black transition-all duration-300 ${scrolled ? 'shadow-md' : ''}`}
             onMouseLeave={closeAllDropdowns}
         >
             <div className="container mx-auto pr-8 xl:px-8 2xl:max-w-7xl">
