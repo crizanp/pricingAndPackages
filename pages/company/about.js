@@ -1,6 +1,6 @@
 import TextHeroSection from '@/components/home/textHero';
-import Image from 'next/image';
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 export default function AboutPage() {
     const [isIntersecting, setIsIntersecting] = useState({});
@@ -56,8 +56,7 @@ export default function AboutPage() {
         sectionRefs.current[id] = element;
     };
 
-    {
-    teamMembers: [
+    const teamMembers = [
         {
             "name": "Krish Khadka",
             "role": "Founder & CEO",
@@ -76,8 +75,7 @@ export default function AboutPage() {
             "specialty": "Video and Production",
             "quote": "Visual storytelling transforms ideas into experiences people remember."
         }
-    ]
-}
+    ];
 
     const clientLogos = [
         "ACME", "GLOBEX", "INITECH", "STARK", "WAYNE", "HOOLI", "DUNDER", "PIED"
@@ -145,7 +143,7 @@ export default function AboutPage() {
 
                     <div className="max-w-3xl">
                         <p className="text-3xl font-light mb-6 leading-snug">
-                            A team of digital architects building tomorrow's solutions today.
+                            A team of digital architects building tomorrow&apos;s solutions today.
                         </p>
                         <p className="text-xl mb-12">
                             We blend technological expertise with creative vision to transform ideas into impactful digital experiences that drive real business results.
@@ -176,11 +174,11 @@ export default function AboutPage() {
                         </p>
 
                         <p className="text-xl mb-8">
-                            Our journey has been defined by continuous evolution—embracing new technologies, refining our processes, and expanding our expertise to meet the changing needs of our clients and the market.
+                            Our journey has been defined by continuous evolution&mdash;embracing new technologies, refining our processes, and expanding our expertise to meet the changing needs of our clients and the market.
                         </p>
 
                         <p className="text-xl">
-                            Today, we blend technical expertise with creative thinking to deliver solutions that are not just functional, but transformative. Our approach combines rigorous methodology with bold innovation, ensuring we build systems that solve today's challenges while anticipating tomorrow's needs.
+                            Today, we blend technical expertise with creative thinking to deliver solutions that are not just functional, but transformative. Our approach combines rigorous methodology with bold innovation, ensuring we build systems that solve today&apos;s challenges while anticipating tomorrow&apos;s needs.
                         </p>
                     </div>
                 </div>
@@ -247,7 +245,7 @@ export default function AboutPage() {
                                 <div className="absolute bottom-0 left-0 right-0 p-4 text-white transition-opacity duration-500 opacity-100 group-hover:opacity-100">
                                     <h3 className="text-xl font-semibold">{member.name}</h3>
                                     <p className="text-sm">{member.role}</p>
-                                    <p className="text-xs italic mt-1">{`"${member.quote}"`}</p>
+                                    <p className="text-xs italic mt-1">&ldquo;{member.quote}&rdquo;</p>
                                 </div>
                             </div>
                         </div>
@@ -269,7 +267,7 @@ export default function AboutPage() {
                             We believe that great technology should be both powerful and accessible. Our process combines deep technical expertise with human-centered design principles to create solutions that not only work flawlessly but feel intuitive to use.
                         </p>
                         <p className="text-xl">
-                            Every project begins with understanding—not just requirements, but the people who will use the solution, the business context, and the long-term objectives. This foundation of understanding guides every decision we make throughout the development process.
+                            Every project begins with understanding&mdash;not just requirements, but the people who will use the solution, the business context, and the long-term objectives. This foundation of understanding guides every decision we make throughout the development process.
                         </p>
                     </div>
 
