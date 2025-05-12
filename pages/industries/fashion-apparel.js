@@ -1,9 +1,9 @@
-import BrandSlider from "../components/home/companySponsered";
-import TextHeroSection from "../components/home/textHero";
-import { EdtechServices } from "../components/industry/eduTech";
-import { Hero } from "../components/industry/hero";
-import { TextHighlight } from "../components/industry/textHero";
-import FAQSection from "../components/services/faqSection";
+import BrandSlider from "../../components/home/companySponsered";
+import TextHeroSection from "../../components/home/textHero";
+import { EdtechServices } from "../../components/industry/eduTech";
+import { Hero } from "../../components/industry/hero";
+import { TextHighlight } from "../../components/industry/textHero";
+import FAQSection from "../../components/services/faqSection";
 
 const FashionApparel = () => {
   // This data would typically come from props, CMS, or API

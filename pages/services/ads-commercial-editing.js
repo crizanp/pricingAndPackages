@@ -1,12 +1,12 @@
-import BrandSlider from "../components/home/companySponsered";
-import TextHeroSection from "../components/home/textHero";
-import FAQSection from "../components/services/faqSection";
-import HeroSection from "../components/video-service/hero";
-import VideoMetrics from "../components/video-service/matrics";
-import TextHero from "../components/video-service/textHero";
-import TypesVideo from "../components/video-service/types";
-import HowWeMakeSection from "../components/video-service/videoHighlight";
-import VideoEditingWorkflow from "../components/video-service/videoWorkflow";
+import BrandSlider from "../../components/home/companySponsered";
+import TextHeroSection from "../../components/home/textHero";
+import FAQSection from "../../components/services/faqSection";
+import HeroSection from "../../components/video-service/hero";
+import VideoMetrics from "../../components/video-service/matrics";
+import TextHero from "../../components/video-service/textHero";
+import TypesVideo from "../../components/video-service/types";
+import HowWeMakeSection from "../../components/video-service/videoHighlight";
+import VideoEditingWorkflow from "../../components/video-service/videoWorkflow";
 
 export default function Home() {
   const faqItems = [

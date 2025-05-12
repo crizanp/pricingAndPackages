@@ -1,7 +1,7 @@
 // pages/details/[title].js
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import PackageDetailPage from '../components/PackageDetailPage';
+import PackageDetailPage from '../../components/PackageDetailPage';
 import { packagesData } from '../../dummyContent'; // Make sure this path is correct
 
 export default function PackageDetail() {

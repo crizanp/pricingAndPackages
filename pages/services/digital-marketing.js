@@ -1,11 +1,11 @@
 import { Percent, TrendingUp, Users } from "lucide-react";
-import HeroSection from "../components/digital-marketing/hero";
-import MarketingBanner from "../components/digital-marketing/IntegratedMarketing";
-import DigitalMarketingProcess from "../components/digital-marketing/marketingProcess";
-import SpecificMarketingBanner from "../components/digital-marketing/specificMarketing";
-import DigitalMarketingShowcase from "../components/digital-marketing/whyYouNeed";
-import FAQSection from "../components/services/faqSection";
-import TextHeroSection from "../components/home/textHero";
+import HeroSection from "../../components/digital-marketing/hero";
+import MarketingBanner from "../../components/digital-marketing/IntegratedMarketing";
+import DigitalMarketingProcess from "../../components/digital-marketing/marketingProcess";
+import SpecificMarketingBanner from "../../components/digital-marketing/specificMarketing";
+import DigitalMarketingShowcase from "../../components/digital-marketing/whyYouNeed";
+import FAQSection from "../../components/services/faqSection";
+import TextHeroSection from "../../components/home/textHero";
 
 export default function Home() {
   const faqItems = [

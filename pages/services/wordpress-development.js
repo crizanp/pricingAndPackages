@@ -1,13 +1,13 @@
-import TextHeroSection from "../components/home/textHero";
-import BenefitsSection from "../components/services/BenefitsSection";
-import FAQSection from "../components/services/faqSection";
-import DevProcess from "../components/services/ProcessStep";
-import ServiceCardSlider from "../components/services/ServiceCardSlider";
-import ServicesGrid from "../components/services/ServicesGrid";
-import TeamBanner from "../components/services/shortQuickBanner";
-import IndustrySlider from "../components/services/sliderService";
-import UniqueFeatures from "../components/services/UniqueFeatures";
-import ServiceBanner from "../components/services/upperHero";
+import TextHeroSection from "../../components/home/textHero";
+import BenefitsSection from "../../components/services/BenefitsSection";
+import FAQSection from "../../components/services/faqSection";
+import DevProcess from "../../components/services/ProcessStep";
+import ServiceCardSlider from "../../components/services/ServiceCardSlider";
+import ServicesGrid from "../../components/services/ServicesGrid";
+import TeamBanner from "../../components/services/shortQuickBanner";
+import IndustrySlider from "../../components/services/sliderService";
+import UniqueFeatures from "../../components/services/UniqueFeatures";
+import ServiceBanner from "../../components/services/upperHero";
 
 export default function Wordpress() {
   const serviceData = {

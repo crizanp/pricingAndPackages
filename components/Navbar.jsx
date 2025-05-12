@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDown, Menu, X, Phone, ArrowRight } from 'lucide-react';
-import { useSmoothScroll, handleHashScroll } from '../../hook/scrolling';
+import { useSmoothScroll, handleHashScroll } from '../hook/scrolling';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);

@@ -191,24 +191,24 @@ export default function Footer() {
 
                     {/* Logo & Copyright */}
                     <div className="col-span-1 flex flex-col items-center text-center mb-6 md:mb-0">
-    <div className="mb-2 relative w-34 h-14">
-        <Image
-            src="/transparentLogo.png"
-            alt="FoxBeep Logo"
-            fill
-            className="object-contain"
-            priority
-        />
-    </div>
-    <p className="text-gray-400 text-xs">© 2025 Foxbeep. All Rights Reserved</p>
-    {/* <div className="flex items-center mt-3 text-xs text-gray-400">
+                        <div className="mb-2 relative w-34 h-14">
+                            <Image
+                                src="/transparentLogo.png"
+                                alt="FoxBeep Logo"
+                                fill
+                                className="object-contain"
+                                priority
+                            />
+                        </div>
+                        <p className="text-gray-400 text-xs">© 2025 Foxbeep. All Rights Reserved</p>
+                        {/* <div className="flex items-center mt-3 text-xs text-gray-400">
         <span>Content protected by</span>
         <a href="https://DMCA.com" className="ml-1 hover:text-white">DMCA.com</a>
         <div className="ml-2 bg-white text-black px-2 py-1 rounded text-xs flex items-center">
             DMCA PROTECTED
         </div>
     </div> */}
-</div>
+                    </div>
 
                     {/* Social Links & Legal */}
                     <div className="col-span-1">
