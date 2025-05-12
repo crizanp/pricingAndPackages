@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { ArrowLeft, CheckCircle, HelpCircle, Info, Star, Clock, Tag, FileText } from 'lucide-react';
+import { ArrowLeft, CheckCircle, HelpCircle, Info, FileText } from 'lucide-react';
 import Link from 'next/link';
 
 const PackageDetailPage = ({ packageData }) => {
@@ -11,7 +11,7 @@ const PackageDetailPage = ({ packageData }) => {
 
   // Initialize selected options when package data changes
   useEffect(() => {
-    if (packageData && packageData.pricing) {
+    if (packageData?.pricing) {
       const initialOptions = {};
       const additionalIndices = [];
       
@@ -42,15 +42,10 @@ const PackageDetailPage = ({ packageData }) => {
 
   const toggleAdditionalService = (categoryIndex, optionIndex) => {
     const currentSelections = [...(selectedOptions[categoryIndex] || [])];
-    let updatedSelections;
     
-    if (currentSelections.includes(optionIndex)) {
-      // Remove option if already selected
-      updatedSelections = currentSelections.filter(index => index !== optionIndex);
-    } else {
-      // Add option if not selected
-      updatedSelections = [...currentSelections, optionIndex];
-    }
+    const updatedSelections = currentSelections.includes(optionIndex)
+      ? currentSelections.filter(index => index !== optionIndex)
+      : [...currentSelections, optionIndex];
     
     setSelectedOptions(prev => ({
       ...prev,
@@ -59,11 +54,26 @@ const PackageDetailPage = ({ packageData }) => {
   };
 
   const handleQuantityChange = (e) => {
-    setQuantity(parseInt(e.target.value) || 1);
+    const value = parseInt(e.target.value) || 1;
+    setQuantity(Math.max(1, value)); // Ensure minimum of 1
+  };
+
+  // Helper function to extract price value from price string
+  const extractPriceValue = (priceString) => {
+    if (!priceString) return 0;
+    
+    // Handle percentage discounts
+    if (priceString.includes('-') && priceString.includes('%')) {
+      return 0; // Simplified handling of percentage discounts
+    }
+    
+    // Extract numeric value, handling both "+100 USD" and "399 USD" formats
+    const numericMatch = priceString.match(/-?\+?(\d+(?:\.\d+)?)/);
+    return numericMatch && numericMatch[1] ? parseFloat(numericMatch[1]) : 0;
   };
 
   const calculateTotal = () => {
-    if (!packageData || !packageData.pricing) return "N/A";
+    if (!packageData?.pricing) return "N/A";
 
     let total = 0;
 
@@ -74,18 +84,16 @@ const PackageDetailPage = ({ packageData }) => {
         const selectedServiceIndices = selectedOptions[categoryIndex] || [];
         selectedServiceIndices.forEach(optionIndex => {
           const option = category.options[optionIndex];
-          if (option && option.price) {
-            const priceValue = extractPriceValue(option.price);
-            total += priceValue;
+          if (option?.price) {
+            total += extractPriceValue(option.price);
           }
         });
       } else {
         // For radio button categories
         const selectedOptionIndex = selectedOptions[categoryIndex] !== undefined ? selectedOptions[categoryIndex] : 0;
         const option = category.options[selectedOptionIndex];
-        if (option && option.price) {
-          const priceValue = extractPriceValue(option.price);
-          total += priceValue;
+        if (option?.price) {
+          total += extractPriceValue(option.price);
         }
       }
     });
@@ -96,51 +104,42 @@ const PackageDetailPage = ({ packageData }) => {
     // Format the total with currency
     return `${total.toFixed(2)} USD`;
   };
-
-  // Helper function to extract price value from price string
-  const extractPriceValue = (priceString) => {
-    if (!priceString) return 0;
-    
-    // Handle percentage discounts
-    if (priceString.includes('-') && priceString.includes('%')) {
-      // For now, we'll ignore percentage discounts in this simplified version
-      return 0;
-    }
-    
-    // Extract numeric value, handling both "+100 USD" and "399 USD" formats
-    const numericMatch = priceString.match(/-?\+?(\d+(?:\.\d+)?)/);
-    if (numericMatch && numericMatch[1]) {
-      const value = parseFloat(numericMatch[1]);
-      return priceString.includes('+') ? value : value;
-    }
-    
-    return 0;
-  };
   
   if (!packageData) {
-    return <div className="flex justify-center items-center h-96">Loading package details...</div>;
+    return (
+      <div className="flex justify-center items-center h-96 text-gray-600">
+        <div className="animate-pulse text-xl">Loading package details...</div>
+      </div>
+    );
   }
   
   return (
-    <div className="container mx-auto max-w-7xl px-2 py-4">
+    <div className="container mx-auto max-w-7xl px-4 pt-12">
+      {/* Back Button */}
+      <Link href="/packages" className="inline-flex items-center text-purple-600 hover:text-purple-800 mb-4 transition-colors">
+        <ArrowLeft className="w-5 h-5 mr-1" />
+        <span className="font-medium">Back to Packages</span>
+      </Link>
+
       {/* Header Section - Hero Style */}
-      <div className="relative bg-gradient-to-r from-purple-700 to-purple-900 rounded-lg overflow-hidden mb-4 shadow-md">
-        <div className="absolute inset-0 bg-black/50 z-10"></div>
-        <div className="relative h-48 md:h-64">
+      <div className="relative bg-gradient-to-r from-purple-700 to-purple-900 rounded-xl overflow-hidden mb-6 shadow-lg">
+        <div className="absolute inset-0 bg-black/40 z-10"></div>
+        <div className="relative h-56 md:h-72">
           <Image
             src={packageData.image || '/placeholder.jpg'}
             alt={packageData.title}
             fill
             style={{ objectFit: 'cover' }}
-            className="brightness-75"
+            className="brightness-90"
+            priority
           />
         </div>
-        <div className="absolute bottom-0 left-0 right-0 p-4 z-20 text-white">
+        <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-white">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold">{packageData.title}</h1>
-            <p className="text-2xl md:text-xl mt-1 text-gray-100">{packageData.subtitle}</p>
-            <div className="flex items-center mt-2">
-              <span className="inline-flex bg-black text-white px-3 py-1 rounded-full text-base font-bold">
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight">{packageData.title}</h1>
+            <p className="text-xl md:text-2xl mt-2 text-gray-100 font-light">{packageData.subtitle}</p>
+            <div className="flex items-center mt-3">
+              <span className="inline-flex bg-black/80 text-white px-4 py-1.5 rounded-full text-lg font-bold">
                 {packageData.price}
               </span>
             </div>
@@ -149,21 +148,21 @@ const PackageDetailPage = ({ packageData }) => {
       </div>
       
       {/* Main Content Area - Two-Column Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left Column - Tabs Content */}
-        <div className="lg:col-span-2">          
+        <div className="lg:col-span-2 order-2 lg:order-1">          
           {/* Tabs Navigation */}
-          <div className="bg-white rounded-t-lg overflow-hidden shadow-sm">
+          <div className="bg-white rounded-t-lg overflow-hidden shadow-sm border border-gray-200 border-b-0">
             <div className="flex overflow-x-auto">
               <button 
                 onClick={() => setActiveTab('description')}
-                className={`py-4 px-6 font-medium text-sm md:text-base whitespace-nowrap cursor-pointer transition-colors duration-300 ${activeTab === 'description' ? 'text-purple-600 border-b-2 border-purple-600' : 'text-gray-600 hover:text-purple-600'}`}
+                className={`py-4 px-8 font-medium text-base whitespace-nowrap cursor-pointer transition-colors duration-300 ${activeTab === 'description' ? 'text-purple-700 border-b-2 border-purple-700 bg-purple-50' : 'text-gray-600 hover:text-purple-600 hover:bg-gray-50'}`}
               >
                 Description
               </button>
               <button 
                 onClick={() => setActiveTab('faq')}
-                className={`py-4 px-6 font-medium text-sm md:text-base whitespace-nowrap cursor-pointer transition-colors duration-300 ${activeTab === 'faq' ? 'text-purple-600 border-b-2 border-purple-600' : 'text-gray-600 hover:text-purple-600'}`}
+                className={`py-4 px-8 font-medium text-base whitespace-nowrap cursor-pointer transition-colors duration-300 ${activeTab === 'faq' ? 'text-purple-700 border-b-2 border-purple-700 bg-purple-50' : 'text-gray-600 hover:text-purple-600 hover:bg-gray-50'}`}
               >
                 FAQ
               </button>
@@ -171,48 +170,66 @@ const PackageDetailPage = ({ packageData }) => {
           </div>
           
           {/* Tab Content */}
-          <div className="bg-white p-4 rounded-b-lg shadow-md mb-4">
+          <div className="bg-white p-6 rounded-b-lg shadow-md mb-6 border border-gray-200 border-t-0">
             {/* Description Tab with Custom Styling */}
             {activeTab === 'description' && (
               <div className="description-content">
                 <style jsx global>{`
                   .description-content h2 {
-                    font-size: 1.5rem;
+                    font-size: 1.75rem;
                     font-weight: 700;
-                    color: #000;
-                    margin-bottom: 0.75rem;
+                    color: #1a202c;
+                    margin-top: 1.5rem;
+                    margin-bottom: 1rem;
                     line-height: 1.3;
                   }
                   .description-content h3 {
-                    font-size: 1.25rem;
+                    font-size: 1.35rem;
                     font-weight: 600;
-                    color: #000;
-                    margin-bottom: 0.5rem;
-                    margin-top: 1rem;
+                    color: #2d3748;
+                    margin-bottom: 0.75rem;
+                    margin-top: 1.25rem;
                     line-height: 1.3;
                   }
                   .description-content p {
-                    margin-bottom: 1rem;
-                    color: #4b5563;
-                    line-height: 1.5;
+                    margin-bottom: 1.25rem;
+                    color: #4a5568;
+                    line-height: 1.6;
+                    font-size: 1.05rem;
                   }
                   .description-content ul {
                     list-style-type: disc;
-                    padding-left: 1.5rem;
-                    margin-bottom: 0.75rem;
+                    padding-left: 1.75rem;
+                    margin-bottom: 1.25rem;
                   }
                   .description-content li {
-                    color: #4b5563;
-                    margin-bottom: 0.25rem;
-                    line-height: 1.5;
+                    color: #4a5568;
+                    margin-bottom: 0.5rem;
+                    line-height: 1.6;
+                    font-size: 1.05rem;
                   }
                   .description-content strong {
-                    color: #6d28d9;
+                    color: #6b46c1;
                     font-weight: 600;
                   }
                   .description-content a {
-                    color: #7c3aed;
+                    color: #6d28d9;
                     text-decoration: underline;
+                    transition: color 0.2s;
+                  }
+                  .description-content a:hover {
+                    color: #5b21b6;
+                  }
+                  .description-content blockquote {
+                    border-left: 4px solid #9f7aea;
+                    padding-left: 1rem;
+                    margin-left: 0;
+                    margin-right: 0;
+                    font-style: italic;
+                    color: #4a5568;
+                  }
+                  .description-content *:first-child {
+                    margin-top: 0;
                   }
                 `}</style>
                 <div dangerouslySetInnerHTML={{ __html: packageData.longDescription }} />
@@ -221,19 +238,23 @@ const PackageDetailPage = ({ packageData }) => {
             
             {/* FAQ Tab */}
             {activeTab === 'faq' && (
-              <div className="space-y-4">
-                {packageData.faqs && packageData.faqs.length > 0 ? (
+              <div className="space-y-5">
+                {packageData.faqs?.length > 0 ? (
                   packageData.faqs.map((faq, index) => (
                     <div key={index} className="border-b border-gray-200 pb-4 last:border-b-0">
                       <div className="flex items-start">
-                        <HelpCircle className="w-4 h-4 text-purple-600 mt-1 mr-2 shrink-0" />
-                        <h3 className="text-base font-semibold text-gray-800">{faq.question}</h3>
+                        <HelpCircle className="w-5 h-5 text-purple-600 mt-1 mr-3 shrink-0" />
+                        <h3 className="text-lg font-semibold text-gray-800">{faq.question}</h3>
                       </div>
-                      <p className="mt-1 text-gray-700 ml-6">{faq.answer}</p>
+                      <p className="mt-2 text-gray-700 ml-8 text-base leading-relaxed">{faq.answer}</p>
                     </div>
                   ))
                 ) : (
-                  <p className="text-gray-700">No FAQs available for this package.</p>
+                  <div className="flex flex-col items-center justify-center py-8 text-center">
+                    <HelpCircle className="w-10 h-10 text-gray-400 mb-2" />
+                    <p className="text-gray-600 text-lg">No FAQs available for this package.</p>
+                    <p className="text-gray-500 text-base mt-1">Check back later or contact support for more information.</p>
+                  </div>
                 )}
               </div>
             )}
@@ -241,37 +262,37 @@ const PackageDetailPage = ({ packageData }) => {
         </div>
         
         {/* Right Column - Features and Pricing Options */}
-        <div className="space-y-4">
+        <div className="space-y-6 order-1 lg:order-2">
           {/* Features Card */}
-          <div className="bg-white rounded-lg p-4 shadow-md">
-            <div className="flex items-center mb-2">
-              <h2 className="text-lg font-bold text-gray-800">Key Features</h2>
+          <div className="bg-white rounded-lg p-5 shadow-md border border-gray-200">
+            <div className="flex items-center mb-3">
+              <h2 className="text-xl font-bold text-gray-800">Key Features</h2>
             </div>
             
-            <ul className="space-y-2">
-              {packageData.features && packageData.features.map((feature, index) => (
+            <ul className="space-y-3">
+              {packageData.features?.map((feature, index) => (
                 <li key={index} className="flex items-start">
-                  <div className="bg-purple-100 p-0.5 rounded-full mt-1 mr-2 shrink-0">
-                    <CheckCircle className="w-3 h-3 text-purple-600" />
+                  <div className="bg-purple-100 p-1 rounded-full mt-0.5 mr-3 shrink-0">
+                    <CheckCircle className="w-4 h-4 text-purple-700" />
                   </div>
-                  <span className="text-gray-700 text-sm">{feature}</span>
+                  <span className="text-gray-700 text-base">{feature}</span>
                 </li>
               ))}
             </ul>
           </div>
           
           {/* Pricing Options Card */}
-          <div className="bg-white rounded-lg p-4 shadow-md">
-            <h2 className="text-lg font-bold text-gray-800 mb-3 flex items-center">
+          <div className="bg-white rounded-lg p-5 shadow-md border border-gray-200">
+            <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
               Customize Your Package
             </h2>
             
-            {packageData.pricing && packageData.pricing.map((pricingCategory, categoryIndex) => (
-              <div key={categoryIndex} className="mb-3">
-                <h3 className="text-base font-medium text-gray-800 mb-2 border-b pb-1">{pricingCategory.title}</h3>
+            {packageData.pricing?.map((pricingCategory, categoryIndex) => (
+              <div key={categoryIndex} className="mb-5 last:mb-3">
+                <h3 className="text-lg font-medium text-gray-800 mb-2 border-b pb-2">{pricingCategory.title}</h3>
                 
-                <div className="py-3">
-                  {pricingCategory.options && pricingCategory.options.map((option, optionIndex) => {
+                <div className="py-2 space-y-1">
+                  {pricingCategory.options?.map((option, optionIndex) => {
                     const isAdditionalService = additionalServicesIndices.includes(categoryIndex);
                     const isSelected = isAdditionalService 
                       ? (selectedOptions[categoryIndex] || []).includes(optionIndex)
@@ -280,7 +301,9 @@ const PackageDetailPage = ({ packageData }) => {
                     return (
                       <div 
                         key={optionIndex} 
-                        className="flex items-center bg-gray-50 p-2 hover:bg-purple-50 transition-colors duration-200"
+                        className={`flex items-center p-3 rounded-md transition-colors duration-200 ${
+                          isSelected ? 'bg-purple-50 border border-purple-200' : 'bg-gray-50 hover:bg-purple-50/50 border border-gray-100'
+                        }`}
                       >
                         {isAdditionalService ? (
                           // Checkboxes for Additional Services
@@ -289,7 +312,7 @@ const PackageDetailPage = ({ packageData }) => {
                             id={`option-${categoryIndex}-${optionIndex}`}
                             checked={isSelected}
                             onChange={() => toggleAdditionalService(categoryIndex, optionIndex)}
-                            className="h-4 w-4 text-purple-600 border-gray-300 cursor-pointer rounded focus:ring-purple-500"
+                            className="h-5 w-5 text-purple-600 border-gray-300 cursor-pointer rounded focus:ring-purple-500"
                           />
                         ) : (
                           // Radio buttons for other categories
@@ -299,20 +322,20 @@ const PackageDetailPage = ({ packageData }) => {
                             name={`category-${categoryIndex}`}
                             checked={isSelected}
                             onChange={() => handleRadioChange(categoryIndex, optionIndex)}
-                            className="h-4 w-4 text-purple-600 border-gray-300 cursor-pointer rounded-full focus:ring-purple-500"
+                            className="h-5 w-5 text-purple-600 border-gray-300 cursor-pointer rounded-full focus:ring-purple-500"
                           />
                         )}
                         <label 
                           htmlFor={`option-${categoryIndex}-${optionIndex}`} 
-                          className="ml-2 flex justify-between w-full text-gray-700 text-sm"
+                          className="ml-3 flex justify-between w-full text-gray-800 cursor-pointer"
                         >
-                          <span>{option.name}</span>
-                          <span className={`font-medium ${
+                          <span className="text-base">{option.name}</span>
+                          <span className={`font-medium text-base ${
                             option.price.includes('+') 
                               ? 'text-green-600' 
                               : option.price.includes('-') 
                                 ? 'text-blue-600' 
-                                : 'text-purple-600'
+                                : 'text-purple-700'
                           }`}>
                             {option.price}
                           </span>
@@ -325,34 +348,48 @@ const PackageDetailPage = ({ packageData }) => {
             ))}
             
             {/* Quantity, Total and Get Quotation Elements */}
-            <div className="mt-6 py-4 border-t border-b border-gray-200">
+            <div className="mt-8 py-5 border-t border-b border-gray-200">
               {/* Quantity Field */}
-              <div className="flex flex-col items-center justify-center mb-4">
-                <label htmlFor="quantity" className="block text-lg font-bold text-gray-800 mb-2">QUANTITY</label>
+              <div className="flex flex-col items-center justify-center mb-6">
+                <label htmlFor="quantity" className="block text-xl font-bold text-gray-800 mb-3">QUANTITY</label>
                 <div className="relative w-1/2">
-                  <input
-                    type="number"
-                    id="quantity"
-                    min="1"
-                    value={quantity}
-                    onChange={handleQuantityChange}
-                    className="w-full px-4 py-2 text-center text-xl font-bold border-2 border-purple-400 rounded-lg focus:ring-purple-600 focus:border-purple-600"
-                  />
+                  <div className="flex">
+                    <button
+                      onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
+                      className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold px-4 rounded-l-lg"
+                    >
+                      −
+                    </button>
+                    <input
+                      type="number"
+                      id="quantity"
+                      min="1"
+                      value={quantity}
+                      onChange={handleQuantityChange}
+                      className="w-full px-4 py-2 text-center text-xl font-bold border-2 border-purple-400 focus:ring-purple-600 focus:border-purple-600"
+                    />
+                    <button
+                      onClick={() => setQuantity(prev => prev + 1)}
+                      className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold px-4 rounded-r-lg"
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
               </div>
               
               {/* Total Price */}
               <div className="flex justify-center items-center mb-6">
                 <div className="text-center">
-                  <div className="text-gray-700 font-medium mb-1">TOTAL PRICE</div>
-                  <div className="text-2xl font-bold text-purple-600">{calculateTotal()}</div>
+                  <div className="text-gray-700 font-medium text-lg mb-1">TOTAL PRICE</div>
+                  <div className="text-3xl font-bold text-purple-700">{calculateTotal()}</div>
                 </div>
               </div>
               
               {/* Get Quotation Button */}
               <div className="flex justify-center">
-                <button className="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 flex items-center shadow-lg">
-                  <FileText className="w-4 h-4 mr-2" />
+                <button className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 flex items-center shadow-lg">
+                  <FileText className="w-5 h-5 mr-2" />
                   GET QUOTATION
                 </button>
               </div>
@@ -360,12 +397,15 @@ const PackageDetailPage = ({ packageData }) => {
           </div>
           
           {/* Support Info */}
-          <div className="bg-gray-100 rounded-lg p-3 shadow-sm border border-gray-200">
+          <div className="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-lg p-4 shadow-sm border border-purple-100">
             <div className="flex items-start">
-              <Info className="w-4 h-4 text-purple-600 mt-1 mr-2 shrink-0" />
+              <Info className="w-5 h-5 text-purple-600 mt-1 mr-3 shrink-0" />
               <div>
-                <h3 className="font-medium text-gray-800 text-sm">Need Help?</h3>
-                <p className="text-xs text-gray-700 mt-0.5">Have questions about this package? Contact our support team for assistance.</p>
+                <h3 className="font-semibold text-gray-800 text-base">Need Help?</h3>
+                <p className="text-gray-700 mt-1">Have questions about this package? Contact our support team for assistance.</p>
+                <a href="/contact" className="inline-block mt-2 text-purple-700 font-medium hover:text-purple-900 transition-colors">
+                  Contact Support →
+                </a>
               </div>
             </div>
           </div>
