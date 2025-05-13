@@ -143,7 +143,7 @@ export default function FoxbeepTestimonials() {
                 className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-gray-700 transition-all duration-300"
               >
                 <p className="text-3xl font-medium mb-8 text-gray-100">
-                  "{testimonial.quote}"
+                  &ldquo;{testimonial.quote}&rdquo;
                 </p>
 
                 <div className="flex items-center">
