@@ -1,46 +1,7 @@
 import TextHeroSection from '@/components/home/textHero';
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 
 export default function CompanyManifesto() {
-    const [isIntersecting, setIsIntersecting] = useState({});
-    const refs = useRef({});
-
-    const registerRef = (id, element) => {
-        if (element && !refs.current[id]) {
-            refs.current[id] = element;
-        }
-    };
-
-    useEffect(() => {
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15,
-        };
-
-        const handleIntersect = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    Object.keys(refs.current).forEach(key => {
-                        if (refs.current[key] === entry.target) {
-                            setIsIntersecting(prev => ({ ...prev, [key]: true }));
-                        }
-                    });
-                }
-            });
-        };
-
-        const observer = new IntersectionObserver(handleIntersect, observerOptions);
-
-        Object.values(refs.current).forEach(ref => {
-            if (ref) observer.observe(ref);
-        });
-
-        return () => {
-            observer.disconnect();
-        };
-    }, []);
-
     const manifestoBeliefs = [
         {
             number: "01",
@@ -128,57 +89,46 @@ export default function CompanyManifesto() {
                 </div>
             </div>
 
-            <div 
-                ref={(el) => registerRef('manifesto', el)}
-                className="max-w-7xl mx-auto py-24 px-4"
-            >
-                <div className="space-y-32">
-                    {manifestoBeliefs.map((belief, index) => (
-                        <div
-                            key={index}
-                            className={`flex flex-col md:flex-row items-start transform transition-all duration-1000 ${
-                                isIntersecting.manifesto ? 'translate-y-0 opacity-100' : 'translate-y-32 opacity-0'
-                            }`}
-                            style={{ transitionDelay: `${index * 200}ms` }}
-                        >
-                            <div className="md:w-1/3 mb-6 md:mb-0 relative">
-                                <div className="absolute top-8 left-4 z-10">
-                                    <div className="flex items-center">
-                                        <svg className="w-8 h-8 mr-3 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={belief.icon}></path>
-                                        </svg>
-                                        <h3 className="text-3xl font-bold text-black">{belief.title}</h3>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="md:w-2/3 md:pl-8">
-                                <p className="text-xl mb-6 font-medium leading-relaxed text-black">
-                                    {belief.description}
-                                </p>
-
-                                <div className="mb-6 p-4 bg-gray-100">
-                                    <p className="text-base text-gray-800 italic">
-                                        {belief.details}
-                                    </p>
-                                </div>
-
-                                <p className="text-lg mb-6 text-gray-800">
-                                    {belief.expandedText}
-                                </p>
-
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
-                                    {belief.keyPoints.map((point, i) => (
-                                        <div key={i} className="flex items-center">
-                                            <div className="w-2 h-2 bg-black rounded-full mr-2"></div>
-                                            <span className="text-gray-800 font-medium">{point}</span>
-                                        </div>
-                                    ))}
+            <div className="max-w-7xl mx-auto py-24 px-4 space-y-32">
+                {manifestoBeliefs.map((belief, index) => (
+                    <div key={index} className="flex flex-col md:flex-row items-start">
+                        <div className="md:w-1/3 mb-6 md:mb-0 relative">
+                            <div className="absolute top-8 left-4 z-10">
+                                <div className="flex items-center">
+                                    <svg className="w-8 h-8 mr-3 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={belief.icon}></path>
+                                    </svg>
+                                    <h3 className="text-3xl font-bold text-black">{belief.title}</h3>
                                 </div>
                             </div>
                         </div>
-                    ))}
-                </div>
+
+                        <div className="md:w-2/3 md:pl-8">
+                            <p className="text-xl mb-6 font-medium leading-relaxed text-black">
+                                {belief.description}
+                            </p>
+
+                            <div className="mb-6 p-4 bg-gray-100">
+                                <p className="text-base text-gray-800 italic">
+                                    {belief.details}
+                                </p>
+                            </div>
+
+                            <p className="text-lg mb-6 text-gray-800">
+                                {belief.expandedText}
+                            </p>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
+                                {belief.keyPoints.map((point, i) => (
+                                    <div key={i} className="flex items-center">
+                                        <div className="w-2 h-2 bg-black rounded-full mr-2"></div>
+                                        <span className="text-gray-800 font-medium">{point}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                ))}
 
                 <div className="mt-32 flex justify-center">
                     <div className="w-1/2 h-px bg-gradient-to-r from-transparent via-black to-transparent"></div>
