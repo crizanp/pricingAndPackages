@@ -262,50 +262,54 @@ const Navbar = () => {
 
                                             {/* Services Style Menu */}
                                             {!item.flatMenu && item.name === 'Services' && (
-                                                <div className="flex flex-col md:flex-row">
-                                                    {/* Left side title */}
-                                                    <div className="md:w-32 lg:w-40 xl:w-48 pr-0 md:pr-4 lg:pr-8 border-b md:border-b-0 border-gray-200 flex justify-start md:justify-center items-center pb-4 md:pb-0">
-                                                        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold flex items-center text-black">
-                                                            {/* {item.name}
-                                                            <ArrowRight size={20} className="ml-2 text-purple-500" /> */}
-                                                        </h2>
-                                                    </div>
+                                                <div className="max-h-[80vh] overflow-y-auto hide-scrollbar">
+                                                    <div className="flex flex-col md:flex-row">
+                                                        {/* Left side title */}
+                                                        <div className="md:w-32 lg:w-40 xl:w-48 pr-0 md:pr-4 lg:pr-8 border-b md:border-b-0 border-gray-200 flex justify-start md:justify-center items-center pb-4 md:pb-0">
+                                                            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold flex items-center text-black">
+                                                                {/* {item.name}
+                    <ArrowRight size={20} className="ml-2 text-purple-500" /> */}
+                                                            </h2>
+                                                        </div>
 
-                                                    {/* Right side sections */}
-                                                    <div className="flex-1 pt-4 md:pt-0 md:pl-4 lg:pl-8 xl:pl-12">
-                                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 lg:gap-y-8 gap-x-4 lg:gap-x-8">
-                                                            {item.sections.map((section, sectionIndex) => (
-                                                                <div key={sectionIndex}>
-                                                                    {section.href ? (
-                                                                        <Link
-                                                                            href={section.href}
-                                                                            className="font-semibold text-sm lg:text-base xl:text-lg mb-2 lg:mb-4 block hover:text-purple-500 transition-colors duration-200"
-                                                                        >
-                                                                            {section.title}
-                                                                        </Link>
-                                                                    ) : (
-                                                                        <h3 className="font-semibold text-sm lg:text-base xl:text-lg mb-2 lg:mb-4">
-                                                                            {section.title}
-                                                                        </h3>
-                                                                    )}
-                                                                    <div className="space-y-2 lg:space-y-3">
-                                                                        {section.items && section.items.map((subItem, subIndex) => (
+                                                        {/* Right side sections */}
+                                                        <div className="flex-1 pt-4 md:pt-0 md:pl-4 lg:pl-8 xl:pl-12">
+                                                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 lg:gap-y-8 gap-x-4 lg:gap-x-8">
+                                                                {item.sections.map((section, sectionIndex) => (
+                                                                    <div key={sectionIndex}>
+                                                                        {section.href ? (
                                                                             <Link
-                                                                                key={subIndex}
-                                                                                href={subItem.href}
-                                                                                className="block text-xs lg:text-sm text-gray-700 hover:text-purple-500 transition-colors duration-200"
-                                                                                onClick={closeAllDropdowns}
+                                                                                href={section.href}
+                                                                                className="font-semibold text-sm lg:text-base xl:text-lg mb-2 lg:mb-4 block hover:text-purple-500 transition-colors duration-200"
                                                                             >
-                                                                                {subItem.name}
+                                                                                {section.title}
                                                                             </Link>
-                                                                        ))}
+                                                                        ) : (
+                                                                            <h3 className="font-semibold text-sm lg:text-base xl:text-lg mb-2 lg:mb-4">
+                                                                                {section.title}
+                                                                            </h3>
+                                                                        )}
+                                                                        <div className="space-y-2 lg:space-y-3">
+                                                                            {section.items && section.items.map((subItem, subIndex) => (
+                                                                                <Link
+                                                                                    key={subIndex}
+                                                                                    href={subItem.href}
+                                                                                    className="block text-xs lg:text-sm text-gray-700 hover:text-purple-500 transition-colors duration-200"
+                                                                                    onClick={closeAllDropdowns}
+                                                                                >
+                                                                                    {subItem.name}
+                                                                                </Link>
+                                                                            ))}
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                            ))}
+                                                                ))}
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             )}
+
+
                                         </div>
                                     </div>
                                 )}
@@ -376,7 +380,7 @@ const Navbar = () => {
                                                             ))}
                                                         </div>
                                                     )}
-                                                    
+
                                                     {/* Other flat menus mobile display */}
                                                     {item.flatMenu && !item.compactMenu && (
                                                         <div className="grid grid-cols-2 gap-y-2 gap-x-4 py-2">
