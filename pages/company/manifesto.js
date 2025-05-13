@@ -4,24 +4,23 @@ import React, { useState, useEffect, useRef } from 'react';
 export default function CompanyManifesto() {
     const [isIntersecting, setIsIntersecting] = useState({});
     const refs = useRef({});
-    
+
     const registerRef = (id, element) => {
         if (element && !refs.current[id]) {
             refs.current[id] = element;
         }
     };
-    
+
     useEffect(() => {
         const observerOptions = {
             root: null,
             rootMargin: '0px',
             threshold: 0.15,
         };
-        
+
         const handleIntersect = (entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Find the id of the element
                     Object.keys(refs.current).forEach(key => {
                         if (refs.current[key] === entry.target) {
                             setIsIntersecting(prev => ({ ...prev, [key]: true }));
@@ -30,14 +29,13 @@ export default function CompanyManifesto() {
                 }
             });
         };
-        
+
         const observer = new IntersectionObserver(handleIntersect, observerOptions);
-        
-        // Observe all registered refs
+
         Object.values(refs.current).forEach(ref => {
             if (ref) observer.observe(ref);
         });
-        
+
         return () => {
             observer.disconnect();
         };
@@ -118,9 +116,7 @@ export default function CompanyManifesto() {
 
     return (
         <div className="bg-white min-h-screen">
-            <div 
-                className="w-full bg-black py-28 px-4"
-            >
+            <div className="w-full bg-black py-28 px-4">
                 <div className="max-w-5xl mx-auto text-center">
                     <h1 className="text-7xl font-black mb-8 tracking-tight text-white">
                         OUR MANIFESTO
@@ -131,7 +127,7 @@ export default function CompanyManifesto() {
                     </p>
                 </div>
             </div>
-            
+
             <div 
                 ref={(el) => registerRef('manifesto', el)}
                 className="max-w-7xl mx-auto py-24 px-4"
@@ -146,7 +142,6 @@ export default function CompanyManifesto() {
                             style={{ transitionDelay: `${index * 200}ms` }}
                         >
                             <div className="md:w-1/3 mb-6 md:mb-0 relative">
-                                <div className="text-9xl font-black text-gray-100">{belief.number}</div>
                                 <div className="absolute top-8 left-4 z-10">
                                     <div className="flex items-center">
                                         <svg className="w-8 h-8 mr-3 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -156,22 +151,22 @@ export default function CompanyManifesto() {
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div className="md:w-2/3 md:pl-8">
                                 <p className="text-xl mb-6 font-medium leading-relaxed text-black">
                                     {belief.description}
                                 </p>
-                                
+
                                 <div className="mb-6 p-4 bg-gray-100">
                                     <p className="text-base text-gray-800 italic">
                                         {belief.details}
                                     </p>
                                 </div>
-                                
+
                                 <p className="text-lg mb-6 text-gray-800">
                                     {belief.expandedText}
                                 </p>
-                                
+
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
                                     {belief.keyPoints.map((point, i) => (
                                         <div key={i} className="flex items-center">
@@ -184,21 +179,21 @@ export default function CompanyManifesto() {
                         </div>
                     ))}
                 </div>
-                
+
                 <div className="mt-32 flex justify-center">
                     <div className="w-1/2 h-px bg-gradient-to-r from-transparent via-black to-transparent"></div>
                 </div>
-                
+
                 <div className="mt-16 text-center">
                     <h3 className="text-2xl font-bold mb-6 text-black">
                         TURNING BELIEFS INTO ACTION
                     </h3>
                     <p className="text-xl max-w-3xl mx-auto text-black">
-                        These principles aren't aspirational—they're operational. They guide our daily decisions, 
-                        shape our processes, and define how we measure success. When you work with us, you'll 
+                        These principles aren&apos;t aspirational—they&apos;re operational. They guide our daily decisions, 
+                        shape our processes, and define how we measure success. When you work with us, you&apos;ll 
                         experience the difference these beliefs make.
                     </p>
-                    
+
                     <div className="mt-12">
                         <button className="px-8 py-4 bg-black text-white font-medium text-lg rounded hover:bg-gray-800 transition-colors">
                             See Our Work

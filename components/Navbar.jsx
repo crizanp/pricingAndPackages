@@ -136,18 +136,14 @@ const Navbar = () => {
             href: '/company',
             hasDropdown: true,
             flatMenu: true,
+            compactMenu: true, // Add a new property to identify compact menus
             items: [
                 { name: 'About', href: '/company/about' },
                 { name: 'Process', href: '/company/process' },
                 { name: 'Careers', href: '/company/careers' },
-                { name: 'Clients', href: '/company/clients' },
                 { name: 'University', href: '/company/university' },
                 { name: 'Testimonials', href: '/company/testimonials' },
                 { name: 'Manifesto', href: '/company/manifesto' },
-                { name: 'Blog', href: '/resources/blog' },
-                { name: 'News & Updates', href: '/resources/news-updates' },
-                { name: 'Press Release', href: '/resources/press-release' },
-                { name: 'Events', href: '/resources/events' },
             ]
         },
         { name: 'Contact', href: '/contact', hasDropdown: false },
@@ -206,8 +202,37 @@ const Navbar = () => {
                                     <div className="fixed left-0 w-full bg-white border-t border-gray-100 shadow-lg z-20"
                                         style={{ top: '4rem' }}>
                                         <div className="container mx-auto py-4 md:py-6 lg:py-8 px-4">
-                                            {/* Industries/Solutions/Company Style Menu */}
-                                            {item.flatMenu && (
+                                            {/* Company menu with compact layout */}
+                                            {item.flatMenu && item.compactMenu && (
+                                                <div className="flex flex-col md:flex-row">
+                                                    {/* Left side title */}
+                                                    <div className="md:w-32 lg:w-40 xl:w-48 pr-0 md:pr-4 lg:pr-8 border-b md:border-b-0 border-gray-200 flex justify-start md:justify-center items-center pb-4 md:pb-0">
+                                                        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold flex items-center text-black">
+                                                            {/* {item.name}
+                                                            <ArrowRight size={20} className="ml-2 text-purple-500" /> */}
+                                                        </h2>
+                                                    </div>
+
+                                                    {/* Right side compact grid with 3 columns for just 6 items */}
+                                                    <div className="flex-1 pt-4 md:pt-0 md:pl-4 lg:pl-8 xl:pl-12">
+                                                        <div className="grid grid-cols-2 md:grid-cols-3 gap-y-3 gap-x-4">
+                                                            {item.items.map((subItem, subIndex) => (
+                                                                <Link
+                                                                    key={subIndex}
+                                                                    href={subItem.href}
+                                                                    className="text-sm lg:text-base text-gray-700 hover:text-purple-500 transition-colors duration-200"
+                                                                    onClick={closeAllDropdowns}
+                                                                >
+                                                                    {subItem.name}
+                                                                </Link>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )}
+
+                                            {/* Industries/Solutions Style Menu */}
+                                            {item.flatMenu && !item.compactMenu && (
                                                 <div className="flex flex-col md:flex-row">
                                                     {/* Left side title */}
                                                     <div className="md:w-32 lg:w-40 xl:w-48 pr-0 md:pr-4 lg:pr-8 border-b md:border-b-0  border-gray-200 flex justify-start md:justify-center items-center pb-4 md:pb-0">
@@ -336,8 +361,24 @@ const Navbar = () => {
                                             </button>
                                             {activeDropdown === index && (
                                                 <div className="pl-4 mt-2 border-l-2 border-purple-500">
-                                                    {/* Flat menu mobile display */}
-                                                    {item.flatMenu && (
+                                                    {/* Company menu mobile layout (compact) */}
+                                                    {item.flatMenu && item.compactMenu && (
+                                                        <div className="grid grid-cols-2 gap-y-2 gap-x-4 py-2">
+                                                            {item.items.map((subItem, subIndex) => (
+                                                                <Link
+                                                                    key={subIndex}
+                                                                    href={subItem.href}
+                                                                    className="text-gray-700 hover:text-purple-500 py-1"
+                                                                    onClick={() => setIsOpen(false)}
+                                                                >
+                                                                    {subItem.name}
+                                                                </Link>
+                                                            ))}
+                                                        </div>
+                                                    )}
+                                                    
+                                                    {/* Other flat menus mobile display */}
+                                                    {item.flatMenu && !item.compactMenu && (
                                                         <div className="grid grid-cols-2 gap-y-2 gap-x-4 py-2">
                                                             {item.items.map((subItem, subIndex) => (
                                                                 <Link
