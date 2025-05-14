@@ -119,7 +119,7 @@ const Navbar = () => {
         },
         {
             name: 'Pricing',
-            href: '/pricing',
+            href: 'https://shop.foxbeep.com',
             hasDropdown: false,
             flatMenu: true,
             items: [
