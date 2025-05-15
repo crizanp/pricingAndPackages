@@ -26,11 +26,11 @@ export default function WorkPage() {
         {
             id: 1,
             title: "Simple Health Facts",
-            category: ["website","wordpress"],
+            category: ["website", "wordpress"],
             client: "MediTech Solutions",
             year: "2024",
-            thumbnail: "https://ighdigital.ae/wp-content/uploads/2024/01/2-1.jpg", // These would be your actual image paths
-            images: ["https://ighdigital.ae/wp-content/uploads/2024/01/2-1.jpg"],
+            thumbnail: "/images/portfolio/simple-health-fact.jpg",
+            images: ["/images/portfolio/simple-health-fact.jpg"],
             description: "Here you'll find free articles and infographics in nutrition, exercise, health, fitness, exercise and coaching. We provide you the best tips, information, idea about healthy food and top ways to stay healthy.",
             challenge: "Creating an intuitive interface that could handle complex health data while remaining accessible to users of all ages.",
             solution: "We implemented a customizable dashboard with color-coded metrics and simplified navigation, along with cloud synchronization for seamless data access across devices.",
@@ -38,38 +38,38 @@ export default function WorkPage() {
         },
         {
             id: 2,
-            title: "Urban Eats Marketplace",
+            title: "Worth Your Website",
             category: "website",
             client: "CityFoods Inc.",
-            year: "2023",
-            thumbnail: "https://ighdigital.ae/wp-content/uploads/2024/01/2-1.jpg",
-            images: ["https://ighdigital.ae/wp-content/uploads/2024/01/2-1.jpg", "/images/portfolio/web-1-detail2.jpg"],
-            description: "An e-commerce platform connecting local restaurants with customers, featuring real-time order tracking and loyalty programs.",
+            year: "2015",
+            thumbnail: "/images/portfolio/worth-your-website.jpg",
+            images: ["/images/portfolio/worth-your-website.jpg"],
+            description: "WorthYourWebsite is a web service for Website Owners, Webmasters, and General Internet Users to retrieve information related to Domain Name and Website. It's the most used tool that provides various statistical reports for any website like Estimated worth of Domain Name and Website Valuation, Search Engine Reports, Traffic Reports, Social Engagement, Safety, Host Information, Domain WHOIS, Page Speed, and much more. Simply type your Domain Name above for all related information.",
             challenge: "Building a scalable system that could handle thousands of concurrent orders while providing accurate delivery estimates.",
             solution: "We developed a microservices architecture with load balancing and implemented a machine learning algorithm to predict delivery times based on traffic and order volume.",
             technology: ["Next.js", "Node.js", "MongoDB", "Stripe API", "Google Maps API"]
         },
         {
             id: 3,
-            title: "Sustainable Fashion Blog",
-            category: "wordpress",
+            title: "NXTech SEO Tools",
+            category: "website",
             client: "EcoStyle Collective",
             year: "2023",
-            thumbnail: "/images/portfolio/wp-1.jpg",
-            images: ["/images/portfolio/wp-1-detail.jpg", "/images/portfolio/wp-1-detail2.jpg"],
-            description: "A custom WordPress site showcasing sustainable fashion brands, featuring an eco-rating system and ethical shopping guides.",
+            thumbnail: "/images/portfolio/nxtech-seo-tools.jpg",
+            images: ["/images/portfolio/nxtech-seo-tools.jpg", "/images/portfolio/nxtech-seo-tools.jpg"],
+            description: "Nxtech SEO Tools - is a bundled collection of best SEO tools websites. We offer all for free of charge, Such as XML Sitemap Generator, Plagiarism Checker etc.",
             challenge: "Creating a visually stunning site that maintained fast loading times despite high-resolution fashion photography.",
             solution: "We implemented advanced image optimization, lazy loading, and a custom caching strategy to ensure blazing-fast performance without sacrificing visual quality.",
             technology: ["WordPress", "Custom Theme Development", "WooCommerce", "Advanced Custom Fields"]
         },
         {
             id: 4,
-            title: "CryptoVault NFT Marketplace",
-            category: "web3",
+            title: "NDS Nepal",
+            category: "website",
             client: "Blockchain Ventures",
-            year: "2024",
-            thumbnail: "/images/portfolio/web3-1.jpg",
-            images: ["/images/portfolio/web3-1-detail.jpg", "/images/portfolio/web3-1-detail2.jpg"],
+            year: "2020",
+            thumbnail: "/images/portfolio/nds-nepal.jpg",
+            images: ["/images/portfolio/nds-nepal.jpg"],
             description: "A decentralized marketplace for buying, selling, and trading NFTs with multi-chain support and fractional ownership capabilities.",
             challenge: "Creating an accessible platform for both crypto newcomers and experienced collectors while ensuring robust security measures.",
             solution: "We developed an intuitive UI with educational onboarding, implemented smart contract auditing, and created a hybrid storage solution for optimal performance.",
@@ -81,8 +81,8 @@ export default function WorkPage() {
             category: "video",
             client: "Adventure Films",
             year: "2023",
-            thumbnail: "/images/portfolio/video-1.jpg",
-            videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video embed URL
+            thumbnail: "/images/portfolio/pipe.jpg",
+            videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
             description: "A breathtaking documentary series exploring remote mountain ranges and the communities that inhabit them.",
             challenge: "Creating a cohesive narrative from footage shot across multiple expeditions in challenging environments.",
             solution: "Our post-production team developed a custom color grading workflow and implemented advanced stabilization techniques to enhance footage captured in extreme conditions.",
@@ -90,11 +90,11 @@ export default function WorkPage() {
         },
         {
             id: 6,
-            title: "Financial Wellness App",
-            category: "app",
+            title: "French House",
+            category: "wordpress",
             client: "ProsperWell Financial",
             year: "2023",
-            thumbnail: "/images/portfolio/app-2.jpg",
+            thumbnail: "/images/portfolio/french-house.jpg",
             images: ["/images/portfolio/app-2-detail.jpg", "/images/portfolio/app-2-detail2.jpg"],
             description: "A personal finance application that helps users budget, save, and invest with personalized recommendations and financial education.",
             challenge: "Handling sensitive financial data while creating an engaging user experience that encourages healthy financial habits.",
@@ -142,12 +142,12 @@ export default function WorkPage() {
         },
         {
             id: 10,
-            title: "Product Launch Campaign",
+            title: "Unbelievable! Top 5 Mind-Blowing AI Tools of 2024 That Will Blow Your Mind Away!",
             category: "video",
             client: "TechInnovate",
             year: "2023",
             thumbnail: "/images/portfolio/video-2.jpg",
-            videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video embed URL
+            videoEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
             description: "A series of promotional videos for a revolutionary tech product launch, including teasers, feature highlights, and user testimonials.",
             challenge: "Creating compelling visual content that explains complex technology to a mainstream audience within a tight launch timeline.",
             solution: "Our team developed a distinctive visual language with 3D animations and motion graphics to simplify technical concepts, and implemented a modular production approach to enable rapid iteration.",
@@ -311,11 +311,10 @@ export default function WorkPage() {
                         <button
                             key={category.id}
                             onClick={() => setActiveCategory(category.id)}
-                            className={`px-6 py-3 font-bold transition-all duration-300 text-lg ${
-                                activeCategory === category.id
+                            className={`px-6 py-3 font-bold transition-all duration-300 text-lg ${activeCategory === category.id
                                     ? 'bg-black text-white'
                                     : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
-                            }`}
+                                }`}
                             onMouseEnter={() => handleMouseEnter(category.label)}
                             onMouseLeave={handleMouseLeave}
                         >
@@ -334,9 +333,8 @@ export default function WorkPage() {
                     {filteredProjects.map((project, index) => (
                         <div
                             key={project.id}
-                            className={`transform transition-all duration-700 ${
-                                isIntersecting.portfolio ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-                            }`}
+                            className={`transform transition-all duration-700 ${isIntersecting.portfolio ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+                                }`}
                             style={{ transitionDelay: `${index * 100}ms` }}
                             onClick={() => openModal(project)}
                             onMouseEnter={() => handleMouseEnter('View Project')}
@@ -358,7 +356,7 @@ export default function WorkPage() {
                                         )}
                                     </div>
                                 </div>
-                                
+
                                 {/* Overlay with project info */}
                                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100">
                                     <div className="text-white text-center p-4">
@@ -367,7 +365,7 @@ export default function WorkPage() {
                                     </div>
                                 </div>
                             </div>
-                            
+
                             {/* Project info below thumbnail */}
                             <div className="mt-4">
                                 <h3 className="text-xl font-bold">{project.title}</h3>
@@ -397,9 +395,8 @@ export default function WorkPage() {
                     ].map((stat, index) => (
                         <div
                             key={index}
-                            className={`text-center transform transition-all duration-700 ${
-                                isIntersecting.stats ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-                            }`}
+                            className={`text-center transform transition-all duration-700 ${isIntersecting.stats ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+                                }`}
                             style={{ transitionDelay: `${index * 150}ms` }}
                         >
                             <div className="text-6xl font-black mb-2">{stat.value}</div>
@@ -445,9 +442,8 @@ export default function WorkPage() {
                     ].map((testimonial, index) => (
                         <div
                             key={index}
-                            className={`bg-gray-50 p-8 transform transition-all duration-700 ${
-                                isIntersecting.testimonials ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-                            }`}
+                            className={`bg-gray-50 p-8 transform transition-all duration-700 ${isIntersecting.testimonials ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+                                }`}
                             style={{ transitionDelay: `${index * 200}ms` }}
                         >
                             <div className="flex flex-col h-full">
@@ -484,7 +480,7 @@ export default function WorkPage() {
                     <p className="text-xl mb-12">
                         Let's collaborate to create digital experiences that elevate your brand, engage your audience, and drive business growth.
                     </p>
-                    <button 
+                    <button
                         className="px-8 py-4 bg-black text-white text-xl font-bold transition-all duration-300 hover:bg-opacity-80"
                         onMouseEnter={() => handleMouseEnter('Get Started')}
                         onMouseLeave={handleMouseLeave}
@@ -497,31 +493,49 @@ export default function WorkPage() {
             {/* Project Detail Modal */}
             {isModalOpen && selectedProject && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center">
-                    <div 
+                    <div
                         className="absolute inset-0 bg-black bg-opacity-80"
                         onClick={closeModal}
                     ></div>
-                    
+
                     <div className="relative max-w-6xl w-full max-h-[90vh] overflow-y-auto bg-white p-8 mx-4">
-                        <button 
+                        <button
                             className="absolute top-4 right-4 text-4xl leading-none"
                             onClick={closeModal}
                         >
                             &times;
                         </button>
-                        
+
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                             {/* Image/Video Section */}
                             <div>
                                 {selectedProject.category === 'video' || (Array.isArray(selectedProject.category) && selectedProject.category.includes('video')) ? (
-                                    <div className="aspect-w-16 aspect-h-9">
-                                        <iframe
-                                            src={selectedProject.videoEmbed}
-                                            title={selectedProject.title}
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowFullScreen
-                                            className="w-full h-full"
-                                        ></iframe>
+                                    <div className="aspect-w-16 aspect-h-9 bg-gray-100 flex items-center justify-center">
+                                        <a
+                                            href={selectedProject.videoUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex flex-col items-center justify-center w-full h-full group"
+                                        >
+                                            {selectedProject.thumbnail && (
+                                                <div className="relative w-full h-full">
+                                                    <img
+                                                        src={selectedProject.thumbnail}
+                                                        alt={selectedProject.title}
+                                                        className="w-full h-full object-cover"
+                                                    />
+                                                    <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center group-hover:bg-opacity-60 transition-all duration-300">
+                                                        <div className="w-20 h-20 rounded-full bg-red-600 flex items-center justify-center">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )}
+                                            <span className="mt-4 text-black font-medium">Watch on YouTube</span>
+                                        </a>
                                     </div>
                                 ) : (
                                     <div className="bg-gray-100">
@@ -532,7 +546,7 @@ export default function WorkPage() {
                                                 className="w-full h-auto"
                                             />
                                         )}
-                                        
+
                                         {selectedProject.images && selectedProject.images.length > 0 && (
                                             <div className="grid grid-cols-2 gap-4 mt-4">
                                                 {selectedProject.images.map((image, index) => (
@@ -549,39 +563,39 @@ export default function WorkPage() {
                                     </div>
                                 )}
                             </div>
-                            
+
                             {/* Project Info Section */}
                             <div>
                                 <h2 className="text-4xl font-black mb-4">{selectedProject.title}</h2>
-                                
+
                                 <div className="mb-6">
                                     <p className="text-xl font-semibold">{selectedProject.client}</p>
                                     <p className="text-gray-600">
                                         {getCategoryLabels(selectedProject)} • {selectedProject.year}
                                     </p>
                                 </div>
-                                
+
                                 <div className="mb-8">
                                     <h3 className="text-2xl font-bold mb-3">Overview</h3>
                                     <p className="text-lg">{selectedProject.description}</p>
                                 </div>
-                                
+
                                 <div className="mb-8">
                                     <h3 className="text-2xl font-bold mb-3">Challenge</h3>
                                     <p className="text-lg">{selectedProject.challenge}</p>
                                 </div>
-                                
+
                                 <div className="mb-8">
                                     <h3 className="text-2xl font-bold mb-3">Solution</h3>
                                     <p className="text-lg">{selectedProject.solution}</p>
                                 </div>
-                                
+
                                 <div>
                                     <h3 className="text-2xl font-bold mb-3">Technologies</h3>
                                     <div className="flex flex-wrap gap-2">
                                         {selectedProject.technology.map((tech, index) => (
-                                            <span 
-                                                key={index} 
+                                            <span
+                                                key={index}
                                                 className="bg-gray-100 px-3 py-1 text-sm font-medium"
                                             >
                                                 {tech}
