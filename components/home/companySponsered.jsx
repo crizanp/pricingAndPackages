@@ -8,9 +8,9 @@ export default function BrandSlider() {
   const animationRef = useRef(null);
   
   const brands = [
-    { id: 1, name: "Michael's", logo: "/images/svg/1.svg" },
-    { id: 2, name: "Walmart", logo: "/images/svg/2.svg" },
-    { id: 3, name: "POLITICO", logo: "/images/svg/3.svg" },
+    { id: 1, name: "Michael's", logo: "/images/slider-company/adidas.png" },
+    { id: 2, name: "Walmart", logo: "/images/slider-company/ncell.png" },
+    { id: 3, name: "POLITICO", logo: "/images/slider-company/nxtech-seo.png" },
     { id: 4, name: "DreamWorks", logo: "/images/svg/4.svg" },
     { id: 5, name: "SONY", logo: "/images/svg/5.svg" },
     { id: 6, name: "TISSOT", logo: "/images/svg/6.svg" },

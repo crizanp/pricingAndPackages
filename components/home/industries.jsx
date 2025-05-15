@@ -1,10 +1,21 @@
+'use client'; // only if you're using Next.js 13+ with app router
+
 import { useState } from 'react';
-import { ChevronRight, Car, BarChart4, Building2, Utensils, GraduationCap, Heart } from 'lucide-react';
+import Link from 'next/link';
+import {
+  ChevronRight,
+  Car,
+  BarChart4,
+  Building2,
+  Utensils,
+  GraduationCap,
+  Heart
+} from 'lucide-react';
 import SoftwareTeamBanner from './SoftwareTeamBanner';
 
 export default function IndustriesWeServe() {
   const [activeIndustry, setActiveIndustry] = useState('');
-  
+
   const industries = [
     {
       id: 'automotive',
@@ -53,53 +64,66 @@ export default function IndustriesWeServe() {
             Industries We Serve
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto sm:mx-0">
-            With a wide range of services and proven experience across major industries, we understand your challenges and deliver tailored solutions that overcome them and drive meaningful impact.
+            We help businesses in various industries solve real problems with smart, customized solutions built from experience.
           </p>
         </div>
 
         {/* Industries Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-          {/* Industry Cards */}
           {industries.map((industry) => (
-            <div 
-              key={industry.id}
-              className={`group p-5 sm:p-6 md:p-8 rounded-xl transition-all duration-300 cursor-pointer border border-gray-800 hover:border-white ${
-                activeIndustry === industry.id ? 'bg-gradient-to-br from-gray-900 to-gray-800 border-white' : 'bg-gray-900 hover:bg-gradient-to-br hover:from-gray-900 hover:to-gray-800'
-              }`}
-              onClick={() => setActiveIndustry(industry.id)}
-            >
-              {/* Icon and Arrow Container */}
-              <div className="flex justify-between items-center mb-4 sm:mb-6">
-                <div className={`p-2 sm:p-3 rounded-full ${
-                  activeIndustry === industry.id ? 'bg-purple-500 text-white' : 'bg-gray-800 text-purple-400 group-hover:bg-purple-500 group-hover:text-white'
-                } transition-colors duration-300`}>
-                  {industry.icon}
+            <Link href={`/industries/${industry.id}`} key={industry.id}>
+              <div
+                className={`group p-5 sm:p-6 md:p-8 rounded-xl transition-all duration-300 cursor-pointer border border-gray-800 hover:border-white ${
+                  activeIndustry === industry.id
+                    ? 'bg-gradient-to-br from-gray-900 to-gray-900 border-white'
+                    : 'bg-gray-900 hover:bg-gradient-to-br hover:from-gray-900 hover:to-gray-800'
+                }`}
+                onMouseEnter={() => setActiveIndustry(industry.id)}
+                onMouseLeave={() => setActiveIndustry('')}
+              >
+                {/* Icon and Arrow */}
+                <div className="flex justify-between items-center mb-4 sm:mb-6">
+                  <div
+                    className={`p-2 sm:p-3 rounded-full ${
+                      activeIndustry === industry.id
+                        ? 'bg-purple-500 text-white'
+                        : 'bg-gray-800 text-purple-400 group-hover:bg-purple-500 group-hover:text-white'
+                    } transition-colors duration-300`}
+                  >
+                    {industry.icon}
+                  </div>
+                  <ChevronRight
+                    className={`w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 ${
+                      activeIndustry === industry.id
+                        ? 'text-white translate-x-1'
+                        : 'opacity-0 group-hover:opacity-100 group-hover:translate-x-1 text-white'
+                    }`}
+                  />
                 </div>
-                <ChevronRight className={`w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 ${
-                  activeIndustry === industry.id ? 'text-white translate-x-1' : 'opacity-0 group-hover:opacity-100 group-hover:translate-x-1 text-white'
-                }`} />
+
+                {/* Title */}
+                <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-white">{industry.name}</h3>
+
+                {/* Description */}
+                <p className="text-sm sm:text-base text-gray-300">{industry.description}</p>
               </div>
-              
-              {/* Title */}
-              <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-white">{industry.name}</h3>
-              
-              {/* Description */}
-              <p className="text-sm sm:text-base text-gray-300">{industry.description}</p>
-            </div>
+            </Link>
           ))}
         </div>
-        
-        {/* Optional CTA Button */}
+
+        {/* CTA Button */}
         <div className="mt-8 sm:mt-10 md:mt-12 text-center">
-          <button className="px-6 sm:px-8 py-3 sm:py-4 bg-white hover:from-blue-600 hover:to-purple-700 text-black rounded-full font-bold transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 text-sm sm:text-base">
-            Explore Our Industry Solutions
-          </button>
+          <Link href="/industries">
+            <button className="px-6 cursor-pointer sm:px-8 py-3 sm:py-4 bg-white hover:from-blue-600 hover:to-purple-700 text-black rounded-full font-bold transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 text-sm sm:text-base">
+              Explore Our Industry Solutions
+            </button>
+          </Link>
         </div>
       </div>
-      
-      {/* Software Team Banner */}
+
+      {/* Banner Component */}
       <div className="mt-16 sm:mt-20">
-        <SoftwareTeamBanner/>
+        <SoftwareTeamBanner />
       </div>
     </div>
   );

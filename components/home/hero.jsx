@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 
 export default function HeroSection() {
@@ -37,7 +38,7 @@ export default function HeroSection() {
         const updateViewportHeight = () => {
             const isMobileView = window.innerWidth < 768;
             setIsMobile(isMobileView);
-            
+
             // Set shorter height on mobile
             if (isMobileView) {
                 setViewportHeight('70vh'); // Shorter height for mobile
@@ -45,16 +46,16 @@ export default function HeroSection() {
                 setViewportHeight('100vh'); // Full height for desktop
             }
         };
-        
+
         // Initial setup
         updateViewportHeight();
-        
+
         // Update on resize
         window.addEventListener('resize', updateViewportHeight);
-        
+
         // Update on orientation change for mobile devices
         window.addEventListener('orientationchange', updateViewportHeight);
-        
+
         return () => {
             window.removeEventListener('resize', updateViewportHeight);
             window.removeEventListener('orientationchange', updateViewportHeight);
@@ -120,8 +121,8 @@ export default function HeroSection() {
     const currentSlide = slides[currentSlideIndex];
 
     return (
-        <div 
-            className="relative w-full overflow-hidden" 
+        <div
+            className="relative w-full overflow-hidden"
             style={{ height: viewportHeight }}
         >
             {/* Video Background */}
@@ -165,10 +166,12 @@ export default function HeroSection() {
                     </p>
 
                     {/* Call to action button */}
-                    <div className="mt-4 md:mt-8 lg:mt-10">
-                        <button className="bg-transparent border-2 border-white text-white font-semibold py-3 px-6 md:py-3 md:px-8 lg:py-4 lg:px-10 rounded-full transition-all duration-300 hover:bg-white hover:text-black text-base md:text-lg">
-                            Let's Connect With Your Idea
-                        </button>
+                    <div className="mt-4 md:mt-8 lg:mt-10 ">
+                        <Link href="/contact"> {/* Replace "/contact" with your desired route */}
+                            <button className="bg-transparent cursor-pointer border-2 border-white text-white font-semibold py-3 px-6 md:py-3 md:px-8 lg:py-4 lg:px-10 rounded-full transition-all duration-300 hover:bg-white hover:text-black text-base md:text-lg">
+                                Let's Connect With Your Idea
+                            </button>
+                        </Link>
                     </div>
 
                     {/* Slider indicators - left on mobile, centered on larger screens */}
@@ -177,11 +180,10 @@ export default function HeroSection() {
                             <button
                                 key={slide.id}
                                 onClick={() => goToSlide(index)}
-                                className={`w-3 h-3 md:w-3 md:h-3 rounded-full transition-all ${
-                                    currentSlideIndex === index
+                                className={`w-3 h-3 md:w-3 md:h-3 rounded-full transition-all ${currentSlideIndex === index
                                         ? "bg-gradient-to-r from-purple-500 to-pink-400"
                                         : "bg-white bg-opacity-30 hover:bg-opacity-60"
-                                }`}
+                                    }`}
                                 aria-label={`Go to slide ${index + 1}`}
                             />
                         ))}

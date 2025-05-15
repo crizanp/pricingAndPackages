@@ -11,46 +11,47 @@ export default function DevelopmentProcess() {
         {
             id: 1,
             title: "Ideate",
-            description: "We analyze your vision thoroughly to ensure the roadmap is perfectly aligned with your end goals, setting the stage for product success.",
+            description: "We carefully think about your idea and understand your goals clearly. This helps us plan a path that matches your vision and sets the product up for success.",
             icon: <Brain className="text-purple-400" size={48} />,
             largeIcon: <Brain className="text-purple-400" size={220} />
         },
         {
             id: 2,
             title: "Design",
-            description: "Crafting a minimal viable product (MVP) that balances design with core functionality, maximizing value and user satisfaction.",
+            description: "We create a simple version of your product that looks nice and works well. This design focuses on the most important features to give users a great experience.",
             icon: <Workflow className="text-purple-400" size={48} />,
             largeIcon: <Workflow className="text-purple-400" size={220} />
         },
         {
             id: 3,
             title: "Develop",
-            description: "Our expert engineers transform designs into robust, scalable code using cutting-edge technologies and development practices.",
+            description: "Our skilled developers turn the design into real working software. We use modern tools and methods to build strong and flexible code.",
             icon: <Code className="text-purple-400" size={48} />,
             largeIcon: <Code className="text-purple-400" size={220} />
         },
         {
             id: 4,
             title: "Test",
-            description: "Rigorous quality assurance ensures your product functions flawlessly across all environments and use cases.",
+            description: "We carefully check the product to make sure it works without problems. We test it in different situations to make sure it’s reliable for all users.",
             icon: <Settings className="text-purple-400" size={48} />,
             largeIcon: <Settings className="text-purple-400" size={220} />
         },
         {
             id: 5,
             title: "Analyze",
-            description: "Data-driven insights guide continuous improvements, helping your product evolve with user needs and market demands.",
+            description: "We look at data and feedback to see how the product is doing. These insights help us improve it and keep it useful for your users over time.",
             icon: <BarChart3 className="text-purple-400" size={48} />,
             largeIcon: <BarChart3 className="text-purple-400" size={220} />
         },
         {
             id: 6,
             title: "Launch",
-            description: "Strategic deployment and marketing support ensure your product reaches its target audience with maximum impact.",
+            description: "We help you launch the product in the best way possible. Our support and promotion make sure it reaches the right people and makes a big impact.",
             icon: <Rocket className="text-purple-400" size={48} />,
             largeIcon: <Rocket className="text-purple-400" size={220} />
-        },
+        }
     ];
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -75,7 +76,7 @@ export default function DevelopmentProcess() {
                 Math.floor(scrollPosition / stepHeight),
                 steps.length - 1
             );
-            
+
             if (currentStep >= 0) {
                 setActiveStep(currentStep);
             }

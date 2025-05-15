@@ -6,7 +6,7 @@ export default function VideoEditingShowcase() {
   const [activeCategory, setActiveCategory] = useState(null);
   const [hoverCategory, setHoverCategory] = useState(null);
   const detailsRef = useRef(null);
-  
+
   // Sample YouTube video IDs corresponding to each category
   const videoIds = [
     "dQw4w9WgXcQ", // YouTube Video Editing
@@ -129,10 +129,10 @@ export default function VideoEditingShowcase() {
           Video and Media
         </h1>
         <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-8 max-w-3xl">
-          Access our network of 400+ specialized experts in cutting-edge technologies and frameworks,
-          ready to elevate your digital projects to the next level.
+          From promotional videos to branded content and high-quality animations, our media team brings your ideas to life. Leverage the skills of 400+ creative and technical professionals to deliver content that captivates, informs, and drives engagement.
         </p>
       </div>
+
 
       {/* Mobile View - Category Grid & Details */}
       <div className="md:hidden">
@@ -173,7 +173,7 @@ export default function VideoEditingShowcase() {
             </div>
 
             <div className="mb-4 rounded-xl overflow-hidden h-48">
-              <iframe 
+              <iframe
                 className="w-full h-full"
                 src={getYouTubeEmbedUrl()}
                 title={`${categories[activeCategory].title} video`}
@@ -204,7 +204,7 @@ export default function VideoEditingShowcase() {
           <div className="relative w-full max-w-3xl aspect-square">
             {/* Central circle with YouTube embed */}
             <div className="absolute left-1/2 top-1/2 w-64 h-64 -ml-32 -mt-32 rounded-full bg-purple-700 shadow-xl flex items-center justify-center z-10 overflow-hidden">
-            <img src="/images/videoIcon/main-video.png" alt="Company Logo" className="w-full h-full object-cover" />
+              <img src="/images/videoIcon/main-video.png" alt="Company Logo" className="w-full h-full object-cover" />
 
             </div>
 
@@ -253,7 +253,7 @@ export default function VideoEditingShowcase() {
               </div>
 
               <div className="mb-6 rounded-xl overflow-hidden h-72">
-                <iframe 
+                <iframe
                   className="w-full h-full"
                   src={getYouTubeEmbedUrl()}
                   title={`${categories[activeCategory].title} video`}
