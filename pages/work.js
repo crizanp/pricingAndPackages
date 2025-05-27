@@ -447,7 +447,7 @@ export default function WorkPage() {
                             style={{ transitionDelay: `${index * 200}ms` }}
                         >
                             <div className="flex flex-col h-full">
-                                <div className="text-4xl font-serif mb-6">"</div>
+                                <div className="text-4xl font-serif mb-6"></div>
                                 <p className="text-xl mb-8 flex-grow">{testimonial.quote}</p>
                                 <div className="flex items-center">
                                     <div className="w-12 h-12 rounded-full bg-gray-300 mr-4">
@@ -478,7 +478,7 @@ export default function WorkPage() {
                 <div className="max-w-3xl mx-auto text-center">
                     <h2 className="text-5xl font-black mb-8 tracking-tight">READY TO BUILD SOMETHING AMAZING?</h2>
                     <p className="text-xl mb-12">
-                        Let's collaborate to create digital experiences that elevate your brand, engage your audience, and drive business growth.
+                        Lets collaborate to create digital experiences that elevate your brand, engage your audience, and drive business growth.
                     </p>
                     <button
                         className="px-8 py-4 bg-black text-white text-xl font-bold transition-all duration-300 hover:bg-opacity-80"
