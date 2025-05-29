@@ -2,44 +2,42 @@ import { useState, useRef, useEffect } from "react";
 import { X } from "lucide-react";
 
 export default function VideoEditingShowcase() {
-  // Initialize with Film Production (index 1) by default
   const [activeCategory, setActiveCategory] = useState(null);
   const [hoverCategory, setHoverCategory] = useState(null);
+  const [screenWidth, setScreenWidth] = useState(1024); // Default to desktop width
   const detailsRef = useRef(null);
 
-  // Sample YouTube video IDs corresponding to each category
   const videoIds = [
-    "dQw4w9WgXcQ", // YouTube Video Editing
-    "2EIeUlvHAiM", // Ads & Commercial Editing
-    "jNQXAC9IVRw", // Social Media Video Editing
-    "pTQnwB8UoTI", // Corporate Video Editing
-    "k1BneeJTDcU", // Event Video Editing
-    "XqZsoesa55w", // Short Video Creation
-    "U9t-slLl30E"  // Whiteboard Animation
+    "b5NQy0IqMIY", // YouTube Video Editing
+    "HGWi-5TBZU0", // Ads & Commercial Editing
+    "YMKW-Nki-TQ", // Social Media Video Editing
+    "EdD_mIjBIZI", // Corporate Video Editing
+    "W3zroZV3Oy8", // Event Video Editing
+    "IhrBmx78ZO0", // Short Video Creation
+    "gxkEW6cOWyI"  // Whiteboard Animation
   ];
 
-  // Effect to scroll to details when activeCategory changes on mobile
   useEffect(() => {
-    // Check if it's desktop view and set default category only if on desktop
+    if (typeof window === 'undefined') return;
+
     const handleResize = () => {
-      if (window.innerWidth >= 768 && activeCategory === null) {
-        setActiveCategory(1); // Set default category for desktop
-      } else if (window.innerWidth < 768) {
-        setActiveCategory(null); // Ensure no active category on mobile
+      const width = window.innerWidth;
+      setScreenWidth(width);
+      
+      if (width >= 1024 && activeCategory === null) {
+        setActiveCategory(1); 
+      } else if (width < 1024) {
+        setActiveCategory(null); 
       }
     };
 
-    // Run once on component mount
     handleResize();
 
-    // Add event listener for window resize
     window.addEventListener('resize', handleResize);
 
-    // Clean up
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [activeCategory]);
 
-  // Categories data
   const categories = [
     {
       title: "YouTube Video Editing",
@@ -85,14 +83,11 @@ export default function VideoEditingShowcase() {
     }
   ];
 
-  // Handle category click to show details and scroll to view
   const handleCategoryClick = (index) => {
     const previousActive = activeCategory;
     setActiveCategory(index === activeCategory ? null : index);
 
-    // If on mobile and selecting a new category (not deselecting), scroll to details after render
-    if (window.innerWidth < 768 && index !== previousActive && index !== null) {
-      // Use setTimeout to ensure state update completes first
+    if (typeof window !== 'undefined' && screenWidth < 1024 && index !== previousActive && index !== null) {
       setTimeout(() => {
         if (detailsRef.current) {
           detailsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -101,47 +96,45 @@ export default function VideoEditingShowcase() {
     }
   };
 
-  // Responsive orbital layout calculation
   const calculatePosition = (index, total) => {
-    // Calculate position on the circle
-    const angle = (index * (2 * Math.PI / total)) - Math.PI / 2; // Start from top
-    const radius = 240; // Default distance from center for desktop
+    const angle = (index * (2 * Math.PI / total)) - Math.PI / 2;
+    
+    let radius = 180; 
+    if (screenWidth >= 1536) radius = 280; 
+    else if (screenWidth >= 1280) radius = 240; 
+    else if (screenWidth >= 1024) radius = 200; 
+    
     const x = radius * Math.cos(angle);
     const y = radius * Math.sin(angle);
 
     return { x, y };
   };
 
-  // Get current YouTube embed URL
   const getYouTubeEmbedUrl = () => {
     if (activeCategory !== null) {
       const videoId = videoIds[activeCategory];
       return `https://www.youtube.com/embed/${videoId}?autoplay=0&controls=1&rel=0`;
     }
-    // Default video when no category is selected
     return `https://www.youtube.com/embed/${videoIds[0]}?autoplay=0&controls=1&rel=0`;
   };
 
   return (
-    <div className="w-full bg-black text-gray-800 py-8 md:py-16 px-4 md:px-12">
+    <div className="w-full bg-black text-gray-800 py-6 md:py-12 lg:py-16 px-4 sm:px-6 md:px-8 lg:px-12">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl md:text-6xl font-bold mb-4 md:mb-6 text-white">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 md:mb-4 lg:mb-6 text-white">
           Video and Media
         </h1>
-        <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-8 max-w-3xl">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mb-6 md:mb-8 max-w-4xl">
           From promotional videos to branded content and high-quality animations, our media team brings your ideas to life. Leverage the skills of 400+ creative and technical professionals to deliver content that captivates, informs, and drives engagement.
         </p>
       </div>
 
-
-      {/* Mobile View - Category Grid & Details */}
-      <div className="md:hidden">
-        {/* Category thumbnails in grid */}
-        <div className="grid grid-cols-2 gap-4 mb-6">
+      <div className="lg:hidden">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 mb-6">
           {categories.map((category, index) => (
             <div
               key={index}
-              className={`rounded-xl overflow-hidden cursor-pointer border-2 transition-all duration-300 ${activeCategory === index ? 'border-gray-200 ring-2 ring-gray-200' : 'border-gray-700'
+              className={`rounded-lg sm:rounded-xl overflow-hidden cursor-pointer border-2 transition-all duration-300 ${activeCategory === index ? 'border-gray-200 ring-2 ring-gray-200' : 'border-gray-700'
                 }`}
               onClick={() => handleCategoryClick(index)}
             >
@@ -152,27 +145,26 @@ export default function VideoEditingShowcase() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="p-2 bg-gray-900">
-                <h3 className="text-sm font-bold text-white truncate">{category.title}</h3>
+              <div className="p-2 sm:p-3 bg-gray-900">
+                <h3 className="text-xs sm:text-sm font-bold text-white truncate">{category.title}</h3>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Category details panel */}
         {activeCategory !== null && (
-          <div ref={detailsRef} className="bg-gray-900 bg-opacity-80 rounded-2xl w-full p-4 overflow-hidden text-white shadow-2xl">
-            <div className="flex justify-between items-start mb-3">
-              <h2 className="text-2xl font-bold text-white">{categories[activeCategory].title}</h2>
+          <div ref={detailsRef} className="bg-gray-900 bg-opacity-80 rounded-xl sm:rounded-2xl w-full p-4 sm:p-6 overflow-hidden text-white shadow-2xl">
+            <div className="flex justify-between items-start mb-3 sm:mb-4">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white pr-2">{categories[activeCategory].title}</h2>
               <button
                 onClick={() => setActiveCategory(null)}
-                className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-full p-1"
+                className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-full p-1 sm:p-2 flex-shrink-0"
               >
-                <X size={20} />
+                <X size={16} className="sm:w-5 sm:h-5" />
               </button>
             </div>
 
-            <div className="mb-4 rounded-xl overflow-hidden h-48">
+            <div className="mb-4 sm:mb-6 rounded-lg sm:rounded-xl overflow-hidden h-40 sm:h-48 md:h-56">
               <iframe
                 className="w-full h-full"
                 src={getYouTubeEmbedUrl()}
@@ -183,12 +175,12 @@ export default function VideoEditingShowcase() {
               ></iframe>
             </div>
 
-            <p className="text-base mb-4 text-gray-100">{categories[activeCategory].description}</p>
+            <p className="text-sm sm:text-base mb-4 sm:mb-6 text-gray-100">{categories[activeCategory].description}</p>
 
-            <h3 className="text-xl font-bold mb-2 text-purple-300">Key Features</h3>
+            <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 text-purple-300">Key Features</h3>
             <div className="flex flex-wrap gap-2">
               {categories[activeCategory].features.map((feature, idx) => (
-                <span key={idx} className="bg-gray-100 bg-opacity-50 text-gray-800 px-3 py-1 rounded-xl text-sm">
+                <span key={idx} className="bg-gray-100 bg-opacity-50 text-gray-800 px-2 sm:px-3 py-1 rounded-lg sm:rounded-xl text-xs sm:text-sm">
                   {feature}
                 </span>
               ))}
@@ -197,18 +189,12 @@ export default function VideoEditingShowcase() {
         )}
       </div>
 
-      {/* Desktop View - Orbital Layout */}
-      <div className="hidden md:flex flex-col md:flex-row min-h-[600px] lg:h-[800px]">
-        {/* Left side - Circle showcase with YouTube embed in center */}
-        <div className="w-full md:w-1/2 h-full flex items-center justify-center relative">
-          <div className="relative w-full max-w-3xl aspect-square">
-            {/* Central circle with YouTube embed */}
-            <div className="absolute left-1/2 top-1/2 w-64 h-64 -ml-32 -mt-32 rounded-full bg-purple-700 shadow-xl flex items-center justify-center z-10 overflow-hidden">
+      <div className="hidden lg:flex flex-col lg:flex-row min-h-[600px] xl:min-h-[700px] 2xl:min-h-[800px]">
+        <div className="w-full lg:w-1/2 h-full flex items-center justify-center relative">
+          <div className="relative w-full max-w-2xl xl:max-w-3xl 2xl:max-w-4xl aspect-square">            <div className="absolute left-1/2 top-1/2 w-48 h-48 xl:w-56 xl:h-56 2xl:w-64 2xl:h-64 -ml-24 xl:-ml-28 2xl:-ml-32 -mt-24 xl:-mt-28 2xl:-mt-32 rounded-full bg-purple-700 shadow-xl flex items-center justify-center z-10 overflow-hidden">
               <img src="/images/videoIcon/main-video.png" alt="Company Logo" className="w-full h-full object-cover" />
-
             </div>
 
-            {/* Orbital categories */}
             {categories.map((category, index) => {
               const { x, y } = calculatePosition(index, categories.length);
 
@@ -227,14 +213,14 @@ export default function VideoEditingShowcase() {
                 >
                   <div className="relative">
                     <div
-                      className={`w-40 h-40 rounded-full overflow-hidden border-4 shadow-lg transition-all duration-300 ${activeCategory === index ? 'border-gray-200 scale-125' : 'border-white hover:scale-110'
+                      className={`w-28 h-28 xl:w-32 xl:h-32 2xl:w-40 2xl:h-40 rounded-full overflow-hidden border-4 shadow-lg transition-all duration-300 ${activeCategory === index ? 'border-gray-200 scale-125' : 'border-white hover:scale-110'
                         }`}
                     >
                       <img src={category.image} alt={category.title} className="w-full h-full object-cover" />
                     </div>
                     {hoverCategory === index && activeCategory !== index && (
-                      <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 bg-gray-900 bg-opacity-90 rounded-lg p-2 shadow-lg w-72 text-center pointer-events-none">
-                        <h4 className="font-bold text-lg text-white">{category.title}</h4>
+                      <div className="absolute -bottom-12 xl:-bottom-16 left-1/2 transform -translate-x-1/2 bg-gray-900 bg-opacity-90 rounded-lg p-2 xl:p-3 shadow-lg w-56 xl:w-72 text-center pointer-events-none">
+                        <h4 className="font-bold text-sm xl:text-lg text-white">{category.title}</h4>
                       </div>
                     )}
                   </div>
@@ -244,15 +230,14 @@ export default function VideoEditingShowcase() {
           </div>
         </div>
 
-        {/* Right side - Details Panel */}
         {activeCategory !== null ? (
-          <div className="w-full md:w-1/2 h-full flex items-center justify-center p-4">
-            <div className="bg-gray-900 bg-opacity-80 rounded-2xl w-full h-[90%] p-6 overflow-hidden text-white shadow-2xl">
-              <div className="flex justify-between items-start mb-4">
-                <h2 className="text-4xl font-bold text-white py-4">{categories[activeCategory].title}</h2>
+          <div className="w-full lg:w-1/2 h-full flex items-center justify-center p-4 xl:p-6">
+            <div className="bg-gray-900 bg-opacity-80 rounded-2xl w-full h-[90%] p-4 xl:p-6 2xl:p-8 overflow-hidden text-white shadow-2xl">
+              <div className="flex justify-between items-start mb-4 xl:mb-6">
+                <h2 className="text-2xl xl:text-3xl 2xl:text-4xl font-bold text-white py-2 xl:py-4">{categories[activeCategory].title}</h2>
               </div>
 
-              <div className="mb-6 rounded-xl overflow-hidden h-72">
+              <div className="mb-4 xl:mb-6 rounded-xl overflow-hidden h-48 xl:h-56 2xl:h-72">
                 <iframe
                   className="w-full h-full"
                   src={getYouTubeEmbedUrl()}
@@ -263,22 +248,25 @@ export default function VideoEditingShowcase() {
                 ></iframe>
               </div>
 
-              <p className="text-xl mb-6 text-purple-100">{categories[activeCategory].description}</p>
+              <p className="text-base xl:text-lg 2xl:text-xl mb-4 xl:mb-6 text-purple-100">{categories[activeCategory].description}</p>
 
-              <h3 className="text-2xl font-bold mb-3 text-purple-300">Key Features</h3>
-              <div className="flex flex-wrap gap-3">
+              <h3 className="text-lg xl:text-xl 2xl:text-2xl font-bold mb-3 text-purple-300">Key Features</h3>
+              <div className="flex flex-wrap gap-2 xl:gap-3">
                 {categories[activeCategory].features.map((feature, idx) => (
-                  <span key={idx} className="bg-black bg-opacity-50 text-gray-100 px-4 py-2 rounded-xl text-lg">
+                  <span key={idx} className="bg-black bg-opacity-50 text-gray-100 px-3 xl:px-4 py-2 rounded-xl text-sm xl:text-base 2xl:text-lg">
                     {feature}
                   </span>
                 ))}
               </div>
             </div>
-          </div>) : (<div className="w-full md:w-1/2 h-full flex items-center justify-center p-4">
-            <div className="bg-gray-900 bg-opacity-80 rounded-2xl w-full h-[90%] p-6 flex items-center justify-center text-white shadow-2xl">
-              <h2 className="text-3xl font-bold text-white">Select a category to view details</h2>
+          </div>
+        ) : (
+          <div className="w-full lg:w-1/2 h-full flex items-center justify-center p-4 xl:p-6">
+            <div className="bg-gray-900 bg-opacity-80 rounded-2xl w-full h-[90%] p-6 xl:p-8 flex items-center justify-center text-white shadow-2xl">
+              <h2 className="text-xl xl:text-2xl 2xl:text-3xl font-bold text-white text-center">Select a category to view details</h2>
             </div>
-          </div>)}
+          </div>
+        )}
       </div>
     </div>
   );

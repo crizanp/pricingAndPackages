@@ -67,12 +67,14 @@ export default function SuccessStories() {
                     </div>
                     <div className="flex items-center justify-center h-full">
                         <a
-                            href="/case-studies"
-                            className="group flex items-center text-xl font-medium text-black hover:text-black transition-colors border-b-2 border-transparent hover:border-black pb-1"
+                            href="#"
+                            onClick={(e) => e.preventDefault()}
+                            className="group flex items-center text-xl font-medium text-black transition-colors border-b-2 border-transparent pb-1 cursor-not-allowed pointer-events-none"
                         >
                             Explore all case studies
-                            <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="ml-2 h-6 w-6 transition-transform" />
                         </a>
+
                     </div>
 
                 </div>

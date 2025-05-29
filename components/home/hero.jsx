@@ -122,7 +122,7 @@ export default function HeroSection() {
 
     return (
         <div
-            className="relative w-full overflow-hidden"
+            className="relative w-full overflow-hidden mt-0"
             style={{ height: viewportHeight }}
         >
             {/* Video Background */}

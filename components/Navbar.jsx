@@ -171,7 +171,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <div className="flex items-center">
                         <Link href="/" className="flex items-center" onClick={closeAllDropdowns}>
-                            <div className="relative w-30 h-20 md:w-28 md:h-16 lg:w-30 lg:h-20 ml-[-14] lg:ml-[-48px]">
+                            <div className="relative w-40 h-16 md:w-40 md:h-16 lg:w-40	 lg:h-16 ml-[-14] lg:ml-[-36px]">
                                 <Image
                                     src="/logo.png"
                                     alt="FoxBeep Logo"

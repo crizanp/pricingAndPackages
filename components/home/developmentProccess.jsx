@@ -100,19 +100,19 @@ export default function DevelopmentProcess() {
                         <span className="block text-purple-400">development process</span>
                     </h2>
                     <div className="flex items-center">
-                        <button className="text-base flex items-center group text-white border border-white/20 px-4 py-2 rounded-full hover:bg-white/5 transition-all">
-                            View More
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                        </button>
-                    </div>
+   <a href="/company/process" className="text-base flex items-center group text-white border border-white/20 px-4 py-2 rounded-full hover:bg-white/5 transition-all">
+       View More
+       <svg
+           xmlns="http://www.w3.org/2000/svg"
+           className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1"
+           fill="none"
+           viewBox="0 0 24 24"
+           stroke="currentColor"
+       >
+           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+       </svg>
+   </a>
+</div>
                 </div>
 
                 {/* Desktop Scroll Experience - keeping original layout */}

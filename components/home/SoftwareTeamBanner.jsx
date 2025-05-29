@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function SoftwareTeamBanner() {
@@ -10,14 +11,16 @@ export default function SoftwareTeamBanner() {
           Create a software development <span className="text-green-500">Team</span> with us
         </h2>
 
-        <button
-          className={`whitespace-nowrap text-sm sm:text-base md:text-lg bg-gradient-to-r text-white font-semibold px-6 sm:px-8 md:px-10 py-2.5 sm:py-3.5 rounded-full transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50
-            ${isHovered ? 'from-blue-600 to-purple-700 shadow-md' : 'from-blue-500 to-purple-600'}`}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          Get a Quote
-        </button>
+       <Link href="https://shop.foxbeep.com" passHref>
+      <button
+        className={`whitespace-nowrap text-sm sm:text-base md:text-lg bg-gradient-to-r text-white font-semibold px-6 sm:px-8 md:px-10 py-2.5 sm:py-3.5 rounded-full transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 cursor-pointer
+          ${isHovered ? 'from-blue-600 to-purple-700 shadow-md' : 'from-blue-500 to-purple-600'}`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        Get a Quote
+      </button>
+    </Link>
       </div>
     </div>
   );
