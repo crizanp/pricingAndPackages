@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function TeamBanner({
@@ -25,7 +26,7 @@ export default function TeamBanner({
           {title} <span className={accentColor}>{highlightedText}</span> <span className="hidden xs:inline">with us</span>
           <span className="inline xs:hidden">with us</span>
         </h2>
-        
+        <Link href="/contact">
         <button
           className={`w-full sm:w-auto bg-gradient-to-r text-white text-lg sm:text-xl cursor-pointer font-medium 
           px-4 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-300
@@ -36,7 +37,7 @@ export default function TeamBanner({
           onTouchEnd={() => setIsHovered(false)}
         >
           {buttonText}
-        </button>
+        </button></Link>
       </div>
     </div>
   );

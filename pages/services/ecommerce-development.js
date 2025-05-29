@@ -162,7 +162,7 @@ export default function ECommerce() {
       {/* Full-screen image section below the banner */}
       <div className="w-full relative sm:h-screen">
         <img
-          src="https://img.freepik.com/free-photo/online-shopping-concept-shopping-cart-with-bags-keyboard_23-2148521553.jpg?w=740"
+          src="/images/pages/ecom-dev.jpg"
           alt="eCommerce Development"
           className="w-full h-full object-cover"
         />

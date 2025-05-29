@@ -160,7 +160,7 @@ export default function BusinessWebsite() {
       {/* Full-screen image section below the banner */}
       <div className="w-full relative sm:h-screen">
         <img
-          src="https://www.graffiti9.com/wp-content/uploads/2019/10/Website-Banner.jpg"
+          src="/images/pages/business-dev.jpg"
           alt="Business Website Development"
           className="w-full h-full object-cover"
         />

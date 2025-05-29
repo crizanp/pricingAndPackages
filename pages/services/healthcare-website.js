@@ -160,7 +160,7 @@ export default function HealthcareWebsite() {
       {/* Full-screen image section below the banner */}
       <div className="w-full relative sm:h-screen">
         <img
-          src="https://i0.wp.com/practis.com/wp-content/uploads/2022/12/shutterstock_1753066349.jpeg?fit=1000%2C667&ssl=1"
+          src="/images/pages/healthcare.jpg"
           alt="Healthcare Website Development"
           className="w-full h-full object-cover"
         />

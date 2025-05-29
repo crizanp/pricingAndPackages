@@ -160,7 +160,7 @@ export default function EducationalWebsite() {
       {/* Full-screen image section below the banner */}
       <div className="w-full relative sm:h-screen">
         <img
-          src="https://ezranking.s3.eu-west-2.amazonaws.com/blog/wp-content/uploads/2021/10/07105852/website-development-process.jpg"
+          src="/images/pages/e-learing.jpg"
           alt="Educational Website Development"
           className="w-full h-full object-cover"
         />
