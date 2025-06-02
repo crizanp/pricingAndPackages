@@ -130,13 +130,20 @@ const Navbar = () => {
                 { name: 'Digital Marketing', href: '/solutions/on-demand-delivery' },
             ]
         },
-        { name: 'Work', href: '/work', hasDropdown: false },
+        { 
+            name: 'Tools', 
+            href: '/tools', 
+            hasDropdown: true,
+            items: [
+                { name: 'Video Converter', href: 'https://tools.foxbeep.com' }
+            ]
+        },
         {
             name: 'Company',
             href: '/company',
             hasDropdown: true,
             flatMenu: true,
-            compactMenu: true, // Add a new property to identify compact menus
+            compactMenu: true,
             items: [
                 { name: 'About', href: '/company/about' },
                 { name: 'Process', href: '/company/process' },
@@ -309,6 +316,23 @@ const Navbar = () => {
                                                 </div>
                                             )}
 
+                                            {/* Simple dropdown for Tools and other basic menus */}
+                                            {!item.flatMenu && item.name !== 'Services' && (
+                                                <div className="py-4">
+                                                    <div className="flex flex-col space-y-2 max-w-xs">
+                                                        {item.items.map((subItem, subIndex) => (
+                                                            <Link
+                                                                key={subIndex}
+                                                                href={subItem.href}
+                                                                className="text-sm lg:text-base text-gray-700 hover:text-purple-500 transition-colors duration-200 px-4 py-2 rounded hover:bg-gray-50"
+                                                                onClick={closeAllDropdowns}
+                                                            >
+                                                                {subItem.name}
+                                                            </Link>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            )}
 
                                         </div>
                                     </div>
@@ -428,6 +452,22 @@ const Navbar = () => {
                                                                         ))}
                                                                     </div>
                                                                 </div>
+                                                            ))}
+                                                        </div>
+                                                    )}
+
+                                                    {/* Simple menu mobile display (for Tools) */}
+                                                    {!item.flatMenu && !item.sections && (
+                                                        <div className="py-2">
+                                                            {item.items.map((subItem, subIndex) => (
+                                                                <Link
+                                                                    key={subIndex}
+                                                                    href={subItem.href}
+                                                                    className="block text-sm text-gray-700 hover:text-purple-500 py-1"
+                                                                    onClick={() => setIsOpen(false)}
+                                                                >
+                                                                    {subItem.name}
+                                                                </Link>
                                                             ))}
                                                         </div>
                                                     )}
