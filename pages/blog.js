@@ -3,6 +3,7 @@ import { Search, Clock, User, Calendar } from "lucide-react";
 
 import blogData from '@/blogdata.json';
 import Image from "next/image";
+import Link from "next/link";
 
 
 const BlogPage = () => {
@@ -77,10 +78,12 @@ const BlogPage = () => {
             </div>
 
             {/* Blog Posts */}
-            <div className="max-w-6xl mx-auto px-4 pb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 {filteredPosts.length > 0 ? (
                     <div className="space-y-4">
                         {filteredPosts.map((post) => (
+                            <Link href={`/blog/${post.slug}`}>
+
                             <article key={post.id} className="bg-white rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer">
                                 <div className="flex flex-col sm:flex-row gap-4">
                                     <img
@@ -136,6 +139,7 @@ const BlogPage = () => {
                                     </div>
                                 </div>
                             </article>
+                            </Link>
                         ))}
                     </div>
                 ) : (
