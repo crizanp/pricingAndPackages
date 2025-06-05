@@ -18,7 +18,7 @@ Allow: /company/manifesto
 Allow: /company/pocess
 Allow: /company/testimonials
 Allow: /company/university
-
+Allow: /services
 Allow: /services/ads-commercial-editing
 Allow: /services/ai-development
 Allow: /services/android-app-development
@@ -39,6 +39,7 @@ Allow: /services/web3-development
 Allow: /services/wordpress-development
 
 Allow: /contact
+Allow: /industries
 Allow: /industries/agriculture
 Allow: /industries/automotive
 Allow: /industries/b2b-software
