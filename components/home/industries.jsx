@@ -75,7 +75,7 @@ export default function IndustriesWeServe() {
               <div
                 className={`group p-5 sm:p-6 md:p-8 rounded-xl transition-all duration-300 cursor-pointer border border-white hover:border-white h-full flex flex-col justify-between ${activeIndustry === industry.id
                     ? 'bg-gradient-to-br from-gray-900 to-gray-900 border-white'
-                    : 'bg-gray-900 hover:bg-gradient-to-br hover:from-gray-900 hover:to-gray-800'
+                    : 'bg-black hover:bg-gradient-to-br hover:from-gray-900 hover:to-gray-800'
                   }`}
                 onMouseEnter={() => setActiveIndustry(industry.id)}
                 onMouseLeave={() => setActiveIndustry('')}

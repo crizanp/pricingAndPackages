@@ -45,10 +45,10 @@ export default function Footer() {
                             <h3 className="text-gray-400 text-sm">Resources</h3>
                         </div>
                         <ul className="space-y-4">
-                            <li><a href="#" className="hover:text-gray-300 transition-colors">Blog</a></li>
+                            <li><a href="/blog" className="hover:text-gray-300 transition-colors">Blog</a></li>
                             <li><a href="#" className="hover:text-gray-300 transition-colors">Events</a></li>
                             <li><a href="#" className="hover:text-gray-300 transition-colors">Press Release</a></li>
-                            <li><a href="#" className="hover:text-gray-300 transition-colors">Work</a></li>
+                            <li><a href="/work" className="hover:text-gray-300 transition-colors">Work</a></li>
                         </ul>
                     </div>
 
@@ -59,10 +59,10 @@ export default function Footer() {
                             <h3 className="text-gray-400 text-sm">Services</h3>
                         </div>
                         <ul className="space-y-4">
-                            <li><a href="#" className="hover:text-gray-300 transition-colors">Mobile App</a></li>
-                            <li><a href="#" className="hover:text-gray-300 transition-colors">Game Development</a></li>
-                            <li><a href="#" className="hover:text-gray-300 transition-colors">Blockchain Development</a></li>
-                            <li><a href="#" className="hover:text-gray-300 transition-colors">AI Development</a></li>
+                            <li><a href="/services/android-app-development" className="hover:text-gray-300 transition-colors">Mobile App</a></li>
+                            <li><a href="/services/telegram-mini-apps-development" className="hover:text-gray-300 transition-colors">Telegram Mini Apps</a></li>
+                            <li><a href="/services/dapp-development" className="hover:text-gray-300 transition-colors">Blockchain Development</a></li>
+                            <li><a href="/services/ai-development" className="hover:text-gray-300 transition-colors">AI Development</a></li>
                         </ul>
                     </div>
 
@@ -73,10 +73,10 @@ export default function Footer() {
                             <h3 className="text-gray-400 text-sm">Insights</h3>
                         </div>
                         <ul className="space-y-4">
-                            <li><a href="#" className="hover:text-gray-300 transition-colors">University</a></li>
-                            <li><a href="#" className="hover:text-gray-300 transition-colors">Careers</a></li>
-                            <li><a href="#" className="hover:text-gray-300 transition-colors">Manifesto</a></li>
-                            <li><a href="#" className="hover:text-gray-300 transition-colors">Culture Book</a></li>
+                            <li><a href="/company/university" className="hover:text-gray-300 transition-colors">University</a></li>
+                            <li><a href="/company/careers" className="hover:text-gray-300 transition-colors">Careers</a></li>
+                            <li><a href="/company/manifesto" className="hover:text-gray-300 transition-colors">Manifesto</a></li>
+                            <li><a href="/about" className="hover:text-gray-300 transition-colors">About Foxbeep</a></li>
                         </ul>
                     </div>
                 </div>
