@@ -20,11 +20,11 @@ export default function BlogShowcase() {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
+
   useEffect(() => {
     // Handle different possible JSON structures
     let posts = [];
-    
+
     if (Array.isArray(blogData)) {
       posts = blogData;
     } else if (blogData && Array.isArray(blogData.posts)) {
@@ -34,7 +34,7 @@ export default function BlogShowcase() {
     } else if (blogData && blogData.data && Array.isArray(blogData.data)) {
       posts = blogData.data;
     }
-    
+
     setBlogPosts(posts);
   }, []);
 
@@ -52,13 +52,13 @@ export default function BlogShowcase() {
           </div>
           <div className="flex items-center justify-center h-full">
             <a
-              href="#"
-              onClick={(e) => e.preventDefault()}
-              className="group flex items-center text-xl font-medium text-black transition-colors border-b-2 border-transparent pb-1 cursor-not-allowed pointer-events-none"
+              href="/blog"
+              className="group flex items-center text-xl font-medium text-black transition-colors border-b-2 border-transparent pb-1"
             >
               View all posts
               <ArrowRight className="ml-2 h-6 w-6 transition-transform" />
             </a>
+
           </div>
         </div>
 
@@ -97,16 +97,15 @@ export default function BlogShowcase() {
                     <div className="flex items-center text-gray-500 text-sm">
                       <Clock size={16} className="mr-2" />
                       <span>{post.date}</span>
-                      <span className="mx-3">•</span>
-                      <span>By {post.author}</span>
+
                     </div>
                   </div>
 
                   <a
-                    href={`/blog/${post.id}`}
+                    href={`/blog/${post.slug}`}
                     className="block mb-4"
                   >
-                    <h3 className="text-2xl md:text-4xl font-bold tracking-tight transition-colors duration-300 border-b-2 border-transparent group-hover:border-black inline-block">
+                    <h3 className="text-2xl md:text-4xl text-black font-bold tracking-tight transition-colors duration-300 border-b-2 border-transparent group-hover:border-black inline-block">
                       {post.title}
                     </h3>
                   </a>
@@ -114,7 +113,7 @@ export default function BlogShowcase() {
                   <p className="text-lg md:text-xl text-gray-700 mb-8">{post.excerpt}</p>
 
                   <a
-                    href={`/blog/${post.id}`}
+                    href={`/blog/${post.slug}`}
                     className="flex items-center text-lg font-semibold text-black transition-colors duration-300 group-hover:translate-x-1 transition-transform"
                   >
                     <span className="mr-2">Read article</span>
@@ -159,16 +158,15 @@ export default function BlogShowcase() {
                     <div className="flex items-center text-gray-500 text-sm">
                       <Clock size={16} className="mr-2" />
                       <span>{post.date}</span>
-                      <span className="mx-3">•</span>
-                      <span>By {post.author}</span>
+
                     </div>
                   </div>
 
                   <a
-                    href={`/blog/${post.id}`}
+                    href={`/blog/${post.slug}`}
                     className="block mb-4"
                   >
-                    <h3 className="text-2xl md:text-4xl font-bold tracking-tight transition-colors duration-300 border-b-2 border-transparent group-hover:border-black inline-block">
+                    <h3 className="text-2xl md:text-4xl text-black font-bold tracking-tight transition-colors duration-300 border-b-2 border-transparent group-hover:border-black inline-block">
                       {post.title}
                     </h3>
                   </a>
@@ -176,7 +174,7 @@ export default function BlogShowcase() {
                   <p className="text-lg md:text-xl text-gray-700 mb-8">{post.excerpt}</p>
 
                   <a
-                    href={`/blog/${post.id}`}
+                    href={`/blog/${post.slug}`}
                     className="flex items-center text-lg font-semibold text-black transition-colors duration-300 group-hover:translate-x-1 transition-transform"
                   >
                     <span className="mr-2">Read article</span>

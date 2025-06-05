@@ -8,7 +8,7 @@ import blogData from '@/blogdata.json';
 const BlogDetail = () => {
     const router = useRouter();
     const { slug } = router.query;
-    
+
     const [post, setPost] = useState(null);
     const [relatedPosts, setRelatedPosts] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -16,7 +16,7 @@ const BlogDetail = () => {
     useEffect(() => {
         // Wait for router to be ready and slug to be available
         if (!router.isReady || !slug) return;
-        
+
         // Simulate fetching blog post by slug
         const foundPost = blogData.blogPosts.find(p => p.slug === slug);
         if (foundPost) {
@@ -103,57 +103,39 @@ const BlogDetail = () => {
             </div>
 
             {/* Header */}
-            <div className="bg-white shadow-sm">
-                <div className="max-w-7xl mx-auto px-4 sm:px-0 py-6">
-                    {/* <button className="flex items-center text-gray-600 hover:text-gray-900 transition-colors mb-6">
-            <ArrowLeft size={20} className="mr-2" />
-            Back to Blog
-          </button> */}
+           <div className="bg-white shadow-sm">
+    <div className="max-w-7xl mx-auto px-4 sm:px-0 py-6 flex flex-col items-center text-center space-y-4">
+        <div className="flex items-center space-x-2 text-sm text-gray-500 justify-center">
+            <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full flex items-center justify-center">
+                <Tag size={14} className="mr-1" />
+                {post.category}
+            </span>
+        </div>
 
-                    <div className="space-y-4">
-                        <div className="flex items-center space-x-4 text-sm text-gray-500">
-                            <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full flex items-center">
-                                <Tag size={14} className="mr-1" />
-                                {post.category}
-                            </span>
-                            <span className="flex items-center">
-                                <Clock size={14} className="mr-1" />
-                                {post.date}
-                            </span>
-                            <span className="flex items-center">
-                                <BookOpen size={14} className="mr-1" />
-                                {post.readTime}
-                            </span>
-                        </div>
+        <h1 className="text-4xl md:text-5xl font-bold text-black leading-tight">
+            {post.title}
+        </h1>
 
-                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                            {post.title}
-                        </h1>
+        <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
+            {post.excerpt}
+        </p>
 
-                        <p className="text-xl text-gray-600 leading-relaxed">
-                            {post.excerpt}
-                        </p>
-
-                        <div className="flex items-center justify-between pt-4">
-                            <div className="flex items-center space-x-3">
-                                <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center">
-                                    <User size={20} className="text-gray-600" />
-                                </div>
-                                <div>
-                                    {/* <p className="font-medium text-gray-900">{post.author}</p> */}
-                                    <p className="font-medium text-gray-900">Foxbeep Tech</p>
-                                    <p className="text-sm text-gray-500">Author</p>
-                                </div>
-                            </div>
-
-                            <button className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors">
-                                <Share2 size={20} />
-                                <span>Share</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+        <div className="flex flex-col items-center pt-4 space-y-1">
+            <div className="w-10 h-10 rounded-full overflow-hidden">
+                <img
+                    src="/favicon-32x32.png" 
+                    alt="Author Avatar"
+                    className="w-full h-full object-cover"
+                />
             </div>
+            <div>
+                <p className="font-medium text-gray-900">Foxbeep Tech</p>
+                <p className="text-sm text-gray-500">Author</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 
             {/* Content */}
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

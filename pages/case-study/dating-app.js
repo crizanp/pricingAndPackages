@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ArrowLeft, ExternalLink, Star, Users, Heart, TrendingUp, CheckCircle, MessageCircle } from 'lucide-react';
 import TextHeroSection from '@/components/home/textHero';
-import TextHero from '@/components/video-service/textHero';
 
 export default function NepmateCaseStudy() {
     const [animateSection, setAnimateSection] = useState(false);
@@ -68,8 +67,8 @@ export default function NepmateCaseStudy() {
                 </div>
             </section>
 
-            {/* Stats Section */}
-            <section className="py-16 bg-gray-50">
+            {/* Stats Section - Black Background */}
+            <section className="py-16 bg-black text-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                         {projectStats.map((stat, index) => (
@@ -82,7 +81,7 @@ export default function NepmateCaseStudy() {
                                     <stat.icon className="h-6 w-6" />
                                 </div>
                                 <div className="text-3xl font-bold mb-2">{stat.value}</div>
-                                <div className="text-gray-600">{stat.label}</div>
+                                <div className="text-gray-300">{stat.label}</div>
                             </div>
                         ))}
                     </div>
@@ -128,12 +127,12 @@ export default function NepmateCaseStudy() {
                 </div>
             </section>
 
-            {/* Key Features */}
-            <section className="py-24 bg-gray-50">
+            {/* Key Features - Black Background */}
+            <section className="py-24 bg-black text-white">
                 <div className="px-4 lg:px-0 max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold mb-6">Key Features</h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                        <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                             Innovative features designed to create meaningful connections while prioritizing user safety and experience
                         </p>
                     </div>
@@ -141,11 +140,11 @@ export default function NepmateCaseStudy() {
                         {features.map((feature, index) => (
                             <div
                                 key={index}
-                                className={`bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transition-all duration-1000 ${animateSection ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                                className={`bg-gray-900 p-6 rounded-2xl shadow-sm border border-gray-800 transition-all duration-1000 ${animateSection ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                                 style={{ transitionDelay: `${index * 100}ms` }}
                             >
                                 <CheckCircle className="h-8 w-8 text-pink-500 mb-4" />
-                                <p className="text-lg font-medium">{feature}</p>
+                                <p className="text-lg font-medium text-white">{feature}</p>
                             </div>
                         ))}
                     </div>
@@ -175,34 +174,32 @@ export default function NepmateCaseStudy() {
                 </div>
             </section>
 
-            
-
-            {/* User Experience Section */}
-            <section className="py-24 bg-gray-50">
+            {/* User Experience Section - Black Background */}
+            <section className="py-24 bg-black text-white">
                 <div className="px-4 lg:px-0 max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold mb-6">User Experience</h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                        <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                             Designed with user safety, privacy, and authentic connections at the forefront
                         </p>
                     </div>
                     <div className="grid md:grid-cols-2 gap-12">
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <div className="bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-800">
                             <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
                                 <Heart className="h-8 w-8 text-white" />
                             </div>
-                            <h3 className="text-2xl font-bold mb-4">Authentic Connections</h3>
-                            <p className="text-gray-700">
+                            <h3 className="text-2xl font-bold mb-4 text-white">Authentic Connections</h3>
+                            <p className="text-gray-300">
                                 Our matching algorithm considers personality compatibility, shared interests, and relationship goals
                                 to facilitate genuine connections that align with user intentions.
                             </p>
                         </div>
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <div className="bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-800">
                             <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
                                 <MessageCircle className="h-8 w-8 text-white" />
                             </div>
-                            <h3 className="text-2xl font-bold mb-4">Safe Communication</h3>
-                            <p className="text-gray-700">
+                            <h3 className="text-2xl font-bold mb-4 text-white">Safe Communication</h3>
+                            <p className="text-gray-300">
                                 Built-in safety features including photo verification, secure messaging, and video call options
                                 ensure users can connect confidently in a protected environment.
                             </p>
