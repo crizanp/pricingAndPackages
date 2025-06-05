@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import { Search, Clock, User, Calendar } from "lucide-react";
 
-// Sample blog data
 import blogData from '@/blogdata.json';
+import Image from "next/image";
 
 
 const BlogPage = () => {
     const [posts, setPosts] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedCategory, setSelectedCategory] = useState("All");
-    
+
     const categories = ["All", ...new Set(blogData.blogPosts.map(post => post.category))];
 
     useEffect(() => {
@@ -18,12 +18,12 @@ const BlogPage = () => {
 
     // Filter posts based on search and category
     const filteredPosts = posts.filter(post => {
-        const matchesSearch = searchTerm === "" || 
+        const matchesSearch = searchTerm === "" ||
             post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
             post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-        
+
         const matchesCategory = selectedCategory === "All" || post.category === selectedCategory;
-        
+
         return matchesSearch && matchesCategory;
     });
 
@@ -31,18 +31,18 @@ const BlogPage = () => {
         <div className="min-h-screen bg-gray-50">
             {/* Header */}
             <div className="bg-white shadow-sm">
-                <div className="max-w-6xl mx-auto px-4 py-8">
-                    <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                    <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-2">
                         Blog
                     </h1>
-                    <p className="text-gray-600 text-sm md:text-base">
+                    <p className="text-gray-600 text-lg md:text-lg">
                         Tips, tutorials, and insights about web development
                     </p>
                 </div>
             </div>
 
             {/* Search and Filter */}
-            <div className="max-w-6xl mx-auto px-4 py-6">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="flex flex-col sm:flex-row gap-4">
                     {/* Search */}
                     <div className="relative flex-1">
@@ -88,7 +88,7 @@ const BlogPage = () => {
                                         alt={post.title}
                                         className="w-full sm:w-32 h-32 object-cover rounded"
                                     />
-                                    
+
                                     <div className="flex-1">
                                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
                                             <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded w-fit mb-2 sm:mb-0">
@@ -105,23 +105,23 @@ const BlogPage = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <h2 className="text-lg font-semibold text-gray-900 mb-2">
                                             {post.title}
                                         </h2>
-                                        
+
                                         <p className="text-gray-600 text-sm mb-3 line-clamp-2">
                                             {post.excerpt}
                                         </p>
-                                        
+
                                         <div className="flex items-center justify-between">
                                             <div className="flex items-center gap-2">
-                                                <div className="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center">
-                                                    <User size={12} className="text-gray-600" />
+                                                <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                                                    <img src="/favicon-32x32.png" size={12} />
                                                 </div>
-                                                <span className="text-xs text-gray-700">Author</span>
+                                                <span className="text-xs text-gray-700">Foxbeep Tech</span>
                                             </div>
-                                            
+
                                             <div className="flex gap-1">
                                                 {post.tags.slice(0, 3).map((tag, index) => (
                                                     <span
