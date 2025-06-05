@@ -132,7 +132,7 @@ const Navbar = () => {
         },
         { 
             name: 'Tools', 
-            href: '/tools', 
+            href: '#', 
             hasDropdown: true,
             items: [
                 { name: 'Video Converter', href: 'https://tools.foxbeep.com' }
@@ -140,7 +140,7 @@ const Navbar = () => {
         },
         {
             name: 'Company',
-            href: '/company',
+            href: '#',
             hasDropdown: true,
             flatMenu: true,
             compactMenu: true,
