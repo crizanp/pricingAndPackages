@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Navbar from '../components/Navbar/ServerNavbar'; // Import your server navbar
 import BlogShowcase from "../components/home/blogShowcase";
 import BrandSlider from "../components/home/companySponsered";
 import DevelopmentProcess from "../components/home/developmentProccess";
@@ -14,23 +15,23 @@ export default function Home() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Your Company Name",
-    "url": "https://yourdomain.com",
-    "logo": "https://yourdomain.com/logo.png",
+    "name": "Foxbeep",
+    "url": "https://foxbeep.com",
+    "logo": "https://foxbeep.com/logo.png",
     "description": "Professional software development, video editing, and digital marketing services. 1,300+ projects delivered with 350+ skilled team members.",
     "address": {
       "@type": "PostalAddress",
-      "addressCountry": "Your Country"
+      "addressCountry": "Nepal"
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+your-phone",
+      "telephone": "+977-9810570201",
       "contactType": "Customer Service"
     },
     "sameAs": [
-      "https://facebook.com/yourcompany",
-      "https://twitter.com/yourcompany",
-      "https://linkedin.com/company/yourcompany"
+      "https://facebook.com/foxbeep",
+      "https://twitter.com/foxbeep",
+      "https://linkedin.com/company/foxbeep"
     ],
     "offers": {
       "@type": "Offer",
@@ -85,6 +86,9 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </Head>
+
+      {/* Add the Navbar component */}
+      <Navbar />
 
       <main>
         {/* Add semantic HTML structure */}
