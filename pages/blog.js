@@ -82,7 +82,7 @@ const BlogPage = () => {
                 {filteredPosts.length > 0 ? (
                     <div className="space-y-4">
                         {filteredPosts.map((post) => (
-                            <Link href={`/blog/${post.slug}`}>
+                            <Link href={`/blog/${post.slug}`}  key={post.id}>
 
                             <article key={post.id} className="bg-white rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer">
                                 <div className="flex flex-col sm:flex-row gap-4">

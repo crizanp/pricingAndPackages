@@ -105,7 +105,7 @@ const Navbar = () => {
         },
         { 
             name: 'Tools', 
-            href: '/tools', 
+            href: '#', 
             hasDropdown: true,
             items: [
                 { name: 'Video Converter', href: 'https://tools.foxbeep.com' }
