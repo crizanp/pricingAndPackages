@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import Navbar from '../components/Navbar/ServerNavbar';
 import TextHeroSection from '@/components/home/textHero';
+import Link from 'next/link';
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -186,8 +187,8 @@ export default function Contact() {
                             {/* Right Column (Description) */}
                             <div>
                                 <p className="text-xl md:text-xl text-gray-600 leading-relaxed">
-                                    We'd love to learn more about you and what we can design and build together.
-                                    Let's turn your vision into reality with our expert development team.
+                                    We would love to learn more about you and what we can design and build together.
+                                    Lets turn your vision into reality with our expert development team.
                                 </p>
                             </div>
 
@@ -206,7 +207,7 @@ export default function Contact() {
                             <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100">
                                 <div className="mb-8">
                                     <h2 className="text-3xl font-bold text-gray-900 mb-4">Start Your Project</h2>
-                                    <p className="text-gray-600">Fill out the form below and we'll get back to you within 24 hours.</p>
+                                    <p className="text-gray-600">Fill out the form below and we will get back to you within 24 hours.</p>
                                 </div>
 
                                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -340,7 +341,7 @@ export default function Contact() {
 
                                     {submitStatus === 'success' && (
                                         <div className="p-4 bg-green-50 border border-green-200 rounded-xl">
-                                            <p className="text-green-800 font-medium">Message sent successfully! We'll get back to you within 24 hours.</p>
+                                            <p className="text-green-800 font-medium">Message sent successfully! We will get back to you within 24 hours.</p>
                                         </div>
                                     )}
 
@@ -366,9 +367,9 @@ export default function Contact() {
                                             </div>
                                             <div>
                                                 <h3 className="font-semibold text-gray-900">Email Us</h3>
-                                                <a href="mailto:info@foxbeep.com" className="text-black hover:text-blue-700 transition duration-200">
+                                                <Link href="mailto:info@foxbeep.com" className="text-black hover:text-blue-700 transition duration-200">
                                                     info@foxbeep.com
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
@@ -382,9 +383,9 @@ export default function Contact() {
                                             </div>
                                             <div>
                                                 <h3 className="font-semibold text-gray-900">Call Us</h3>
-                                                <a href="tel:+977-9810570201" className="text-black hover:text-green-700 transition duration-200">
+                                                <Link href="tel:+977-9810570201" className="text-black hover:text-green-700 transition duration-200">
                                                     +977-9810570201
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>

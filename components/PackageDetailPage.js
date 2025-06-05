@@ -403,9 +403,9 @@ const PackageDetailPage = ({ packageData }) => {
               <div>
                 <h3 className="font-semibold text-gray-800 text-base">Need Help?</h3>
                 <p className="text-gray-700 mt-1">Have questions about this package? Contact our support team for assistance.</p>
-                <a href="/contact" className="inline-block mt-2 text-purple-700 font-medium hover:text-purple-900 transition-colors">
+                <Link href="/contact" className="inline-block mt-2 text-purple-700 font-medium hover:text-purple-900 transition-colors">
                   Contact Support →
-                </a>
+                </Link>
               </div>
             </div>
           </div>
