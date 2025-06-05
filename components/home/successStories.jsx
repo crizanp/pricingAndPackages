@@ -25,7 +25,8 @@ export default function SuccessStories() {
             title: "Interview Preparation App",
             description: "This app provides a wide range of job interview questions for both freshers and experienced job seekers.",
             image: "https://bohlerengineering.com/wp-content/uploads/2019/05/The-Industry-Working-740x420-1.jpg",
-            stats: "4.8/5 user satisfaction"
+            stats: "4.8/5 user satisfaction",
+            link:"interview-preperation-app"
         },
         {
             id: 2,
@@ -33,7 +34,9 @@ export default function SuccessStories() {
             title: "WorthYourWebsite - Domain Insights",
             description: "A web tool for website owners and internet users to retrieve domain name details, stats, and SEO insights.",
             image: "https://cdn-proxy.slickplan.com/wp-content/uploads/2024/07/AdobeStock_251279381-1.jpeg",
-            stats: "10K+ active users"
+            stats: "10K+ active users",
+                        link:"interview-preperation-app"
+
         },
         {
             id: 3,
@@ -41,7 +44,9 @@ export default function SuccessStories() {
             title: "WorkinEU - Jobs in Europe",
             description: "A Dubai-based company helping job seekers find career opportunities across Europe with ease and trust.",
             image: "https://ejp-eurad.eu/sites/default/files/styles/576x432/public/2022-04/eurad-implementation-compress_190422.jpg?itok=KmMjUoyU",
-            stats: "1,200+ successful placements"
+            stats: "1,200+ successful placements",
+                        link:"interview-preperation-app"
+
         },
         {
             id: 4,
@@ -49,7 +54,9 @@ export default function SuccessStories() {
             title: "Nepmate - Dating & Hookups",
             description: "A free dating app offering features for both casual hookups and serious relationships with a fun experience.",
             image: "https://ighdigital.ae/wp-content/uploads/2024/01/epmate.png",
-            stats: "500K+ matches made"
+            stats: "500K+ matches made",
+                        link:"interview-preperation-app"
+
         }
     ];
 
@@ -109,7 +116,7 @@ export default function SuccessStories() {
                                     </div>
 
                                     <a
-                                        href={`/case-study/${study.id}`}
+                                        href={`/case-study/${study.link}`}
                                         className="block mb-4"
                                     >
                                         <h3 className="text-2xl md:text-4xl font-bold tracking-tight transition-colors duration-300 border-b-2 border-transparent group-hover:border-black inline-block">
@@ -120,7 +127,7 @@ export default function SuccessStories() {
                                     <p className="text-lg md:text-xl text-gray-700 mb-8">{study.description}</p>
 
                                     <a
-                                        href={`/case-study/${study.id}`}
+                                        href={`/case-study/${study.link}`}
                                         className="flex items-center text-lg font-semibold text-black transition-colors duration-300 group-hover:translate-x-1 transition-transform"
                                     >
                                         <span className="mr-2">Read case study</span>
@@ -160,7 +167,7 @@ export default function SuccessStories() {
                                     </div>
 
                                     <a
-                                        href={`/case-study/${study.id}`}
+                                        href={`/case-study/${study.link}`}
                                         className="block mb-4"
                                     >
                                         <h3 className="text-2xl md:text-4xl font-bold tracking-tight transition-colors duration-300 border-b-2 border-transparent group-hover:border-black inline-block">
@@ -171,7 +178,7 @@ export default function SuccessStories() {
                                     <p className="text-lg md:text-xl text-gray-700 mb-8">{study.description}</p>
 
                                     <a
-                                        href={`/case-study/${study.id}`}
+                                        href={`/case-study/${study.link}`}
                                         className="flex items-center text-lg font-semibold text-black transition-colors duration-300 group-hover:translate-x-1 transition-transform"
                                     >
                                         <span className="mr-2">Read case study</span>
