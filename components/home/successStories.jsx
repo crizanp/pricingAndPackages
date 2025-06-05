@@ -35,7 +35,7 @@ export default function SuccessStories() {
             description: "A web tool for website owners and internet users to retrieve domain name details, stats, and SEO insights.",
             image: "https://cdn-proxy.slickplan.com/wp-content/uploads/2024/07/AdobeStock_251279381-1.jpeg",
             stats: "10K+ active users",
-                        link:"interview-preperation-app"
+            link:"worth-your-website"
 
         },
         {
@@ -45,7 +45,7 @@ export default function SuccessStories() {
             description: "A Dubai-based company helping job seekers find career opportunities across Europe with ease and trust.",
             image: "https://ejp-eurad.eu/sites/default/files/styles/576x432/public/2022-04/eurad-implementation-compress_190422.jpg?itok=KmMjUoyU",
             stats: "1,200+ successful placements",
-                        link:"interview-preperation-app"
+            link:"work-in-europe"
 
         },
         {
@@ -55,7 +55,7 @@ export default function SuccessStories() {
             description: "A free dating app offering features for both casual hookups and serious relationships with a fun experience.",
             image: "https://ighdigital.ae/wp-content/uploads/2024/01/epmate.png",
             stats: "500K+ matches made",
-                        link:"interview-preperation-app"
+                        link:"dating-app"
 
         }
     ];
