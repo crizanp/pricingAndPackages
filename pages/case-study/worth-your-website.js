@@ -103,7 +103,7 @@ export default function WorthYourWebsiteCaseStudy() {
                                 <p>
                                     Our platform combines multiple data sources to deliver accurate domain statistics, SEO metrics, and
                                     competitive analysis. The tool serves both technical professionals and non-technical users who need
-                                    to understand their website's performance and market position.
+                                    to understand their websites performance and market position.
                                 </p>
                             </div>
                         </div>
