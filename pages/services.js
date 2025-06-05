@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import { ChevronRight, Monitor, Video, TrendingUp, Blocks, Smartphone, Brain, Globe, Code, ShoppingCart, Building, GraduationCap, Heart, Newspaper, Factory, Play, Target, Instagram, Search, Send, Mail, Users, Cpu, Database, ArrowRight } from 'lucide-react';
 import TextHeroSection from '@/components/home/textHero';
+import Link from 'next/link';
 
 const servicesData = [
   {
@@ -191,7 +192,7 @@ const ServiceCard = ({ service, isExpanded, onToggle }) => {
               {service.items.map((item, index) => {
                 const ItemIcon = item.icon;
                 return (
-                  <a
+                  <Link
                     key={index}
                     href={item.href}
                     className={`flex items-center space-x-3 p-3 rounded-lg transition-colors ${colors.hover} group`}
@@ -202,7 +203,7 @@ const ServiceCard = ({ service, isExpanded, onToggle }) => {
                       {item.name}
                     </span>
                     <ArrowRight className="w-3 h-3 text-gray-400 group-hover:text-gray-600 transition-colors" aria-hidden="true" />
-                  </a>
+                  </Link>
                 );
               })}
             </nav>
