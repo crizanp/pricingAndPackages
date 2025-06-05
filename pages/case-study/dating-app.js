@@ -113,7 +113,7 @@ export default function NepmateCaseStudy() {
                                 <h3 className="text-xl font-semibold mb-4">Challenge</h3>
                                 <p className="text-gray-700">
                                     Existing dating apps often pigeonhole users into specific categories, failing to acknowledge that
-                                    peoples relationship goals can evolve and vary, creating a need for a more flexible platform.
+                                    peoples relationship goals can evolve and vary creating a need for a more flexible platform.
                                 </p>
                             </div>
                             <div>
