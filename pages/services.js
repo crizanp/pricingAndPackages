@@ -279,7 +279,7 @@ export default function ServicesPage() {
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content="Professional Digital Services | Web Development & Marketing" />
         <meta property="og:description" content="Expert digital services including website development, video editing, digital marketing, and blockchain solutions. 500+ projects completed worldwide." />
-        <meta property="og:image" content="https://foxbeep.com/services-og-image.png" />
+        <meta property="og:image" content="https://foxbeep.com/og-image.png" />
         <meta property="og:url" content="https://foxbeep.com/services" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Foxbeep" />
@@ -288,7 +288,7 @@ export default function ServicesPage() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Professional Digital Services | Foxbeep" />
         <meta name="twitter:description" content="Expert digital services including website development, video editing, digital marketing, and blockchain solutions." />
-        <meta name="twitter:image" content="https://foxbeep.com/services-og-image.png" />
+        <meta name="twitter:image" content="https://foxbeep.com/og-image.png" />
         
         {/* Technical Meta Tags */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
