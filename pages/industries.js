@@ -197,7 +197,7 @@ export default function IndustriesPage() {
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content="Industries We Serve | Custom Software Solutions Across 15+ Sectors" />
         <meta property="og:description" content="Expert software development across healthcare, education, ecommerce, automotive, and 9+ other industries. Custom solutions tailored to your industry needs." />
-        <meta property="og:image" content="https://foxbeep.com/industries-og-image.png" />
+        <meta property="og:image" content="https://foxbeep.com/og-image.png" />
         <meta property="og:url" content="https://foxbeep.com/industries" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Foxbeep" />
@@ -206,7 +206,7 @@ export default function IndustriesPage() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Industries We Serve | Custom Software Solutions" />
         <meta name="twitter:description" content="Expert software development across 15+ industries including healthcare, education, ecommerce, and more." />
-        <meta name="twitter:image" content="https://foxbeep.com/industries-og-image.png" />
+        <meta name="twitter:image" content="https://foxbeep.com/og-image.png" />
         
         {/* Technical Meta Tags */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
