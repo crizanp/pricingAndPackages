@@ -1,0 +1,55 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://foxbeep.com/sitemap.xml
+
+# Disallow crawling of admin areas (if any)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow crawling of important pages
+Allow: /
+Allow: /company/about
+Allow: /company/careers
+Allow: /company/manifesto
+Allow: /company/pocess
+Allow: /company/testimonials
+Allow: /company/university
+
+Allow: /services/ads-commercial-editing
+Allow: /services/ai-development
+Allow: /services/android-app-development
+Allow: /services/big-data-development
+Allow: /services/business-website
+Allow: /services/dapp-development
+Allow: /services/digital-marketing
+Allow: /services/ecommerce-development
+Allow: /services/education-website
+Allow: /services/healthcare-website
+Allow: /services/ios-app-development
+Allow: /services/manufacturing-website
+Allow: /services/news-media-website
+Allow: /services/nft-marketplace-development
+Allow: /services/telegram-mini-apps-development
+Allow: /services/video-editing
+Allow: /services/web3-development
+Allow: /services/wordpress-development
+
+Allow: /contact
+Allow: /industries/agriculture
+Allow: /industries/automotive
+Allow: /industries/b2b-software
+Allow: /industries/crm-development
+Allow: /industries/ecommerce
+Allow: /industries/education
+Allow: /industries/fashion-apparel
+Allow: /industries/healthcare
+Allow: /industries/legal
+Allow: /industries/logistics
+Allow: /industries/manufacturing
+Allow: /industries/travel
+Allow: /blog
+Allow: /work
