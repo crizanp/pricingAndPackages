@@ -63,7 +63,7 @@ export default function InterviewPrepCaseStudy() {
                     </div>
                 </div>
                 <div className="flex justify-center items-center w-full my-6">
-                    <Link href="https://play.google.com/store/" className='cursor-pointer flex items-center px-6 py-4 bg-black text-white rounded-xl hover:bg-gray-800 transition-colors text-lg lg:text-xl font-semibold' passHref>
+                    <Link href="https://play.google.com/store/apps/details?id=com.interview.qa.nxtech" className='cursor-pointer flex items-center px-6 py-4 bg-black text-white rounded-xl hover:bg-gray-800 transition-colors text-lg lg:text-xl font-semibold' passHref>
                             <ExternalLink className="h-6 w-6 mr-3" />
                             View Live App
                     </Link>
