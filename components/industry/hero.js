@@ -25,7 +25,7 @@ export const Hero = ({
       </div>
 
       {/* Content container */}
-      <div className="relative max-w-7xl mx-auto px-4 xl:px-0 py-12">
+      <div className="relative max-w-7xl mx-auto px-4 md:px-6 xl:px-8 py-12">
         <div className=" text-left py-6 md:py-24 lg:py-32">
           <h1 className="max-w-3xl text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             {title}
@@ -35,7 +35,7 @@ export const Hero = ({
           </p>
           {buttonText && buttonLink && (
             <a
-              href={buttonLink}
+              href='/contact'
               className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors duration-300"
             >
               {buttonText}

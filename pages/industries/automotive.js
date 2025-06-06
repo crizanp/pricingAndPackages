@@ -1,3 +1,4 @@
+import Head from "next/head";
 import BrandSlider from "../../components/home/companySponsered";
 import TextHeroSection from "../../components/home/textHero";
 import { EdtechServices } from "../../components/industry/eduTech";
@@ -5,146 +6,183 @@ import { Hero } from "../../components/industry/hero";
 import { TextHighlight } from "../../components/industry/textHero";
 import FAQSection from "../../components/services/faqSection";
 
-const AutomotiveServices = () => {
+
+export default function AutomotiveIndustry() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Foxbeep Automotive Solutions",
+    "url": "https://foxbeep.com/automotive",
+    "logo": "https://foxbeep.com/logo.png",
+    "description": "Professional automotive software development services including autonomous driving systems, connected vehicle solutions, and fleet management platforms. 18+ years experience with 350+ automotive software professionals.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Nepal"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+977-9810570201",
+      "contactType": "Customer Service"
+    },
+    "sameAs": [
+      "https://facebook.com/foxbeep",
+      "https://twitter.com/foxbeep",
+      "https://linkedin.com/company/foxbeep"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "name": "Automotive Software Development Services",
+      "description": "Custom automotive software development, connected vehicle solutions, autonomous driving systems, and fleet management platforms"
+    },
+    "expertise": [
+      "Autonomous Driving Systems",
+      "Connected Vehicle Solutions", 
+      "Fleet Management Platforms",
+      "Automotive IoT Solutions",
+      "Vehicle Telematics",
+      "ADAS Development"
+    ]
+  };
+
   // Hero section content
   const heroContent = {
-    title: "Advanced Automotive Solutions for Modern Vehicles",
-    subtitle: "Transforming the automotive industry with technology-driven services, sustainable practices, and exceptional customer experiences.",
-    buttonText: "Get Started",
+    title: "Automotive Software Development Services",
+    subtitle: "Expert automotive software development for vehicle automation, safety, connectivity, and performance optimization with cutting-edge IT solutions.",
+    buttonText: "Request Consultation",
     buttonLink: "#contact",
-    backgroundImage: "/images/automotive-services-hero-banner.png",
-    imageAlt: "Modern automotive service professionals in action"
+    backgroundImage: "/images/industries/automotive.jpg",
+    imageAlt: "Advanced automotive software development and connected vehicle technology"
   };
 
   // Text highlight section content
   const textHeroContent = {
-    headingText: "TECHNOLOGY IS REVOLUTIONIZING THE AUTOMOTIVE INDUSTRY THROUGH INNOVATION",
-    highlightWord: "INNOVATION",
-    descriptionText: "Technology is revolutionizing the automotive industry through innovative approaches to manufacturing, maintenance, customer experience, and connected vehicles. From diagnostic systems to fleet management and autonomous driving platforms, digital transformation is enhancing efficiency and sustainability across the entire automotive value chain. Foxbeep helps automotive businesses leverage technology to improve operations, reduce environmental impact, and deliver exceptional customer experiences.",
+    headingText: "AUTOMOTIVE INDUSTRY TRANSFORMATION THROUGH ADVANCED SOFTWARE SOLUTIONS",
+    highlightWord: "SOFTWARE",
+    descriptionText: "The automotive industry is experiencing digital transformation through innovative software solutions. From autonomous driving systems to connected vehicle platforms, our IT expertise delivers comprehensive automotive software development services. We specialize in vehicle automation, predictive maintenance, fleet management systems, and smart mobility solutions that enhance safety, efficiency, and user experience across the automotive ecosystem.",
     brandName: "Foxbeep",
     highlightColor: "bg-blue-300"
   };
 
-  // Automotive Tech Solutions section
-  const automotiveTechContent = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing automotive industry solutions. Our key focus areas are:",
+  // Autonomous Driving Systems section
+  const autonomousDrivingContent = {
+    mainHeading: "Our Automotive Software Solutions",
+    introText: "We deliver comprehensive automotive software development services with focus on innovation and reliability:",
     companyName: "Foxbeep",
     servicesList: [
-      "Automotive Tech Solutions",
-      "Dealership Management Systems",
-      "Fleet Management Platforms",
-      "Connected Vehicle Solutions"
+      "Autonomous Driving Systems",
+      "Connected Vehicle Platforms",
+      "Fleet Management Solutions", 
+      "Automotive IoT Integration"
     ],
-    featuredService: "Automotive Tech Solutions",
-    featuredServiceDescription: "We develop innovative automotive technology solutions that help businesses streamline operations, enhance customer experiences, and maintain vehicle safety. Our platforms integrate cutting-edge technologies to address the unique challenges of modern automotive businesses.",
-    featuredServiceImage: "/images/automotive-tech-solutions.jpg",
+    featuredService: "Autonomous Driving Systems",
+    featuredServiceDescription: "Advanced autonomous driving software solutions that integrate AI, machine learning, and real-time sensor data processing. Our systems enhance vehicle safety through intelligent navigation, object detection, and decision-making algorithms designed for modern automotive requirements.",
+    featuredServiceImage: "/images/autonomous-driving-systems.jpg",
     highlightColor: "bg-blue-300",
     featureDetails: [
       {
-        title: "Smart diagnostic systems",
-        description: "We create intelligent diagnostic platforms that optimize maintenance workflows, monitor vehicle systems, and ensure consistent service quality through IoT sensors and advanced analytics."
+        title: "AI-Powered Navigation Systems",
+        description: "Intelligent navigation software that processes real-time traffic data, weather conditions, and road infrastructure to optimize routing and enhance driver safety through predictive analytics."
       },
       {
-        title: "Safety compliance platforms",
-        description: "Our digital compliance solutions help automotive businesses adhere to regulatory requirements through automated safety checks, digital maintenance records, and comprehensive vehicle history tracking."
+        title: "Advanced Driver Assistance Systems (ADAS)",
+        description: "Comprehensive ADAS software development including adaptive cruise control, lane departure warnings, automatic emergency braking, and parking assistance systems with sensor fusion technology."
       },
       {
-        title: "Service optimization tools",
-        description: "We develop data-driven service optimization tools that analyze performance metrics, part costs, and customer satisfaction to streamline workshop operations and maximize efficiency."
+        title: "Computer Vision Integration",
+        description: "Real-time object detection and recognition systems that identify pedestrians, vehicles, traffic signals, and road conditions using advanced computer vision algorithms and machine learning models."
       }
     ]
   };
 
-  // Dealership Management Systems section
-  const dealershipManagementContent = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing automotive industry solutions. Our key focus areas are:",
-    companyName: "Foxbeep",
-    servicesList: [
-      "Automotive Tech Solutions",
-      "Dealership Management Systems",
-      "Fleet Management Platforms",
-      "Connected Vehicle Solutions"
-    ],
-    featuredService: "Dealership Management Systems",
-    featuredServiceDescription: "Our comprehensive dealership management systems integrate sales, inventory, service scheduling, and customer relationship management into a unified platform. These solutions enhance operational efficiency while providing valuable business insights.",
-    featuredServiceImage: "/images/dealership-management-systems.jpg",
-    highlightColor: "bg-blue-300",
-    featureDetails: [
-      {
-        title: "Integrated sales platforms",
-        description: "We develop modern sales systems that seamlessly connect showroom and online operations, process multiple payment methods, and provide real-time sales analytics."
-      },
-      {
-        title: "Inventory & showroom management",
-        description: "Our inventory platforms optimize vehicle stock levels, track vehicle location and status, and enhance the showroom experience through digital vehicle information systems and virtual customization tools."
-      },
-      {
-        title: "Service department optimization",
-        description: "We create intuitive service management tools that optimize scheduling based on forecasted demand, track technician performance, and streamline communication between service advisors and technicians."
-      }
-    ]
-  };
-
-  // Fleet Management Platforms section
-  const fleetManagementContent = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing automotive industry solutions. Our key focus areas are:",
-    companyName: "Foxbeep",
-    servicesList: [
-      "Automotive Tech Solutions",
-      "Dealership Management Systems",
-      "Fleet Management Platforms",
-      "Connected Vehicle Solutions"
-    ],
-    featuredService: "Fleet Management Platforms",
-    featuredServiceDescription: "We develop intelligent fleet management solutions that connect vehicle operators, maintenance providers, and businesses. Our platforms enhance transparency, reduce downtime, and ensure vehicle safety throughout the fleet lifecycle.",
-    featuredServiceImage: "/images/fleet-management-platforms.jpg",
-    highlightColor: "bg-blue-300",
-    featureDetails: [
-      {
-        title: "Telematics integration systems",
-        description: "Our telematics solutions provide real-time vehicle tracking, driver behavior monitoring, and fuel consumption analytics to optimize fleet operations and reduce overall costs."
-      },
-      {
-        title: "Predictive maintenance platforms",
-        description: "We create digital platforms that analyze vehicle data to predict maintenance needs, prevent breakdowns, and optimize service scheduling to minimize vehicle downtime."
-      },
-      {
-        title: "Fleet sustainability solutions",
-        description: "Our comprehensive systems help fleet operators transition to electric and hybrid vehicles, optimize routes for fuel efficiency, and track environmental impact metrics."
-      }
-    ]
-  };
-
-  // Connected Vehicle Solutions section
+  // Connected Vehicle Platforms section
   const connectedVehicleContent = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing automotive industry solutions. Our key focus areas are:",
+    mainHeading: "Our Automotive Software Solutions", 
+    introText: "We deliver comprehensive automotive software development services with focus on innovation and reliability:",
     companyName: "Foxbeep",
     servicesList: [
-      "Automotive Tech Solutions",
-      "Dealership Management Systems",
-      "Fleet Management Platforms",
-      "Connected Vehicle Solutions"
+      "Autonomous Driving Systems",
+      "Connected Vehicle Platforms",
+      "Fleet Management Solutions",
+      "Automotive IoT Integration"
     ],
-    featuredService: "Connected Vehicle Solutions",
-    featuredServiceDescription: "We develop sophisticated connected vehicle platforms that link vehicles with infrastructure and cloud services. Our solutions enhance the driving experience through intuitive interfaces, real-time data integration, and seamless connectivity.",
-    featuredServiceImage: "/images/connected-vehicle-solutions.jpg",
+    featuredService: "Connected Vehicle Platforms",
+    featuredServiceDescription: "Comprehensive connected vehicle software platforms that enable seamless communication between vehicles, infrastructure, and cloud services. Our solutions provide real-time vehicle diagnostics, remote monitoring, and enhanced user experiences through integrated connectivity.",
+    featuredServiceImage: "/images/connected-vehicle-platforms.jpg", 
     highlightColor: "bg-blue-300",
     featureDetails: [
       {
-        title: "In-vehicle infotainment systems",
-        description: "We create customizable infotainment platforms that integrate with existing vehicle systems, feature interactive interfaces with voice control, and support multiple connectivity options."
+        title: "Vehicle-to-Everything (V2X) Communication",
+        description: "Advanced V2X communication software that enables vehicles to communicate with infrastructure, other vehicles, and cloud services for improved traffic flow and enhanced safety protocols."
       },
       {
-        title: "V2X communication platforms",
-        description: "Our Vehicle-to-Everything (V2X) solutions use advanced algorithms to enable communication between vehicles and infrastructure, improving safety and traffic flow in urban environments."
+        title: "Telematics and Remote Diagnostics",
+        description: "Comprehensive telematics solutions providing real-time vehicle health monitoring, predictive maintenance alerts, and remote diagnostic capabilities through IoT sensors and cloud integration."
       },
       {
-        title: "Customer engagement applications",
-        description: "We develop sophisticated mobile applications that connect drivers with their vehicles, enable remote diagnostics and controls, and build loyalty through personalized services and rewards programs."
+        title: "In-Vehicle Infotainment Systems",
+        description: "Modern infotainment platform development with touchscreen interfaces, voice control, smartphone integration, and cloud-based services for enhanced driver and passenger experience."
+      }
+    ]
+  };
+
+  // Fleet Management Solutions section
+  const fleetManagementContent = {
+    mainHeading: "Our Automotive Software Solutions",
+    introText: "We deliver comprehensive automotive software development services with focus on innovation and reliability:",
+    companyName: "Foxbeep", 
+    servicesList: [
+      "Autonomous Driving Systems",
+      "Connected Vehicle Platforms",
+      "Fleet Management Solutions",
+      "Automotive IoT Integration"
+    ],
+    featuredService: "Fleet Management Solutions",
+    featuredServiceDescription: "Enterprise-grade fleet management software solutions that optimize vehicle utilization, reduce operational costs, and enhance fleet efficiency. Our platforms provide comprehensive vehicle tracking, maintenance scheduling, and performance analytics for commercial and enterprise fleets.",
+    featuredServiceImage: "/images/fleet-management-solutions.jpg",
+    highlightColor: "bg-blue-300", 
+    featureDetails: [
+      {
+        title: "Real-Time Fleet Tracking",
+        description: "GPS-based fleet tracking systems with real-time location monitoring, route optimization, geofencing capabilities, and comprehensive reporting dashboards for fleet managers."
+      },
+      {
+        title: "Predictive Maintenance Systems",
+        description: "AI-powered predictive maintenance software that analyzes vehicle data to predict maintenance needs, schedule service appointments, and prevent costly breakdowns through proactive maintenance planning."
+      },
+      {
+        title: "Driver Performance Analytics",
+        description: "Comprehensive driver behavior monitoring systems that track driving patterns, fuel efficiency, safety scores, and provide actionable insights for fleet optimization and driver training programs."
+      }
+    ]
+  };
+
+  // Automotive IoT Integration section
+  const iotIntegrationContent = {
+    mainHeading: "Our Automotive Software Solutions",
+    introText: "We deliver comprehensive automotive software development services with focus on innovation and reliability:",
+    companyName: "Foxbeep",
+    servicesList: [
+      "Autonomous Driving Systems", 
+      "Connected Vehicle Platforms",
+      "Fleet Management Solutions",
+      "Automotive IoT Integration"
+    ],
+    featuredService: "Automotive IoT Integration",
+    featuredServiceDescription: "Advanced automotive IoT software solutions that connect vehicles, infrastructure, and mobile devices through intelligent sensor networks. Our IoT platforms enable smart vehicle monitoring, automated maintenance alerts, and enhanced connectivity for modern automotive ecosystems.",
+    featuredServiceImage: "/images/automotive-iot-integration.jpg",
+    highlightColor: "bg-blue-300",
+    featureDetails: [
+      {
+        title: "Smart Sensor Integration",
+        description: "Comprehensive IoT sensor integration for vehicle monitoring including temperature sensors, pressure monitors, GPS tracking, and environmental sensors with real-time data processing capabilities."
+      },
+      {
+        title: "Cloud-Based Vehicle Analytics",
+        description: "Advanced cloud analytics platforms that process vehicle IoT data to provide insights on performance, usage patterns, maintenance needs, and operational efficiency through machine learning algorithms."
+      },
+      {
+        title: "Mobile App Integration",
+        description: "Native mobile applications that connect drivers with their vehicles through IoT networks, providing remote vehicle control, diagnostics, location tracking, and maintenance notifications."
       }
     ]
   };
@@ -152,119 +190,155 @@ const AutomotiveServices = () => {
   // FAQ Section content
   const faqItems = [
     {
-      question: "How can technology improve vehicle maintenance in my business?",
-      answer: "Our technology solutions enhance vehicle maintenance through predictive diagnostics, automated service reminders, digital service histories, and IoT sensor monitoring. These systems provide real-time alerts for potential issues, maintain comprehensive digital records for warranty claims, and ensure consistent adherence to maintenance schedules across entire fleets."
+      question: "What automotive software development services do you provide?",
+      answer: "We provide comprehensive automotive software development including autonomous driving systems, connected vehicle platforms, fleet management solutions, ADAS development, telematics integration, IoT connectivity, predictive maintenance systems, and custom automotive applications tailored to specific industry requirements."
     },
     {
-      question: "What benefits do integrated dealership management systems offer?",
-      answer: "Integrated systems eliminate data silos by connecting sales, inventory, service scheduling, and customer management into one platform. This provides a holistic view of operations, reduces manual data entry, enables data-driven decision making, and improves coordination between departments, ultimately enhancing efficiency and customer satisfaction."
+      question: "How do you ensure automotive software compliance and safety standards?",
+      answer: "Our automotive software development follows ISO 26262 functional safety standards, AUTOSAR architecture guidelines, and industry best practices. We implement rigorous testing protocols, code reviews, and quality assurance processes to ensure compliance with automotive safety and regulatory requirements."
     },
     {
-      question: "How can you help reduce environmental impact in our automotive operations?",
-      answer: "We address environmental impact through EV integration planning, route optimization that reduces fuel consumption, idle-time monitoring systems, and sustainability analytics that identify patterns and improvement opportunities throughout your operations."
+      question: "Can you integrate with existing automotive systems and hardware?",
+      answer: "Yes, we specialize in integrating automotive software with existing vehicle systems, ECUs, sensors, and third-party hardware. Our solutions are designed for seamless compatibility with various automotive platforms and can be customized for specific vehicle models and manufacturer requirements."
     },
     {
-      question: "Can you create custom customer portals for our dealership group?",
-      answer: "Absolutely. We specialize in developing customized customer portals that showcase your inventory, accommodate service scheduling, highlight special offers, and integrate your branding. These systems can handle complex vehicle searches, financing calculators, and personalized recommendations based on customer preferences."
+      question: "What technologies do you use for automotive software development?",
+      answer: "We use cutting-edge technologies including C/C++, Python, Java, embedded systems programming, real-time operating systems (RTOS), machine learning frameworks, computer vision libraries, IoT platforms, cloud services, and automotive-specific development tools and simulators."
     },
     {
-      question: "How do your fleet platforms optimize vehicle utilization?",
-      answer: "Our fleet platforms use machine learning algorithms to optimize vehicle assignments based on usage patterns, maintenance schedules, and business needs. They prioritize assignments based on vehicle type and condition, provide accurate availability forecasts, and balance utilization to maximize efficiency and extend vehicle lifespan."
+      question: "How do you handle automotive data security and privacy?",
+      answer: "We implement advanced cybersecurity measures including end-to-end encryption, secure communication protocols, intrusion detection systems, and compliance with automotive cybersecurity standards. Our solutions protect vehicle data, user privacy, and prevent unauthorized access to automotive systems."
     },
     {
-      question: "What analytics capabilities do your automotive solutions provide?",
-      answer: "Our platforms offer comprehensive analytics including sales performance by model, salesperson, and location; part-level cost analysis; technician productivity metrics; customer behavior patterns; vehicle performance data; and predictive analytics for maintenance forecasting. These insights enable data-driven decisions across all aspects of your automotive business."
+      question: "What is your experience with autonomous vehicle development?",
+      answer: "We have extensive experience developing autonomous driving software including sensor fusion algorithms, path planning systems, object detection and classification, decision-making algorithms, and safety-critical software components for various levels of vehicle automation from Level 1 to Level 4 autonomy."
     },
     {
-      question: "How do your solutions help with technician management challenges?",
-      answer: "We address staffing challenges through AI-powered scheduling that matches technician skills with forecasted service demand, mobile apps that improve communication and job management, performance analytics that identify training needs, and streamlined documentation tools that accelerate job completion."
+      question: "Can you develop custom fleet management solutions?",
+      answer: "Absolutely. We develop custom fleet management platforms with features like real-time GPS tracking, route optimization, fuel monitoring, maintenance scheduling, driver behavior analysis, reporting dashboards, and mobile applications tailored to specific fleet management requirements and business models."
     },
     {
-      question: "Can your systems integrate with our existing automotive technology?",
-      answer: "Yes, our solutions are designed with open APIs that enable seamless integration with existing DMS systems, accounting software, CRM platforms, and diagnostic equipment. We conduct thorough assessments of your current technology ecosystem and develop custom integration strategies to preserve your existing investments."
+      question: "How do you support connected vehicle and V2X communication development?",
+      answer: "We develop V2X communication software supporting Vehicle-to-Vehicle (V2V), Vehicle-to-Infrastructure (V2I), and Vehicle-to-Cloud (V2C) connectivity. Our solutions enable real-time data exchange, traffic optimization, safety warnings, and smart transportation system integration."
     },
     {
-      question: "How do you address consumer demand for transparency in vehicle history?",
-      answer: "We develop transparency solutions that track vehicle history from manufacture to current state, create digital storytelling platforms that showcase vehicle care, implement QR code systems that reveal service history and authenticity, and provide comprehensive vehicle information through interactive digital interfaces."
+      question: "What is your approach to automotive software testing and validation?",
+      answer: "We employ comprehensive testing methodologies including unit testing, integration testing, hardware-in-the-loop (HIL) testing, software-in-the-loop (SIL) testing, and real-world validation. Our testing processes ensure software reliability, performance, and safety compliance before deployment."
     },
     {
-      question: "Why choose Foxbeep for automotive industry technology solutions?",
-      answer: "Foxbeep combines deep automotive industry expertise with cutting-edge technical capabilities. We understand the unique challenges of automotive businesses and develop solutions that address real operational pain points. Our technology enhances efficiency, ensures compliance, improves customer experiences, and provides actionable insights that drive profitability and sustainability."
+      question: "Why choose Foxbeep for automotive software development?",
+      answer: "Foxbeep combines 18+ years of software development expertise with specialized automotive industry knowledge. Our 350+ software professionals have experience in safety-critical systems, real-time processing, and automotive standards compliance, ensuring reliable and innovative automotive software solutions."
     }
   ];
 
-  // Final CTA section content
-  const ctaContent = {
-    heading: "Ready to transform your automotive business with innovative technology?",
-    description: "Let's discuss how our automotive industry expertise can help you optimize operations, reduce costs, and deliver exceptional customer experiences.",
-    buttonText: "Book a consultation",
-    buttonLink: "/contact"
-  };
-
   return (
-    <div>
-      {/* Hero Banner */}
-      <Hero {...heroContent} />
-      
-      {/* Text Highlight Section */}
-      <TextHighlight {...textHeroContent} />
-      
-      {/* Trusted By Brand Slider */}
-      <BrandSlider />
-      
-      {/* Services Overview Section */}
-      <div className="max-w-7xl mx-auto px-4 xl:px-0 my-16">
-        {/* Heading */}
-        <h2 className="text-4xl md:text-5xl relative inline-block mb-6">
-          <span className="bg-blue-300 absolute -bottom-1 left-0 w-full h-4 -z-10 rounded-sm"></span>
-          Foxbeep services
-        </h2>
+    <>
+      <Head>
+        {/* Essential Meta Tags */}
+        <title>Automotive Software Development Services | Connected Vehicle Solutions | Foxbeep</title>
+        <meta name="description" content="Expert automotive software development services including autonomous driving systems, connected vehicle platforms, fleet management, and IoT integration. 18+ years experience, 350+ automotive software professionals." />
+        <meta name="keywords" content="automotive software development, autonomous driving systems, connected vehicle platforms, fleet management software, automotive IoT, ADAS development, vehicle telematics, automotive app development" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Automotive Software Development Services | Connected Vehicle Solutions" />
+        <meta property="og:description" content="Professional automotive software development including autonomous driving, connected vehicles, fleet management, and IoT solutions. Expert automotive software developers." />
+        <meta property="og:image" content="https://foxbeep.com/automotive-software-development.png" />
+        <meta property="og:url" content="https://foxbeep.com/automotive" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Foxbeep Automotive Solutions" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Automotive Software Development Services | Foxbeep" />
+        <meta name="twitter:description" content="Expert automotive software development for autonomous driving, connected vehicles, and fleet management solutions." />
+        <meta name="twitter:image" content="https://foxbeep.com/automotive-software-development.png" />
+        
+        {/* Technical Meta Tags */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow" />
+        
+        {/* Industry-Specific Meta Tags */}
+        <meta name="industry" content="Automotive Software Development" />
+        <meta name="services" content="Autonomous Driving Systems, Connected Vehicle Platforms, Fleet Management, Automotive IoT" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://foxbeep.com/automotive" />
+        
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        
+        {/* Preconnect for Performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </Head>
 
-        {/* Intro Text */}
-        <p className="text-lg text-gray-700 mb-8">
-          At <span className="font-semibold text-gray-900">Foxbeep</span>, we take a unique approach to developing technology solutions for the automotive industry. Our core focus areas include:
-        </p>
-
-        {/* Services List */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4">
-          {[
-            "Automotive Tech Solutions",
-            "Dealership Management Systems",
-            "Fleet Management Platforms",
-            "Connected Vehicle Solutions",
-          ].map((service, index) => (
-            <div key={index} className="flex items-start">
-              <div className="mt-1 mr-3 text-blue-500">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15H5v-3.414l8.293-8.293a1 1 0 011.414 0zM7 13h.586L14 6.586 13.414 6 7 12.414V13z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <p className="text-lg text-gray-800">{service}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+      <main>
+        {/* Hero Section */}
+        <section aria-label="Automotive Software Development Hero">
+          <Hero {...heroContent} />
+        </section>
+        
+        {/* Text Highlight Section */}
+        <section aria-label="Automotive Industry Overview">
+          <TextHighlight {...textHeroContent} />
+        </section>
+        
+        {/* Brand Partners */}
+        <section aria-label="Trusted by Leading Automotive Companies">
+          <BrandSlider />
+        </section>
+        
+       
+        
+        {/* Automotive Software Services Sections */}
+        <section aria-label="Autonomous Driving Systems">
+          <EdtechServices {...autonomousDrivingContent} />
+        </section>
+        
+        <section aria-label="Connected Vehicle Platforms">
+          <EdtechServices {...connectedVehicleContent} />
+        </section>
+        
+        <section aria-label="Fleet Management Solutions">
+          <EdtechServices {...fleetManagementContent} />
+        </section>
+        
+        <section aria-label="Automotive IoT Integration">
+          <EdtechServices {...iotIntegrationContent} />
+        </section>
+        
+       
+       
+        
+       
+        {/* FAQ Section */}
+        <section aria-label="Automotive Software Development FAQ">
+          <FAQSection
+            title="Frequently Asked Questions"
+            subtitle="Get answers to common questions about our automotive software development services"
+            faqItems={faqItems}
+            backgroundColor="bg-white"
+            textColor="text-gray-700"
+            questionSize="text-2xl"
+          />
+        </section>
+        
       
-      {/* Detailed Service Sections */}
-      <EdtechServices {...automotiveTechContent} />
-      <EdtechServices {...dealershipManagementContent} />
-      <EdtechServices {...fleetManagementContent} />
-      <EdtechServices {...connectedVehicleContent} />
-      
-      {/* FAQ Section */}
-      <FAQSection
-        title="Frequently Asked Questions"
-        subtitle="Get answers to common questions about our automotive industry solutions"
-        faqItems={faqItems}
-        backgroundColor="bg-white"
-        textColor="text-gray-700"
-        questionSize="text-2xl"
-      />
-      
-      {/* Final Text Hero Section */}
-      <TextHeroSection />
-    </div>
+        {/* Call to Action */}
+        <section aria-label="Get Started with Automotive Software Development">
+          <TextHeroSection />
+        </section>
+      </main>
+    </>
   );
-};
-
-export default AutomotiveServices;
+}

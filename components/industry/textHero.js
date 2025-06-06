@@ -4,31 +4,30 @@ export const TextHighlight = ({
   headingText,
   highlightWord,
   descriptionText,
-  highlightColor = 'bg-yellow-300',
+  highlightColor = 'bg-blue-600',
   brandName = ''
 }) => {
   // Split the heading to handle highlighting a specific word
   const headingParts = headingText.split(highlightWord);
 
   return (
-    <div className="max-w-7xl mx-auto py-16 px-4 xl:px-0  bg-white">
-      <div className=" mx-auto flex flex-col md:flex-row items-start justify-between gap-8 md:gap-16">
+    <div className="max-w-7xl mx-auto py-20 px-6 xl:px-8 bg-white">
+      <div className="mx-auto flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-20">
         {/* Left column - Big heading with highlighted word */}
-        <div className="w-full md:w-5/12">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl leading-tight">
+        <div className="w-full lg:w-5/12 my-auto">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl  text-gray-900 leading-tight">
             {headingParts[0]}
-            <span className="relative inline-block px-1">
+            <span className="relative inline-block">
               <span className="relative z-10">{highlightWord}</span>
-              <span className="absolute left-0 bottom-1 h-2 w-full bg-lime-400 rounded-md z-0"></span>
+              <span className={`absolute left-0 bottom-2 h-3 w-full ${highlightColor} opacity-20 rounded-sm`}></span>
             </span>
             {headingParts[1]}
           </h1>
-
         </div>
 
         {/* Right column - Description text */}
-        <div className="w-full md:w-7/12 my-auto">
-          <p className="text-lg md:text-xl text-gray-800 leading-relaxed">
+        <div className="w-full lg:w-7/12 flex items-center">
+          <p className="text-xl text-gray-600 leading-relaxed font-light">
             {descriptionText.replace('{brandName}', brandName)}
           </p>
         </div>
@@ -36,3 +35,16 @@ export const TextHighlight = ({
     </div>
   );
 };
+
+// Example usage
+export default function Demo() {
+  return (
+    <TextHighlight
+      headingText="We deliver innovative solutions that transform your business"
+      highlightWord="transform"
+      descriptionText="Our comprehensive approach combines cutting-edge technology with proven methodologies to help organizations achieve their strategic objectives and drive sustainable growth."
+      highlightColor="bg-blue-600"
+      brandName="TechCorp"
+    />
+  );
+}
