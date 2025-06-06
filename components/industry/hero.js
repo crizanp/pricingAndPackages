@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 export const Hero = ({
@@ -34,12 +35,12 @@ export const Hero = ({
             {subtitle}
           </p>
           {buttonText && buttonLink && (
-            <a
+            <Link
               href='/contact'
               className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors duration-300"
             >
               {buttonText}
-            </a>
+            </Link>
           )}
         </div>
       </div>
