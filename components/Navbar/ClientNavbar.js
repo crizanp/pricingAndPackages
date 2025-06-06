@@ -54,36 +54,83 @@ const ClientNavbarEnhancer = () => {
         const setupDesktopDropdowns = () => {
             const dropdownTriggers = document.querySelectorAll('[data-dropdown-trigger]');
             
-            dropdownTriggers.forEach((trigger, index) => {
-                const dropdown = document.querySelector(`[data-dropdown-content="${index}"]`);
+            dropdownTriggers.forEach((trigger) => {
+                const triggerIndex = trigger.getAttribute('data-dropdown-trigger');
+                const dropdown = document.querySelector(`[data-dropdown-content="${triggerIndex}"]`);
                 
                 if (dropdown) {
                     let timeoutId;
 
                     // Show dropdown on hover
-                    trigger.addEventListener('mouseenter', () => {
+                    const showDropdown = () => {
                         clearTimeout(timeoutId);
+                        // Hide all other dropdowns first
+                        const allDropdowns = document.querySelectorAll('[data-dropdown-content]');
+                        allDropdowns.forEach(dd => {
+                            if (dd !== dropdown) {
+                                dd.classList.add('hidden');
+                                dd.classList.remove('block');
+                            }
+                        });
+                        
                         dropdown.classList.remove('hidden');
                         dropdown.classList.add('block');
-                    });
+                    };
 
                     // Hide dropdown with delay
                     const hideDropdown = () => {
                         timeoutId = setTimeout(() => {
                             dropdown.classList.add('hidden');
                             dropdown.classList.remove('block');
-                        }, 100);
+                        }, 150);
                     };
 
+                    // Event listeners
+                    trigger.addEventListener('mouseenter', showDropdown);
                     trigger.addEventListener('mouseleave', hideDropdown);
                     dropdown.addEventListener('mouseenter', () => clearTimeout(timeoutId));
                     dropdown.addEventListener('mouseleave', hideDropdown);
+
+                    // Also handle click for accessibility
+                    trigger.addEventListener('click', (e) => {
+                        if (trigger.tagName === 'A' && trigger.getAttribute('href') !== '#') {
+                            // Allow normal link navigation
+                            return;
+                        }
+                        e.preventDefault();
+                        
+                        const isVisible = !dropdown.classList.contains('hidden');
+                        
+                        // Hide all dropdowns
+                        const allDropdowns = document.querySelectorAll('[data-dropdown-content]');
+                        allDropdowns.forEach(dd => {
+                            dd.classList.add('hidden');
+                            dd.classList.remove('block');
+                        });
+                        
+                        // Show this dropdown if it was hidden
+                        if (!isVisible) {
+                            dropdown.classList.remove('hidden');
+                            dropdown.classList.add('block');
+                        }
+                    });
                 }
             });
 
             // Close all dropdowns when clicking outside
             document.addEventListener('click', (e) => {
                 if (!e.target.closest('[data-dropdown-trigger]') && !e.target.closest('[data-dropdown-content]')) {
+                    const allDropdowns = document.querySelectorAll('[data-dropdown-content]');
+                    allDropdowns.forEach(dropdown => {
+                        dropdown.classList.add('hidden');
+                        dropdown.classList.remove('block');
+                    });
+                }
+            });
+
+            // Close dropdowns on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
                     const allDropdowns = document.querySelectorAll('[data-dropdown-content]');
                     allDropdowns.forEach(dropdown => {
                         dropdown.classList.add('hidden');
