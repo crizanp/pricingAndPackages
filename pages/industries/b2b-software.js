@@ -1,3 +1,4 @@
+import Head from "next/head";
 import BrandSlider from "../../components/home/companySponsered";
 import TextHeroSection from "../../components/home/textHero";
 import { EdtechServices } from "../../components/industry/eduTech";
@@ -5,146 +6,182 @@ import { Hero } from "../../components/industry/hero";
 import { TextHighlight } from "../../components/industry/textHero";
 import FAQSection from "../../components/services/faqSection";
 
-const B2BSoftware = () => {
+export default function B2BSolutions() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Foxbeep B2B Solutions",
+    "url": "https://foxbeep.com/b2b-solutions",
+    "logo": "https://foxbeep.com/logo.png",
+    "description": "Professional B2B software development services including CRM systems, ERP solutions, supply chain management, and enterprise automation platforms. 18+ years experience with 350+ B2B software professionals.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Nepal"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+977-9810570201",
+      "contactType": "Customer Service"
+    },
+    "sameAs": [
+      "https://facebook.com/foxbeep",
+      "https://twitter.com/foxbeep",
+      "https://linkedin.com/company/foxbeep"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "name": "B2B Software Development Services",
+      "description": "Custom B2B software development, CRM systems, ERP solutions, supply chain management, and enterprise automation platforms"
+    },
+    "expertise": [
+      "CRM Development",
+      "ERP Solutions",
+      "Supply Chain Management",
+      "B2B Platform Development",
+      "Enterprise Automation",
+      "Business Intelligence Systems"
+    ]
+  };
+
   // Hero section content
   const heroContent = {
-    title: "Transforming Business Operations Through Enterprise Software",
-    subtitle: "Delivering powerful B2B solutions that streamline workflows, enhance collaboration, and drive growth in today's competitive business landscape.",
-    buttonText: "Let's connect",
+    title: "B2B Software Development Services",
+    subtitle: "Expert B2B software solutions for enterprise automation, customer relationship management, supply chain optimization, and business process enhancement with cutting-edge IT solutions.",
+    buttonText: "Request Consultation",
     buttonLink: "#contact",
-    backgroundImage: "/images/b2b-software-banner-hero-image.png",
-    imageAlt: "Business professionals using enterprise software"
+    backgroundImage: "/images/industries/b2b.jpg",
+    imageAlt: "Advanced B2B software development and enterprise solutions"
   };
 
   // Text highlight section content
   const textHeroContent = {
-    headingText: "TECHNOLOGY IS RESHAPING BUSINESS OPERATIONS BY AUTOMATING",
-    highlightWord: "AUTOMATING",
-    descriptionText: "Technology is reshaping business operations by automating complex workflows, facilitating data-driven decision making, and fostering seamless collaboration between departments, customers, and partners. From cloud-native architectures to API ecosystems, each emerging technology is poised to transform enterprise operations. Foxbeep helps businesses enhance operational efficiency and customer satisfaction via innovative, scalable B2B software solutions.",
+    headingText: "B2B INDUSTRY TRANSFORMATION THROUGH INTELLIGENT SOFTWARE SOLUTIONS",
+    highlightWord: "INTELLIGENT",
+    descriptionText: "The B2B industry is experiencing digital transformation through innovative software solutions. From customer relationship management to enterprise resource planning, our IT expertise delivers comprehensive B2B software development services. We specialize in business automation, supply chain optimization, CRM systems, and enterprise platforms that enhance efficiency, productivity, and growth across B2B ecosystems.",
     brandName: "Foxbeep",
-    highlightColor: "bg-indigo-300"
+    highlightColor: "bg-purple-300"
   };
 
-  // Enterprise Software Development section
-  const enterpriseSoftwareContent = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing your ideal B2B software. Our key focus areas are:",
+  // CRM Development section
+  const crmDevelopmentContent = {
+    mainHeading: "Our B2B Software Solutions",
+    introText: "We deliver comprehensive B2B software development services with focus on innovation and scalability:",
     companyName: "Foxbeep",
     servicesList: [
-      "Enterprise Software Development",
-      "SaaS Platform Development",
-      "Workflow Automation Solutions",
-      "Data Analytics & Business Intelligence"
+      "CRM Development",
+      "ERP Solutions",
+      "Supply Chain Management",
+      "B2B Platform Development"
     ],
-    featuredService: "Enterprise Software Development",
-    featuredServiceDescription: "Robust, scalable enterprise applications are essential for modern business operations. We empower forward-thinking organizations to streamline processes, enhance collaboration, and integrate innovative workflows transforming operational efficiency.",
-    featuredServiceImage: "/images/enterprise-software-development.jpg",
-    highlightColor: "bg-indigo-300",
+    featuredService: "CRM Development",
+    featuredServiceDescription: "Advanced customer relationship management software solutions that streamline sales processes, enhance customer interactions, and boost revenue growth. Our CRM systems integrate AI-powered analytics, automated workflows, and comprehensive customer data management for modern B2B requirements.",
+    featuredServiceImage: "/images/crm-development-systems.jpg",
+    highlightColor: "bg-purple-300",
     featureDetails: [
       {
-        title: "Custom enterprise applications",
-        description: "We develop enterprise-grade solutions incorporating cutting-edge technologies, empowering your organization to optimize complex operations. Our platforms feature seamless integration capabilities, customized workflow automation, and secure multi-tenant architecture."
+        title: "Sales Pipeline Management",
+        description: "Intelligent sales pipeline software that tracks leads, opportunities, and deals through automated workflows, forecasting analytics, and performance dashboards to maximize sales team efficiency and revenue generation."
       },
       {
-        title: "System integration",
-        description: "Our forward-looking teams leverage modern API strategies to enhance business connectivity and elevate operational efficiency. By integrating customized, feature-rich applications with existing systems, we optimize cross-functional workflows, streamline data exchange, and foster a connected enterprise ecosystem."
+        title: "Customer Data Analytics",
+        description: "Comprehensive customer analytics platforms that analyze interaction patterns, purchase history, and behavioral data to provide actionable insights for personalized marketing and improved customer retention strategies."
       },
       {
-        title: "Enterprise mobility solutions",
-        description: "We transform critical business processes into mobile-friendly applications with robust security features, offline capabilities, and seamless synchronization to keep your workforce productive regardless of location."
+        title: "Marketing Automation Integration",
+        description: "Seamless marketing automation systems that nurture leads through personalized campaigns, email sequences, and targeted content delivery based on customer segmentation and engagement analytics."
       }
     ]
   };
 
-  // SaaS Platform Development section
-  const saasPlatformContent = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing your ideal B2B software. Our key focus areas are:",
+  // ERP Solutions section
+  const erpSolutionsContent = {
+    mainHeading: "Our B2B Software Solutions",
+    introText: "We deliver comprehensive B2B software development services with focus on innovation and scalability:",
     companyName: "Foxbeep",
     servicesList: [
-      "Enterprise Software Development",
-      "SaaS Platform Development",
-      "Workflow Automation Solutions",
-      "Data Analytics & Business Intelligence"
+      "CRM Development",
+      "ERP Solutions", 
+      "Supply Chain Management",
+      "B2B Platform Development"
     ],
-    featuredService: "SaaS Platform Development",
-    featuredServiceDescription: "We create scalable, cloud-native SaaS platforms engineered for growth, multi-tenancy, and operational efficiency. We develop secure, flexible solutions that accelerate time-to-market and enable subscription-based business models, making your services accessible to a broader range of business customers.",
-    featuredServiceImage: "/images/saas-platform-development.jpg",
-    highlightColor: "bg-indigo-300",
+    featuredService: "ERP Solutions",
+    featuredServiceDescription: "Comprehensive enterprise resource planning software solutions that integrate business processes, financial management, inventory control, and human resources. Our ERP systems provide real-time visibility, automated workflows, and data-driven decision making across all business operations.",
+    featuredServiceImage: "/images/erp-solutions-systems.jpg",
+    highlightColor: "bg-purple-300",
     featureDetails: [
       {
-        title: "Multi-tenant architecture",
-        description: "We design scalable multi-tenant SaaS solutions with robust data isolation, configurable features, and efficient resource allocation. Our customized platforms enable you to serve multiple customers from a single codebase while maintaining security and performance."
+        title: "Financial Management Systems",
+        description: "Advanced financial management modules including accounting automation, budget planning, expense tracking, and financial reporting with real-time dashboards and compliance management for accurate financial oversight."
       },
       {
-        title: "Subscription management",
-        description: "We specialize in developing comprehensive subscription management systems that handle billing cycles, tier-based pricing models, usage tracking, and automated invoicing to maximize recurring revenue streams."
+        title: "Inventory & Warehouse Management",
+        description: "Intelligent inventory management systems with real-time stock tracking, automated reordering, warehouse optimization, and supply chain visibility to minimize costs and prevent stockouts."
       },
       {
-        title: "White-label solutions",
-        description: "We specialize in creating customizable white-label software platforms that allow your clients to rebrand your solution as their own, complete with customized user interfaces, domain settings, and configuration options."
+        title: "Human Resource Management",
+        description: "Comprehensive HR management platforms covering employee onboarding, payroll processing, performance management, attendance tracking, and talent acquisition with self-service portals and analytics."
       }
     ]
   };
 
-  // Workflow Automation Solutions section
-  const workflowAutomationContent = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing your ideal B2B software. Our key focus areas are:",
+  // Supply Chain Management section
+  const supplyChainContent = {
+    mainHeading: "Our B2B Software Solutions",
+    introText: "We deliver comprehensive B2B software development services with focus on innovation and scalability:",
     companyName: "Foxbeep",
     servicesList: [
-      "Enterprise Software Development",
-      "SaaS Platform Development",
-      "Workflow Automation Solutions",
-      "Data Analytics & Business Intelligence"
+      "CRM Development",
+      "ERP Solutions",
+      "Supply Chain Management",
+      "B2B Platform Development"
     ],
-    featuredService: "Workflow Automation Solutions",
-    featuredServiceDescription: "We revolutionize business efficiency by designing and developing intelligent workflow automation platforms. Our solutions enable teams to eliminate manual processes, reduce errors, and accelerate business operations with unprecedented precision.",
-    featuredServiceImage: "/images/workflow-automation-solutions.jpg",
-    highlightColor: "bg-indigo-300",
+    featuredService: "Supply Chain Management",
+    featuredServiceDescription: "Advanced supply chain management software solutions that optimize procurement, logistics, vendor relationships, and inventory management. Our platforms provide end-to-end supply chain visibility, predictive analytics, and automated processes for efficient B2B operations.",
+    featuredServiceImage: "/images/supply-chain-management-b2b.jpg",
+    highlightColor: "bg-purple-300",
     featureDetails: [
       {
-        title: "Business process automation",
-        description: "We specialize in creating comprehensive automation solutions that digitize paper-based processes, automate repetitive tasks, and orchestrate complex workflows across departments and systems."
+        title: "Vendor Management Systems",
+        description: "Comprehensive vendor management platforms that streamline supplier onboarding, performance monitoring, contract management, and procurement processes with automated workflows and vendor scorecards."
       },
       {
-        title: "Low-code/No-code platforms",
-        description: "With extensive expertise, we craft flexible business automation platforms that empower non-technical users to create, modify, and deploy automated workflows without extensive coding knowledge."
+        title: "Logistics Optimization",
+        description: "AI-powered logistics management systems that optimize transportation routes, warehouse operations, delivery scheduling, and cost management through predictive analytics and real-time tracking capabilities."
       },
       {
-        title: "Document automation",
-        description: "At Foxbeep, we specialize in developing intelligent document processing systems that extract data from unstructured documents, automate approval workflows, and integrate with your document management systems."
+        title: "Procurement Automation",
+        description: "Intelligent procurement platforms that automate purchase requisitions, approval workflows, supplier selection, and contract management while ensuring compliance and cost optimization across procurement processes."
       }
     ]
   };
 
-  // Data Analytics & Business Intelligence section
-  const dataAnalyticsContent = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing your ideal B2B software. Our key focus areas are:",
+  // B2B Platform Development section
+  const b2bPlatformContent = {
+    mainHeading: "Our B2B Software Solutions",
+    introText: "We deliver comprehensive B2B software development services with focus on innovation and scalability:",
     companyName: "Foxbeep",
     servicesList: [
-      "Enterprise Software Development",
-      "SaaS Platform Development",
-      "Workflow Automation Solutions",
-      "Data Analytics & Business Intelligence"
+      "CRM Development",
+      "ERP Solutions",
+      "Supply Chain Management",
+      "B2B Platform Development"
     ],
-    featuredService: "Data Analytics & Business Intelligence",
-    featuredServiceDescription: "We specialize in the development and deployment of advanced analytics platforms to transform raw data into actionable insights, enabling data-driven decision making, performance monitoring, and strategic planning across your organization.",
-    featuredServiceImage: "/images/data-analytics-business-intelligence.jpg",
-    highlightColor: "bg-indigo-300",
+    featuredService: "B2B Platform Development",
+    featuredServiceDescription: "Custom B2B platform development that connects businesses, streamlines transactions, and enhances collaboration. Our platforms include marketplace solutions, partner portals, API integrations, and enterprise communication systems designed for scalable B2B operations.",
+    featuredServiceImage: "/images/b2b-platform-development.jpg",
+    highlightColor: "bg-purple-300",
     featureDetails: [
       {
-        title: "Business intelligence dashboards",
-        description: "We leverage advanced visualization technologies to transform complex data into intuitive, interactive dashboards. This empowers decision-makers to identify trends, monitor KPIs, and gain insights that drive strategic business decisions."
+        title: "B2B Marketplace Platforms",
+        description: "Custom B2B marketplace development with multi-vendor support, product catalogs, bulk ordering systems, price negotiation tools, and integrated payment processing for seamless business-to-business transactions."
       },
       {
-        title: "Predictive analytics platforms",
-        description: "Offer comprehensive forecasting capabilities through our bespoke analytics platforms that leverage machine learning to predict business trends, customer behavior, and market opportunities. These intelligent systems transform historical data into forward-looking insights."
+        title: "Partner Portal Systems",
+        description: "Comprehensive partner portal development that enables secure collaboration, document sharing, performance tracking, and communication between business partners with role-based access controls and analytics."
       },
       {
-        title: "Data integration solutions",
-        description: "We specialize in creating robust ETL (Extract, Transform, Load) pipelines and data integration frameworks that connect disparate systems, unify data sources, and create a single source of truth for your organization."
+        title: "API Integration & Development",
+        description: "Robust API development and integration services that connect B2B systems, third-party applications, and business tools to create unified ecosystems with seamless data flow and automated processes."
       }
     ]
   };
@@ -152,119 +189,148 @@ const B2BSoftware = () => {
   // FAQ Section content
   const faqItems = [
     {
-      question: "What types of B2B software solutions do you offer?",
-      answer: "We offer end-to-end B2B software development services, including enterprise applications, SaaS platforms, workflow automation tools, customer portals, business intelligence dashboards, and integration middleware. Our goal is to transform the way businesses operate through intelligent, scalable software solutions."
+      question: "What B2B software development services do you provide?",
+      answer: "We provide comprehensive B2B software development including CRM systems, ERP solutions, supply chain management platforms, B2B marketplaces, partner portals, business intelligence systems, workflow automation, and custom enterprise applications tailored to specific B2B industry requirements."
     },
     {
-      question: "How do you ensure scalability in enterprise applications?",
-      answer: "We design for scalability from the ground up, implementing microservices architecture, containerization, cloud-native technologies, and horizontal scaling capabilities. Our solutions grow seamlessly with your business, handling increasing loads, users, and data volumes without compromising performance."
+      question: "How do you ensure B2B software scalability and performance?",
+      answer: "Our B2B software development follows enterprise architecture best practices, microservices design patterns, and cloud-native technologies. We implement load balancing, database optimization, caching strategies, and performance monitoring to ensure scalability and reliability for growing businesses."
     },
     {
-      question: "Can you build a custom SaaS platform for our business?",
-      answer: "Absolutely. We specialize in developing multi-tenant SaaS platforms tailored to your specific business model and market requirements. These solutions include robust subscription management, white-labeling capabilities, and the flexibility to serve diverse customer segments from a single codebase."
+      question: "Can you integrate with existing B2B systems and third-party tools?",
+      answer: "Yes, we specialize in integrating B2B software with existing enterprise systems, CRM platforms, accounting software, inventory management tools, and third-party APIs. Our solutions are designed for seamless compatibility and can be customized for specific business requirements."
     },
     {
-      question: "How do technologies like AI enhance B2B software?",
-      answer: "AI transforms B2B software by enabling intelligent automation, predictive analytics, natural language processing, and personalized user experiences. These capabilities increase operational efficiency and provide deeper business insights, especially in areas like sales, customer service, and resource planning."
+      question: "What technologies do you use for B2B software development?",
+      answer: "We use modern technologies including React, Node.js, Python, Java, .NET, cloud platforms (AWS, Azure, GCP), databases (PostgreSQL, MongoDB), microservices architecture, API development, business intelligence tools, and enterprise integration platforms for robust B2B solutions."
     },
     {
-      question: "Do you provide API development and integration services?",
-      answer: "Yes. We design and develop robust APIs that enable seamless connectivity between your applications and third-party services. Our integration expertise spans REST, GraphQL, SOAP, and event-driven architectures, ensuring your business systems communicate effectively in real-time."
+      question: "How do you handle B2B data security and compliance?",
+      answer: "We implement enterprise-grade security measures including data encryption, secure authentication, role-based access controls, audit trails, and compliance with industry standards like GDPR, SOC 2, and ISO 27001. Our solutions protect sensitive business data and ensure regulatory compliance."
     },
     {
-      question: "How do you ensure security in B2B applications?",
-      answer: "We implement comprehensive security measures including role-based access controls, encryption, secure authentication, regular vulnerability testing, and compliance with industry standards (SOC 2, GDPR, HIPAA). Security is integrated throughout our development lifecycle, not added as an afterthought."
+      question: "What is your experience with CRM and ERP development?",
+      answer: "We have extensive experience developing custom CRM and ERP systems with modules for sales management, customer service, financial management, inventory control, HR management, and business intelligence. Our solutions are tailored to specific industry needs and business processes."
     },
     {
-      question: "What kind of analytics capabilities can you build into our software?",
-      answer: "Our solutions include advanced analytics features such as interactive dashboards, real-time reporting, predictive modeling, anomaly detection, and data visualization tools. These capabilities provide actionable insights for operational improvements and strategic decision-making."
+      question: "Can you develop custom B2B marketplace platforms?",
+      answer: "Absolutely. We develop custom B2B marketplace platforms with features like multi-vendor management, product catalogs, bulk ordering, price negotiation, payment processing, logistics integration, and analytics dashboards tailored to specific B2B marketplace requirements."
     },
     {
-      question: "Can your B2B solutions integrate with our existing systems?",
-      answer: "Yes, we offer extensive integration capabilities with CRM, ERP, accounting systems, payment processors, and other business applications. Our integration approach ensures seamless data flow, process continuity, and a unified experience across your technology ecosystem."
+      question: "How do you support supply chain management software development?",
+      answer: "We develop comprehensive supply chain management solutions including vendor management, procurement automation, inventory optimization, logistics tracking, demand forecasting, and supply chain analytics with real-time visibility and predictive capabilities."
     },
     {
-      question: "Do you support post-launch maintenance and updates?",
-      answer: "Definitely. We offer continuous support, feature enhancements, security updates, and performance optimization to ensure your B2B software remains competitive, secure, and aligned with evolving business requirements and technology standards."
+      question: "What is your approach to B2B software testing and quality assurance?",
+      answer: "We employ comprehensive testing methodologies including unit testing, integration testing, performance testing, security testing, and user acceptance testing. Our QA processes ensure software reliability, performance optimization, and business continuity before deployment."
     },
     {
       question: "Why choose Foxbeep for B2B software development?",
-      answer: "Foxbeep stands out for its deep expertise in enterprise architecture, modern development practices, and business process optimization. We deliver secure, scalable, and future-ready solutions that empower businesses to streamline operations and drive growth in rapidly changing markets."
+      answer: "Foxbeep combines 18+ years of software development expertise with specialized B2B industry knowledge. Our 350+ software professionals have experience in enterprise systems, business process automation, and B2B platform development, ensuring reliable and innovative B2B software solutions."
     }
   ];
 
-  // Final CTA section content
-  const ctaContent = {
-    heading: "Ready to transform your business with powerful software solutions?",
-    description: "Let's discuss how our B2B software expertise can help you optimize operations, enhance collaboration, and drive growth.",
-    buttonText: "Schedule a consultation",
-    buttonLink: "/contact"
-  };
-
   return (
-    <div>
-      {/* Hero Banner */}
-      <Hero {...heroContent} />
-      
-      {/* Text Highlight Section */}
-      <TextHighlight {...textHeroContent} />
-      
-      {/* Trusted By Brand Slider */}
-      <BrandSlider />
-      
-      {/* Services Overview Section */}
-      <div className="max-w-7xl mx-auto px-4 xl:px-0 my-16">
-        {/* Heading */}
-        <h2 className="text-4xl md:text-5xl relative inline-block mb-6">
-          <span className="bg-indigo-300 absolute -bottom-1 left-0 w-full h-4 -z-10 rounded-sm"></span>
-          Foxbeep services
-        </h2>
+    <>
+      <Head>
+        {/* Essential Meta Tags */}
+        <title>B2B Software Development Services | CRM & ERP Solutions | Foxbeep</title>
+        <meta name="description" content="Expert B2B software development services including CRM systems, ERP solutions, supply chain management, and B2B platform development. 18+ years experience, 350+ B2B software professionals." />
+        <meta name="keywords" content="B2B software development, CRM development, ERP solutions, supply chain management software, B2B platform development, enterprise automation, business intelligence systems" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="B2B Software Development Services | CRM & ERP Solutions" />
+        <meta property="og:description" content="Professional B2B software development including CRM systems, ERP solutions, supply chain management, and enterprise platforms. Expert B2B software developers." />
+        <meta property="og:image" content="https://foxbeep.com/b2b-software-development.png" />
+        <meta property="og:url" content="https://foxbeep.com/b2b-solutions" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Foxbeep B2B Solutions" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="B2B Software Development Services | Foxbeep" />
+        <meta name="twitter:description" content="Expert B2B software development for CRM systems, ERP solutions, and supply chain management platforms." />
+        <meta name="twitter:image" content="https://foxbeep.com/b2b-software-development.png" />
+        
+        {/* Technical Meta Tags */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow" />
+        
+        {/* Industry-Specific Meta Tags */}
+        <meta name="industry" content="B2B Software Development" />
+        <meta name="services" content="CRM Development, ERP Solutions, Supply Chain Management, B2B Platform Development" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://foxbeep.com/b2b-solutions" />
+        
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        
+        {/* Preconnect for Performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </Head>
 
-        {/* Intro Text */}
-        <p className="text-lg text-gray-700 mb-8">
-          At <span className="font-semibold text-gray-900">Foxbeep</span>, we take a unique approach to building impactful B2B software. Our core focus areas include:
-        </p>
-
-        {/* Services List */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4">
-          {[
-            "Enterprise Software Development",
-            "SaaS Platform Development",
-            "Workflow Automation Solutions",
-            "Data Analytics & Business Intelligence",
-          ].map((service, index) => (
-            <div key={index} className="flex items-start">
-              <div className="mt-1 mr-3 text-indigo-500">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15H5v-3.414l8.293-8.293a1 1 0 011.414 0zM7 13h.586L14 6.586 13.414 6 7 12.414V13z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <p className="text-lg text-gray-800">{service}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-      
-      {/* Detailed Service Sections */}
-      <EdtechServices {...enterpriseSoftwareContent} />
-      <EdtechServices {...saasPlatformContent} />
-      <EdtechServices {...workflowAutomationContent} />
-      <EdtechServices {...dataAnalyticsContent} />
-      
-      {/* FAQ Section */}
-      <FAQSection
-        title="Frequently Asked Questions"
-        subtitle="Get answers to common questions about our B2B software solutions"
-        faqItems={faqItems}
-        backgroundColor="bg-white"
-        textColor="text-gray-700"
-        questionSize="text-2xl"
-      />
-      
-      {/* Final Text Hero Section */}
-      <TextHeroSection />
-    </div>
+      <main>
+        {/* Hero Section */}
+        <section aria-label="B2B Software Development Hero">
+          <Hero {...heroContent} />
+        </section>
+        
+        {/* Text Highlight Section */}
+        <section aria-label="B2B Industry Overview">
+          <TextHighlight {...textHeroContent} />
+        </section>
+        
+        {/* Brand Partners */}
+        <section aria-label="Trusted by Leading B2B Companies">
+          <BrandSlider />
+        </section>
+        
+        {/* B2B Software Services Sections */}
+        <section aria-label="CRM Development">
+          <EdtechServices {...crmDevelopmentContent} />
+        </section>
+        
+        <section aria-label="ERP Solutions">
+          <EdtechServices {...erpSolutionsContent} />
+        </section>
+        
+        <section aria-label="Supply Chain Management">
+          <EdtechServices {...supplyChainContent} />
+        </section>
+        
+        <section aria-label="B2B Platform Development">
+          <EdtechServices {...b2bPlatformContent} />
+        </section>
+        
+        {/* FAQ Section */}
+        <section aria-label="B2B Software Development FAQ">
+          <FAQSection
+            title="Frequently Asked Questions"
+            subtitle="Get answers to common questions about our B2B software development services"
+            faqItems={faqItems}
+            backgroundColor="bg-white"
+            textColor="text-gray-700"
+            questionSize="text-2xl"
+          />
+        </section>
+        
+        {/* Call to Action */}
+        <section aria-label="Get Started with B2B Software Development">
+          <TextHeroSection />
+        </section>
+      </main>
+    </>
   );
-};
-
-export default B2BSoftware;
+}
