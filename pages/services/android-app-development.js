@@ -160,7 +160,7 @@ export default function AndroidAppDevelopment() {
       {/* Full-screen image section below the banner */}
       <div className="w-full relative sm:h-screen">
         <img
-          src="https://wayspire.in/wp-content/uploads/2022/11/Android-App-Development-1.jpg"
+          src="/images/pages/android-app-dev.jpg"
           alt="Android App Development"
           className="w-full h-full object-cover"
         />
@@ -174,21 +174,21 @@ export default function AndroidAppDevelopment() {
             id: 1,
             title: "Consumer Android Apps",
             description: "Engaging mobile applications that connect brands with their customers through exceptional experiences.",
-            image: "https://cdn.dribbble.com/users/2461751/screenshots/11431532/media/5da2dc04ccf1eaaa65b70d893b7c8be6.png",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-green-500"
           },
           {
             id: 2,
             title: "Enterprise Android Solutions",
             description: "Secure, scalable business applications that streamline operations and boost productivity.",
-            image: "https://www.mindinventory.com/blog/wp-content/uploads/2022/10/enterprise-mobile-app-development.webp",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-teal-500"
           },
           {
             id: 3,
             title: "Google Ecosystem Apps",
             description: "Integrated experiences across smartphones, tablets, wearables, and Android TV.",
-            image: "https://storage.googleapis.com/gweb-cloudblog-publish/images/android_nCqnBL0.max-2000x2000.jpg",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-green-700"
           }
         ]}

@@ -160,7 +160,7 @@ export default function DappDevelopment() {
       {/* Full-screen image section below the banner */}
       <div className="w-full relative sm:h-screen">
         <img
-          src="https://images.unsplash.com/photo-1639322537228-f710d846310a"
+          src="/images/pages/dapp.jpeg"
           alt="dApp Development"
           className="w-full h-full object-cover"
         />
@@ -174,21 +174,21 @@ export default function DappDevelopment() {
             id: 1,
             title: "DeFi Platforms",
             description: "Secure financial applications for lending, staking, and yield optimization with transparent operations.",
-            image: "https://images.unsplash.com/photo-1620321023374-d1a68fbc720d",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-indigo-500"
           },
           {
             id: 2,
             title: "DAO Governance Systems",
             description: "Decentralized autonomous organization frameworks with voting and proposal mechanisms.",
-            image: "https://images.unsplash.com/photo-1639322537504-6427a16b0a28",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-blue-600"
           },
           {
             id: 3,
             title: "Enterprise Blockchain Solutions",
             description: "Private and consortium blockchain applications for business process optimization.",
-            image: "https://images.unsplash.com/photo-1561451213-d5c9f0951fcc",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-teal-500"
           }
         ]}

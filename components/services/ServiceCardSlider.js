@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Star, MoveRight } from 'lucide-react';
+import Link from 'next/link';
 
 const defaultCards = [
     {
@@ -130,10 +131,12 @@ export default function ServiceCardSlider({
                         {description}
                     </p>
                     <div className="flex items-center pt-2 sm:pt-4">
+                        <Link href="/services">
                         <button className="group flex items-center space-x-2 text-white border-b border-transparent hover:border-white pb-1 transition-all duration-300">
                             <span className="font-medium text-base sm:text-lg cursor-pointer">Explore all services</span>
                             <MoveRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                         </button>
+                        </Link>
                     </div>
                 </div>
 

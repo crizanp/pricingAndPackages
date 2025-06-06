@@ -176,21 +176,21 @@ export default function ECommerce() {
             id: 1,
             title: "Custom eCommerce Stores",
             description: "Tailor-made online stores with unique user experiences designed to maximize conversions.",
-            image: "https://assets-global.website-files.com/62b24ad131ccc0ac5d001739/6538e8b77a7a51b2d43e5ca6_ECommerce.webp",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-blue-500"
           },
           {
             id: 2,
             title: "B2B eCommerce Platforms",
             description: "Specialized wholesale portals with bulk ordering, account management, and custom pricing.",
-            image: "https://www.hexafair.com/blog/wp-content/uploads/2020/12/Untitled-design-1.jpg",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-green-500"
           },
           {
             id: 3,
             title: "Marketplace Development",
             description: "Multi-vendor platforms that connect buyers and sellers in a unified shopping ecosystem.",
-            image: "https://www.peppercontent.io/blog/wp-content/uploads/2021/11/Marketplace-business-model-examples-types-revenue-model.jpg",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-orange-500"
           }
         ]}

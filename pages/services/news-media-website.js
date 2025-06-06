@@ -160,7 +160,7 @@ export default function NewsMediaWebsite() {
       {/* Full-screen image section below the banner */}
       <div className="w-full relative sm:h-screen">
         <img
-          src="https://dxlm84u5gf2hs.cloudfront.net/wp-content/uploads/2018/01/Fotolia_104752853_S.jpg"
+          src="/images/pages/news-and-media.jpg"
           alt="News Media Website Development"
           className="w-full h-full object-cover"
         />
@@ -174,21 +174,21 @@ export default function NewsMediaWebsite() {
             id: 1,
             title: "Digital News Publications",
             description: "Professional news platforms with breaking news capabilities and multimedia content delivery.",
-            image: "https://www.webdesignerdepot.com/cdn-origin/uploads/2019/07/nyt.jpg",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-red-500"
           },
           {
             id: 2,
             title: "Subscriber Platforms",
             description: "Membership-based news sites with premium content and exclusive features.",
-            image: "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/idvJrPILs6W4/v0/1200x-1.jpg",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-gray-800"
           },
           {
             id: 3,
             title: "Multimedia News Hubs",
             description: "Feature-rich platforms for video, podcasts, and interactive journalism.",
-            image: "https://www.wired.com/wp-content/uploads/2016/02/vox-media-2-1200x630.jpg",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-blue-600"
           }
         ]}

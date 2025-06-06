@@ -218,7 +218,7 @@ export default function AIDevelopment() {
       {/* Full-screen image section below the banner */}
       <div className="w-full relative sm:h-screen">
         <img
-          src="https://img.freepik.com/free-photo/ai-nuclear-energy-background-future-innovation-disruptive-technology_53876-129783.jpg"
+          src="/images/pages/ai-dev.avif"
           alt="AI Development"
           className="w-full h-full object-cover"
         />
@@ -232,21 +232,21 @@ export default function AIDevelopment() {
             id: 1,
             title: "Machine Learning Models",
             description: "Custom ML models for prediction, classification, and anomaly detection.",
-            image: "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_machine_learning.jpg",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-blue-500"
           },
           {
             id: 2,
             title: "Natural Language Processing",
             description: "Advanced NLP solutions for text analysis, sentiment analysis, and chatbots.",
-            image: "https://www.mindtree.com/sites/default/files/2022-04/shutterstock_1950833367%20%281%29.jpg",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-green-500"
           },
           {
             id: 3,
             title: "Computer Vision Systems",
             description: "Intelligent image and video analysis for object detection and recognition.",
-            image: "https://miro.medium.com/v2/resize:fit:1400/1*yGfLYOXmNQ2-9XKOJKv8xQ.jpeg",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-indigo-500"
           }
         ]}

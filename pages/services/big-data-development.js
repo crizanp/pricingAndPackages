@@ -218,7 +218,7 @@ export default function BigDataDevelopment() {
       {/* Full-screen image section below the banner */}
       <div className="w-full relative sm:h-screen">
         <img
-          src="https://img.freepik.com/free-vector/big-data-center-server-room-rack-engineering-process-teamwork-computer-technology-cloud-storage_39422-1032.jpg"
+          src="/images/pages/big-data.avif"
           alt="Big Data Development"
           className="w-full h-full object-cover"
         />
@@ -232,21 +232,21 @@ export default function BigDataDevelopment() {
             id: 1,
             title: "Data Lakes & Warehouses",
             description: "Scalable repositories for all your structured and unstructured data needs.",
-            image: "https://www.techtarget.com/searchdatamanagement/definition/data-lake",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-orange-500"
           },
           {
             id: 2,
             title: "ETL/ELT Pipelines",
             description: "Robust data integration flows that prepare data for analytics and business intelligence.",
-            image: "https://www.integrate.io/blog/what-is-etl/",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-yellow-500"
           },
           {
             id: 3,
             title: "Real-time Analytics",
             description: "Stream processing systems that deliver insights as events happen in your business.",
-            image: "https://hazelcast.com/glossary/real-time-analytics/",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-red-500"
           }
         ]}

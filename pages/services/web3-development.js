@@ -160,7 +160,7 @@ export default function Web3Development() {
       {/* Full-screen image section below the banner */}
       <div className="w-full relative sm:h-screen">
         <img
-          src="https://images.unsplash.com/photo-1642104704074-907c0698cbd9"
+          src="/images/pages/web3.jpeg"
           alt="Web3 Development"
           className="w-full h-full object-cover"
         />
@@ -174,21 +174,21 @@ export default function Web3Development() {
             id: 1,
             title: "DeFi Protocol Development",
             description: "Custom financial protocols with secure lending, staking, and yield optimization mechanisms.",
-            image: "https://images.unsplash.com/photo-1639322537228-f710d846310a",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-violet-600"
           },
           {
             id: 2,
             title: "DAO & Governance Systems",
             description: "Decentralized organizational structures with transparent voting and incentive mechanisms.",
-            image: "https://images.unsplash.com/photo-1622630998477-20aa696ecb05",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-fuchsia-600"
           },
           {
             id: 3,
             title: "Metaverse Infrastructure",
             description: "Technical foundations for virtual worlds with ownership, identity, and economic systems.",
-            image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-blue-600"
           }
         ]}

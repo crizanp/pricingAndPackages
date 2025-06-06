@@ -174,21 +174,21 @@ export default function BusinessWebsite() {
             id: 1,
             title: "Corporate Websites",
             description: "Professional company websites that establish credibility and showcase your services.",
-            image: "/api/placeholder/600/400",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-blue-500"
           },
           {
             id: 2,
             title: "Small Business Sites",
             description: "Cost-effective websites that help local businesses attract customers and grow.",
-            image: "/api/placeholder/600/400",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-green-500"
           },
           {
             id: 3,
             title: "Service Portfolios",
             description: "Showcase your work and expertise with elegant, conversion-optimized websites.",
-            image: "/api/placeholder/600/400",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-orange-500"
           }
         ]}

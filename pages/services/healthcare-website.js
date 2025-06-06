@@ -174,21 +174,21 @@ export default function HealthcareWebsite() {
             id: 1,
             title: "Medical Practice Websites",
             description: "Professional healthcare websites that showcase your services and streamline patient communication.",
-            image: "https://www.practicebuilders.com/wp-content/themes/practice-builders/assets/images/physician-website-design.jpg",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-blue-500"
           },
           {
             id: 2,
             title: "Patient Portals",
             description: "Secure platforms for appointment scheduling, medical records, and provider messaging.",
-            image: "https://3.bp.blogspot.com/-1i9SOl4d3KM/Xa3tIVCJYLI/AAAAAAAABME/JBm5XucqJTw3p6ihZsX6f0t-xWGD0J5RACLcBGAsYHQ/s1600/patient-portal-mobile-ux-ui-design.jpg",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-teal-500"
           },
           {
             id: 3,
             title: "Telehealth Platforms",
             description: "Feature-rich solutions for virtual consultations and remote patient monitoring.",
-            image: "https://blog.coviu.com/content/images/2020/03/telehealth-software-platforms-white-label-custom-solution.png",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-indigo-500"
           }
         ]}

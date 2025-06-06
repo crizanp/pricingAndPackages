@@ -160,7 +160,7 @@ export default function ManufacturingWebsite() {
       {/* Full-screen image section below the banner */}
       <div className="w-full relative sm:h-screen">
         <img
-          src="https://inter-web.co/wp-content/uploads/2021/10/website-development.jpg"
+          src="/images/pages/manufacturing.jpg"
           alt="Manufacturing Facility"
           className="w-full h-full object-cover"
         />
@@ -174,21 +174,21 @@ export default function ManufacturingWebsite() {
             id: 1,
             title: "Industrial Equipment Websites",
             description: "Technical product showcases with detailed specifications for industrial machinery and equipment.",
-            image: "https://www.thomasnet.com/wp-content/uploads/2019/07/manufacturing-websites-2.jpg",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-blue-700"
           },
           {
             id: 2,
             title: "Parts Manufacturing Platforms",
             description: "Comprehensive catalogs with parametric search for manufactured components and parts.",
-            image: "https://www.digitalsilk.com/wp-content/uploads/2022/07/manufacturing-website-design-company-hero-image.jpg",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-gray-700"
           },
           {
             id: 3,
             title: "Custom Fabrication Sites",
             description: "Interactive platforms showcasing custom manufacturing capabilities and materials expertise.",
-            image: "https://www.wsijaxfl.com/wp-content/uploads/2020/06/manufacturing-website-design-example-1.jpg",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-indigo-600"
           }
         ]}

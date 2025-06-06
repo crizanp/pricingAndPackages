@@ -174,21 +174,21 @@ export default function EducationalWebsite() {
             id: 1,
             title: "School Websites",
             description: "Professional K-12 and higher education websites that showcase your institution and engage students.",
-            image: "https://w3layouts.b-cdn.net//wp-content/uploads/2021/12/Edu-School-Website-Template-1-scaled.jpg",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-green-500"
           },
           {
             id: 2,
             title: "Learning Management Systems",
             description: "Comprehensive platforms for course delivery, assessment, and student engagement.",
-            image: "https://www.techasoft.com/blog/2021/01/1609606508.png",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-blue-500"
           },
           {
             id: 3,
             title: "Online Course Platforms",
             description: "Feature-rich sites for creating, selling, and delivering educational content.",
-            image: "https://foundr.com/wp-content/uploads/2021/09/Best-online-course-platforms.png",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-purple-500"
           }
         ]}

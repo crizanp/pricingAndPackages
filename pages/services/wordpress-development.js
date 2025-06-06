@@ -232,21 +232,21 @@ export default function Wordpress() {
             id: 1,
             title: "Custom WordPress Themes",
             description: "Responsive themes tailored to your brand with clean, optimized code.",
-            image: "https://www.cloudways.com/blog/wp-content/uploads/Main-Image_750x394-32.jpg",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-purple-500"
           },
           {
             id: 2,
             title: "Plugin Development",
             description: "Custom plugins to extend functionality and fit your business needs.",
-            image: "https://embed-ssl.wistia.com/deliveries/558fe5180e0e8fc922d31c23ef84d240.jpg",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-blue-500"
           },
           {
             id: 3,
             title: "WooCommerce Solutions",
             description: "Custom e-commerce stores with seamless shopping experiences.",
-            image: "https://mobrilz.com/assets/img/woocommerce.png",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-pink-500"
           }
         ]}

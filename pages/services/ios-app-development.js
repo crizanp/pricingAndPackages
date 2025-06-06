@@ -160,7 +160,7 @@ export default function IOSAppDevelopment() {
       {/* Full-screen image section below the banner */}
       <div className="w-full relative sm:h-screen">
         <img
-          src="https://webandcrafts.com/_next/image?url=https%3A%2F%2Fadmin.wac.co%2Fuploads%2F10_Best_i_OS_Development_Tools_bdf3e41836.png&w=4500&q=90"
+          src="/images/pages/ios-development.jpg"
           alt="iOS App Development"
           className="w-full h-full object-cover"
         />
@@ -174,21 +174,21 @@ export default function IOSAppDevelopment() {
             id: 1,
             title: "Consumer iOS Apps",
             description: "Engaging mobile applications that connect brands with their customers through exceptional experiences.",
-            image: "https://cdn.dribbble.com/users/1615584/screenshots/15571949/media/7e95f0fddb7957220033569815613b39.jpg",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-blue-500"
           },
           {
             id: 2,
             title: "Enterprise iOS Solutions",
             description: "Secure, scalable business applications that streamline operations and boost productivity.",
-            image: "https://www.apptunix.com/blog/wp-content/uploads/sites/3/2020/04/enterprise-app-development.jpg",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-teal-500"
           },
           {
             id: 3,
             title: "Apple Ecosystem Apps",
             description: "Integrated experiences across iPhone, iPad, Apple Watch, and Apple TV.",
-            image: "https://developer.apple.com/news/images/og/apple-platform-og.jpg",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-indigo-500"
           }
         ]}

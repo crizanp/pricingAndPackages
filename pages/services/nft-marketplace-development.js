@@ -160,7 +160,7 @@ export default function NFTMarketplaceDevelopment() {
       {/* Full-screen image section below the banner */}
       <div className="relative w-full sm:h-screen max-h-screen overflow-hidden">
   <img
-    src="https://5.imimg.com/data5/SELLER/Default/2024/12/477004869/EI/FS/EN/79533529/nft-marketplace-development-service-500x500.jpg"
+    src="/images/pages/nft.jpg"
     alt="NFT Marketplace Development"
     className="w-full h-full object-cover object-center"
   />
@@ -175,21 +175,21 @@ export default function NFTMarketplaceDevelopment() {
             id: 1,
             title: "Art NFT Marketplaces",
             description: "Professional platforms for digital artists to mint, showcase and sell their work to collectors.",
-            image: "https://images.unsplash.com/photo-1637858868799-7f26a0640eb6",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-purple-500"
           },
           {
             id: 2,
             title: "Gaming Asset Exchanges",
             description: "Specialized marketplaces for in-game items, characters and virtual land ownership.",
-            image: "https://images.unsplash.com/photo-1640079421264-61f50d5a7f64",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-blue-600"
           },
           {
             id: 3,
             title: "Multi-Media NFT Hubs",
             description: "Feature-rich platforms for music, video, and interactive digital collectibles.",
-            image: "https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-green-500"
           }
         ]}

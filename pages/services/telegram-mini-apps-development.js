@@ -161,7 +161,7 @@ export default function TelegramMiniAppsDevelopment() {
       {/* Full-screen image section below the banner */}
       <div className="w-full relative sm:h-screen">
         <img
-          src="https://repository-images.githubusercontent.com/699527302/cb7cf801-4956-45fc-b835-38a5b0495cf4"
+          src="/images/pages/telegram-mini-apps.png"
           alt="Telegram Mini Apps Development"
           className="w-full h-full object-cover"
         />
@@ -175,21 +175,21 @@ export default function TelegramMiniAppsDevelopment() {
             id: 1,
             title: "E-Commerce Mini Apps",
             description: "In-chat shopping experiences with product catalogs, carts, and seamless checkout.",
-            image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-blue-500"
           },
           {
             id: 2,
             title: "Crypto & Finance Solutions",
             description: "Wallets, payment systems, and trading interfaces within the Telegram environment.",
-            image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-cyan-600"
           },
           {
             id: 3,
             title: "Service Booking Apps",
             description: "Appointment scheduling, reservations, and bookings directly through Telegram.",
-            image: "https://images.unsplash.com/photo-1531973576160-7125cd663d86",
+            image: "/images/purplebg-logo.png",
             accentColor: "bg-teal-500"
           }
         ]}
