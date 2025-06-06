@@ -57,9 +57,15 @@ const ClientNavbarEnhancer = () => {
             dropdownTriggers.forEach((trigger) => {
                 const triggerIndex = trigger.getAttribute('data-dropdown-trigger');
                 const dropdown = document.querySelector(`[data-dropdown-content="${triggerIndex}"]`);
+                const triggerLink = trigger.querySelector('a');
                 
-                if (dropdown) {
+                if (dropdown && triggerLink) {
                     let timeoutId;
+
+                    // Check if the link has a valid href (not just '#' or empty)
+                    const hasValidHref = triggerLink.getAttribute('href') && 
+                                       triggerLink.getAttribute('href') !== '#' && 
+                                       triggerLink.getAttribute('href') !== '';
 
                     // Show dropdown on hover
                     const showDropdown = () => {
@@ -85,33 +91,45 @@ const ClientNavbarEnhancer = () => {
                         }, 150);
                     };
 
-                    // Event listeners
+                    // Event listeners for hover
                     trigger.addEventListener('mouseenter', showDropdown);
                     trigger.addEventListener('mouseleave', hideDropdown);
                     dropdown.addEventListener('mouseenter', () => clearTimeout(timeoutId));
                     dropdown.addEventListener('mouseleave', hideDropdown);
 
-                    // Also handle click for accessibility
-                    trigger.addEventListener('click', (e) => {
-                        if (trigger.tagName === 'A' && trigger.getAttribute('href') !== '#') {
-                            // Allow normal link navigation
-                            return;
-                        }
-                        e.preventDefault();
-                        
-                        const isVisible = !dropdown.classList.contains('hidden');
-                        
-                        // Hide all dropdowns
-                        const allDropdowns = document.querySelectorAll('[data-dropdown-content]');
-                        allDropdowns.forEach(dd => {
-                            dd.classList.add('hidden');
-                            dd.classList.remove('block');
-                        });
-                        
-                        // Show this dropdown if it was hidden
-                        if (!isVisible) {
-                            dropdown.classList.remove('hidden');
-                            dropdown.classList.add('block');
+                    // Handle click events
+                    triggerLink.addEventListener('click', (e) => {
+                        // If it has a valid href and no dropdown is visible, allow normal navigation
+                        if (hasValidHref) {
+                            const isDropdownVisible = !dropdown.classList.contains('hidden');
+                            
+                            // If dropdown is not visible, allow the link to work normally
+                            if (!isDropdownVisible) {
+                                return; // Allow normal link navigation
+                            } else {
+                                // If dropdown is visible, hide it and prevent navigation
+                                e.preventDefault();
+                                dropdown.classList.add('hidden');
+                                dropdown.classList.remove('block');
+                            }
+                        } else {
+                            // No valid href, just toggle dropdown
+                            e.preventDefault();
+                            
+                            const isVisible = !dropdown.classList.contains('hidden');
+                            
+                            // Hide all dropdowns
+                            const allDropdowns = document.querySelectorAll('[data-dropdown-content]');
+                            allDropdowns.forEach(dd => {
+                                dd.classList.add('hidden');
+                                dd.classList.remove('block');
+                            });
+                            
+                            // Show this dropdown if it was hidden
+                            if (!isVisible) {
+                                dropdown.classList.remove('hidden');
+                                dropdown.classList.add('block');
+                            }
                         }
                     });
                 }
