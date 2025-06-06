@@ -42,43 +42,43 @@ export default function VideoEditingShowcase() {
     {
       title: "YouTube Video Editing",
       description: "Tailored editing for YouTube creators to enhance watch time, engagement, and subscriber growth.",
-      image: "https://via.placeholder.com/150x150/ff0000/ffffff?text=YT",
+      image: "/images/videoIcon/youtube.png",
       features: ["Engaging Intros/Outros", "Jump Cuts", "On-screen Text & Effects"]
     },
     {
       title: "Ads & Commercial Editing",
       description: "High-impact editing for advertisements and commercials designed to convert and captivate.",
-      image: "https://via.placeholder.com/150x150/0066cc/ffffff?text=AD",
+      image: "/images/videoIcon/commercial.png",
       features: ["Brand Messaging", "Product Highlighting", "Call-To-Action Overlays"]
     },
     {
       title: "Social Media Video Editing",
       description: "Optimized video formats for platforms like Instagram, TikTok, and Facebook to boost shares and reach.",
-      image: "https://via.placeholder.com/150x150/ff6600/ffffff?text=SM",
+      image: "/images/videoIcon/social-media.png",
       features: ["Vertical Formats", "Trendy Transitions", "Platform-Specific Captions"]
     },
     {
       title: "Corporate Video Editing",
       description: "Professional editing for corporate content like promos, training videos, and internal communications.",
-      image: "https://via.placeholder.com/150x150/333333/ffffff?text=CORP",
+      image: "/images/videoIcon/corporate.png",
       features: ["Clean Transitions", "Branded Graphics", "Subtle Background Music"]
     },
     {
       title: "Event Video Editing",
       description: "Dynamic editing for weddings, conferences, and live events to preserve the energy and emotion.",
-      image: "https://via.placeholder.com/150x150/9900cc/ffffff?text=EVENT",
+      image: "/images/videoIcon/event.png",
       features: ["Highlight Reels", "Multi-Cam Syncing", "Emotion-Driven Cuts"]
     },
     {
       title: "Short Video Creation",
       description: "Dynamic editing for weddings, conferences, and live events to preserve the energy and emotion.",
-      image: "https://via.placeholder.com/150x150/00cc66/ffffff?text=SHORT",
+      image: "/images/videoIcon/short-video.png",
       features: ["Highlight Reels", "Multi-Cam Syncing", "Emotion-Driven Cuts"]
     },
     {
       title: "Whiteboard Animation",
       description: "Clear and creative whiteboard-style animations to explain concepts or pitch ideas visually.",
-      image: "https://via.placeholder.com/150x150/ffcc00/ffffff?text=WB",
+      image: "/images/videoIcon/whiteboard.png",
       features: ["Hand-Drawn Effects", "Voiceover Syncing", "Script-Based Flow"]
     }
   ];
@@ -223,7 +223,7 @@ export default function VideoEditingShowcase() {
           <div className="relative w-full max-w-2xl xl:max-w-3xl 2xl:max-w-4xl aspect-square">
             <div className="absolute left-1/2 top-1/2 w-48 h-48 xl:w-56 xl:h-56 2xl:w-64 2xl:h-64 -ml-24 xl:-ml-28 2xl:-ml-32 -mt-24 xl:-mt-28 2xl:-mt-32 rounded-full bg-purple-700 shadow-xl flex items-center justify-center z-10 overflow-hidden">
               <div className="w-full h-full bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center text-white font-bold text-2xl">
-                VIDEO
+              <img src="/images/videoIcon/main-video.png" alt="Company Logo" className="w-full h-full object-cover" />
               </div>
             </div>
 
