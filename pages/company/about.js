@@ -277,7 +277,21 @@ export default function AboutPage() {
                         {cursorText}
                     </div>
                 </div>
-
+<nav className="max-w-7xl mx-auto px-4 py-4" aria-label="Breadcrumb">
+                    <ol className="flex items-center space-x-2 text-sm" itemScope itemType="https://schema.org/BreadcrumbList">
+                        <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+                            <a href="/" className="text-gray-500 hover:text-black" itemProp="item">
+                                <span itemProp="name">Home</span>
+                            </a>
+                            <meta itemProp="position" content="1" />
+                        </li>
+                        <li className="text-gray-400">/</li>
+                        <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+                            <span className="text-black font-medium" itemProp="name">About Foxbeep</span>
+                            <meta itemProp="position" content="2" />
+                        </li>
+                    </ol>
+                </nav>
                 {/* Hero section */}
                 <header className="relative max-w-7xl mx-auto px-4 pt-24 pb-12">
                     <div className="relative z-10">
