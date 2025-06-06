@@ -2,6 +2,7 @@ import Head from 'next/head';
 import TextHeroSection from '@/components/home/textHero';
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function AboutPage() {
     const [isIntersecting, setIsIntersecting] = useState({});
@@ -191,7 +192,7 @@ export default function AboutPage() {
                 <title>About Foxbeep - Meet Our Team | Krish Khadka, Srijan Pokhrel, Suwani Baral</title>
                 <meta name="description" content="Learn about Foxbeep's journey since 2015. Meet our leadership team: CEO Krish Khadka, CTO Srijan Pokhrel, and Design Director Suwani Baral. 250+ successful projects, 35 industry awards." />
                 <meta name="keywords" content="Foxbeep team, Krish Khadka CEO, Srijan Pokhrel CTO, Suwani Baral designer, about Foxbeep, company history, software development team, digital agency leadership" />
-                
+
                 {/* Open Graph Meta Tags */}
                 <meta property="og:title" content="About Foxbeep - Meet Our Expert Team & Leadership" />
                 <meta property="og:description" content="Discover Foxbeep's story since 2015. Meet CEO Krish Khadka, CTO Srijan Pokhrel & Design Director Suwani Baral. 250+ projects, 35 awards, global reach." />
@@ -199,13 +200,13 @@ export default function AboutPage() {
                 <meta property="og:url" content="https://foxbeep.com/about" />
                 <meta property="og:type" content="website" />
                 <meta property="og:site_name" content="Foxbeep" />
-                
+
                 {/* Twitter Card Meta Tags */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="About Foxbeep - Meet Our Expert Team & Leadership" />
                 <meta name="twitter:description" content="Founded in 2015 by Krish Khadka, Srijan Pokhrel & Suwani Baral. 250+ successful projects in software development, AI, and digital solutions." />
                 <meta name="twitter:image" content="https://foxbeep.com/images/about-twitter-card.png" />
-                
+
                 {/* Technical Meta Tags */}
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
@@ -213,30 +214,30 @@ export default function AboutPage() {
                 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
                 <meta name="googlebot" content="index, follow" />
                 <meta name="author" content="Foxbeep Team" />
-                
+
                 {/* Additional SEO Meta Tags */}
                 <meta name="geo.region" content="US-CA" />
                 <meta name="geo.placename" content="San Francisco" />
                 <meta name="geo.position" content="37.7749;-122.4194" />
                 <meta name="ICBM" content="37.7749, -122.4194" />
-                
+
                 {/* Canonical URL */}
                 <link rel="canonical" href="https://foxbeep.com/about" />
-                
+
                 {/* Favicon */}
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-                
+
                 {/* Structured Data */}
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
                 />
-                
+
                 {/* Preconnect for Performance */}
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-                
+
                 {/* Breadcrumb Schema */}
                 <script
                     type="application/ld+json"
@@ -277,12 +278,12 @@ export default function AboutPage() {
                         {cursorText}
                     </div>
                 </div>
-<nav className="max-w-7xl mx-auto px-4 py-4" aria-label="Breadcrumb">
+                <nav className="max-w-7xl mx-auto px-4 py-4" aria-label="Breadcrumb">
                     <ol className="flex items-center space-x-2 text-sm" itemScope itemType="https://schema.org/BreadcrumbList">
                         <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                            <a href="/" className="text-gray-500 hover:text-black" itemProp="item">
+                            <Link href="/" className="text-gray-500 hover:text-black" itemProp="item">
                                 <span itemProp="name">Home</span>
-                            </a>
+                            </Link>
                             <meta itemProp="position" content="1" />
                         </li>
                         <li className="text-gray-400">/</li>
@@ -438,20 +439,20 @@ export default function AboutPage() {
                                         <h3 className="text-xl font-semibold" itemProp="name">{member.name}</h3>
                                         <p className="text-sm" itemProp="jobTitle">{member.role}</p>
                                         <p className="text-xs italic mt-1 opacity-90">{member.quote}</p>
-                                        
+
                                         {/* Contact info - appears on hover */}
                                         <div className="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
                                             <div className="flex items-center space-x-4 text-xs">
-                                                <a 
-                                                    href={member.linkedin} 
-                                                    target="_blank" 
+                                                <a
+                                                    href={member.linkedin}
+                                                    target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="hover:text-blue-300 transition-colors duration-200"
                                                 >
                                                     LinkedIn
                                                 </a>
                                                 <span className="text-gray-400">•</span>
-                                                <a 
+                                                <a
                                                     href={`mailto:${member.email}`}
                                                     className="hover:text-blue-300 transition-colors duration-200"
                                                 >

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import { Car, Shield, GraduationCap, Briefcase, Gift, Clock, Globe, Rocket } from 'lucide-react';
 import TextHeroSection from '@/components/home/textHero';
+import Link from 'next/link';
 
 export default function CareersPage() {
   const [activeIndustry, setActiveIndustry] = useState(null);
@@ -378,13 +379,13 @@ export default function CareersPage() {
               <span className="bg-gray-100 px-3 py-1 rounded-full">Career Growth</span>
               <span className="bg-gray-100 px-3 py-1 rounded-full">Remote Friendly</span>
             </div>
-            <a 
+            <Link 
               href="https://forms.gle/vJYoRrJ1G6Z1Setz8" 
               className="bg-black text-white px-10 py-4 rounded-full text-xl font-bold hover:bg-gray-800 transition-colors"
               aria-label="Apply for a position at Foxbeep"
             >
               Apply Now
-            </a>
+            </Link>
           </div>
         </header>
 

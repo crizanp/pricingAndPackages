@@ -133,9 +133,9 @@ export default function FoxbeepTestimonials() {
         <nav className="max-w-7xl mx-auto px-4 py-4" aria-label="Breadcrumb">
                     <ol className="flex items-center space-x-2 text-sm" itemScope itemType="https://schema.org/BreadcrumbList">
                         <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                            <a href="/" className="text-gray-500 hover:text-black" itemProp="item">
+                            <Link href="/" className="text-gray-500 hover:text-black" itemProp="item">
                                 <span itemProp="name">Home</span>
-                            </a>
+                            </Link>
                             <meta itemProp="position" content="1" />
                         </li>
                         <li className="text-gray-400">/</li>
@@ -188,9 +188,9 @@ export default function FoxbeepTestimonials() {
               Proud to serve as the innovation partner for industry leaders who have experienced our expertise and excellence firsthand.
             </p>
 
-            <a href="#feedback" className="mt-6 px-8 py-4 border-2 border-white text-white text-lg font-semibold rounded-full hover:bg-white hover:text-black transition-all duration-300">
+            <Link href="#feedback" className="mt-6 px-8 py-4 border-2 border-white text-white text-lg font-semibold rounded-full hover:bg-white hover:text-black transition-all duration-300">
               Give Feedback
-            </a>
+            </Link>
           </section>
 
 
@@ -315,7 +315,7 @@ export default function FoxbeepTestimonials() {
                 <div className="text-center mb-8">
                   <h3 className="text-3xl font-bold text-white mb-4">Share Your Experience</h3>
                   <p className="text-gray-300 text-lg">
-                    We'd love to hear about your experience working with Foxbeep. Your feedback helps us improve our services.
+                    We would love to hear about your experience working with Foxbeep. Your feedback helps us improve our services.
                   </p>
                 </div>
 

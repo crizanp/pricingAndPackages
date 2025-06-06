@@ -11,6 +11,7 @@ import {
   Clock, 
   Target 
 } from 'lucide-react';
+import Link from 'next/link';
 
 export default function FoxbeepUniversityPage() {
   const [activeProgram, setActiveProgram] = useState(null);
@@ -320,9 +321,9 @@ export default function FoxbeepUniversityPage() {
         <nav className="max-w-7xl mx-auto px-4 py-4" aria-label="Breadcrumb">
           <ol className="flex items-center space-x-2 text-sm" itemScope itemType="https://schema.org/BreadcrumbList">
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-              <a href="/" className="text-gray-500 hover:text-black" itemProp="item">
+              <Link href="/" className="text-gray-500 hover:text-black" itemProp="item">
                 <span itemProp="name">Home</span>
-              </a>
+              </Link>
               <meta itemProp="position" content="1" />
             </li>
             <li className="text-gray-400">/</li>
@@ -356,18 +357,18 @@ export default function FoxbeepUniversityPage() {
           </div>
           
           <div className="flex justify-left space-x-6">
-            <a 
+            <Link 
               href="https://forms.gle/vJYoRrJ1G6Z1Setz8" 
               className="bg-black text-white px-10 py-4 rounded-full text-xl font-bold hover:bg-gray-800 transition-colors"
             >
               Apply Now
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="#programs" 
               className="border-2 border-black text-black px-10 py-4 rounded-full text-xl font-bold hover:bg-gray-100 transition-colors"
             >
               Learn More
-            </a>
+            </Link>
           </div>
         </header>
 
@@ -560,18 +561,18 @@ export default function FoxbeepUniversityPage() {
             Break barriers, challenge conventions, and become a tech innovator. Foxbeep University is your launchpad to an extraordinary career.
           </p>
           <div className="flex justify-center space-x-6">
-            <a 
+            <Link 
               href="https://forms.gle/vJYoRrJ1G6Z1Setz8" 
               className="bg-white text-black px-10 py-4 rounded-full text-xl font-bold hover:bg-gray-200 transition-colors"
             >
               START YOUR APPLICATION
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/contact" 
               className="border-2 border-white text-white px-10 py-4 rounded-full text-xl font-bold hover:bg-white/20 transition-colors"
             >
               SCHEDULE A CONSULTATION
-            </a>
+            </Link>
           </div>
         </section>
       </div>

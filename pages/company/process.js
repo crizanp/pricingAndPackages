@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import TextHeroSection from '@/components/home/textHero';
 import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 
 export default function ClientWorkflowProcess() {
     const [isIntersecting, setIsIntersecting] = useState({});
@@ -274,9 +275,9 @@ export default function ClientWorkflowProcess() {
                 <nav className="max-w-7xl mx-auto px-4 py-4" aria-label="Breadcrumb">
                     <ol className="flex items-center space-x-2 text-sm" itemScope itemType="https://schema.org/BreadcrumbList">
                         <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                            <a href="/" className="text-gray-500 hover:text-black" itemProp="item">
+                            <Link href="/" className="text-gray-500 hover:text-black" itemProp="item">
                                 <span itemProp="name">Home</span>
-                            </a>
+                            </Link>     
                             <meta itemProp="position" content="1" />
                         </li>
                         <li className="text-gray-400">/</li>
@@ -397,14 +398,14 @@ export default function ClientWorkflowProcess() {
                     <section className="mt-20 text-center bg-black text-white p-12 rounded-2xl">
                         <h2 className="text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
                         <p className="text-xl mb-8 max-w-2xl mx-auto">
-                            Let's discuss how our proven process can transform your ideas into successful digital solutions.
+                            Lets discuss how our proven process can transform your ideas into successful digital solutions.
                         </p>
-                        <a 
+                        <Link 
                             href="/contact" 
                             className="inline-block bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors duration-200"
                         >
                             Start Your Project
-                        </a>
+                        </Link>
                     </section>
                 </main>
                 

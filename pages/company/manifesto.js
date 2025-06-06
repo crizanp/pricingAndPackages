@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import TextHeroSection from '@/components/home/textHero';
 import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 
 export default function CompanyManifesto() {
     const [isIntersecting, setIsIntersecting] = useState({});
@@ -338,9 +339,9 @@ export default function CompanyManifesto() {
                 <nav className="max-w-7xl mx-auto px-4 py-4" aria-label="Breadcrumb">
                     <ol className="flex items-center space-x-2 text-sm" itemScope itemType="https://schema.org/BreadcrumbList">
                         <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                            <a href="/" className="text-gray-500 hover:text-black transition-colors" itemProp="item">
+                            <Link href="/" className="text-gray-500 hover:text-black transition-colors" itemProp="item">
                                 <span itemProp="name">Home</span>
-                            </a>
+                            </Link>
                             <meta itemProp="position" content="1" />
                         </li>
                         <li className="text-gray-400" aria-hidden="true">/</li>
@@ -476,13 +477,13 @@ export default function CompanyManifesto() {
                         </div>
 
                         <div className="mt-12">
-                            <a 
+                            <Link 
                                 href="/work" 
                                 className="px-8 py-4 bg-black text-white font-medium text-lg rounded hover:bg-gray-800 transition-colors duration-200 inline-block"
                                 aria-label="View our work and see our manifesto in action"
                             >
                                 See Our Work
-                            </a>
+                            </Link>
                         </div>
                     </section>
                 </main>
