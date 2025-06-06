@@ -12,24 +12,23 @@ export const EdtechServices = ({
   highlightColor = 'bg-blue-600'
 }) => {
   return (
-    <div className="max-w-7xl mx-auto py-16 px-6 xl:px-8 bg-white">
+    <div className="max-w-7xl mx-auto py-8 px-4 md:px-6 xl:px-8 bg-white">
       <div className="mx-auto">
-
-
         {/* Featured service section */}
         {featuredService && (
-          <div className="mb-20">
+          <div className="mb-10">
             {/* Featured service header with professional styling */}
-            <div className="relative mb-12">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl text-gray-900 leading-tight mb-8 flex items-center gap-2">
-                <ArrowBigRight />{featuredService}
+            <div className="relative mb-6">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl text-gray-900 leading-tight mb-4 flex items-center gap-2">
+                <ArrowBigRight className="text-blue-600" size={28} />
+                {featuredService}
               </h2>
             </div>
 
             {/* Featured service description */}
             {featuredServiceDescription && (
-              <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
-                <p className="text-xl text-gray-700 leading-relaxed max-w-4xl">
+              <div className="bg-gradient-to-r from-gray-50 to-blue-50 p-6 rounded-xl border border-gray-100 shadow-sm">
+                <p className="text-xl text-gray-700 leading-relaxed">
                   {featuredServiceDescription}
                 </p>
               </div>
@@ -37,25 +36,24 @@ export const EdtechServices = ({
           </div>
         )}
 
-
         {/* Professional divider */}
-        <div className="flex items-center my-16">
-          <div className="flex-grow h-px bg-gray-200"></div>
-          <div className={`${highlightColor} w-12 h-px mx-4`}></div>
-          <div className="flex-grow h-px bg-gray-200"></div>
+        <div className="flex items-center my-8">
+          <div className="flex-grow h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+          <div className={`${highlightColor} w-8 h-0.5 mx-3 rounded-full`}></div>
+          <div className="flex-grow h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
         </div>
 
         {/* Feature details in professional grid */}
         {featureDetails && featureDetails.length > 0 && (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featureDetails.map((feature, index) => (
               <div key={index} className="group">
-                <div className="bg-white p-8 rounded-2xl border border-gray-200 h-full hover:border-gray-300 transition-all duration-300 hover:shadow-xl">
-                  <div className={`${highlightColor} w-12 h-1 mb-6 group-hover:w-16 transition-all duration-300`}></div>
-                  <h4 className="text-2xl font-bold text-gray-900 mb-4">
+                <div className="bg-white p-6 rounded-xl border border-gray-200 h-full hover:border-blue-300 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <div className={`${highlightColor} w-8 h-0.5 mb-4 group-hover:w-12 transition-all duration-300 rounded-full`}></div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3">
                     {feature.title}
                   </h4>
-                  <p className="text-gray-600 leading-relaxed text-lg">
+                  <p className="text-gray-600 leading-relaxed text-base">
                     {feature.description}
                   </p>
                 </div>
@@ -63,8 +61,6 @@ export const EdtechServices = ({
             ))}
           </div>
         )}
-
-
       </div>
     </div>
   );
