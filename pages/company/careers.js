@@ -348,9 +348,9 @@ export default function CareersPage() {
         <nav className="max-w-7xl mx-auto px-4 py-4" aria-label="Breadcrumb">
           <ol className="flex items-center space-x-2 text-sm" itemScope itemType="https://schema.org/BreadcrumbList">
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-              <a href="/" className="text-gray-500 hover:text-black" itemProp="item">
+              <Link href="/" className="text-gray-500 hover:text-black" itemProp="item">
                 <span itemProp="name">Home</span>
-              </a>
+              </Link>
               <meta itemProp="position" content="1" />
             </li>
             <li className="text-gray-400">/</li>
