@@ -32,7 +32,7 @@ const Navbar = () => {
                         { name: 'Ads & Commercial Editing', href: '/services/video-editing/ads-commercial-editing' },
                         { name: 'Social Media Video Editing', href: '/services/video-editing/social-media-video-editing' },
                         { name: 'Corporate Video Editing', href: '/services/video-editing/corporate-video-editing' },
-                        { name: 'Event Video Editing', href: '/services/video-editing/event-video-editing' },
+                        { name: 'Event Video Editing', href: '/services/video-editing/events-video-editing' },
                         { name: 'Whiteboard Animation', href: '/services/video-editing/whiteboard-editing' }
                     ]
                 },

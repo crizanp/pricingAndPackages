@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Navbar from './Navbar';
+import Navbar from './Navbar/ServerNavbar';
 import Footer from './home/footer';
 
 const Layout = ({
@@ -16,7 +16,7 @@ const Layout = ({
         <link rel="icon" type="image/png" href="/images/favicon.png" />
       </Head>
 
-      <Navbar />
+      <Navbar/>
       <main className="pt-16">{children}</main>
       <Footer />
     </>

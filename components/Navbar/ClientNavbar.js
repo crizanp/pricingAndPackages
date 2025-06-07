@@ -18,6 +18,15 @@ const ClientNavbarEnhancer = () => {
             }
         };
 
+        // Helper function to close all dropdowns
+        const closeAllDropdowns = () => {
+            const allDropdowns = document.querySelectorAll('[data-dropdown-content]');
+            allDropdowns.forEach(dropdown => {
+                dropdown.classList.add('hidden');
+                dropdown.classList.remove('block');
+            });
+        };
+
         // Mobile menu toggle
         const setupMobileMenu = () => {
             const button = document.getElementById('mobile-menu-button');
@@ -53,6 +62,7 @@ const ClientNavbarEnhancer = () => {
         // Enhanced dropdown behavior for desktop
         const setupDesktopDropdowns = () => {
             const dropdownTriggers = document.querySelectorAll('[data-dropdown-trigger]');
+            let hoverDisabled = false; // Flag to temporarily disable hover
             
             dropdownTriggers.forEach((trigger) => {
                 const triggerIndex = trigger.getAttribute('data-dropdown-trigger');
@@ -67,17 +77,12 @@ const ClientNavbarEnhancer = () => {
                                        triggerLink.getAttribute('href') !== '#' && 
                                        triggerLink.getAttribute('href') !== '';
 
-                    // Show dropdown on hover
+                    // Show dropdown on hover (only if hover is not disabled)
                     const showDropdown = () => {
+                        if (hoverDisabled) return;
                         clearTimeout(timeoutId);
                         // Hide all other dropdowns first
-                        const allDropdowns = document.querySelectorAll('[data-dropdown-content]');
-                        allDropdowns.forEach(dd => {
-                            if (dd !== dropdown) {
-                                dd.classList.add('hidden');
-                                dd.classList.remove('block');
-                            }
-                        });
+                        closeAllDropdowns();
                         
                         dropdown.classList.remove('hidden');
                         dropdown.classList.add('block');
@@ -85,6 +90,7 @@ const ClientNavbarEnhancer = () => {
 
                     // Hide dropdown with delay
                     const hideDropdown = () => {
+                        if (hoverDisabled) return;
                         timeoutId = setTimeout(() => {
                             dropdown.classList.add('hidden');
                             dropdown.classList.remove('block');
@@ -94,10 +100,12 @@ const ClientNavbarEnhancer = () => {
                     // Event listeners for hover
                     trigger.addEventListener('mouseenter', showDropdown);
                     trigger.addEventListener('mouseleave', hideDropdown);
-                    dropdown.addEventListener('mouseenter', () => clearTimeout(timeoutId));
+                    dropdown.addEventListener('mouseenter', () => {
+                        if (!hoverDisabled) clearTimeout(timeoutId);
+                    });
                     dropdown.addEventListener('mouseleave', hideDropdown);
 
-                    // Handle click events
+                    // Handle click events for trigger links
                     triggerLink.addEventListener('click', (e) => {
                         // If it has a valid href and no dropdown is visible, allow normal navigation
                         if (hasValidHref) {
@@ -109,8 +117,7 @@ const ClientNavbarEnhancer = () => {
                             } else {
                                 // If dropdown is visible, hide it and prevent navigation
                                 e.preventDefault();
-                                dropdown.classList.add('hidden');
-                                dropdown.classList.remove('block');
+                                closeAllDropdowns();
                             }
                         } else {
                             // No valid href, just toggle dropdown
@@ -118,12 +125,8 @@ const ClientNavbarEnhancer = () => {
                             
                             const isVisible = !dropdown.classList.contains('hidden');
                             
-                            // Hide all dropdowns
-                            const allDropdowns = document.querySelectorAll('[data-dropdown-content]');
-                            allDropdowns.forEach(dd => {
-                                dd.classList.add('hidden');
-                                dd.classList.remove('block');
-                            });
+                            // Hide all dropdowns first
+                            closeAllDropdowns();
                             
                             // Show this dropdown if it was hidden
                             if (!isVisible) {
@@ -135,25 +138,42 @@ const ClientNavbarEnhancer = () => {
                 }
             });
 
-            // Close all dropdowns when clicking outside
+            // Use event delegation to handle all dropdown link clicks
             document.addEventListener('click', (e) => {
+                // Check if clicked element is a link inside a dropdown
+                const clickedLink = e.target.closest('[data-dropdown-content] a');
+                if (clickedLink) {
+                    // Temporarily disable hover effects
+                    hoverDisabled = true;
+                    
+                    // Close all dropdowns immediately when any dropdown link is clicked
+                    closeAllDropdowns();
+                    
+                    // Force full page reload for dropdown links
+                    const href = clickedLink.getAttribute('href');
+                    if (href && href !== '#' && href !== '') {
+                        e.preventDefault();
+                        window.location.href = href;
+                        return;
+                    }
+                    
+                    // Re-enable hover after a short delay (in case link doesn't navigate)
+                    setTimeout(() => {
+                        hoverDisabled = false;
+                    }, 300);
+                    return;
+                }
+
+                // Check if clicked outside dropdown area
                 if (!e.target.closest('[data-dropdown-trigger]') && !e.target.closest('[data-dropdown-content]')) {
-                    const allDropdowns = document.querySelectorAll('[data-dropdown-content]');
-                    allDropdowns.forEach(dropdown => {
-                        dropdown.classList.add('hidden');
-                        dropdown.classList.remove('block');
-                    });
+                    closeAllDropdowns();
                 }
             });
 
             // Close dropdowns on escape key
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') {
-                    const allDropdowns = document.querySelectorAll('[data-dropdown-content]');
-                    allDropdowns.forEach(dropdown => {
-                        dropdown.classList.add('hidden');
-                        dropdown.classList.remove('block');
-                    });
+                    closeAllDropdowns();
                 }
             });
         };
