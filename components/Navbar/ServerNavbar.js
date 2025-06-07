@@ -126,7 +126,7 @@ const Navbar = () => {
                 { name: 'Manifesto', href: '/company/manifesto' },
             ]
         },
-        { name: 'Contact', href: '/contact', hasDropdown: false },
+        // { name: 'Contact', href: '/contact', hasDropdown: false },
     ];
 
     return (
