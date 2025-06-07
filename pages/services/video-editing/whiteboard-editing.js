@@ -364,7 +364,7 @@ export default function WhiteboardVideoEditing() {
                                 Our Creation Process
                             </h2>
                             <p className="text-2xl text-gray-600">
-                                From concept to final animation - here's how we bring your ideas to life
+                                From concept to final animation - here is how we bring your ideas to life
                             </p>
                         </div>
                         

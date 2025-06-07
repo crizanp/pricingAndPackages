@@ -193,7 +193,7 @@ export default function EventVideoEditing() {
                         </h1>
                         <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
                             Professional event video editing services that transform your special moments 
-                            into cinematic masterpieces you'll treasure forever.
+                            into cinematic masterpieces you will treasure forever.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                             <Link href="/contact">
@@ -364,7 +364,7 @@ export default function EventVideoEditing() {
                                 Our Editing Process
                             </h2>
                             <p className="text-2xl text-gray-600">
-                                From raw footage to cinematic masterpiece - here's how we work
+                                From raw footage to cinematic masterpiece - here is how we work
                             </p>
                         </div>
                         
@@ -381,7 +381,7 @@ export default function EventVideoEditing() {
                                     2
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-800 mb-2">Story Structure</h3>
-                                <p className="text-gray-600">We create a narrative flow that captures the event's essence</p>
+                                <p className="text-gray-600">We create a narrative flow that captures the event s essence</p>
                             </div>
                             <div className="text-center">
                                 <div className="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">

@@ -224,7 +224,7 @@ export default function CorporateVideoEditing() {
                         </h1>
                         <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
                             Transform your corporate content into professional videos that engage employees, 
-                            attract customers, and communicate your brand's vision effectively.
+                            attract customers, and communicate your brand vision effectively.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                             <Link href="/contact">

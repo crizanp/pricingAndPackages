@@ -256,7 +256,7 @@ export default function SocialMediaVideoEditing() {
                                 Platform-Specific Editing
                             </h2>
                             <p className="text-2xl text-gray-600 max-w-2xl mx-auto">
-                                We create content optimized for each platform's unique algorithm and audience behavior
+                                We create content optimized for each platform  unique algorithm and audience behavior
                             </p>
                         </div>
                         
