@@ -94,19 +94,7 @@ export default function VideoMetrics({
           </div>
         </div>
         
-        {/* CTA Button with improved styling */}
-        {showCTA && (
-          <div className="flex justify-center mt-16">
-            <a
-              href={ctaLink}
-              className="flex items-center gap-3 text-lg px-8 py-4 rounded-lg transition-all hover:shadow-lg"
-              style={{ backgroundColor: accentColor, color: 'white' }}
-            >
-              {React.createElement(ctaIcon, { className: "w-5 h-5" })}
-              <span className="font-medium">{buttonText}</span>
-            </a>
-          </div>
-        )}
+       
       </div>
     </div>
   );

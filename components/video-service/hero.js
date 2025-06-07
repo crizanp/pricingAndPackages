@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 
 export default function HeroSection({
@@ -104,9 +105,10 @@ export default function HeroSection({
           </p>
           
           <div className="mt-6 md:mt-12">
-            <button className="bg-white text-black font-medium py-2 px-6 md:py-4 md:px-10 rounded-md transition-all duration-300 hover:bg-opacity-90 text-base md:text-lg">
+            <Link href="/contact">
+            <button className="cursor-pointer bg-white text-black font-medium py-2 px-6 md:py-4 md:px-10 rounded-md transition-all duration-300 hover:bg-opacity-90 text-base md:text-lg">
               {buttonText}
-            </button>
+            </button></Link>
           </div>
           
           {/* Features section */}
