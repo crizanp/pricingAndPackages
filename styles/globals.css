@@ -34,3 +34,24 @@ body {
   -ms-overflow-style: none; 
   scrollbar-width: none;
 }
+@keyframes gradientBG {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.bg-animated-red {
+  @apply bg-gradient-to-r from-red-600 via-red-700 to-red-800 bg-[length:300%_300%] animate-[gradientBG_6s_ease_infinite];
+}
+.bg-animated-blue {
+  @apply bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-[length:300%_300%] animate-[gradientBG_6s_ease_infinite];
+}
+.bg-animated-purple {
+  @apply bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 bg-[length:300%_300%] animate-[gradientBG_6s_ease_infinite];
+}
+.bg-animated-pink {
+  @apply bg-gradient-to-r from-pink-600 via-pink-700 to-pink-800 bg-[length:300%_300%] animate-[gradientBG_6s_ease_infinite];
+}
