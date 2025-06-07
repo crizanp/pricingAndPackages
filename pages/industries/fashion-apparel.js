@@ -1,3 +1,4 @@
+import Head from "next/head";
 import BrandSlider from "../../components/home/companySponsered";
 import TextHeroSection from "../../components/home/textHero";
 import { EdtechServices } from "../../components/industry/eduTech";
@@ -5,240 +6,331 @@ import { Hero } from "../../components/industry/hero";
 import { TextHighlight } from "../../components/industry/textHero";
 import FAQSection from "../../components/services/faqSection";
 
-const FashionApparel = () => {
-  // This data would typically come from props, CMS, or API
-  const heroContent = {
-    title: "Transforming Fashion & Apparel Through Digital Innovation",
-    subtitle: "Revolutionizing how brands design, showcase, sell, and deliver fashion products in an increasingly digital and sustainable world.",
-    buttonText: "Let's connect",
-    buttonLink: "#contact",
-    backgroundImage: "https://10pearls.com/wp-content/uploads/2025/01/fashion-apparel-Hero-Image.png",
-    imageAlt: "Digital fashion technology showcase"
+export default function FashionSoftware() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Foxbeep Fashion Technology Solutions",
+    "url": "https://foxbeep.com/industries/fashion-apparel",
+    "logo": "https://foxbeep.com/logo.png",
+    "description": "Professional fashion technology development services including fashion e-commerce platforms, virtual try-on solutions, inventory management systems, and fashion mobile apps. 18+ years experience with fashion industry software.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Nepal"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+977-9810570201",
+      "contactType": "Customer Service"
+    },
+    "sameAs": [
+      "https://facebook.com/foxbeep",
+      "https://twitter.com/foxbeep", 
+      "https://linkedin.com/company/foxbeep"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "name": "Fashion Technology Development Services",
+      "description": "Custom fashion e-commerce development, virtual try-on solutions, inventory management systems, fashion mobile apps, and retail technology solutions"
+    },
+    "expertise": [
+      "Fashion E-commerce Development",
+      "Virtual Try-On Solutions",
+      "Fashion Inventory Management",
+      "Fashion Mobile Apps",
+      "Retail Technology Solutions",
+      "Fashion Brand Websites"
+    ]
   };
 
+  // Hero section content
+  const heroContent = {
+    title: "Fashion Technology Development Services",
+    subtitle: "Custom fashion technology solutions including e-commerce platforms, virtual try-on experiences, inventory management systems, and fashion mobile apps designed to elevate fashion brands and enhance customer shopping experiences.",
+    buttonText: "Get Free Consultation",
+    buttonLink: "#contact",
+    backgroundImage: "/images/industries/fashion-apparel.jpg",
+    imageAlt: "Fashion technology development and retail solutions"
+  };
+
+  // Text highlight section content
   const textHeroContent = {
-    headingText: "TECHNOLOGY IS REDEFINING FASHION & APPAREL BY ACCELERATING",
-    highlightWord: "ACCELERATING",
-    descriptionText: "Technology is redefining fashion and apparel by accelerating innovation across the entire value chain, from digital design and virtual try-on to sustainable production and personalized shopping experiences. As emerging technologies transform customer expectations, {brandName} helps fashion brands enhance customer engagement and operational efficiency through integrated, intelligent digital fashion ecosystems.",
-    brandName: "10Pearls",
+    headingText: "FASHION TECHNOLOGY FOR MODERN RETAIL",
+    highlightWord: "TECHNOLOGY",
+    descriptionText: "Fashion technology development transforms retail experiences through innovative digital solutions. From virtual try-on platforms to smart inventory systems, our development expertise delivers cutting-edge fashion applications. We specialize in custom fashion e-commerce, AR/VR solutions, and integrated retail systems that boost sales and enhance customer engagement.",
+    brandName: "Foxbeep",
     highlightColor: "bg-pink-300"
   };
 
-  const fashionTechContent1 = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing your ideal fashion and apparel solutions. Our key focus areas are:",
-    companyName: "10Pearls",
+  // Fashion E-commerce Platforms section
+  const fashionEcommerceContent = {
+    mainHeading: "Our Fashion Technology Solutions",
+    introText: "We deliver professional fashion technology development services focused on enhancing retail experiences and brand growth:",
+    companyName: "Foxbeep",
     servicesList: [
-      "Digital Commerce Solutions",
-      "AR/VR Fashion Experiences",
-      "Supply Chain Optimization",
-      "Customer Engagement Platforms"
+      "Fashion E-commerce Platforms",
+      "Virtual Try-On Solutions",
+      "Fashion Inventory Management",
+      "Fashion Mobile Apps"
     ],
-    featuredService: "Digital Commerce Solutions",
-    featuredServiceDescription: "We develop comprehensive fashion e-commerce platforms that deliver immersive, personalized shopping experiences. Our solutions optimize the entire customer journey from discovery to purchase while providing powerful merchandising and management tools for fashion brands.",
-    featuredServiceImage: "https://10pearls.com/wp-content/uploads/2024/12/digital-commerce-solutions.jpg",
+    featuredService: "Fashion E-commerce Platforms",
+    featuredServiceDescription: "Sophisticated fashion e-commerce platforms with visual product displays, size guides, style recommendations, and seamless shopping experiences. Designed specifically for fashion brands, retailers, and designers.",
+    featuredServiceImage: "/images/fashion-ecommerce-platforms.jpg",
     highlightColor: "bg-pink-300",
     featureDetails: [
       {
-        title: "Fashion E-commerce Platforms",
-        description: "We create visually stunning, high-performance e-commerce solutions specifically designed for fashion brands. Our platforms feature rich product visualization, intuitive navigation, personalized recommendations, and seamless checkout experiences that drive conversion rates."
+        title: "Visual Product Showcase",
+        description: "High-resolution image galleries with zoom functionality, 360-degree product views, color variants, multiple angles, and lifestyle photography integration for compelling fashion product presentation."
       },
       {
-        title: "Omnichannel Retail Integration",
-        description: "Our omnichannel solutions unify the shopping experience across online, mobile, and physical retail environments. These systems synchronize inventory, customer data, and transactions in real-time, enabling features like click-and-collect, endless aisle, and seamless returns across channels."
+        title: "Size & Fit Solutions",
+        description: "Advanced size guide systems with fit calculators, size recommendations, measurement tools, and customer reviews integration to reduce returns and improve customer satisfaction."
       },
       {
-        title: "Fashion Merchandising Tools",
-        description: "We develop advanced merchandising systems that optimize product assortment, pricing, and promotion strategies. Our tools include visual merchandising features, A/B testing capabilities, and AI-powered analytics that help fashion brands maximize revenue and margin."
+        title: "Style Recommendation Engine",
+        description: "AI-powered style suggestions with personalized recommendations, outfit combinations, trend analysis, and customer preference learning for enhanced shopping experiences and increased sales."
       }
     ]
   };
 
-  const fashionTechContent2 = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing your ideal fashion and apparel solutions. Our key focus areas are:",
-    companyName: "10Pearls",
+  // Virtual Try-On Solutions section
+  const virtualTryOnContent = {
+    mainHeading: "Our Fashion Technology Solutions",
+    introText: "We deliver professional fashion technology development services focused on enhancing retail experiences and brand growth:",
+    companyName: "Foxbeep",
     servicesList: [
-      "Digital Commerce Solutions",
-      "AR/VR Fashion Experiences",
-      "Supply Chain Optimization",
-      "Customer Engagement Platforms"
+      "Fashion E-commerce Platforms",
+      "Virtual Try-On Solutions",
+      "Fashion Inventory Management",
+      "Fashion Mobile Apps"
     ],
-    featuredService: "AR/VR Fashion Experiences",
-    featuredServiceDescription: "We create immersive augmented and virtual reality solutions that transform how consumers discover, experience, and interact with fashion products. Our AR/VR technologies bridge the gap between digital and physical retail while reducing returns and enhancing customer confidence.",
-    featuredServiceImage: "https://10pearls.com/wp-content/uploads/2024/12/ar-vr-fashion-experiences.jpg",
+    featuredService: "Virtual Try-On Solutions",
+    featuredServiceDescription: "Cutting-edge AR/VR virtual try-on experiences that allow customers to visualize clothing, accessories, and makeup digitally. Reduces returns and increases customer confidence in online purchases.",
+    featuredServiceImage: "/images/virtual-try-on-solutions.jpg",
     highlightColor: "bg-pink-300",
     featureDetails: [
       {
-        title: "Virtual Try-On Solutions",
-        description: "Our advanced virtual try-on applications use AR technology and computer vision to let customers realistically visualize how clothing, accessories, and footwear will look on them. These solutions increase conversion rates and reduce returns by helping customers make more confident purchase decisions."
+        title: "AR Clothing Visualization",
+        description: "Augmented reality technology enabling customers to see how clothing fits and looks on their body using smartphone cameras, with realistic fabric rendering and movement simulation."
       },
       {
-        title: "3D Product Visualization",
-        description: "We develop 3D visualization tools that transform traditional product photography into interactive, engaging experiences. Our solutions allow customers to examine products from every angle, zoom in on details, and customize colors and features before purchasing."
+        title: "Virtual Fitting Rooms",
+        description: "Interactive virtual fitting room experiences with body scanning, size matching, outfit mixing, and sharing capabilities for immersive online shopping experiences."
       },
       {
-        title: "Virtual Fashion Showrooms",
-        description: "Our virtual showroom platforms enable fashion brands to create immersive digital environments for presenting collections to buyers, influencers, and consumers. These solutions reduce sample production costs while expanding global reach beyond traditional physical events."
+        title: "Makeup & Accessory Try-On",
+        description: "Real-time makeup application and accessory placement using facial recognition technology, color matching, and lighting adjustments for accurate virtual beauty experiences."
       }
     ]
   };
 
-  const fashionTechContent3 = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing your ideal fashion and apparel solutions. Our key focus areas are:",
-    companyName: "10Pearls",
+  // Fashion Inventory Management section
+  const inventoryManagementContent = {
+    mainHeading: "Our Fashion Technology Solutions",
+    introText: "We deliver professional fashion technology development services focused on enhancing retail experiences and brand growth:",
+    companyName: "Foxbeep",
     servicesList: [
-      "Digital Commerce Solutions",
-      "AR/VR Fashion Experiences",
-      "Supply Chain Optimization",
-      "Customer Engagement Platforms"
+      "Fashion E-commerce Platforms",
+      "Virtual Try-On Solutions",
+      "Fashion Inventory Management",
+      "Fashion Mobile Apps"
     ],
-    featuredService: "Supply Chain Optimization",
-    featuredServiceDescription: "We develop intelligent supply chain solutions that enhance transparency, sustainability, and efficiency across the fashion value chain. Our technologies optimize inventory management, production planning, and logistics while providing real-time visibility into the entire product lifecycle.",
-    featuredServiceImage: "https://10pearls.com/wp-content/uploads/2024/12/supply-chain-optimization.jpg",
+    featuredService: "Fashion Inventory Management",
+    featuredServiceDescription: "Comprehensive inventory management systems designed for fashion retailers with size/color variants, seasonal tracking, trend analysis, and multi-location support for efficient fashion business operations.",
+    featuredServiceImage: "/images/fashion-inventory-management.jpg",
     highlightColor: "bg-pink-300",
     featureDetails: [
       {
-        title: "Fashion Inventory Management",
-        description: "Our inventory management solutions provide real-time visibility across all channels and locations while optimizing stock levels based on demand forecasts, seasonality, and trend data. These systems reduce carrying costs and markdowns while minimizing stockouts of popular items."
+        title: "Multi-Variant Product Tracking",
+        description: "Advanced inventory tracking for fashion products with size, color, style variants, SKU management, barcode scanning, and real-time stock level monitoring across all channels."
       },
       {
-        title: "Sustainable Supply Chain Tracking",
-        description: "We create blockchain-based platforms that track and verify the sustainability credentials of fashion products from raw materials to finished goods. These solutions enable transparent communication of ethical and environmental practices to increasingly conscious consumers."
+        title: "Seasonal Collection Management",
+        description: "Specialized tools for managing fashion seasons, collection launches, trend forecasting, markdown planning, and seasonal inventory optimization to maximize profitability."
       },
       {
-        title: "Predictive Analytics for Fashion",
-        description: "Our predictive analytics tools leverage AI and machine learning to forecast trends, optimize production quantities, and reduce waste. These solutions analyze historical sales data, social media trends, and external factors to guide more precise merchandising decisions."
+        title: "Supply Chain Integration",
+        description: "Seamless integration with suppliers, manufacturers, and distributors with automated reordering, lead time tracking, and quality control workflows for efficient fashion supply chain management."
       }
     ]
   };
 
-  const fashionTechContent4 = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing your ideal fashion and apparel solutions. Our key focus areas are:",
-    companyName: "10Pearls",
+  // Fashion Mobile Apps section
+  const fashionMobileContent = {
+    mainHeading: "Our Fashion Technology Solutions",
+    introText: "We deliver professional fashion technology development services focused on enhancing retail experiences and brand growth:",
+    companyName: "Foxbeep",
     servicesList: [
-      "Digital Commerce Solutions",
-      "AR/VR Fashion Experiences",
-      "Supply Chain Optimization",
-      "Customer Engagement Platforms"
+      "Fashion E-commerce Platforms",
+      "Virtual Try-On Solutions",
+      "Fashion Inventory Management",
+      "Fashion Mobile Apps"
     ],
-    featuredService: "Customer Engagement Platforms",
-    featuredServiceDescription: "We build comprehensive customer engagement solutions that foster deeper connections between fashion brands and their audiences. Our platforms deliver personalized experiences, loyalty programs, and community features that transform one-time purchasers into brand advocates.",
-    featuredServiceImage: "https://10pearls.com/wp-content/uploads/2024/12/customer-engagement-platforms.jpg",
+    featuredService: "Fashion Mobile Apps",
+    featuredServiceDescription: "Native and cross-platform fashion mobile applications with personalized shopping experiences, style discovery, social features, and seamless mobile commerce for fashion-forward customers.",
+    featuredServiceImage: "/images/fashion-mobile-apps.jpg",
     highlightColor: "bg-pink-300",
     featureDetails: [
       {
-        title: "Fashion Personalization Engines",
-        description: "Our AI-powered personalization systems analyze customer preferences, purchase history, browsing behavior, and style profiles to deliver highly relevant product recommendations, content, and offers. These solutions increase engagement and conversion while enhancing customer satisfaction."
+        title: "Personal Style Discovery",
+        description: "AI-powered style profiling with preference learning, trend discovery, personalized feeds, and style inspiration features to help customers discover their unique fashion sense."
       },
       {
-        title: "Fashion Loyalty & Community",
-        description: "We develop innovative loyalty platforms and brand communities that reward engagement beyond purchases. Our solutions include gamified experiences, user-generated content features, virtual styling communities, and exclusive digital experiences that deepen emotional connections with fashion brands."
+        title: "Social Fashion Features",
+        description: "Social networking capabilities with outfit sharing, style ratings, fashion challenges, influencer integration, and community features to create engaging fashion experiences."
       },
       {
-        title: "Clienteling & Styling Applications",
-        description: "Our clienteling solutions empower fashion associates with customer insights, purchase history, and styling tools that deliver premium personalized service across channels. These applications blend human expertise with digital capabilities to create high-touch shopping experiences at scale."
+        title: "Mobile Shopping Optimization",
+        description: "Mobile-first shopping experiences with swipe navigation, quick checkout, wishlist management, push notifications, and offline browsing for seamless mobile fashion commerce."
       }
     ]
   };
 
+  // FAQ Section content
   const faqItems = [
     {
-      question: "What types of fashion technology solutions do you offer?",
-      answer: "We provide comprehensive fashion technology services including e-commerce platforms, mobile shopping apps, AR/VR try-on experiences, virtual showrooms, supply chain management systems, clienteling solutions, and customer engagement platforms. Our goal is to transform how fashion products are designed, marketed, sold, and experienced."
+      question: "What fashion technology development services do you provide?",
+      answer: "We provide comprehensive fashion technology development including fashion e-commerce platforms, virtual try-on solutions, inventory management systems, fashion mobile apps, brand websites, and custom retail technology solutions tailored to fashion businesses."
     },
     {
-      question: "How can AR/VR technology benefit my fashion brand?",
-      answer: "Augmented and virtual reality technologies enable virtual try-on experiences, 3D product visualization, interactive showrooms, and immersive brand storytelling. These solutions reduce return rates by 30-40%, increase conversion rates, expand global reach without physical limitations, and create memorable brand experiences that drive engagement."
+      question: "Can you develop custom fashion e-commerce websites?",
+      answer: "Yes, we specialize in custom fashion e-commerce development with features like visual product showcases, size guides, style recommendations, customer reviews, and fashion-specific checkout processes designed for clothing and accessory retailers."
     },
     {
-      question: "Can you develop custom e-commerce platforms for fashion brands?",
-      answer: "Absolutely. We develop tailored e-commerce solutions for fashion retailers and brands with features specifically designed for apparel, accessories, and footwear. Our platforms include advanced visual merchandising tools, size recommendation engines, outfit builders, and integrated inventory management across channels."
+      question: "Do you develop virtual try-on and AR solutions for fashion?",
+      answer: "Absolutely. We develop advanced AR/VR virtual try-on solutions including clothing visualization, virtual fitting rooms, makeup try-on, and accessory placement using cutting-edge augmented reality technology."
     },
     {
-      question: "How do you leverage AI in fashion applications?",
-      answer: "We implement AI for trend forecasting, visual search, personalized recommendations, virtual styling, demand prediction, dynamic pricing, and customer segmentation. Our AI solutions help fashion brands anticipate market shifts, reduce overproduction, and deliver highly relevant experiences to each customer."
+      question: "What technologies do you use for fashion app development?",
+      answer: "We use modern technologies including React, Node.js, Python, AR/VR frameworks, AI/ML for recommendations, mobile frameworks (React Native, Flutter), cloud platforms (AWS, Azure), and fashion-specific APIs for comprehensive solutions."
     },
     {
-      question: "What solutions do you offer for sustainable fashion?",
-      answer: "We develop blockchain-based traceability platforms, carbon footprint calculators, circular fashion marketplaces, and sustainable material libraries. These technologies enable transparent communication of sustainability credentials, support ethical sourcing, and help brands implement circular business models."
+      question: "Can you integrate fashion software with existing retail systems?",
+      answer: "Yes, we specialize in fashion retail integration with existing systems including POS systems, inventory management, accounting software, CRM platforms, and third-party fashion services through APIs and custom connectors."
     },
     {
-      question: "How do you approach personalization in fashion platforms?",
-      answer: "We create fashion-specific personalization engines that consider style preferences, body type, occasion needs, color affinities, and brand affinities. Our solutions deliver personalized product recommendations, content, styling advice, and promotions that make customers feel understood and valued."
+      question: "How do you handle fashion inventory management with multiple variants?",
+      answer: "We develop sophisticated inventory systems specifically for fashion with multi-variant tracking (size, color, style), SKU management, seasonal collection handling, and real-time stock monitoring across all sales channels."
     },
     {
-      question: "Can you help optimize our fashion supply chain?",
-      answer: "Yes, we build comprehensive supply chain management platforms featuring real-time inventory visibility, demand forecasting, production planning, supplier collaboration tools, and logistics optimization. Our solutions help fashion brands reduce lead times, minimize excess inventory, and increase supply chain transparency."
+      question: "What is the typical timeline for fashion technology development?",
+      answer: "Fashion technology development timelines vary based on complexity. Simple fashion websites take 2-4 months, while comprehensive e-commerce platforms with AR features may require 4-8 months. We provide detailed timelines during consultation."
     },
     {
-      question: "What analytics capabilities do your fashion solutions include?",
-      answer: "Our platforms provide advanced analytics for merchandising performance, customer behavior, trend identification, pricing optimization, and marketing effectiveness. We develop customized dashboards and reporting tools that transform complex fashion retail data into actionable business insights."
+      question: "Can you customize existing fashion platforms like Shopify or WooCommerce?",
+      answer: "Yes, we provide extensive customization for fashion-focused platforms including custom themes, fashion-specific plugins, size chart integrations, and specialized features for clothing and accessory businesses."
     },
     {
-      question: "Do you support post-launch maintenance and updates?",
-      answer: "Yes, we offer ongoing support, platform optimization, feature enhancements, security updates, and technology modernization. Our managed services ensure your fashion technology solutions remain secure, scalable, and aligned with evolving industry trends and consumer expectations."
+      question: "Do you provide ongoing support for fashion technology solutions?",
+      answer: "Absolutely. We offer comprehensive support including seasonal updates, new feature development, performance optimization, security updates, and technical support to keep your fashion technology running smoothly."
     },
     {
-      question: "Why choose 10Pearls for fashion technology development?",
-      answer: "10Pearls combines deep fashion industry expertise with technical excellence in emerging technologies. We understand the unique requirements of fashion e-commerce, prioritize visually stunning and intuitive experiences, and deliver scalable solutions that advance digital transformation while strengthening brand identity."
+      question: "Why choose Foxbeep for fashion technology development?",
+      answer: "Foxbeep combines 18+ years of software development expertise with deep understanding of fashion industry needs and customer behavior. Our team delivers innovative, visually stunning fashion technology solutions that enhance brand presence and drive sales."
     }
   ];
 
   return (
-    <div>
-      <Hero {...heroContent} />
-      <TextHighlight {...textHeroContent} />
-      <BrandSlider />
-      <div className="max-w-7xl mx-auto px-4 xl:px-0 my-16">
-        {/* Heading */}
-        <h2 className="text-4xl md:text-5xl relative inline-block mb-6">
-          <span className="bg-pink-300 absolute -bottom-1 left-0 w-full h-4 -z-10 rounded-sm"></span>
-          Foxbeep services
-        </h2>
+    <>
+      <Head>
+        {/* Essential Meta Tags */}
+        <title>Fashion Technology Development Services | Fashion E-commerce | Foxbeep</title>
+        <meta name="description" content="Professional fashion technology development services including fashion e-commerce platforms, virtual try-on solutions, inventory management systems, and fashion mobile apps. Expert fashion developers." />
+        <meta name="keywords" content="fashion technology development, fashion e-commerce, virtual try-on solutions, fashion mobile apps, fashion inventory management, retail technology, fashion website development, AR fashion solutions" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Fashion Technology Development Services | Fashion E-commerce" />
+        <meta property="og:description" content="Custom fashion technology development including e-commerce platforms, virtual try-on experiences, inventory management, and fashion mobile apps designed for modern retail." />
+        <meta property="og:image" content="https://foxbeep.com/fashion-technology-development.png" />
+        <meta property="og:url" content="https://foxbeep.com/industries/fashion-apparel" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Foxbeep Fashion Solutions" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Fashion Technology Development Services | Foxbeep" />
+        <meta name="twitter:description" content="Expert fashion technology development for e-commerce, virtual try-on, and retail solutions." />
+        <meta name="twitter:image" content="https://foxbeep.com/fashion-technology-development.png" />
+        
+        {/* Technical Meta Tags */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow" />
+        
+        {/* Industry-Specific Meta Tags */}
+        <meta name="industry" content="Fashion Technology Development" />
+        <meta name="services" content="Fashion E-commerce Platforms, Virtual Try-On Solutions, Fashion Inventory Management, Fashion Mobile Apps" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://foxbeep.com/industries/fashion-apparel" />
+        
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        
+        {/* Preconnect for Performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </Head>
 
-        {/* Intro Text */}
-        <p className="text-lg text-gray-700 mb-8">
-          At <span className="font-semibold text-gray-900">Foxbeep</span>, we take a unique approach to building impactful fashion and apparel solutions. Our core focus areas include:
-        </p>
-
-        {/* Services List */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4">
-          {[
-            "Digital Commerce Solutions",
-            "Supply Chain Optimization",
-            "AR/VR Fashion Experiences",
-            "Customer Engagement Platforms",
-          ].map((service, index) => (
-            <div key={index} className="flex items-start">
-              <div className="mt-1 mr-3 text-pink-500">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15H5v-3.414l8.293-8.293a1 1 0 011.414 0zM7 13h.586L14 6.586 13.414 6 7 12.414V13z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <p className="text-lg text-gray-800">{service}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <EdtechServices {...fashionTechContent1} />
-      <EdtechServices {...fashionTechContent2} />
-      <EdtechServices {...fashionTechContent3} />
-      <EdtechServices {...fashionTechContent4} />
-      <FAQSection
-        title="Frequently Asked Questions"
-        faqItems={faqItems}
-        backgroundColor="bg-white"
-        textColor="text-gray-700"
-        questionSize="text-2xl"
-      />
-      <TextHeroSection />
-      {/* Rest of the page content would go here */}
-    </div>
+      <main>
+        {/* Hero Section */}
+        <section aria-label="Fashion Technology Development Hero">
+          <Hero {...heroContent} />
+        </section>
+        
+        {/* Text Highlight Section */}
+        <section aria-label="Fashion Technology Overview">
+          <TextHighlight {...textHeroContent} />
+        </section>
+        
+        {/* Brand Partners */}
+        <section aria-label="Trusted by Leading Fashion Brands">
+          <BrandSlider />
+        </section>
+        
+        {/* Fashion Technology Services Sections */}
+        <section aria-label="Fashion E-commerce Platforms">
+          <EdtechServices {...fashionEcommerceContent} />
+        </section>
+        
+        <section aria-label="Virtual Try-On Solutions">
+          <EdtechServices {...virtualTryOnContent} />
+        </section>
+        
+        <section aria-label="Fashion Inventory Management">
+          <EdtechServices {...inventoryManagementContent} />
+        </section>
+        
+        <section aria-label="Fashion Mobile Applications">
+          <EdtechServices {...fashionMobileContent} />
+        </section>
+        
+        {/* FAQ Section */}
+        <section aria-label="Fashion Technology Development FAQ">
+          <FAQSection
+            title="Frequently Asked Questions"
+            subtitle="Get answers to common questions about our fashion technology development services"
+            faqItems={faqItems}
+            backgroundColor="bg-white"
+            textColor="text-gray-700"
+            questionSize="text-2xl"
+          />
+        </section>
+        
+        {/* Call to Action */}
+        <section aria-label="Get Started with Fashion Technology Development">
+          <TextHeroSection />
+        </section>
+      </main>
+    </>
   );
-};
-
-export default FashionApparel;
+}

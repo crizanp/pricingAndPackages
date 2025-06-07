@@ -22,7 +22,7 @@ export const Hero = ({
         ) : (
           <div className="w-full h-full bg-gradient-to-r from-blue-900 to-indigo-800"></div>
         )}
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="absolute inset-0 bg-black opacity-70"></div>
       </div>
 
       {/* Content container */}

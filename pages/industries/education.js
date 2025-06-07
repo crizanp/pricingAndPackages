@@ -1,3 +1,4 @@
+import Head from "next/head";
 import BrandSlider from "../../components/home/companySponsered";
 import TextHeroSection from "../../components/home/textHero";
 import { EdtechServices } from "../../components/industry/eduTech";
@@ -5,250 +6,331 @@ import { Hero } from "../../components/industry/hero";
 import { TextHighlight } from "../../components/industry/textHero";
 import FAQSection from "../../components/services/faqSection";
 
-const Education = () => {
-  // This data would typically come from props, CMS, or API
-  const heroContent = {
-    title: "Empowering Learning Through Innovating Technologies",
-    subtitle: "Revolutionizing the learning experience by empowering learners to explore, create, and excel in an ever-evolving digital landscape.",
-    buttonText: "Let's connect",
-    buttonLink: "#contact",
-    backgroundImage: "https://10pearls.com/wp-content/uploads/2025/01/education-banner-2Her0-Image.png",
-    imageAlt: "Students using technology in a library"
-  };
-  const textHeroContent = {
-    headingText: "TECHNOLOGY IS RESHAPING EDUCATION BY REVOLUTIONIZING",
-    highlightWord: "REVOLUTIONIZING",
-    descriptionText: "Technology is reshaping education by revolutionizing how information is accessed, facilitating personalized learning experiences, and fostering global connectivity among learners and educators alike. From augmented and virtual reality to artificial intelligence, each emerging technology is poised to transform educational paradigms. {brandName} aids enterprises in enhancing learning experiences and academic achievements via an innovative, collaborative educational ecosystem.",
-    brandName: "10Pearls",
-    highlightColor: "bg-yellow-300"
-  };
-  const edtechContent = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "we have a unique approach to developing your ideal Foxbeep software. Our key focus areas are:",
-    companyName: "10Pearls",
-    servicesList: [
-      "Learning Management Systems (LMS)",
-      "Educational Content Creation and Delivery",
-      "Emerging Tech Experiences",
-      "Artificial Intelligence"
+export default function EducationSoftware() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Foxbeep Education Technology Solutions",
+    "url": "https://foxbeep.com/industries/education",
+    "logo": "https://foxbeep.com/logo.png",
+    "description": "Professional education technology development services including learning management systems, online course platforms, educational mobile apps, and e-learning solutions. 18+ years experience with scalable EdTech development.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Nepal"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+977-9810570201",
+      "contactType": "Customer Service"
+    },
+    "sameAs": [
+      "https://facebook.com/foxbeep",
+      "https://twitter.com/foxbeep", 
+      "https://linkedin.com/company/foxbeep"
     ],
-    featuredService: "Learning management systems (LMS)",
-    featuredServiceDescription: "Collaborative, self-paced learning solutions are the need of the hour. We empower forward-thinking educational institutions to reach students across various channels and integrate innovative learning methods transforming learning.",
-    featuredServiceImage: "https://10pearls.com/wp-content/uploads/2024/12/learning-management-systems.jpg",
-    highlightColor: "bg-lime-300" // You can use any Tailwind color class
-  };
-  const MoreedtechContent = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing your ideal Foxbeep software. Our key focus areas are:",
-    companyName: "10Pearls",
-    servicesList: [
-      "Learning Management Systems (LMS)",
-      "Educational Content Creation and Delivery",
-      "Emerging Tech Experiences",
-      "Artificial Intelligence"
-    ],
-    featuredService: "Learning management systems (LMS)",
-    featuredServiceDescription: "Collaborative, self-paced learning solutions are the need of the hour. We empower forward-thinking educational institutions to reach students across various channels and integrate innovative learning methods transforming learning.",
-    featuredServiceImage: "https://10pearls.com/wp-content/uploads/2024/12/learning-management-systems.jpg",
-    highlightColor: "bg-lime-300",
-    featureDetails: [
-      {
-        title: "Intelligent e-learning platforms",
-        description: "We develop e-learning solutions incorporating AI tutoring, empowering every student to embark on personalized educational journeys with self-paced learning options. Our platforms feature seamless progress tracking, customized reporting dashboards, and interactive e-learning content accessibility."
-      },
-      {
-        title: "Platform integration",
-        description: "Our forward-looking teams leverage cutting-edge technologies to enrich learning experiences and elevate academic achievements. By integrating customized, feature-rich e-learning platforms, we optimize academic outcomes, streamline operations, and foster a collaborative learning environment."
-      },
-      {
-        title: "Learning analytics and reporting",
-        description: "We transform extensive learning data into visually intuitive, actionable insights for all stakeholders and develop analytics tools to monitor learner progress, engagement, and performance."
-      }
+    "offers": {
+      "@type": "Offer",
+      "name": "Education Technology Development Services",
+      "description": "Custom EdTech development, learning management systems, online course platforms, educational mobile apps, and e-learning solutions"
+    },
+    "expertise": [
+      "EdTech Development",
+      "Learning Management Systems",
+      "Online Course Platforms",
+      "Educational Mobile Apps",
+      "E-learning Solutions",
+      "Student Information Systems"
     ]
   };
-  const Moreed2techContent = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing your ideal Foxbeep software. Our key focus areas are:",
-    companyName: "10Pearls",
+
+  // Hero section content
+  const heroContent = {
+    title: "Education Technology Development Services",
+    subtitle: "Custom EdTech solutions including learning management systems, online course platforms, educational mobile apps, and e-learning systems designed to enhance education delivery and student engagement.",
+    buttonText: "Get Free Consultation",
+    buttonLink: "#contact",
+    backgroundImage: "/images/industries/education.jpg",
+    imageAlt: "Education technology development and e-learning solutions"
+  };
+
+  // Text highlight section content
+  const textHeroContent = {
+    headingText: "EDTECH DEVELOPMENT FOR MODERN EDUCATION",
+    highlightWord: "DEVELOPMENT",
+    descriptionText: "Education technology development transforms learning through innovative digital solutions. From learning management systems to interactive course platforms, our development expertise delivers scalable educational applications. We specialize in custom e-learning platforms, educational mobile apps, and integrated learning systems that improve student outcomes and educational efficiency.",
+    brandName: "Foxbeep",
+    highlightColor: "bg-green-300"
+  };
+
+  // Learning Management Systems section
+  const lmsContent = {
+    mainHeading: "Our Education Technology Solutions",
+    introText: "We deliver professional EdTech development services focused on enhancing education and learning experiences:",
+    companyName: "Foxbeep",
     servicesList: [
-      "Learning Management Systems (LMS)",
-      "Educational Content Creation and Delivery",
-      "Emerging Tech Experiences",
-      "Artificial Intelligence"
+      "Learning Management Systems",
+      "Online Course Platforms",
+      "Educational Mobile Apps",
+      "Student Information Systems"
     ],
-    featuredService: "Educational Content Creation and Delivery",
-    featuredServiceDescription: "We create digital educational content, including interactive multimedia resources, e-books, videos, and online courses. We develop platforms and tools for content creation, delivery, and distribution, making educational resources more accessible and engaging for learners.",
-    featuredServiceImage: "https://10pearls.com/wp-content/uploads/2024/12/educational-content-creation-and-delivery.jpg", // Replace with actual image URL if needed
-    highlightColor: "bg-lime-300",
+    featuredService: "Learning Management Systems",
+    featuredServiceDescription: "Comprehensive LMS platforms with course management, student tracking, assessment tools, and collaborative learning features. Our systems support blended learning, remote education, and institutional management.",
+    featuredServiceImage: "/images/learning-management-systems.jpg",
+    highlightColor: "bg-green-300",
     featureDetails: [
       {
-        title: "Content Management System (CMS)",
-        description: "We facilitate custom content creation by providing intuitive content management tools, robust templates, and seamless integration capabilities within our CMS platform. Our customized CMS solutions manage authoring, storage, publishing, and content analytics and streamline content creation."
+        title: "Course Management & Delivery",
+        description: "Complete course creation tools with multimedia content support, lesson planning, curriculum mapping, progress tracking, and automated content delivery for structured learning experiences."
       },
       {
-        title: "Virtual Classroom Solutions",
-        description: "We specialize in designing and developing robust virtual classroom platforms and software tailored to facilitate engaging live online learning sessions, lectures, and interactive discussions."
+        title: "Assessment & Grading Tools",
+        description: "Advanced assessment features including online quizzes, automated grading, rubric-based evaluation, plagiarism detection, and comprehensive grade management for fair student evaluation."
       },
       {
-        title: "Mobile Learning App Development",
-        description: "We specialize in the design and development of mobile applications offering intuitive interfaces, interactive content, and offline access, ensuring seamless learning opportunities that align with modern learners’ needs and preferences."
+        title: "Student Progress Analytics",
+        description: "Detailed learning analytics with performance dashboards, engagement metrics, learning path tracking, and predictive insights to support personalized education strategies."
       }
     ]
   };
 
-  const Moreed3techContent = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing your ideal Foxbeep software. Our key focus areas are:",
-    companyName: "10Pearls",
+  // Online Course Platforms section
+  const coursePlatformContent = {
+    mainHeading: "Our Education Technology Solutions",
+    introText: "We deliver professional EdTech development services focused on enhancing education and learning experiences:",
+    companyName: "Foxbeep",
     servicesList: [
-      "Learning Management Systems (LMS)",
-      "Educational Content Creation and Delivery",
-      "Emerging Tech Experiences",
-      "Artificial Intelligence"
+      "Learning Management Systems",
+      "Online Course Platforms",
+      "Educational Mobile Apps",
+      "Student Information Systems"
     ],
-    featuredService: "Emerging Tech Experiences",
-    featuredServiceDescription: "We revolutionize learning for tech-forward institutions by designing and developing immersive mixed-reality and 3D simulation solutions. Our solutions allow students to grasp complex concepts in an engaging manner.",
-    featuredServiceImage: "https://10pearls.com/wp-content/uploads/2024/12/emerging-tech-experiences.jpg", // Replace with an actual image if available
-    highlightColor: "bg-lime-300",
+    featuredService: "Online Course Platforms",
+    featuredServiceDescription: "Interactive online learning platforms with video streaming, live classes, discussion forums, and monetization features. Perfect for educators, institutions, and online course creators.",
+    featuredServiceImage: "/images/online-course-platforms.jpg",
+    highlightColor: "bg-green-300",
     featureDetails: [
       {
-        title: "AR/VR Content Creation",
-        description: "We specialize in creating immersive e-learning solutions utilizing AR/VR and customized multi-dimensional technologies into educational content to provide immersive and interactive learning experiences."
+        title: "Interactive Video Learning",
+        description: "High-quality video streaming with interactive elements, bookmarking, note-taking, playback speed control, and offline viewing capabilities for engaging multimedia learning experiences."
       },
       {
-        title: "Metaverse",
-        description: "With extensive expertise, we craft interconnected metaverse and 3D layer solutions, transforming learning and student experiences. Our teams utilize innovative technologies to create visually captivating 3D simulations, immersing students in virtual learning environments."
+        title: "Live Virtual Classrooms",
+        description: "Real-time video conferencing with screen sharing, digital whiteboard, breakout rooms, recording capabilities, and interactive tools for immersive online education delivery."
       },
       {
-        title: "Gamification",
-        description: "At 10Pearls, we specialize in developing educational games to infuse enjoyment into learning experiences. Incorporating gamification elements into learning platforms serves to elevate learner engagement and enhance motivation."
+        title: "Course Monetization Tools",
+        description: "Comprehensive payment integration with subscription models, one-time purchases, course bundles, discount coupons, and revenue analytics for successful course business management."
       }
     ]
   };
-  const Moreed4techContent = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing your ideal Foxbeep software. Our key focus areas are:",
-    companyName: "10Pearls",
+
+  // Educational Mobile Apps section
+  const mobileEducationContent = {
+    mainHeading: "Our Education Technology Solutions",
+    introText: "We deliver professional EdTech development services focused on enhancing education and learning experiences:",
+    companyName: "Foxbeep",
     servicesList: [
-      "Learning Management Systems (LMS)",
-      "Educational Content Creation and Delivery",
-      "Emerging Tech Experiences",
-      "Artificial Intelligence"
+      "Learning Management Systems",
+      "Online Course Platforms",
+      "Educational Mobile Apps",
+      "Student Information Systems"
     ],
-    featuredService: "Artificial Intelligence",
-    featuredServiceDescription: "We specialize in the development and deployment of AI technologies to tailor learning experiences, streamline assessment and feedback processes, identify opportunities for growth, and promote universal access to high-quality education.",
-    featuredServiceImage: "https://10pearls.com/wp-content/uploads/2024/12/artificial-intelligence.jpg", // Replace with actual image if needed
-    highlightColor: "bg-lime-300",
+    featuredService: "Educational Mobile Apps",
+    featuredServiceDescription: "Native and cross-platform educational apps with offline learning, gamification, interactive content, and progress synchronization. Designed for students, teachers, and educational institutions.",
+    featuredServiceImage: "/images/educational-mobile-apps.jpg",
+    highlightColor: "bg-green-300",
     featureDetails: [
       {
-        title: "Personalized Recommendations",
-        description: "We leverage AI/ML algorithms to monitor student interests, activities, and performance metrics. This enables educators to offer tailored educational content, course suggestions, and career advancement opportunities."
+        title: "Offline Learning Capabilities",
+        description: "Download courses and content for offline access, automatic synchronization when online, offline progress tracking, and seamless learning continuity without internet dependency."
       },
       {
-        title: "Virtual Assistants",
-        description: "Offer round-the-clock support to students through our bespoke AI chatbots and virtual assistants. These intelligent systems address inquiries on admissions, enrollment, schedules, and more, delivering tailored assistance."
+        title: "Gamification & Engagement",
+        description: "Interactive learning elements with badges, points, leaderboards, achievements, learning streaks, and social features to motivate students and increase engagement."
       },
       {
-        title: "Assessment and Testing Tools",
-        description: "We specialize in the creation of AI-driven assessment and testing tools designed to conduct quizzes, exams, and evaluations within online or virtual learning environments."
+        title: "Adaptive Learning Paths",
+        description: "AI-powered personalized learning recommendations, difficulty adjustment based on performance, customized study plans, and intelligent content delivery for optimal learning outcomes."
       }
     ]
   };
+
+  // Student Information Systems section
+  const sisContent = {
+    mainHeading: "Our Education Technology Solutions",
+    introText: "We deliver professional EdTech development services focused on enhancing education and learning experiences:",
+    companyName: "Foxbeep",
+    servicesList: [
+      "Learning Management Systems",
+      "Online Course Platforms",
+      "Educational Mobile Apps",
+      "Student Information Systems"
+    ],
+    featuredService: "Student Information Systems",
+    featuredServiceDescription: "Comprehensive SIS platforms with enrollment management, academic records, scheduling, communication tools, and administrative features. Designed for schools, colleges, and universities.",
+    featuredServiceImage: "/images/student-information-systems.jpg",
+    highlightColor: "bg-green-300",
+    featureDetails: [
+      {
+        title: "Enrollment & Registration",
+        description: "Complete student lifecycle management with online admissions, course registration, fee management, document handling, and automated enrollment workflows for streamlined administration."
+      },
+      {
+        title: "Academic Records Management",
+        description: "Secure academic record keeping with transcript generation, grade management, attendance tracking, academic history, and compliance with educational standards and regulations."
+      },
+      {
+        title: "Parent-Teacher Communication",
+        description: "Integrated communication portals with parent access, teacher messaging, progress reports, event notifications, and collaborative tools to enhance educational community engagement."
+      }
+    ]
+  };
+
+  // FAQ Section content
   const faqItems = [
     {
-      question: "What types of EdTech solutions do you offer?",
-      answer: "We offer end-to-end EdTech development services, including Learning Management Systems (LMS), mobile learning apps, AI-driven tutoring platforms, virtual classroom software, AR/VR immersive learning solutions, and personalized learning analytics tools. Our goal is to reshape the way education is delivered and experienced."
+      question: "What education technology development services do you provide?",
+      answer: "We provide comprehensive EdTech development including learning management systems, online course platforms, educational mobile apps, student information systems, e-learning portals, and custom educational software tailored to your institution's needs."
     },
     {
-      question: "How do you use AI in education platforms?",
-      answer: "We leverage artificial intelligence to deliver personalized learning experiences, real-time feedback, intelligent assessments, and career-aligned content recommendations. Our AI-driven virtual assistants also provide 24/7 support for students and educators across platforms."
+      question: "Can you develop custom learning management systems (LMS)?",
+      answer: "Yes, we specialize in custom LMS development with features like course management, student tracking, assessment tools, progress analytics, content delivery, and collaborative learning environments designed specifically for your educational requirements."
     },
     {
-      question: "Can you build a customized Learning Management System (LMS)?",
-      answer: "Absolutely. We specialize in developing scalable, feature-rich LMS platforms tailored to your institution’s needs. These systems support blended learning, track learner progress, integrate with third-party tools, and ensure a collaborative, engaging user experience."
+      question: "Do you develop educational mobile applications?",
+      answer: "Absolutely. We develop native iOS and Android educational apps as well as cross-platform applications with features like offline learning, gamification, interactive content, progress tracking, and synchronized learning experiences."
     },
     {
-      question: "How do immersive technologies like AR/VR enhance learning?",
-      answer: "AR/VR transforms education by offering interactive and immersive experiences that help students visualize complex concepts, conduct virtual experiments, and explore virtual environments. These tools increase engagement and retention, especially in STEM and medical education."
+      question: "What technologies do you use for EdTech development?",
+      answer: "We use modern technologies including React, Node.js, Python, Java, cloud platforms (AWS, Azure), mobile frameworks (React Native, Flutter), AI/ML integration, video streaming solutions, and educational APIs for scalable EdTech solutions."
     },
     {
-      question: "Do you provide mobile learning solutions?",
-      answer: "Yes. We design mobile-first learning apps with intuitive interfaces, offline capabilities, gamified features, and real-time performance tracking. These apps ensure learners can access educational content anytime, anywhere, on any device."
+      question: "Can you integrate educational software with existing school systems?",
+      answer: "Yes, we specialize in EdTech integration with existing systems including student information systems, library management, accounting software, HR systems, and third-party educational tools through APIs and custom connectors."
     },
     {
-      question: "How do you ensure content accessibility and inclusivity?",
-      answer: "We develop accessible digital content and platforms that follow WCAG guidelines, support multiple languages, and offer customizable experiences. From interactive multimedia to voice navigation, our solutions cater to diverse learning needs and abilities."
+      question: "How do you ensure data security and student privacy compliance?",
+      answer: "We implement robust security measures including data encryption, secure authentication, role-based access controls, FERPA compliance, GDPR compliance, and regular security audits to protect sensitive educational and student data."
     },
     {
-      question: "What kind of analytics do your platforms offer?",
-      answer: "Our systems provide real-time insights on learner engagement, performance, completion rates, and content effectiveness. Dashboards and reporting tools empower educators and administrators to make data-driven decisions that enhance learning outcomes."
+      question: "What is the typical timeline for EdTech development projects?",
+      answer: "EdTech development timelines vary based on complexity and features. Simple educational apps take 3-5 months, while comprehensive LMS or SIS solutions may require 6-12 months. We provide detailed project timelines during consultation."
     },
     {
-      question: "Can your platforms integrate with existing school systems?",
-      answer: "Yes, we offer seamless platform integration with SIS, ERP, CRM, video conferencing tools, and third-party educational apps. This ensures unified data flow, smooth operations, and improved learning continuity."
+      question: "Can you customize existing educational platforms like Moodle or Canvas?",
+      answer: "Yes, we provide extensive customization services for platforms like Moodle, Canvas, Blackboard, and others. This includes custom plugins, themes, integrations, and feature enhancements to match your specific educational workflows."
     },
     {
-      question: "Do you support post-launch maintenance and updates?",
-      answer: "Definitely. We offer continuous support, platform optimization, new feature rollouts, and technology updates to keep your EdTech solution scalable, secure, and aligned with evolving education trends."
+      question: "Do you provide ongoing support and maintenance for educational software?",
+      answer: "Absolutely. We offer comprehensive support and maintenance services including bug fixes, security updates, feature enhancements, performance optimization, content management support, and technical assistance to ensure smooth operation."
     },
     {
-      question: "Why choose 10Pearls for educational technology development?",
-      answer: "10Pearls stands out for its deep expertise in emerging technologies, user-centric design, and proven success in the education sector. We deliver secure, scalable, and future-ready solutions that empower educators and learners alike."
+      question: "Why choose Foxbeep for education technology development?",
+      answer: "Foxbeep combines 18+ years of software development expertise with deep understanding of educational processes and learning methodologies. Our experienced team delivers user-friendly, scalable EdTech solutions that improve educational outcomes and institutional efficiency."
     }
   ];
 
   return (
-    <div>
-      <Hero {...heroContent} />
-      <TextHighlight {...textHeroContent} />;
-      <BrandSlider />
-      <div className="max-w-7xl mx-auto px-4 xl:px-0 my-16">
-        {/* Heading */}
-        <h2 className="text-4xl md:text-5xl relative inline-block mb-6">
-          <span className="bg-lime-300 absolute -bottom-1 left-0 w-full h-4 -z-10 rounded-sm"></span>
-          Foxbeep services
-        </h2>
+    <>
+      <Head>
+        {/* Essential Meta Tags */}
+        <title>Education Technology Development Services | EdTech Solutions | Foxbeep</title>
+        <meta name="description" content="Professional education technology development services including learning management systems, online course platforms, educational mobile apps, and e-learning solutions. Expert EdTech developers." />
+        <meta name="keywords" content="education technology development, EdTech development, learning management systems, online course platforms, educational mobile apps, e-learning solutions, student information systems, LMS development" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Education Technology Development Services | EdTech Solutions" />
+        <meta property="og:description" content="Custom EdTech development including learning management systems, online course platforms, educational mobile apps, and e-learning systems designed to enhance education delivery." />
+        <meta property="og:image" content="https://foxbeep.com/edtech-development.png" />
+        <meta property="og:url" content="https://foxbeep.com/industries/education" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Foxbeep Education Solutions" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Education Technology Development Services | Foxbeep" />
+        <meta name="twitter:description" content="Expert EdTech development for learning management, online courses, and educational mobile solutions." />
+        <meta name="twitter:image" content="https://foxbeep.com/edtech-development.png" />
+        
+        {/* Technical Meta Tags */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow" />
+        
+        {/* Industry-Specific Meta Tags */}
+        <meta name="industry" content="Education Technology Development" />
+        <meta name="services" content="Learning Management Systems, Online Course Platforms, Educational Mobile Apps, Student Information Systems" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://foxbeep.com/industries/education" />
+        
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        
+        {/* Preconnect for Performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </Head>
 
-        {/* Intro Text */}
-        <p className="text-lg text-gray-700 mb-8">
-          At <span className="font-semibold text-gray-900">Foxbeep</span>, we take a unique approach to building impactful Foxbeep software. Our core focus areas include:
-        </p>
-
-        {/* Services List */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4">
-          {[
-            "Learning Management Systems (LMS)",
-            "Emerging Tech Experiences",
-            "Educational Content Creation and Delivery",
-            "Artificial Intelligence",
-          ].map((service, index) => (
-            <div key={index} className="flex items-start">
-              <div className="mt-1 mr-3 text-lime-500">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15H5v-3.414l8.293-8.293a1 1 0 011.414 0zM7 13h.586L14 6.586 13.414 6 7 12.414V13z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <p className="text-lg text-gray-800">{service}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <EdtechServices {...MoreedtechContent} />;
-      <EdtechServices {...Moreed2techContent} />;
-      <EdtechServices {...Moreed3techContent} />;
-      <EdtechServices {...Moreed4techContent} />;
-      <FAQSection
-        title="Frequently Asked Questions"
-        faqItems={faqItems}
-        backgroundColor="bg-white"
-        textColor="text-gray-700"
-        questionSize="text-2xl"
-      />
-      <TextHeroSection />
-      {/* Rest of the page content would go here */}
-    </div>
+      <main>
+        {/* Hero Section */}
+        <section aria-label="Education Technology Development Hero">
+          <Hero {...heroContent} />
+        </section>
+        
+        {/* Text Highlight Section */}
+        <section aria-label="EdTech Development Overview">
+          <TextHighlight {...textHeroContent} />
+        </section>
+        
+        {/* Brand Partners */}
+        <section aria-label="Trusted by Leading Educational Institutions">
+          <BrandSlider />
+        </section>
+        
+        {/* Education Technology Services Sections */}
+        <section aria-label="Learning Management Systems">
+          <EdtechServices {...lmsContent} />
+        </section>
+        
+        <section aria-label="Online Course Platforms">
+          <EdtechServices {...coursePlatformContent} />
+        </section>
+        
+        <section aria-label="Educational Mobile Applications">
+          <EdtechServices {...mobileEducationContent} />
+        </section>
+        
+        <section aria-label="Student Information Systems">
+          <EdtechServices {...sisContent} />
+        </section>
+        
+        {/* FAQ Section */}
+        <section aria-label="Education Technology Development FAQ">
+          <FAQSection
+            title="Frequently Asked Questions"
+            subtitle="Get answers to common questions about our education technology development services"
+            faqItems={faqItems}
+            backgroundColor="bg-white"
+            textColor="text-gray-700"
+            questionSize="text-2xl"
+          />
+        </section>
+        
+        {/* Call to Action */}
+        <section aria-label="Get Started with EdTech Development">
+          <TextHeroSection />
+        </section>
+      </main>
+    </>
   );
-};
-
-export default Education;
+}

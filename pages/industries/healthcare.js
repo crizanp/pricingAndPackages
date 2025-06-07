@@ -1,3 +1,4 @@
+import Head from "next/head";
 import BrandSlider from "../../components/home/companySponsered";
 import TextHeroSection from "../../components/home/textHero";
 import { EdtechServices } from "../../components/industry/eduTech";
@@ -5,240 +6,331 @@ import { Hero } from "../../components/industry/hero";
 import { TextHighlight } from "../../components/industry/textHero";
 import FAQSection from "../../components/services/faqSection";
 
-const Healthcare = () => {
-  // This data would typically come from props, CMS, or API
-  const heroContent = {
-    title: "Transforming Healthcare Through Digital Innovation",
-    subtitle: "Revolutionizing patient care and operational efficiency with cutting-edge technology solutions designed for the evolving healthcare landscape.",
-    buttonText: "Let's connect",
-    buttonLink: "#contact",
-    backgroundImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw2l3t5r0qa5HGrgwanWd43L2qcTBqa-2n-w&s",
-    imageAlt: "Modern healthcare facility with digital technology"
+export default function HealthcareSoftware() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Foxbeep Healthcare Software Solutions",
+    "url": "https://foxbeep.com/industries/healthcare",
+    "logo": "https://foxbeep.com/logo.png",
+    "description": "Professional healthcare software development services including telemedicine platforms, patient management systems, and medical app development. 18+ years experience with 350+ healthcare software professionals.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Nepal"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+977-9810570201",
+      "contactType": "Customer Service"
+    },
+    "sameAs": [
+      "https://facebook.com/foxbeep",
+      "https://twitter.com/foxbeep", 
+      "https://linkedin.com/company/foxbeep"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "name": "Healthcare Software Development Services",
+      "description": "Custom healthcare software development, telemedicine platforms, patient management systems, and medical mobile apps"
+    },
+    "expertise": [
+      "Healthcare Software Development",
+      "Telemedicine Platforms",
+      "Patient Management Systems",
+      "Medical Mobile Apps",
+      "Healthcare Analytics",
+      "HIPAA Compliant Solutions"
+    ]
   };
 
+  // Hero section content
+  const heroContent = {
+    title: "Healthcare Software Development Services",
+    subtitle: "Custom healthcare software solutions including telemedicine platforms, patient management systems, and medical apps with HIPAA compliance and modern technology.",
+    buttonText: "Get Free Consultation",
+    buttonLink: "#contact",
+    backgroundImage: "/images/industries/healthcare.jpg",
+    imageAlt: "Healthcare software development and medical technology solutions"
+  };
+
+  // Text highlight section content
   const textHeroContent = {
-    headingText: "TECHNOLOGY IS TRANSFORMING HEALTHCARE BY ENABLING",
-    highlightWord: "ENABLING",
-    descriptionText: "Technology is transforming healthcare by enabling more personalized, efficient, and accessible care through digital innovation. From telemedicine platforms to AI-powered diagnostics, emerging technologies are reshaping how healthcare is delivered and experienced. {brandName} helps healthcare organizations enhance patient outcomes and operational efficiency through an integrated, secure digital healthcare ecosystem.",
-    brandName: "10Pearls",
+    headingText: "HEALTHCARE SOFTWARE DEVELOPMENT FOR MODERN MEDICAL PRACTICES",
+    highlightWord: "SOFTWARE",
+    descriptionText: "Healthcare software development transforms medical practices through innovative digital solutions. From telemedicine platforms to patient management systems, our software development expertise delivers secure, HIPAA-compliant healthcare applications. We specialize in custom medical software, healthcare mobile apps, and integrated healthcare systems that improve patient care and streamline medical operations.",
+    brandName: "Foxbeep",
     highlightColor: "bg-blue-300"
   };
 
-  const healthTechContent1 = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing your ideal healthcare solutions. Our key focus areas are:",
-    companyName: "10Pearls",
+  // Telemedicine Platforms section
+  const telemedicineContent = {
+    mainHeading: "Our Healthcare Software Solutions",
+    introText: "We deliver professional healthcare software development services focused on innovation and compliance:",
+    companyName: "Foxbeep",
     servicesList: [
-      "Patient Engagement Solutions",
-      "Healthcare Analytics & AI",
-      "Digital Health Platforms",
-      "Medical IoT & Wearables"
+      "Telemedicine Platforms",
+      "Patient Management Systems",
+      "Medical Mobile Apps",
+      "Healthcare Analytics"
     ],
-    featuredService: "Patient Engagement Solutions",
-    featuredServiceDescription: "We develop comprehensive patient engagement platforms that empower patients with self-service tools, personalized health information, and seamless communication channels with providers. Our solutions enhance the patient experience while improving health outcomes.",
-    featuredServiceImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_n0amMeJTei1ezzpcuQndvZf4mAja8CB-uw&s",
+    featuredService: "Telemedicine Platforms",
+    featuredServiceDescription: "Custom telemedicine software platforms that enable secure video consultations, patient scheduling, and remote healthcare delivery. Our solutions are HIPAA-compliant and designed for modern healthcare practices seeking digital transformation.",
+    featuredServiceImage: "/images/telemedicine-platforms.jpg",
     highlightColor: "bg-blue-300",
     featureDetails: [
       {
-        title: "Patient Portals & Mobile Apps",
-        description: "We create intuitive digital portals and mobile applications that give patients 24/7 access to their health records, appointment scheduling, medication management, and secure provider messaging. Our solutions prioritize user experience while ensuring compliance with healthcare regulations."
+        title: "Video Consultation Software",
+        description: "Secure video conferencing platforms with HD quality, screen sharing, file transfer, and encrypted communication designed specifically for healthcare consultations and patient interactions."
       },
       {
-        title: "Telemedicine Platforms",
-        description: "Our custom telemedicine solutions bridge the gap between patients and providers through secure video consultations, remote monitoring, and integrated EHR systems. We design platforms that make virtual care as effective and personal as in-person visits."
+        title: "Patient Scheduling Systems",
+        description: "Automated appointment booking software with calendar integration, reminder notifications, patient registration, and seamless scheduling management for healthcare providers."
       },
       {
-        title: "Patient Education Systems",
-        description: "We develop personalized health education platforms that deliver condition-specific information, treatment guidance, and preventive care resources to patients. These systems improve health literacy and empower patients to actively participate in their care journey."
+        title: "Prescription Management",
+        description: "Digital prescription systems with e-prescribing capabilities, medication tracking, pharmacy integration, and automated refill management for efficient healthcare delivery."
       }
     ]
   };
 
-  const healthTechContent2 = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing your ideal healthcare solutions. Our key focus areas are:",
-    companyName: "10Pearls",
+  // Patient Management Systems section
+  const patientManagementContent = {
+    mainHeading: "Our Healthcare Software Solutions",
+    introText: "We deliver professional healthcare software development services focused on innovation and compliance:",
+    companyName: "Foxbeep",
     servicesList: [
-      "Patient Engagement Solutions",
-      "Healthcare Analytics & AI",
-      "Digital Health Platforms",
-      "Medical IoT & Wearables"
+      "Telemedicine Platforms", 
+      "Patient Management Systems",
+      "Medical Mobile Apps",
+      "Healthcare Analytics"
     ],
-    featuredService: "Healthcare Analytics & AI",
-    featuredServiceDescription: "We harness the power of data and artificial intelligence to transform healthcare delivery, clinical decision-making, and operational efficiency. Our analytics and AI solutions turn complex healthcare data into actionable insights that improve patient outcomes and reduce costs.",
-    featuredServiceImage: "https://cloudinary.hbs.edu/hbsit/image/upload/s--rIH56VDY--/f_auto,c_fill,h_375,w_750,/v20200101/46F1F1D3646E19918F869DBF930C3E5C.jpg",
+    featuredService: "Patient Management Systems",
+    featuredServiceDescription: "Comprehensive patient management software that streamlines medical records, appointment scheduling, billing, and patient communication. Our systems integrate with existing healthcare infrastructure while maintaining HIPAA compliance.",
+    featuredServiceImage: "/images/patient-management-systems.jpg",
     highlightColor: "bg-blue-300",
     featureDetails: [
       {
-        title: "Predictive Analytics",
-        description: "Our predictive analytics solutions leverage machine learning algorithms to identify patients at risk for specific conditions, predict treatment outcomes, and recommend preventive interventions. These tools enable proactive care that improves health outcomes while reducing costs."
+        title: "Electronic Medical Records (EMR)",
+        description: "Custom EMR software development with patient history tracking, medical documentation, lab results integration, and secure data storage designed for healthcare practices of all sizes."
       },
       {
-        title: "Clinical Decision Support",
-        description: "We develop AI-powered systems that assist healthcare providers with evidence-based decision-making at the point of care. Our solutions analyze patient data, medical literature, and clinical guidelines to offer personalized treatment recommendations and alerts."
+        title: "Patient Portal Development",
+        description: "User-friendly patient portals with appointment booking, medical record access, test results viewing, and secure messaging between patients and healthcare providers."
+      },
+      {
+        title: "Billing and Insurance Integration",
+        description: "Automated medical billing software with insurance claim processing, payment tracking, and revenue cycle management integrated with patient management systems."
+      }
+    ]
+  };
+
+  // Medical Mobile Apps section
+  const medicalAppsContent = {
+    mainHeading: "Our Healthcare Software Solutions",
+    introText: "We deliver professional healthcare software development services focused on innovation and compliance:",
+    companyName: "Foxbeep",
+    servicesList: [
+      "Telemedicine Platforms",
+      "Patient Management Systems", 
+      "Medical Mobile Apps",
+      "Healthcare Analytics"
+    ],
+    featuredService: "Medical Mobile Apps",
+    featuredServiceDescription: "Native and cross-platform medical mobile applications for patient engagement, health monitoring, and healthcare provider tools. Our apps are designed with medical workflows and patient privacy in mind.",
+    featuredServiceImage: "/images/medical-mobile-apps.jpg",
+    highlightColor: "bg-blue-300",
+    featureDetails: [
+      {
+        title: "Patient Health Apps",
+        description: "Mobile health applications for symptom tracking, medication reminders, appointment scheduling, and health data monitoring with intuitive user interfaces and secure data handling."
+      },
+      {
+        title: "Healthcare Provider Apps",
+        description: "Professional medical apps for doctors and nurses including patient lookup, medical references, clinical calculators, and secure communication tools optimized for mobile devices."
+      },
+      {
+        title: "Remote Monitoring Apps",
+        description: "Mobile applications for remote patient monitoring with wearable device integration, vital signs tracking, and real-time health data transmission to healthcare providers."
+      }
+    ]
+  };
+
+  // Healthcare Analytics section
+  const healthcareAnalyticsContent = {
+    mainHeading: "Our Healthcare Software Solutions",
+    introText: "We deliver professional healthcare software development services focused on innovation and compliance:",
+    companyName: "Foxbeep",
+    servicesList: [
+      "Telemedicine Platforms",
+      "Patient Management Systems",
+      "Medical Mobile Apps",
+      "Healthcare Analytics"
+    ],
+    featuredService: "Healthcare Analytics",
+    featuredServiceDescription: "Advanced healthcare analytics software that transforms medical data into actionable insights. Our analytics platforms help healthcare organizations improve patient outcomes, optimize operations, and make data-driven decisions.",
+    featuredServiceImage: "/images/healthcare-analytics.jpg",
+    highlightColor: "bg-blue-300",
+    featureDetails: [
+      {
+        title: "Medical Data Visualization",
+        description: "Interactive dashboards and reporting tools that present complex medical data in clear, actionable formats for healthcare administrators and medical professionals."
+      },
+      {
+        title: "Patient Outcome Analytics",
+        description: "Analytics software that tracks patient outcomes, treatment effectiveness, and health trends to support evidence-based medical decision-making and quality improvement."
       },
       {
         title: "Healthcare Business Intelligence",
-        description: "We create comprehensive analytics dashboards and reporting tools that transform healthcare data into visual insights for administrators and clinicians. These solutions optimize resource allocation, improve operational efficiency, and enhance quality measurement."
+        description: "Comprehensive BI solutions for healthcare organizations including performance metrics, resource utilization analysis, and operational efficiency reporting."
       }
     ]
   };
 
-  const healthTechContent3 = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing your ideal healthcare solutions. Our key focus areas are:",
-    companyName: "10Pearls",
-    servicesList: [
-      "Patient Engagement Solutions",
-      "Healthcare Analytics & AI",
-      "Digital Health Platforms",
-      "Medical IoT & Wearables"
-    ],
-    featuredService: "Digital Health Platforms",
-    featuredServiceDescription: "We build comprehensive digital health ecosystems that integrate electronic health records, care management tools, and patient engagement features. Our platforms streamline clinical workflows while ensuring seamless data exchange between all healthcare stakeholders.",
-    featuredServiceImage: "https://www.healthtechdigital.com/wp-content/uploads/Home-Instead-debuts-Birdies-home-healthcare-tech-platform-to-deliver-person-centred-care-at-home-min.jpg",
-    highlightColor: "bg-blue-300",
-    featureDetails: [
-      {
-        title: "Electronic Health Record (EHR) Integration",
-        description: "We specialize in developing solutions that seamlessly integrate with existing EHR systems, enabling interoperability and data exchange. Our integration services ensure that clinical information flows securely across the healthcare ecosystem."
-      },
-      {
-        title: "Care Coordination Platforms",
-        description: "Our care coordination solutions enable multidisciplinary teams to collaborate effectively across care settings. These platforms support care planning, task management, secure messaging, and progress tracking to ensure patients receive coordinated, high-quality care."
-      },
-      {
-        title: "Population Health Management",
-        description: "We develop comprehensive systems for managing the health of patient populations through risk stratification, care gap identification, and targeted intervention programs. These platforms help healthcare organizations succeed in value-based care models."
-      }
-    ]
-  };
-
-  const healthTechContent4 = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing your ideal healthcare solutions. Our key focus areas are:",
-    companyName: "10Pearls",
-    servicesList: [
-      "Patient Engagement Solutions",
-      "Healthcare Analytics & AI",
-      "Digital Health Platforms",
-      "Medical IoT & Wearables"
-    ],
-    featuredService: "Medical IoT & Wearables",
-    featuredServiceDescription: "We create innovative connected health solutions that leverage IoT technology to monitor patient health, collect real-time data, and enable remote care. Our medical IoT and wearable solutions extend care beyond traditional settings into daily life.",
-    featuredServiceImage: "https://cdn.sanity.io/images/14xthjfi/prod/92c270efd13ca098937e3f4ed2f16762aa6a257a-1254x836.jpg?w=1600&q=75&fit=clip&auto=format",
-    highlightColor: "bg-blue-300",
-    featureDetails: [
-      {
-        title: "Remote Patient Monitoring",
-        description: "We develop comprehensive remote monitoring systems that collect and analyze patient health data from connected devices. These solutions enable early intervention, reduce hospital readmissions, and support chronic disease management in home settings."
-      },
-      {
-        title: "Medical Device Connectivity",
-        description: "Our solutions connect medical devices to healthcare IT systems, ensuring seamless data flow from the point of care to electronic health records. We prioritize security, reliability, and standards compliance in all medical device integration projects."
-      },
-      {
-        title: "Smart Hospital Solutions",
-        description: "We create IoT-enabled systems that optimize hospital operations through asset tracking, environmental monitoring, and workflow automation. These smart hospital solutions improve efficiency, enhance patient safety, and reduce operational costs."
-      }
-    ]
-  };
-
+  // FAQ Section content
   const faqItems = [
     {
-      question: "What types of healthcare technology solutions do you offer?",
-      answer: "We provide end-to-end healthcare technology development services, including patient engagement platforms, telemedicine systems, healthcare analytics and AI solutions, digital health platforms, medical IoT applications, and interoperability solutions. Our goal is to transform healthcare delivery through innovative technology."
+      question: "What healthcare software development services do you provide?",
+      answer: "We provide comprehensive healthcare software development including telemedicine platforms, patient management systems, medical mobile apps, healthcare analytics, EMR systems, patient portals, and custom healthcare solutions designed for modern medical practices."
     },
     {
-      question: "How do you ensure HIPAA compliance in your healthcare solutions?",
-      answer: "We implement comprehensive security measures including encryption, access controls, audit logging, and secure authentication. Our development processes incorporate HIPAA requirements from design through deployment, and we conduct regular security assessments to maintain compliance."
+      question: "How do you ensure HIPAA compliance in healthcare software?",
+      answer: "Our healthcare software development follows strict HIPAA compliance guidelines including data encryption, secure authentication, access controls, audit logging, and secure data transmission. We implement comprehensive security measures to protect patient health information."
     },
     {
-      question: "Can you integrate with existing electronic health record (EHR) systems?",
-      answer: "Yes, we specialize in EHR integration using industry standards like FHIR, HL7, and SMART on FHIR. Our solutions seamlessly connect with major EHR platforms while ensuring data integrity, security, and complete interoperability across healthcare systems."
+      question: "Can you develop custom telemedicine platforms?",
+      answer: "Yes, we specialize in custom telemedicine software development with secure video consultations, patient scheduling, prescription management, payment processing, and integration with existing healthcare systems tailored to your specific requirements."
     },
     {
-      question: "How do you leverage AI in healthcare solutions?",
-      answer: "We implement AI for predictive analytics, clinical decision support, medical image analysis, natural language processing of clinical notes, patient risk stratification, and personalized treatment recommendations. Our AI solutions are designed to augment clinical expertise and improve patient outcomes."
+      question: "What technologies do you use for healthcare software development?",
+      answer: "We use modern technologies including React, Node.js, Python, Java, cloud platforms (AWS, Azure), mobile frameworks (React Native, Flutter), database systems, and healthcare-specific APIs while ensuring security and compliance standards."
     },
     {
-      question: "What remote patient monitoring capabilities do you offer?",
-      answer: "Our remote monitoring solutions support continuous data collection from medical devices and wearables, real-time analytics, automated alerts, patient engagement tools, and integration with clinical workflows. These systems enable proactive care management outside traditional healthcare settings."
+      question: "How do you handle medical data security and privacy?",
+      answer: "We implement advanced security measures including end-to-end encryption, secure APIs, multi-factor authentication, role-based access controls, and regular security audits to ensure complete protection of sensitive medical data and patient privacy."
     },
     {
-      question: "How do you approach the user experience for healthcare applications?",
-      answer: "We design healthcare interfaces with accessibility, clinical workflows, and varying tech literacy in mind. Our human-centered design process involves extensive user research, iterative testing with clinicians and patients, and optimization for both efficiency and ease of use."
+      question: "Can you integrate healthcare software with existing systems?",
+      answer: "Absolutely. We specialize in healthcare system integration including EMR/EHR systems, hospital management systems, laboratory systems, pharmacy systems, and third-party healthcare APIs ensuring seamless data flow and interoperability."
     },
     {
-      question: "Can you develop custom telehealth platforms?",
-      answer: "Absolutely. We build comprehensive telehealth solutions featuring secure video consultations, scheduling systems, virtual waiting rooms, EHR integration, e-prescribing capabilities, and remote monitoring. Our telehealth platforms are designed to deliver engaging, effective virtual care experiences."
+      question: "Do you develop mobile apps for healthcare?",
+      answer: "Yes, we develop native iOS and Android medical apps as well as cross-platform healthcare applications for patient engagement, health monitoring, doctor-patient communication, and healthcare provider tools with focus on usability and security."
     },
     {
-      question: "What analytics capabilities do your healthcare solutions offer?",
-      answer: "Our platforms provide advanced analytics for clinical outcomes, operational efficiency, patient engagement, population health, and financial performance. We develop customized dashboards and reporting tools that transform complex healthcare data into actionable insights."
+      question: "What is your experience with healthcare analytics software?",
+      answer: "We have extensive experience developing healthcare analytics platforms including patient outcome tracking, medical data visualization, business intelligence dashboards, and predictive analytics tools that help healthcare organizations make data-driven decisions."
     },
     {
-      question: "Do you support post-launch maintenance and updates?",
-      answer: "Yes, we offer ongoing support, platform optimization, feature enhancements, compliance updates, and technology modernization. Our managed services ensure your healthcare solutions remain secure, compliant, and aligned with evolving clinical and business requirements."
+      question: "How do you ensure healthcare software quality and reliability?",
+      answer: "We follow rigorous testing protocols including functional testing, security testing, performance testing, and compliance validation. Our quality assurance process ensures healthcare software meets medical standards and provides reliable performance."
     },
     {
-      question: "Why choose 10Pearls for healthcare technology development?",
-      answer: "10Pearls combines deep healthcare domain expertise with technical excellence in emerging technologies. We understand the unique challenges of healthcare IT, prioritize security and compliance, and deliver scalable solutions that advance digital transformation while improving patient outcomes."
+      question: "Why choose Foxbeep for healthcare software development?",
+      answer: "Foxbeep combines 18+ years of software development expertise with specialized healthcare industry knowledge. Our 350+ software professionals understand medical workflows, compliance requirements, and deliver secure, scalable healthcare software solutions."
     }
   ];
 
   return (
-    <div>
-      <Hero {...heroContent} />
-      <TextHighlight {...textHeroContent} />
-      <BrandSlider />
-      <div className="max-w-7xl mx-auto px-4 xl:px-0 my-16">
-        {/* Heading */}
-        <h2 className="text-4xl md:text-5xl relative inline-block mb-6">
-          <span className="bg-blue-300 absolute -bottom-1 left-0 w-full h-4 -z-10 rounded-sm"></span>
-          Foxbeep services
-        </h2>
+    <>
+      <Head>
+        {/* Essential Meta Tags */}
+        <title>Healthcare Software Development Services | Medical App Development | Foxbeep</title>
+        <meta name="description" content="Professional healthcare software development services including telemedicine platforms, patient management systems, medical mobile apps, and HIPAA-compliant solutions. Expert healthcare software developers." />
+        <meta name="keywords" content="healthcare software development, medical app development, telemedicine platforms, patient management systems, healthcare mobile apps, EMR software, medical software development, HIPAA compliant software" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Healthcare Software Development Services | Medical App Development" />
+        <meta property="og:description" content="Custom healthcare software development including telemedicine platforms, patient management systems, and medical apps with HIPAA compliance and modern technology." />
+        <meta property="og:image" content="https://foxbeep.com/healthcare-software-development.png" />
+        <meta property="og:url" content="https://foxbeep.com/industries/healthcare" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Foxbeep Healthcare Solutions" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Healthcare Software Development Services | Foxbeep" />
+        <meta name="twitter:description" content="Expert healthcare software development for telemedicine, patient management, and medical applications." />
+        <meta name="twitter:image" content="https://foxbeep.com/healthcare-software-development.png" />
+        
+        {/* Technical Meta Tags */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow" />
+        
+        {/* Industry-Specific Meta Tags */}
+        <meta name="industry" content="Healthcare Software Development" />
+        <meta name="services" content="Telemedicine Platforms, Patient Management Systems, Medical Mobile Apps, Healthcare Analytics" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://foxbeep.com/industries/healthcare" />
+        
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        
+        {/* Preconnect for Performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </Head>
 
-        {/* Intro Text */}
-        <p className="text-lg text-gray-700 mb-8">
-          At <span className="font-semibold text-gray-900">Foxbeep</span>, we take a unique approach to building impactful healthcare solutions. Our core focus areas include:
-        </p>
-
-        {/* Services List */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4">
-          {[
-            "Patient Engagement Solutions",
-            "Digital Health Platforms",
-            "Healthcare Analytics & AI",
-            "Medical IoT & Wearables",
-          ].map((service, index) => (
-            <div key={index} className="flex items-start">
-              <div className="mt-1 mr-3 text-blue-500">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15H5v-3.414l8.293-8.293a1 1 0 011.414 0zM7 13h.586L14 6.586 13.414 6 7 12.414V13z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <p className="text-lg text-gray-800">{service}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <EdtechServices {...healthTechContent1} />
-      <EdtechServices {...healthTechContent2} />
-      <EdtechServices {...healthTechContent3} />
-      <EdtechServices {...healthTechContent4} />
-      <FAQSection
-        title="Frequently Asked Questions"
-        faqItems={faqItems}
-        backgroundColor="bg-white"
-        textColor="text-gray-700"
-        questionSize="text-2xl"
-      />
-      <TextHeroSection />
-      {/* Rest of the page content would go here */}
-    </div>
+      <main>
+        {/* Hero Section */}
+        <section aria-label="Healthcare Software Development Hero">
+          <Hero {...heroContent} />
+        </section>
+        
+        {/* Text Highlight Section */}
+        <section aria-label="Healthcare Software Overview">
+          <TextHighlight {...textHeroContent} />
+        </section>
+        
+        {/* Brand Partners */}
+        <section aria-label="Trusted by Leading Healthcare Organizations">
+          <BrandSlider />
+        </section>
+        
+        {/* Healthcare Software Services Sections */}
+        <section aria-label="Telemedicine Platforms">
+          <EdtechServices {...telemedicineContent} />
+        </section>
+        
+        <section aria-label="Patient Management Systems">
+          <EdtechServices {...patientManagementContent} />
+        </section>
+        
+        <section aria-label="Medical Mobile Apps">
+          <EdtechServices {...medicalAppsContent} />
+        </section>
+        
+        <section aria-label="Healthcare Analytics">
+          <EdtechServices {...healthcareAnalyticsContent} />
+        </section>
+        
+        {/* FAQ Section */}
+        <section aria-label="Healthcare Software Development FAQ">
+          <FAQSection
+            title="Frequently Asked Questions"
+            subtitle="Get answers to common questions about our healthcare software development services"
+            faqItems={faqItems}
+            backgroundColor="bg-white"
+            textColor="text-gray-700"
+            questionSize="text-2xl"
+          />
+        </section>
+        
+        {/* Call to Action */}
+        <section aria-label="Get Started with Healthcare Software Development">
+          <TextHeroSection />
+        </section>
+      </main>
+    </>
   );
-};
-
-export default Healthcare;
+}

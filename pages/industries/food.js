@@ -1,3 +1,4 @@
+import Head from "next/head";
 import BrandSlider from "../../components/home/companySponsered";
 import TextHeroSection from "../../components/home/textHero";
 import { EdtechServices } from "../../components/industry/eduTech";
@@ -5,146 +6,182 @@ import { Hero } from "../../components/industry/hero";
 import { TextHighlight } from "../../components/industry/textHero";
 import FAQSection from "../../components/services/faqSection";
 
-const FoodServices = () => {
+export default function FoodIndustrySoftware() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Foxbeep Food Technology Solutions",
+    "url": "https://foxbeep.com/industries/food",
+    "logo": "https://foxbeep.com/logo.png",
+    "description": "Professional food industry technology development services including food delivery apps, restaurant management systems, online ordering platforms, and food-tech solutions. 18+ years experience with scalable food industry development.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Nepal"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+977-9810570201",
+      "contactType": "Customer Service"
+    },
+    "sameAs": [
+      "https://facebook.com/foxbeep",
+      "https://twitter.com/foxbeep", 
+      "https://linkedin.com/company/foxbeep"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "name": "Food Industry Technology Development Services",
+      "description": "Custom food-tech development, food delivery apps, restaurant management systems, online ordering platforms, and food industry solutions"
+    },
+    "expertise": [
+      "Food Delivery App Development",
+      "Restaurant Management Systems",
+      "Online Ordering Platforms",
+      "Food Inventory Management",
+      "Kitchen Display Systems",
+      "Food Safety Compliance Software"
+    ]
+  };
+
   // Hero section content
   const heroContent = {
-    title: "Innovative Food Solutions for Modern Businesses",
-    subtitle: "Transforming the food industry with technology-driven services, sustainable practices, and exceptional dining experiences.",
-    buttonText: "Get Started",
+    title: "Food Industry Technology Development Services",
+    subtitle: "Custom food-tech solutions including food delivery apps, restaurant management systems, online ordering platforms, and kitchen automation systems designed to streamline food service operations and enhance customer experiences.",
+    buttonText: "Get Free Consultation",
     buttonLink: "#contact",
-    backgroundImage: "/images/food-services-hero-banner.png",
-    imageAlt: "Modern food service professionals in action"
+    backgroundImage: "/images/industries/food.jpg",
+    imageAlt: "Food industry technology development and restaurant solutions"
   };
 
   // Text highlight section content
   const textHeroContent = {
-    headingText: "TECHNOLOGY IS REVOLUTIONIZING THE FOOD INDUSTRY THROUGH INNOVATION",
-    highlightWord: "INNOVATION",
-    descriptionText: "Technology is revolutionizing the food industry through innovative approaches to sourcing, production, distribution, and consumer engagement. From farm management systems to restaurant automation and food delivery platforms, digital transformation is enhancing efficiency and sustainability across the entire food value chain. Foxbeep helps food businesses leverage technology to improve operations, reduce waste, and deliver exceptional customer experiences.",
+    headingText: "FOOD-TECH DEVELOPMENT FOR MODERN RESTAURANTS",
+    highlightWord: "DEVELOPMENT",
+    descriptionText: "Food industry technology development revolutionizes dining through innovative digital solutions. From food delivery apps to restaurant management systems, our development expertise delivers scalable food-tech applications. We specialize in custom ordering platforms, kitchen automation systems, and integrated restaurant solutions that improve operational efficiency and customer satisfaction.",
     brandName: "Foxbeep",
-    highlightColor: "bg-green-300"
+    highlightColor: "bg-orange-300"
   };
 
-  // Food Tech Solutions section
-  const foodTechContent = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing food industry solutions. Our key focus areas are:",
+  // Food Delivery Apps section
+  const deliveryAppContent = {
+    mainHeading: "Our Food Industry Technology Solutions",
+    introText: "We deliver professional food-tech development services focused on enhancing restaurant operations and customer dining experiences:",
     companyName: "Foxbeep",
     servicesList: [
-      "Food Tech Solutions",
+      "Food Delivery Applications",
       "Restaurant Management Systems",
-      "Supply Chain Optimization",
-      "Food Delivery Platforms"
+      "Online Ordering Platforms",
+      "Kitchen Display Systems"
     ],
-    featuredService: "Food Tech Solutions",
-    featuredServiceDescription: "We develop innovative food technology solutions that help businesses streamline operations, enhance customer experiences, and maintain food safety. Our platforms integrate cutting-edge technologies to address the unique challenges of modern food businesses.",
-    featuredServiceImage: "/images/food-tech-solutions.jpg",
-    highlightColor: "bg-green-300",
+    featuredService: "Food Delivery Applications",
+    featuredServiceDescription: "Comprehensive food delivery platforms with real-time tracking, multiple payment options, restaurant dashboards, and customer management. Perfect for food delivery startups, restaurant chains, and multi-vendor marketplaces.",
+    featuredServiceImage: "/images/food-delivery-apps.jpg",
+    highlightColor: "bg-orange-300",
     featureDetails: [
       {
-        title: "Smart kitchen systems",
-        description: "We create intelligent kitchen management platforms that optimize food preparation workflows, monitor cooking equipment, and ensure consistent food quality through IoT sensors and advanced analytics."
+        title: "Real-Time Order Tracking",
+        description: "Advanced GPS tracking with live order status updates, delivery time estimation, driver location sharing, push notifications, and customer communication for transparent delivery experiences."
       },
       {
-        title: "Food safety compliance",
-        description: "Our digital compliance solutions help food businesses adhere to regulatory requirements through automated temperature monitoring, digital HACCP checklists, and allergen tracking systems."
+        title: "Multi-Vendor Restaurant Platform",
+        description: "Scalable marketplace architecture supporting multiple restaurants, individual restaurant dashboards, commission management, menu customization, and centralized order processing for delivery aggregators."
       },
       {
-        title: "Menu engineering platforms",
-        description: "We develop data-driven menu engineering tools that analyze sales performance, ingredient costs, and customer preferences to optimize menu offerings and maximize profitability."
+        title: "Smart Delivery Management",
+        description: "Intelligent delivery optimization with route planning, driver assignment algorithms, delivery zone management, performance analytics, and automated dispatch systems for efficient operations."
       }
     ]
   };
 
   // Restaurant Management Systems section
   const restaurantManagementContent = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing food industry solutions. Our key focus areas are:",
+    mainHeading: "Our Food Industry Technology Solutions",
+    introText: "We deliver professional food-tech development services focused on enhancing restaurant operations and customer dining experiences:",
     companyName: "Foxbeep",
     servicesList: [
-      "Food Tech Solutions",
+      "Food Delivery Applications",
       "Restaurant Management Systems",
-      "Supply Chain Optimization",
-      "Food Delivery Platforms"
+      "Online Ordering Platforms",
+      "Kitchen Display Systems"
     ],
     featuredService: "Restaurant Management Systems",
-    featuredServiceDescription: "Our comprehensive restaurant management systems integrate point-of-sale, inventory, staff scheduling, and customer relationship management into a unified platform. These solutions enhance operational efficiency while providing valuable business insights.",
+    featuredServiceDescription: "Complete restaurant management platforms with POS integration, inventory management, staff scheduling, financial reporting, and customer relationship management. Designed for restaurants, cafes, and food service businesses.",
     featuredServiceImage: "/images/restaurant-management-systems.jpg",
-    highlightColor: "bg-green-300",
+    highlightColor: "bg-orange-300",
     featureDetails: [
       {
-        title: "Integrated POS solutions",
-        description: "We develop modern point-of-sale systems that seamlessly connect front-of-house and back-of-house operations, process multiple payment methods, and provide real-time sales analytics."
+        title: "Point of Sale Integration",
+        description: "Seamless POS system integration with order processing, payment handling, receipt generation, table management, split billing, and real-time sales reporting for streamlined restaurant operations."
       },
       {
-        title: "Reservation & table management",
-        description: "Our reservation platforms optimize seating capacity, reduce wait times, and enhance the dining experience through digital waitlists, automatic table assignments, and customer preference tracking."
+        title: "Inventory & Supply Management",
+        description: "Comprehensive inventory tracking with ingredient management, automatic reorder alerts, supplier integration, cost analysis, waste tracking, and recipe costing for optimal stock control."
       },
       {
-        title: "Staff management & scheduling",
-        description: "We create intuitive staff management tools that optimize scheduling based on forecasted demand, track employee performance, and streamline communication between management and staff."
+        title: "Staff & Operations Management",
+        description: "Complete staff management with scheduling, time tracking, performance monitoring, role-based access, payroll integration, and operational analytics for efficient restaurant administration."
       }
     ]
   };
 
-  // Supply Chain Optimization section
-  const supplyChainContent = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing food industry solutions. Our key focus areas are:",
+  // Online Ordering Platforms section
+  const onlineOrderingContent = {
+    mainHeading: "Our Food Industry Technology Solutions",
+    introText: "We deliver professional food-tech development services focused on enhancing restaurant operations and customer dining experiences:",
     companyName: "Foxbeep",
     servicesList: [
-      "Food Tech Solutions",
+      "Food Delivery Applications",
       "Restaurant Management Systems",
-      "Supply Chain Optimization",
-      "Food Delivery Platforms"
+      "Online Ordering Platforms",
+      "Kitchen Display Systems"
     ],
-    featuredService: "Supply Chain Optimization",
-    featuredServiceDescription: "We develop intelligent supply chain solutions that connect food producers, distributors, and businesses. Our platforms enhance transparency, reduce waste, and ensure food quality throughout the distribution process.",
-    featuredServiceImage: "/images/supply-chain-optimization.jpg",
-    highlightColor: "bg-green-300",
+    featuredService: "Online Ordering Platforms",
+    featuredServiceDescription: "Custom online ordering systems with menu management, customer accounts, loyalty programs, and integrated payment processing. Perfect for restaurants wanting direct customer relationships without third-party commissions.",
+    featuredServiceImage: "/images/online-ordering-platforms.jpg",
+    highlightColor: "bg-orange-300",
     featureDetails: [
       {
-        title: "Inventory management systems",
-        description: "Our inventory solutions provide real-time stock visibility, automated reordering, and expiration date tracking to minimize waste and optimize storage space utilization."
+        title: "Custom Menu Management",
+        description: "Dynamic menu systems with item customization, seasonal offerings, pricing controls, availability management, dietary filters, and visual menu presentation for enhanced customer ordering experiences."
       },
       {
-        title: "Supplier relationship platforms",
-        description: "We create digital platforms that streamline communication with suppliers, centralize ordering processes, and provide analytics on supplier performance and pricing trends."
+        title: "Customer Loyalty Programs",
+        description: "Integrated loyalty systems with points accumulation, reward redemption, member tiers, special offers, birthday rewards, and customer retention analytics to build lasting relationships."
       },
       {
-        title: "Food traceability solutions",
-        description: "Our blockchain-based traceability systems track food products from farm to table, ensuring food safety, authenticating product origins, and enhancing consumer trust through transparent sourcing information."
+        title: "Order Fulfillment Integration",
+        description: "Seamless order processing with kitchen integration, pickup/delivery scheduling, order status updates, customer notifications, and fulfillment tracking for smooth service delivery."
       }
     ]
   };
 
-  // Food Delivery Platforms section
-  const foodDeliveryContent = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing food industry solutions. Our key focus areas are:",
+  // Kitchen Display Systems section
+  const kitchenDisplayContent = {
+    mainHeading: "Our Food Industry Technology Solutions",
+    introText: "We deliver professional food-tech development services focused on enhancing restaurant operations and customer dining experiences:",
     companyName: "Foxbeep",
     servicesList: [
-      "Food Tech Solutions",
+      "Food Delivery Applications",
       "Restaurant Management Systems",
-      "Supply Chain Optimization",
-      "Food Delivery Platforms"
+      "Online Ordering Platforms",
+      "Kitchen Display Systems"
     ],
-    featuredService: "Food Delivery Platforms",
-    featuredServiceDescription: "We develop sophisticated food delivery platforms that connect restaurants with customers while optimizing delivery logistics. Our solutions enhance the customer experience through intuitive interfaces, real-time order tracking, and seamless payment processing.",
-    featuredServiceImage: "/images/food-delivery-platforms.jpg",
-    highlightColor: "bg-green-300",
+    featuredService: "Kitchen Display Systems",
+    featuredServiceDescription: "Digital kitchen management systems with order queuing, preparation timing, quality control, and kitchen analytics. Designed to optimize kitchen workflows and improve food preparation efficiency.",
+    featuredServiceImage: "/images/kitchen-display-systems.jpg",
+    highlightColor: "bg-orange-300",
     featureDetails: [
       {
-        title: "Online ordering systems",
-        description: "We create customizable online ordering platforms that integrate with existing restaurant systems, feature interactive menus with dietary filters, and support multiple payment methods."
+        title: "Order Queue Management",
+        description: "Smart order prioritization with preparation time tracking, kitchen station assignment, order sequencing, rush order handling, and real-time kitchen performance monitoring for optimal workflow."
       },
       {
-        title: "Delivery logistics optimization",
-        description: "Our logistics solutions use machine learning algorithms to optimize delivery routes, estimate accurate delivery times, and balance driver workloads to maximize efficiency."
+        title: "Preparation Time Optimization",
+        description: "Recipe timing systems with cooking duration tracking, preparation alerts, quality checkpoints, temperature monitoring, and kitchen efficiency analytics to ensure consistent food quality."
       },
       {
-        title: "Customer engagement tools",
-        description: "We develop sophisticated CRM systems that track customer preferences, enable personalized promotions, and build loyalty through rewards programs and targeted marketing campaigns."
+        title: "Kitchen Performance Analytics",
+        description: "Comprehensive kitchen insights with preparation times, order accuracy, peak hour analysis, staff performance metrics, and operational reports for continuous improvement and efficiency optimization."
       }
     ]
   };
@@ -152,169 +189,148 @@ const FoodServices = () => {
   // FAQ Section content
   const faqItems = [
     {
-      question: "How can technology improve food safety in my business?",
-      answer: "Our technology solutions enhance food safety through automated temperature monitoring, digital HACCP compliance tools, allergen tracking systems, and blockchain-based traceability. These systems provide real-time alerts for potential issues, maintain comprehensive digital records for inspections, and ensure consistent adherence to safety protocols across all locations."
+      question: "What food industry technology development services do you provide?",
+      answer: "We provide comprehensive food-tech development including food delivery apps, restaurant management systems, online ordering platforms, kitchen display systems, inventory management, and custom food industry software tailored to your business needs."
     },
     {
-      question: "What benefits do integrated restaurant management systems offer?",
-      answer: "Integrated systems eliminate data silos by connecting POS, inventory, staff scheduling, and customer management into one platform. This provides a holistic view of operations, reduces manual data entry, enables data-driven decision making, and improves coordination between front and back of house teams, ultimately enhancing efficiency and customer satisfaction."
+      question: "Can you develop custom food delivery applications?",
+      answer: "Yes, we specialize in custom food delivery app development with features like real-time tracking, multi-vendor support, payment integration, driver management, customer ratings, and restaurant dashboards for complete delivery solutions."
     },
     {
-      question: "How can you help reduce food waste in our operations?",
-      answer: "We address food waste through smart inventory management that tracks expiration dates and suggests usage priorities, AI-powered demand forecasting that improves ordering accuracy, portion control systems, and waste tracking analytics that identify patterns and improvement opportunities throughout your operations."
+      question: "Do you develop restaurant management software?",
+      answer: "Absolutely. We develop comprehensive restaurant management systems with POS integration, inventory management, staff scheduling, table management, financial reporting, and customer relationship management features."
     },
     {
-      question: "Can you create custom ordering systems for our unique menu?",
-      answer: "Absolutely. We specialize in developing customized ordering platforms that showcase your unique menu items, accommodate special preparation instructions, highlight seasonal offerings, and integrate your branding. These systems can handle complex modifier options, dietary filters, and personalized recommendations based on customer preferences."
+      question: "What technologies do you use for food-tech development?",
+      answer: "We use modern technologies including React, Node.js, Python, Java, cloud platforms (AWS, Azure), mobile frameworks (React Native, Flutter), real-time databases, payment gateways, and GPS tracking APIs for scalable food-tech solutions."
     },
     {
-      question: "How do your delivery platforms optimize the last-mile logistics?",
-      answer: "Our delivery platforms use machine learning algorithms to optimize routes based on real-time traffic conditions, driver location, and order clustering. They prioritize deliveries based on food type and preparation time, provide accurate delivery estimates to customers, and balance driver workloads to maximize efficiency and maintain food quality."
+      question: "Can you integrate food software with existing restaurant systems?",
+      answer: "Yes, we specialize in food-tech integration with existing systems including POS systems, payment processors, accounting software, inventory management, delivery services, and third-party food platforms through APIs and custom connectors."
     },
     {
-      question: "What analytics capabilities do your food service solutions provide?",
-      answer: "Our platforms offer comprehensive analytics including sales performance by menu item, day-part, and location; ingredient-level cost analysis; labor productivity metrics; customer behavior patterns; delivery time performance; and predictive analytics for demand forecasting. These insights enable data-driven decisions across all aspects of your food business."
+      question: "How do you ensure food safety compliance in your software?",
+      answer: "We implement food safety features including temperature monitoring, HACCP compliance tracking, expiration date management, allergen information, food traceability, health inspection reporting, and regulatory compliance documentation."
     },
     {
-      question: "How do your solutions help with staff management challenges?",
-      answer: "We address staffing challenges through AI-powered scheduling that matches staff skills with forecasted demand, mobile apps that improve communication and shift management, performance analytics that identify training needs, and streamlined onboarding tools that accelerate new employee productivity."
+      question: "What is the typical timeline for food-tech development projects?",
+      answer: "Food-tech development timelines vary based on complexity and features. Simple ordering apps take 3-5 months, while comprehensive restaurant management or delivery platforms may require 6-12 months. We provide detailed project timelines during consultation."
     },
     {
-      question: "Can your systems integrate with our existing restaurant technology?",
-      answer: "Yes, our solutions are designed with open APIs that enable seamless integration with existing POS systems, accounting software, reservation platforms, and kitchen equipment. We conduct thorough assessments of your current technology ecosystem and develop custom integration strategies to preserve your existing investments."
+      question: "Can you develop multi-restaurant food delivery platforms?",
+      answer: "Yes, we develop scalable multi-vendor food delivery platforms with restaurant onboarding, commission management, centralized order processing, delivery logistics, payment distribution, and administrative dashboards for marketplace operators."
     },
     {
-      question: "How do you address consumer demand for transparency in food sourcing?",
-      answer: "We develop transparency solutions that track ingredients from farm to table, create digital storytelling platforms that showcase supplier partnerships, implement QR code systems that reveal product origins and journey, and provide allergen and nutritional information through interactive digital menus."
+      question: "Do you provide ongoing support and maintenance for food industry software?",
+      answer: "Absolutely. We offer comprehensive support and maintenance services including bug fixes, security updates, feature enhancements, performance optimization, menu updates, and technical assistance to ensure smooth restaurant operations."
     },
     {
-      question: "Why choose Foxbeep for food industry technology solutions?",
-      answer: "Foxbeep combines deep food industry expertise with cutting-edge technical capabilities. We understand the unique challenges of food businesses and develop solutions that address real operational pain points. Our technology enhances efficiency, ensures compliance, improves customer experiences, and provides actionable insights that drive profitability and sustainability."
+      question: "Why choose Foxbeep for food industry technology development?",
+      answer: "Foxbeep combines 18+ years of software development expertise with deep understanding of restaurant operations and food service workflows. Our experienced team delivers user-friendly, scalable food-tech solutions that improve operational efficiency and customer satisfaction."
     }
   ];
 
-  // Final CTA section content
-  const ctaContent = {
-    heading: "Ready to transform your food business with innovative technology?",
-    description: "Let's discuss how our food industry expertise can help you optimize operations, reduce waste, and deliver exceptional dining experiences.",
-    buttonText: "Book a consultation",
-    buttonLink: "/contact"
-  };
-
   return (
-    <div>
-      {/* Hero Banner */}
-      <Hero {...heroContent} />
-      
-      {/* Text Highlight Section */}
-      <TextHighlight {...textHeroContent} />
-      
-      {/* Trusted By Brand Slider */}
-      <BrandSlider />
-      
-      {/* Services Overview Section */}
-      <div className="max-w-7xl mx-auto px-4 xl:px-0 my-16">
-        {/* Heading */}
-        <h2 className="text-4xl md:text-5xl relative inline-block mb-6">
-          <span className="bg-green-300 absolute -bottom-1 left-0 w-full h-4 -z-10 rounded-sm"></span>
-          Foxbeep services
-        </h2>
+    <>
+      <Head>
+        {/* Essential Meta Tags */}
+        <title>Food Industry Technology Development Services | Food-Tech Solutions | Foxbeep</title>
+        <meta name="description" content="Professional food industry technology development services including food delivery apps, restaurant management systems, online ordering platforms, and food-tech solutions. Expert food industry developers." />
+        <meta name="keywords" content="food industry technology development, food-tech development, food delivery apps, restaurant management systems, online ordering platforms, kitchen display systems, POS integration, restaurant software" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Food Industry Technology Development Services | Food-Tech Solutions" />
+        <meta property="og:description" content="Custom food-tech development including food delivery apps, restaurant management systems, online ordering platforms, and kitchen automation systems designed to streamline food service operations." />
+        <meta property="og:image" content="https://foxbeep.com/food-tech-development.png" />
+        <meta property="og:url" content="https://foxbeep.com/industries/food" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Foxbeep Food Technology Solutions" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Food Industry Technology Development Services | Foxbeep" />
+        <meta name="twitter:description" content="Expert food-tech development for restaurants, food delivery, and kitchen management solutions." />
+        <meta name="twitter:image" content="https://foxbeep.com/food-tech-development.png" />
+        
+        {/* Technical Meta Tags */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow" />
+        
+        {/* Industry-Specific Meta Tags */}
+        <meta name="industry" content="Food Industry Technology Development" />
+        <meta name="services" content="Food Delivery Apps, Restaurant Management Systems, Online Ordering Platforms, Kitchen Display Systems" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://foxbeep.com/industries/food" />
+        
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        
+        {/* Preconnect for Performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </Head>
 
-        {/* Intro Text */}
-        <p className="text-lg text-gray-700 mb-8">
-          At <span className="font-semibold text-gray-900">Foxbeep</span>, we take a unique approach to developing technology solutions for the food industry. Our core focus areas include:
-        </p>
-
-        {/* Services List */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4">
-          {[
-            "Food Tech Solutions",
-            "Restaurant Management Systems",
-            "Supply Chain Optimization",
-            "Food Delivery Platforms",
-          ].map((service, index) => (
-            <div key={index} className="flex items-start">
-              <div className="mt-1 mr-3 text-green-500">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15H5v-3.414l8.293-8.293a1 1 0 011.414 0zM7 13h.586L14 6.586 13.414 6 7 12.414V13z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <p className="text-lg text-gray-800">{service}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-      
-      {/* Detailed Service Sections */}
-      <EdtechServices {...foodTechContent} />
-      <EdtechServices {...restaurantManagementContent} />
-      <EdtechServices {...supplyChainContent} />
-      <EdtechServices {...foodDeliveryContent} />
-      
-      {/* Success Stories / Case Studies */}
-      <div className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-12">
-          <h2 className="text-4xl font-bold mb-12 text-center">Success Stories</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Case Study 1 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-48 bg-green-100 flex items-center justify-center">
-                <img src="/images/case-study-restaurant-chain.jpg" alt="Restaurant chain case study" className="object-cover w-full h-full" />
-              </div>
-              <div className="p-6">
-                <span className="text-sm font-medium text-green-600">Restaurant Chain</span>
-                <h3 className="text-xl font-bold mt-1 mb-3">50% Reduction in Food Waste</h3>
-                <p className="text-gray-600 mb-4">Our inventory management system helped a national restaurant chain reduce food waste by 50% while improving menu consistency across 120+ locations.</p>
-                <a href="/case-studies/restaurant-chain" className="text-green-600 font-medium hover:text-green-700">Read case study →</a>
-              </div>
-            </div>
-            
-            {/* Case Study 2 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-48 bg-green-100 flex items-center justify-center">
-                <img src="/images/case-study-food-delivery.jpg" alt="Food delivery case study" className="object-cover w-full h-full" />
-              </div>
-              <div className="p-6">
-                <span className="text-sm font-medium text-green-600">Food Delivery</span>
-                <h3 className="text-xl font-bold mt-1 mb-3">30% Faster Delivery Times</h3>
-                <p className="text-gray-600 mb-4">Our route optimization algorithm helped a regional food delivery service reduce delivery times by 30% while handling 45% more orders.</p>
-                <a href="/case-studies/food-delivery" className="text-green-600 font-medium hover:text-green-700">Read case study →</a>
-              </div>
-            </div>
-            
-            {/* Case Study 3 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-48 bg-green-100 flex items-center justify-center">
-                <img src="/images/case-study-food-producer.jpg" alt="Food producer case study" className="object-cover w-full h-full" />
-              </div>
-              <div className="p-6">
-                <span className="text-sm font-medium text-green-600">Food Producer</span>
-                <h3 className="text-xl font-bold mt-1 mb-3">Complete Supply Chain Visibility</h3>
-                <p className="text-gray-600 mb-4">Our blockchain traceability platform provided farm-to-table transparency for an organic food producer, increasing consumer trust and premium pricing power.</p>
-                <a href="/case-studies/food-producer" className="text-green-600 font-medium hover:text-green-700">Read case study →</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* FAQ Section */}
-      <FAQSection
-        title="Frequently Asked Questions"
-        subtitle="Get answers to common questions about our food industry solutions"
-        faqItems={faqItems}
-        backgroundColor="bg-white"
-        textColor="text-gray-700"
-        questionSize="text-2xl"
-      />
-      
-      
-      
-      {/* Final Text Hero Section */}
-      <TextHeroSection />
-    </div>
+      <main>
+        {/* Hero Section */}
+        <section aria-label="Food Industry Technology Development Hero">
+          <Hero {...heroContent} />
+        </section>
+        
+        {/* Text Highlight Section */}
+        <section aria-label="Food-Tech Development Overview">
+          <TextHighlight {...textHeroContent} />
+        </section>
+        
+        {/* Brand Partners */}
+        <section aria-label="Trusted by Leading Food Industry Businesses">
+          <BrandSlider />
+        </section>
+        
+        {/* Food Industry Technology Services Sections */}
+        <section aria-label="Food Delivery Applications">
+          <EdtechServices {...deliveryAppContent} />
+        </section>
+        
+        <section aria-label="Restaurant Management Systems">
+          <EdtechServices {...restaurantManagementContent} />
+        </section>
+        
+        <section aria-label="Online Ordering Platforms">
+          <EdtechServices {...onlineOrderingContent} />
+        </section>
+        
+        <section aria-label="Kitchen Display Systems">
+          <EdtechServices {...kitchenDisplayContent} />
+        </section>
+        
+        {/* FAQ Section */}
+        <section aria-label="Food Industry Technology Development FAQ">
+          <FAQSection
+            title="Frequently Asked Questions"
+            subtitle="Get answers to common questions about our food industry technology development services"
+            faqItems={faqItems}
+            backgroundColor="bg-white"
+            textColor="text-gray-700"
+            questionSize="text-2xl"
+          />
+        </section>
+        
+        {/* Call to Action */}
+        <section aria-label="Get Started with Food-Tech Development">
+          <TextHeroSection />
+        </section>
+      </main>
+    </>
   );
-};
-
-export default FoodServices;
+}

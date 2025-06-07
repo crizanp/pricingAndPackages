@@ -1,3 +1,4 @@
+import Head from "next/head";
 import BrandSlider from "../../components/home/companySponsered";
 import TextHeroSection from "../../components/home/textHero";
 import { EdtechServices } from "../../components/industry/eduTech";
@@ -5,240 +6,331 @@ import { Hero } from "../../components/industry/hero";
 import { TextHighlight } from "../../components/industry/textHero";
 import FAQSection from "../../components/services/faqSection";
 
-const Travel = () => {
-  // This data would typically come from props, CMS, or API
-  const heroContent = {
-    title: "Elevating Travel Experiences Through Digital Innovation",
-    subtitle: "Reimagining the way people discover, book, and experience travel with intelligent, seamless technology solutions for the modern traveler.",
-    buttonText: "Let's connect",
-    buttonLink: "#contact",
-    backgroundImage: "https://10pearls.com/wp-content/uploads/2025/01/travel-banner-Hero-Image.png",
-    imageAlt: "Modern travel experience with digital technology"
+export default function TravelIndustrySoftware() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Foxbeep Travel Technology Solutions",
+    "url": "https://foxbeep.com/industries/travel",
+    "logo": "https://foxbeep.com/logo.png",
+    "description": "Professional travel industry technology development services including booking systems, travel management platforms, hotel reservation software, and tourism technology solutions. 18+ years experience with travel technology development.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Nepal"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+977-9810570201",
+      "contactType": "Customer Service"
+    },
+    "sameAs": [
+      "https://facebook.com/foxbeep",
+      "https://twitter.com/foxbeep", 
+      "https://linkedin.com/company/foxbeep"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "name": "Travel Industry Technology Development Services",
+      "description": "Custom travel technology development, booking systems, travel management platforms, hotel reservation software, and tourism technology solutions"
+    },
+    "expertise": [
+      "Online Booking Systems",
+      "Travel Management Platforms",
+      "Hotel Reservation Software",
+      "Tourism Mobile Applications",
+      "Travel CRM Systems",
+      "Tour Package Management"
+    ]
   };
 
+  // Hero section content
+  const heroContent = {
+    title: "Travel Industry Technology Development Services",
+    subtitle: "Custom travel technology solutions including online booking systems, travel management platforms, hotel reservation software, and tourism mobile applications designed to enhance travel experiences and streamline travel operations.",
+    buttonText: "Get Free Consultation",
+    buttonLink: "#contact",
+    backgroundImage: "/images/industries/travel.png",
+    imageAlt: "Travel industry technology development and tourism solutions"
+  };
+
+  // Text highlight section content
   const textHeroContent = {
-    headingText: "TECHNOLOGY IS TRANSFORMING TRAVEL BY CREATING",
-    highlightWord: "CREATING",
-    descriptionText: "Technology is transforming travel by creating personalized, frictionless experiences that empower travelers throughout their journey. From AI-powered recommendations to contactless services, emerging technologies are revolutionizing how travel is planned, booked, and experienced. {brandName} helps travel companies enhance customer satisfaction and operational efficiency through intuitive, connected digital travel ecosystems.",
-    brandName: "10Pearls",
+    headingText: "TRAVEL TECHNOLOGY DEVELOPMENT FOR MODERN TOURISM",
+    highlightWord: "DEVELOPMENT",
+    descriptionText: "Travel industry technology development revolutionizes tourism operations through innovative digital solutions. From online booking systems to mobile travel applications, our development expertise delivers scalable travel technology platforms. We specialize in custom hotel reservation systems, travel management platforms, and integrated tourism solutions that enhance customer experiences and increase booking conversions.",
+    brandName: "Foxbeep",
     highlightColor: "bg-purple-300"
   };
 
-  const travelTechContent1 = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing your ideal travel solutions. Our key focus areas are:",
-    companyName: "10Pearls",
+  // Online Booking Systems section
+  const bookingSystemsContent = {
+    mainHeading: "Our Travel Industry Technology Solutions",
+    introText: "We deliver professional travel technology development services focused on enhancing travel experiences and tourism operations:",
+    companyName: "Foxbeep",
     servicesList: [
-      "Booking & Reservation Systems",
-      "Travel Experience Platforms",
-      "Intelligent Travel Assistance",
-      "Operations Management Solutions"
+      "Online Booking Systems",
+      "Travel Management Platforms",
+      "Hotel Reservation Software",
+      "Tourism Mobile Applications"
     ],
-    featuredService: "Booking & Reservation Systems",
-    featuredServiceDescription: "We develop comprehensive travel booking platforms that deliver seamless, intuitive experiences across all channels. Our solutions optimize the entire booking journey from search to payment while providing powerful management tools for travel providers.",
-    featuredServiceImage: "https://10pearls.com/wp-content/uploads/2024/12/booking-reservation-systems.jpg",
+    featuredService: "Online Booking Systems",
+    featuredServiceDescription: "Comprehensive booking platforms with flight reservations, hotel bookings, tour packages, payment processing, and multi-language support. Designed for travel agencies, tour operators, and online travel companies.",
+    featuredServiceImage: "/images/online-booking-systems.jpg",
     highlightColor: "bg-purple-300",
     featureDetails: [
       {
-        title: "Multi-Channel Booking Platforms",
-        description: "We create integrated booking solutions that provide consistent, optimized experiences across web, mobile, voice, and partner channels. Our platforms ensure perfect synchronization of inventory, pricing, and customer data across all touchpoints."
+        title: "Multi-Service Booking Platform",
+        description: "Integrated booking system with flight reservations, hotel bookings, car rentals, tour packages, activity bookings, and travel insurance options with real-time availability and instant confirmation capabilities."
       },
       {
-        title: "Dynamic Packaging Systems",
-        description: "Our dynamic packaging solutions enable travel providers to bundle flights, accommodations, activities, and transportation in real-time. These systems maximize revenue opportunities while delivering value and convenience to travelers."
+        title: "Payment & Pricing Management",
+        description: "Secure payment processing with multiple payment gateways, dynamic pricing algorithms, discount management, promotional codes, multi-currency support, and automated billing for seamless transactions."
       },
       {
-        title: "Payment & Revenue Management",
-        description: "We develop secure, flexible payment processing systems with support for multiple currencies, payment methods, and complex pricing models. Our solutions include advanced revenue management tools that optimize pricing based on demand, competition, and customer segmentation."
+        title: "Inventory & Availability Management",
+        description: "Real-time inventory control with availability tracking, booking calendars, capacity management, overbooking protection, and automated inventory updates for accurate booking management."
       }
     ]
   };
 
-  const travelTechContent2 = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing your ideal travel solutions. Our key focus areas are:",
-    companyName: "10Pearls",
+  // Travel Management Platforms section
+  const travelManagementContent = {
+    mainHeading: "Our Travel Industry Technology Solutions",
+    introText: "We deliver professional travel technology development services focused on enhancing travel experiences and tourism operations:",
+    companyName: "Foxbeep",
     servicesList: [
-      "Booking & Reservation Systems",
-      "Travel Experience Platforms",
-      "Intelligent Travel Assistance",
-      "Operations Management Solutions"
+      "Online Booking Systems",
+      "Travel Management Platforms",
+      "Hotel Reservation Software",
+      "Tourism Mobile Applications"
     ],
-    featuredService: "Travel Experience Platforms",
-    featuredServiceDescription: "We build comprehensive digital platforms that enhance every aspect of the travel journey from inspiration to return. Our experience-focused solutions help travel brands create memorable, personalized moments that drive loyalty and advocacy.",
-    featuredServiceImage: "https://10pearls.com/wp-content/uploads/2024/12/travel-experience-platforms.jpg",
+    featuredService: "Travel Management Platforms",
+    featuredServiceDescription: "Complete travel management solutions with itinerary planning, customer management, booking administration, financial reporting, and travel analytics. Perfect for travel agencies, corporate travel managers, and tour operators.",
+    featuredServiceImage: "/images/travel-management-platforms.jpg",
     highlightColor: "bg-purple-300",
     featureDetails: [
       {
-        title: "Personalized Travel Planning",
-        description: "Our intelligent planning solutions use AI and machine learning to analyze traveler preferences, past behavior, and contextual factors to create custom travel recommendations and itineraries. These platforms transform travel planning from a transaction to an engaging, personalized experience."
+        title: "Itinerary & Trip Planning",
+        description: "Advanced trip planning tools with custom itinerary creation, destination management, activity scheduling, travel timeline management, and collaborative planning features for personalized travel experiences."
       },
       {
-        title: "In-Destination Experience Apps",
-        description: "We develop mobile applications that serve as digital companions throughout the travel journey, offering contactless check-in, local recommendations, wayfinding, activity booking, and digital concierge services. These apps enhance the guest experience while creating new revenue opportunities."
+        title: "Customer Relationship Management",
+        description: "Comprehensive CRM system with customer profiles, booking history, preferences tracking, communication management, loyalty programs, and personalized travel recommendations for enhanced customer service."
       },
       {
-        title: "Loyalty & Engagement Systems",
-        description: "Our loyalty platforms go beyond points and rewards to create emotional connections with travelers through personalized recognition, gamified experiences, and tailored communications. These systems drive repeat business and turn customers into brand advocates."
+        title: "Business Analytics & Reporting",
+        description: "Travel business intelligence with booking analytics, revenue reporting, customer insights, market trends analysis, performance dashboards, and financial management for data-driven travel business decisions."
       }
     ]
   };
 
-  const travelTechContent3 = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing your ideal travel solutions. Our key focus areas are:",
-    companyName: "10Pearls",
+  // Hotel Reservation Software section
+  const hotelReservationContent = {
+    mainHeading: "Our Travel Industry Technology Solutions",
+    introText: "We deliver professional travel technology development services focused on enhancing travel experiences and tourism operations:",
+    companyName: "Foxbeep",
     servicesList: [
-      "Booking & Reservation Systems",
-      "Travel Experience Platforms",
-      "Intelligent Travel Assistance",
-      "Operations Management Solutions"
+      "Online Booking Systems",
+      "Travel Management Platforms",
+      "Hotel Reservation Software",
+      "Tourism Mobile Applications"
     ],
-    featuredService: "Intelligent Travel Assistance",
-    featuredServiceDescription: "We create AI-powered assistance solutions that deliver personalized support to travelers throughout their journey. Our intelligent systems anticipate needs, solve problems, and enhance the travel experience through contextual, conversational interfaces.",
-    featuredServiceImage: "https://10pearls.com/wp-content/uploads/2024/12/intelligent-travel-assistance.jpg",
+    featuredService: "Hotel Reservation Software",
+    featuredServiceDescription: "Advanced hotel management systems with room reservations, property management, channel management, guest services, and revenue optimization. Designed for hotels, resorts, and hospitality businesses.",
+    featuredServiceImage: "/images/hotel-reservation-software.jpg",
     highlightColor: "bg-purple-300",
     featureDetails: [
       {
-        title: "AI-Powered Travel Chatbots",
-        description: "We develop intelligent virtual assistants that combine natural language processing, machine learning, and travel domain expertise to provide conversational support across channels. Our chatbots handle inquiries, bookings, changes, and personalized recommendations with human-like understanding."
+        title: "Room & Reservation Management",
+        description: "Complete reservation system with room availability, booking management, check-in/check-out processes, guest registration, room assignment, and housekeeping coordination for efficient hotel operations."
       },
       {
-        title: "Proactive Travel Alerts",
-        description: "Our proactive notification systems monitor flight statuses, weather conditions, traffic patterns, and other factors to keep travelers informed of changes that may impact their journey. These solutions reduce stress and enable travelers to adjust plans quickly when disruptions occur."
+        title: "Channel & Distribution Management",
+        description: "Multi-channel distribution with OTA integrations (Booking.com, Expedia), channel manager connectivity, rate synchronization, inventory distribution, and booking consolidation from multiple sources."
       },
       {
-        title: "Voice-Enabled Travel Services",
-        description: "We create voice-first travel experiences for smart speakers, in-car systems, and mobile devices that allow hands-free booking, information retrieval, and service requests. Our voice solutions make travel planning and management more accessible and convenient."
+        title: "Guest Services & Experience",
+        description: "Enhanced guest experience with online check-in, digital concierge services, room service management, guest communication, feedback collection, and personalized service delivery for superior hospitality."
       }
     ]
   };
 
-  const travelTechContent4 = {
-    mainHeading: "Foxbeep services we offer",
-    introText: "We have a unique approach to developing your ideal travel solutions. Our key focus areas are:",
-    companyName: "10Pearls",
+  // Tourism Mobile Applications section
+  const mobileApplicationsContent = {
+    mainHeading: "Our Travel Industry Technology Solutions",
+    introText: "We deliver professional travel technology development services focused on enhancing travel experiences and tourism operations:",
+    companyName: "Foxbeep",
     servicesList: [
-      "Booking & Reservation Systems",
-      "Travel Experience Platforms",
-      "Intelligent Travel Assistance",
-      "Operations Management Solutions"
+      "Online Booking Systems",
+      "Travel Management Platforms",
+      "Hotel Reservation Software",
+      "Tourism Mobile Applications"
     ],
-    featuredService: "Operations Management Solutions",
-    featuredServiceDescription: "We develop comprehensive systems that optimize back-office operations for travel providers. Our solutions streamline workflows, enhance resource utilization, and provide actionable insights that improve efficiency and service quality.",
-    featuredServiceImage: "https://10pearls.com/wp-content/uploads/2024/12/operations-management-solutions.jpg",
+    featuredService: "Tourism Mobile Applications",
+    featuredServiceDescription: "Interactive mobile travel apps with destination guides, booking capabilities, offline maps, travel assistance, and social sharing features. Designed to enhance traveler experiences and increase engagement.",
+    featuredServiceImage: "/images/tourism-mobile-applications.jpg",
     highlightColor: "bg-purple-300",
     featureDetails: [
       {
-        title: "Inventory & Resource Management",
-        description: "Our inventory management solutions enable travel providers to optimize the allocation and utilization of rooms, vehicles, seats, and other resources. These systems include forecasting tools, automated pricing updates, and distribution channel management to maximize revenue."
+        title: "Destination & Travel Guides",
+        description: "Comprehensive travel guides with destination information, attraction details, local recommendations, cultural insights, weather updates, and interactive maps for immersive travel experiences."
       },
       {
-        title: "Staff Scheduling & Task Management",
-        description: "We create workforce management solutions that optimize staff scheduling based on demand forecasts, skill requirements, and employee preferences. These platforms include mobile-first tools for task assignment, communication, and service delivery tracking."
+        title: "Mobile Booking & Services",
+        description: "On-the-go booking capabilities with instant reservations, mobile payments, digital tickets, booking modifications, and travel services access for convenient mobile travel management."
       },
       {
-        title: "Business Intelligence & Analytics",
-        description: "Our analytics platforms transform travel operations data into actionable insights through interactive dashboards, automated reporting, and predictive models. These solutions help travel businesses identify opportunities for service improvement, cost reduction, and revenue growth."
+        title: "Travel Assistance & Navigation",
+        description: "Smart travel assistance with GPS navigation, offline maps, real-time translations, emergency contacts, travel alerts, and local discovery features for safe and informed travel experiences."
       }
     ]
   };
 
+  // FAQ Section content
   const faqItems = [
     {
-      question: "What types of travel technology solutions do you offer?",
-      answer: "We provide comprehensive travel technology services including booking and reservation systems, mobile travel apps, AI-powered traveler assistance, personalized experience platforms, operations management software, and business intelligence solutions. Our goal is to transform how travel is sold, managed, and experienced."
+      question: "What travel industry technology development services do you provide?",
+      answer: "We provide comprehensive travel technology development including online booking systems, travel management platforms, hotel reservation software, tourism mobile applications, travel CRM systems, and custom travel solutions tailored to your business needs."
     },
     {
-      question: "How do you integrate with travel industry systems and GDSs?",
-      answer: "We have extensive experience integrating with all major Global Distribution Systems (GDSs), Online Travel Agencies (OTAs), payment gateways, and travel supplier APIs. Our solutions support industry standards like NDC and ONE Order while ensuring seamless data flow across the travel ecosystem."
+      question: "Can you develop custom online booking systems for travel agencies?",
+      answer: "Yes, we specialize in custom booking system development with features like flight reservations, hotel bookings, tour packages, payment processing, inventory management, and multi-language support for travel agencies and tour operators."
     },
     {
-      question: "Can you build custom booking engines for travel businesses?",
-      answer: "Absolutely. We develop tailored booking solutions for hotels, airlines, cruise lines, tour operators, and travel agencies. Our booking engines feature responsive designs, multi-language support, dynamic pricing, customizable business rules, and integration with existing business systems."
+      question: "Do you develop hotel reservation and property management systems?",
+      answer: "Absolutely. We develop comprehensive hotel management systems with room reservations, property management, channel management, guest services, housekeeping coordination, and revenue optimization for hotels and resorts."
     },
     {
-      question: "How do you leverage AI in travel applications?",
-      answer: "We implement AI for personalized recommendations, natural language chatbots, dynamic pricing optimization, demand forecasting, sentiment analysis, fraud detection, and disruption management. Our AI solutions enhance customer experiences while improving operational efficiency."
+      question: "What technologies do you use for travel software development?",
+      answer: "We use travel-optimized technologies including .NET, Java, Python, cloud platforms (AWS, Azure), payment gateways, GDS integrations, mapping APIs, mobile frameworks, and real-time databases specifically designed for travel industry requirements."
     },
     {
-      question: "What mobile capabilities do your travel solutions offer?",
-      answer: "Our mobile travel applications provide comprehensive functionality including inspirational content, booking capabilities, itinerary management, contactless check-in, digital room keys, in-destination services, real-time alerts, and loyalty program integration—all optimized for on-the-go usage."
+      question: "How do you ensure integration with travel industry systems and APIs?",
+      answer: "We implement seamless integration through GDS connections (Amadeus, Sabre), OTA APIs (Booking.com, Expedia), payment gateways, airline APIs, hotel chains, and third-party travel services through secure APIs and data synchronization."
     },
     {
-      question: "How do you approach personalization in travel platforms?",
-      answer: "We create personalization engines that analyze traveler profiles, past behavior, context, and preferences to deliver tailored recommendations, custom offers, dynamic content, and adaptive user interfaces. Our solutions balance personalization with privacy and security considerations."
+      question: "Can you integrate travel software with existing booking and payment systems?",
+      answer: "Yes, we specialize in travel system integration with existing booking platforms, payment processors, accounting systems, CRM platforms, inventory management, and other travel tools through secure APIs and custom connectors."
     },
     {
-      question: "Can you develop solutions for business travel management?",
-      answer: "Yes, we build comprehensive corporate travel platforms featuring policy compliance, approval workflows, expense management, duty of care functionality, reporting tools, and traveler engagement features. Our solutions help organizations balance traveler satisfaction with cost control objectives."
+      question: "What is the typical timeline for travel technology development projects?",
+      answer: "Travel technology development timelines vary based on complexity and integration requirements. Simple booking systems take 3-6 months, while comprehensive travel management or hotel reservation platforms may require 6-12 months including testing and integration phases."
     },
     {
-      question: "What analytics capabilities do your travel solutions include?",
-      answer: "Our platforms provide advanced analytics for booking conversion, pricing optimization, traveler behavior, operational performance, and market trends. We develop customized dashboards and reporting tools that transform complex travel data into actionable business insights."
+      question: "Do you provide mobile app development for tourism and travel?",
+      answer: "Yes, we develop mobile applications for travel with features like destination guides, mobile booking, offline maps, travel assistance, real-time notifications, and social sharing capabilities for enhanced traveler experiences."
     },
     {
-      question: "Do you support post-launch maintenance and updates?",
-      answer: "Yes, we offer ongoing support, platform optimization, feature enhancements, security updates, and technology modernization. Our managed services ensure your travel solutions remain secure, scalable, and aligned with evolving industry trends and traveler expectations."
+      question: "Can you develop multi-language and multi-currency travel platforms?",
+      answer: "Absolutely. We develop globalized travel platforms with multi-language support, multi-currency processing, regional customization, local payment methods, and cultural adaptations for international travel markets."
     },
     {
-      question: "Why choose 10Pearls for travel technology development?",
-      answer: "10Pearls combines deep travel industry expertise with technical excellence in emerging technologies. We understand the unique complexities of travel distribution, prioritize seamless user experiences, and deliver scalable solutions that advance digital transformation while driving business growth."
+      question: "Why choose Foxbeep for travel industry technology development?",
+      answer: "Foxbeep combines 18+ years of software development expertise with deep understanding of travel industry workflows and customer expectations. Our experienced team delivers scalable, integrated travel solutions that enhance customer experiences, increase bookings, and optimize travel operations."
     }
   ];
 
   return (
-    <div>
-      <Hero {...heroContent} />
-      <TextHighlight {...textHeroContent} />
-      <BrandSlider />
-      <div className="max-w-7xl mx-auto my-16">
-        {/* Heading */}
-        <h2 className="text-4xl md:text-5xl relative inline-block mb-6">
-          <span className="bg-purple-300 absolute -bottom-1 left-0 w-full h-4 -z-10 rounded-sm"></span>
-          Foxbeep services
-        </h2>
+    <>
+      <Head>
+        {/* Essential Meta Tags */}
+        <title>Travel Industry Technology Development Services | Tourism Software Solutions | Foxbeep</title>
+        <meta name="description" content="Professional travel industry technology development services including online booking systems, travel management platforms, hotel reservation software, and tourism mobile applications. Expert travel technology developers." />
+        <meta name="keywords" content="travel industry technology development, online booking systems, travel management platforms, hotel reservation software, tourism mobile applications, travel CRM systems, tour package management" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Travel Industry Technology Development Services | Tourism Software Solutions" />
+        <meta property="og:description" content="Custom travel technology development including online booking systems, travel management platforms, hotel reservation software, and tourism mobile applications designed to enhance travel experiences." />
+        <meta property="og:image" content="https://foxbeep.com/travel-tech-development.png" />
+        <meta property="og:url" content="https://foxbeep.com/industries/travel" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Foxbeep Travel Technology Solutions" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Travel Industry Technology Development Services | Foxbeep" />
+        <meta name="twitter:description" content="Expert travel technology development for booking systems, travel management, and tourism solutions." />
+        <meta name="twitter:image" content="https://foxbeep.com/travel-tech-development.png" />
+        
+        {/* Technical Meta Tags */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow" />
+        
+        {/* Industry-Specific Meta Tags */}
+        <meta name="industry" content="Travel Industry Technology Development" />
+        <meta name="services" content="Online Booking Systems, Travel Management Platforms, Hotel Reservation Software, Tourism Mobile Applications" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://foxbeep.com/industries/travel" />
+        
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        
+        {/* Preconnect for Performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </Head>
 
-        {/* Intro Text */}
-        <p className="text-lg text-gray-700 mb-8">
-          At <span className="font-semibold text-gray-900">Foxbeep</span>, we take a unique approach to building impactful travel solutions. Our core focus areas include:
-        </p>
-
-        {/* Services List */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4">
-          {[
-            "Booking & Reservation Systems",
-            "Intelligent Travel Assistance",
-            "Travel Experience Platforms",
-            "Operations Management Solutions",
-          ].map((service, index) => (
-            <div key={index} className="flex items-start">
-              <div className="mt-1 mr-3 text-purple-500">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15H5v-3.414l8.293-8.293a1 1 0 011.414 0zM7 13h.586L14 6.586 13.414 6 7 12.414V13z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <p className="text-lg text-gray-800">{service}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <EdtechServices {...travelTechContent1} />
-      <EdtechServices {...travelTechContent2} />
-      <EdtechServices {...travelTechContent3} />
-      <EdtechServices {...travelTechContent4} />
-      <FAQSection
-        title="Frequently Asked Questions"
-        faqItems={faqItems}
-        backgroundColor="bg-white"
-        textColor="text-gray-700"
-        questionSize="text-2xl"
-      />
-      <TextHeroSection />
-      {/* Rest of the page content would go here */}
-    </div>
+      <main>
+        {/* Hero Section */}
+        <section aria-label="Travel Industry Technology Development Hero">
+          <Hero {...heroContent} />
+        </section>
+        
+        {/* Text Highlight Section */}
+        <section aria-label="Travel Technology Development Overview">
+          <TextHighlight {...textHeroContent} />
+        </section>
+        
+        {/* Brand Partners */}
+        <section aria-label="Trusted by Leading Travel Companies and Tourism Organizations">
+          <BrandSlider />
+        </section>
+        
+        {/* Travel Industry Technology Services Sections */}
+        <section aria-label="Online Booking Systems">
+          <EdtechServices {...bookingSystemsContent} />
+        </section>
+        
+        <section aria-label="Travel Management Platforms">
+          <EdtechServices {...travelManagementContent} />
+        </section>
+        
+        <section aria-label="Hotel Reservation Software">
+          <EdtechServices {...hotelReservationContent} />
+        </section>
+        
+        <section aria-label="Tourism Mobile Applications">
+          <EdtechServices {...mobileApplicationsContent} />
+        </section>
+        
+        {/* FAQ Section */}
+        <section aria-label="Travel Industry Technology Development FAQ">
+          <FAQSection
+            title="Frequently Asked Questions"
+            subtitle="Get answers to common questions about our travel industry technology development services"
+            faqItems={faqItems}
+            backgroundColor="bg-white"
+            textColor="text-gray-700"
+            questionSize="text-2xl"
+          />
+        </section>
+        
+        {/* Call to Action */}
+        <section aria-label="Get Started with Travel Technology Development">
+          <TextHeroSection />
+        </section>
+      </main>
+    </>
   );
-};
-
-export default Travel;
+}
