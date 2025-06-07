@@ -39,7 +39,7 @@ export default function DevProcess({
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10 md:py-12 bg-white">
+    <div className="max-w-7xl mx-auto px-4 md:px-6 xl:px-8 py-8 sm:py-10 md:py-12 bg-white">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
         {/* Left side - sticky on desktop only */}
         <div className={`${isDesktop ? 'md:sticky top-24 h-fit self-start' : ''}`}>

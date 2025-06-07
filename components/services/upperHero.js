@@ -7,7 +7,7 @@ const ServiceBanner = ({
   reviewLabel = "REVIEWS"
 }) => {
   return (
-    <div className="flex flex-col lg:flex-row justify-between items-center w-full py-8 sm:py-12 md:py-16 lg:py-24 px-4 bg-white text-black max-w-7xl mx-auto">
+    <div className="flex flex-col lg:flex-row justify-between items-center w-full py-8 sm:py-12 md:py-16 lg:py-24 px-4 md:px-6 xl:px-8 bg-white text-black max-w-7xl mx-auto">
       <div className="w-full lg:w-3/4 mb-8 lg:mb-0 lg:pr-8">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-black mb-4 sm:mb-6">
           {title}

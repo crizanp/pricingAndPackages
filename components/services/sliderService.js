@@ -119,7 +119,7 @@ export default function IndustrySlider({
 
   return (
     <div className="w-full bg-black py-12 sm:py-16 md:py-24 px-4">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 xl:px-8">
         <div className="mb-8 sm:mb-12 md:mb-16 text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-white">
             {title}
@@ -190,20 +190,6 @@ export default function IndustrySlider({
         >
           <ChevronRight size={isMobile ? 20 : 24} />
         </button>
-      </div>
-
-      {/* Pagination dots - Improved for mobile */}
-      <div className="flex justify-center mt-6 sm:mt-8 overflow-x-auto px-4 gap-2">
-        {Array.from({ length: totalSlides + 1 }).map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`mx-1 h-2 sm:h-3 rounded-full transition-all duration-300 ${
-              currentSlide === index ? 'bg-white w-6 sm:w-8' : 'bg-gray-600 w-2 sm:w-3 hover:bg-gray-500'
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
       </div>
     </div>
   );

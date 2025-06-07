@@ -163,7 +163,8 @@ export default function NewsMediaWebsite() {
           src="/images/pages/news-and-media.jpg"
           alt="News Media Website Development"
           className="w-full h-full object-cover"
-        />
+        />                <div className="absolute inset-0 bg-black opacity-60"></div>
+
       </div>
 
       <ServicesGrid {...servicesGridData} />

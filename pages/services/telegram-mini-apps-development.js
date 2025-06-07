@@ -164,7 +164,8 @@ export default function TelegramMiniAppsDevelopment() {
           src="/images/pages/telegram-mini-apps.png"
           alt="Telegram Mini Apps Development"
           className="w-full h-full object-cover"
-        />
+        />                <div className="absolute inset-0 bg-black opacity-60"></div>
+
       </div>
 
       <ServicesGrid {...servicesGridData} />

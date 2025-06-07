@@ -118,7 +118,7 @@ export default function ServiceCardSlider({
             <div className="absolute w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 rounded-full blur-3xl opacity-5 bg-white bottom-0 left-0"></div>
             <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center relative z-10">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 xl:px-8 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center relative z-10">
                 {/* Left content column */}
                 <div className="space-y-4 sm:space-y-6 md:space-y-8 order-2 lg:order-1">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white">

@@ -163,7 +163,8 @@ export default function Web3Development() {
           src="/images/pages/web3.jpeg"
           alt="Web3 Development"
           className="w-full h-full object-cover"
-        />
+        />                <div className="absolute inset-0 bg-black opacity-60"></div>
+
       </div>
 
       <ServicesGrid {...servicesGridData} />

@@ -163,7 +163,8 @@ export default function IOSAppDevelopment() {
           src="/images/pages/ios-development.jpg"
           alt="iOS App Development"
           className="w-full h-full object-cover"
-        />
+        />                <div className="absolute inset-0 bg-black opacity-60"></div>
+
       </div>
 
       <ServicesGrid {...servicesGridData} />

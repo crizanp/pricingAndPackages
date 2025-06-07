@@ -38,7 +38,7 @@ export default function FAQSection({
   };
   
   return (
-    <div className={`max-w-7xl mx-auto py-8 sm:py-12 md:py-16 ${backgroundColor} px-4 sm:px-6 md:px-8 text-black`}>
+    <div className={`max-w-7xl mx-auto py-8 sm:py-12 md:py-16 ${backgroundColor} px-4 md:px-6 xl:px-8 text-black`}>
       <h1 className={`${headingSize} font-bold mb-8 sm:mb-12 md:mb-16 text-left`}>{title}</h1>
       
       <div className="space-y-4 sm:space-y-6">

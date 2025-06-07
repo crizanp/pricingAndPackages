@@ -21,7 +21,7 @@ const BenefitsSection = ({
   ctaText = "Let's Discuss"
 }) => {
   return (
-    <div className="max-w-7xl mx-auto py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <div className="max-w-7xl mx-auto py-8 sm:py-12 md:py-16 px-4 md:px-6 xl:px-8 bg-white">
       <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black mb-6 sm:mb-8 md:mb-12 lg:mb-16">
         {title}
       </h2>

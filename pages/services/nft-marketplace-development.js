@@ -163,7 +163,8 @@ export default function NFTMarketplaceDevelopment() {
     src="/images/pages/nft.jpg"
     alt="NFT Marketplace Development"
     className="w-full h-full object-cover object-center"
-  />
+  />                <div className="absolute inset-0 bg-black opacity-60"></div>
+
 </div>
 
 

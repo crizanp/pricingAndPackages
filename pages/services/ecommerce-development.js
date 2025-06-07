@@ -18,7 +18,7 @@ export default function ECommerce() {
     reviewCount: "58",
     reviewLabel: "REVIEWS"
   }
-  ;
+    ;
 
   const servicesGridData = {
     title: "What's Included?",
@@ -31,7 +31,7 @@ export default function ECommerce() {
       { title: "Maintenance & Support", description: "We keep your store fast, safe, and updated." }
     ]
   }
-  ;
+    ;
   const industrySliderData = {
     title: "eCommerce for Every Industry",
     subtitle: "FoxBeep powers eCommerce for brands across all sectors.",
@@ -44,7 +44,7 @@ export default function ECommerce() {
       { title: "Subscription Services", description: "Recurring billing with customer dashboards." }
     ]
   }
-  ;
+    ;
   const devProcessData = {
     title: "How We Build eCommerce Stores",
     description: "Our process ensures secure, fast, and tailored online stores.",
@@ -58,7 +58,7 @@ export default function ECommerce() {
       { number: 7, title: "Launch & Training", description: "Go live and learn to run your store with ease." }
     ]
   }
-  
+
   const faqItems = [
     {
       question: "How much does eCommerce development cost?",
@@ -81,7 +81,7 @@ export default function ECommerce() {
       answer: "Yes! We connect your store with tools like ERP, CRM, and inventory systems."
     }
   ]
-  
+
   const benefitsData = {
     title: "Why Our eCommerce Services Work",
     benefits: [
@@ -104,7 +104,7 @@ export default function ECommerce() {
     ],
     ctaText: "Let's Discuss"
   }
-  
+
 
   const uniqueFeaturesData = {
     title: "Why Pick Foxbeep?",
@@ -141,7 +141,7 @@ export default function ECommerce() {
       }
     ]
   }
-  
+
   const teamBannerData = {
     title: "Build an eCommerce development",
     highlightedText: "Team",
@@ -154,19 +154,21 @@ export default function ECommerce() {
     buttonHoverFrom: "from-blue-600",
     buttonHoverTo: "to-blue-700"
   }
-  
+
   return (
     <div>
       <ServiceBanner {...serviceData} />
 
-      {/* Full-screen image section below the banner */}
       <div className="w-full relative sm:h-screen">
         <img
           src="/images/pages/ecom-dev.jpg"
           alt="eCommerce Development"
           className="w-full h-full object-cover"
         />
+
+        <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
+
 
       <ServicesGrid {...servicesGridData} />
       <BenefitsSection {...benefitsData} />
@@ -210,7 +212,7 @@ export default function ECommerce() {
         backgroundColor="bg-white"
         textColor="text-gray-700"
         questionSize="text-3xl"
-      />     
+      />
       <TextHeroSection />
     </div>
   );
