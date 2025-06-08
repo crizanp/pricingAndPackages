@@ -1,8 +1,10 @@
 // components/Navbar/ClientNavbarEnhancer.js
 "use client";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const ClientNavbarEnhancer = () => {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
     useEffect(() => {
         // Scroll effect for navbar shadow
         const handleScroll = () => {
@@ -27,40 +29,60 @@ const ClientNavbarEnhancer = () => {
             });
         };
 
-        // Fixed setupMobileMenu function for ClientNavbarEnhancer.js
+        // Fixed setupMobileMenu function
         const setupMobileMenu = () => {
             const button = document.getElementById('mobile-menu-button');
             const menu = document.getElementById('mobile-menu');
 
             if (!button || !menu) {
-                console.log('Mobile menu elements not found');
+                console.log('Mobile menu elements not found, retrying...');
+                // Retry after a short delay if elements aren't found
+                setTimeout(setupMobileMenu, 100);
                 return;
             }
 
             const menuIcon = button.querySelector('svg');
-
             if (!menuIcon) {
                 console.log('Menu icon not found');
                 return;
             }
 
-            button.addEventListener('click', (e) => {
-                e.preventDefault(); // Prevent any default behavior
+            // Remove any existing event listeners to prevent duplicates
+            const newButton = button.cloneNode(true);
+            button.parentNode.replaceChild(newButton, button);
+            const updatedButton = document.getElementById('mobile-menu-button');
+            const updatedMenuIcon = updatedButton.querySelector('svg');
 
-                const isHidden = menu.classList.contains('hidden');
+            // Add click event listener with proper event handling
+            const handleButtonClick = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                console.log('Mobile menu button clicked'); // Debug log
+                
+                const isCurrentlyHidden = menu.classList.contains('hidden');
+                console.log('Menu is currently hidden:', isCurrentlyHidden); // Debug log
 
-                if (isHidden) {
+                if (isCurrentlyHidden) {
+                    // Show menu
                     menu.classList.remove('hidden');
-                    menu.classList.add('block'); // Explicitly add block class
+                    menu.classList.add('block');
+                    setIsMobileMenuOpen(true);
                     // Change to X icon
-                    menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+                    updatedMenuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
                 } else {
+                    // Hide menu
                     menu.classList.add('hidden');
-                    menu.classList.remove('block'); // Explicitly remove block class
+                    menu.classList.remove('block');
+                    setIsMobileMenuOpen(false);
                     // Change back to hamburger icon
-                    menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+                    updatedMenuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
                 }
-            });
+            };
+
+            // Add event listener
+            updatedButton.addEventListener('click', handleButtonClick);
+            updatedButton.addEventListener('touchstart', handleButtonClick); // Add touch support for mobile
 
             // Close mobile menu when clicking on links
             const mobileLinks = menu.querySelectorAll('a');
@@ -68,26 +90,39 @@ const ClientNavbarEnhancer = () => {
                 link.addEventListener('click', () => {
                     menu.classList.add('hidden');
                     menu.classList.remove('block');
-                    menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+                    setIsMobileMenuOpen(false);
+                    updatedMenuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
                 });
             });
 
             // Close mobile menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!button.contains(e.target) && !menu.contains(e.target)) {
+            const handleOutsideClick = (e) => {
+                if (!updatedButton.contains(e.target) && !menu.contains(e.target)) {
                     if (!menu.classList.contains('hidden')) {
                         menu.classList.add('hidden');
                         menu.classList.remove('block');
-                        menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+                        setIsMobileMenuOpen(false);
+                        updatedMenuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
                     }
                 }
-            });
+            };
+
+            document.addEventListener('click', handleOutsideClick);
+            document.addEventListener('touchstart', handleOutsideClick);
+
+            // Return cleanup function
+            return () => {
+                updatedButton.removeEventListener('click', handleButtonClick);
+                updatedButton.removeEventListener('touchstart', handleButtonClick);
+                document.removeEventListener('click', handleOutsideClick);
+                document.removeEventListener('touchstart', handleOutsideClick);
+            };
         };
 
         // Enhanced dropdown behavior for desktop
         const setupDesktopDropdowns = () => {
             const dropdownTriggers = document.querySelectorAll('[data-dropdown-trigger]');
-            let hoverDisabled = false; // Flag to temporarily disable hover
+            let hoverDisabled = false;
 
             dropdownTriggers.forEach((trigger) => {
                 const triggerIndex = trigger.getAttribute('data-dropdown-trigger');
@@ -97,23 +132,18 @@ const ClientNavbarEnhancer = () => {
                 if (dropdown && triggerLink) {
                     let timeoutId;
 
-                    // Check if the link has a valid href (not just '#' or empty)
                     const hasValidHref = triggerLink.getAttribute('href') &&
                         triggerLink.getAttribute('href') !== '#' &&
                         triggerLink.getAttribute('href') !== '';
 
-                    // Show dropdown on hover (only if hover is not disabled)
                     const showDropdown = () => {
                         if (hoverDisabled) return;
                         clearTimeout(timeoutId);
-                        // Hide all other dropdowns first
                         closeAllDropdowns();
-
                         dropdown.classList.remove('hidden');
                         dropdown.classList.add('block');
                     };
 
-                    // Hide dropdown with delay
                     const hideDropdown = () => {
                         if (hoverDisabled) return;
                         timeoutId = setTimeout(() => {
@@ -122,7 +152,6 @@ const ClientNavbarEnhancer = () => {
                         }, 150);
                     };
 
-                    // Event listeners for hover
                     trigger.addEventListener('mouseenter', showDropdown);
                     trigger.addEventListener('mouseleave', hideDropdown);
                     dropdown.addEventListener('mouseenter', () => {
@@ -130,30 +159,19 @@ const ClientNavbarEnhancer = () => {
                     });
                     dropdown.addEventListener('mouseleave', hideDropdown);
 
-                    // Handle click events for trigger links
                     triggerLink.addEventListener('click', (e) => {
-                        // If it has a valid href and no dropdown is visible, allow normal navigation
                         if (hasValidHref) {
                             const isDropdownVisible = !dropdown.classList.contains('hidden');
-
-                            // If dropdown is not visible, allow the link to work normally
                             if (!isDropdownVisible) {
-                                return; // Allow normal link navigation
+                                return;
                             } else {
-                                // If dropdown is visible, hide it and prevent navigation
                                 e.preventDefault();
                                 closeAllDropdowns();
                             }
                         } else {
-                            // No valid href, just toggle dropdown
                             e.preventDefault();
-
                             const isVisible = !dropdown.classList.contains('hidden');
-
-                            // Hide all dropdowns first
                             closeAllDropdowns();
-
-                            // Show this dropdown if it was hidden
                             if (!isVisible) {
                                 dropdown.classList.remove('hidden');
                                 dropdown.classList.add('block');
@@ -163,39 +181,28 @@ const ClientNavbarEnhancer = () => {
                 }
             });
 
-            // Use event delegation to handle all dropdown link clicks
             document.addEventListener('click', (e) => {
-                // Check if clicked element is a link inside a dropdown
                 const clickedLink = e.target.closest('[data-dropdown-content] a');
                 if (clickedLink) {
-                    // Temporarily disable hover effects
                     hoverDisabled = true;
-
-                    // Close all dropdowns immediately when any dropdown link is clicked
                     closeAllDropdowns();
-
-                    // Force full page reload for dropdown links
                     const href = clickedLink.getAttribute('href');
                     if (href && href !== '#' && href !== '') {
                         e.preventDefault();
                         window.location.href = href;
                         return;
                     }
-
-                    // Re-enable hover after a short delay (in case link doesn't navigate)
                     setTimeout(() => {
                         hoverDisabled = false;
                     }, 300);
                     return;
                 }
 
-                // Check if clicked outside dropdown area
                 if (!e.target.closest('[data-dropdown-trigger]') && !e.target.closest('[data-dropdown-content]')) {
                     closeAllDropdowns();
                 }
             });
 
-            // Close dropdowns on escape key
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') {
                     closeAllDropdowns();
@@ -203,21 +210,55 @@ const ClientNavbarEnhancer = () => {
             });
         };
 
-        // Initialize all enhancements
-        handleScroll(); // Set initial state
-        setupMobileMenu();
-        setupDesktopDropdowns();
+        // Initialize with a small delay to ensure DOM is ready
+        const initializeEnhancements = () => {
+            handleScroll();
+            const mobileCleanup = setupMobileMenu();
+            setupDesktopDropdowns();
+            return mobileCleanup;
+        };
+
+        // Wait for DOM to be fully ready
+        let cleanup;
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                cleanup = initializeEnhancements();
+            });
+        } else {
+            cleanup = initializeEnhancements();
+        }
 
         // Add scroll listener
         window.addEventListener('scroll', handleScroll);
 
-        // Cleanup
+        // Cleanup function
         return () => {
             window.removeEventListener('scroll', handleScroll);
+            if (cleanup && typeof cleanup === 'function') {
+                cleanup();
+            }
         };
     }, []);
 
-    // This component renders nothing - it only adds behavior
+    // Sync state with DOM for mobile menu
+    useEffect(() => {
+        const menu = document.getElementById('mobile-menu');
+        const button = document.getElementById('mobile-menu-button');
+        const menuIcon = button?.querySelector('svg');
+
+        if (menu && menuIcon) {
+            if (isMobileMenuOpen) {
+                menu.classList.remove('hidden');
+                menu.classList.add('block');
+                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+            } else {
+                menu.classList.add('hidden');
+                menu.classList.remove('block');
+                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+            }
+        }
+    }, [isMobileMenuOpen]);
+
     return null;
 };
 
