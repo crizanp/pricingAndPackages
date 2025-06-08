@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useState } from 'react';
-import Navbar from '../components/Navbar/ServerNavbar';
+import Navbar from '../components/Navbar';
 import TextHeroSection from '@/components/home/textHero';
 import Link from 'next/link';
 

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Navbar from '../components/Navbar/ServerNavbar'; // Import your server navbar
+import Navbar from '../components/Navbar'; // Import your server navbar
 import BlogShowcase from "../components/home/blogShowcase";
 import BrandSlider from "../components/home/companySponsered";
 import DevelopmentProcess from "../components/home/developmentProccess";
