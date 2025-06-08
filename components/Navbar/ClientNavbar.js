@@ -27,55 +27,80 @@ const ClientNavbarEnhancer = () => {
             });
         };
 
-        // Mobile menu toggle
+        // Fixed setupMobileMenu function for ClientNavbarEnhancer.js
         const setupMobileMenu = () => {
             const button = document.getElementById('mobile-menu-button');
             const menu = document.getElementById('mobile-menu');
-            const menuIcon = button?.querySelector('svg');
 
-            if (button && menu && menuIcon) {
-                button.addEventListener('click', () => {
-                    const isHidden = menu.classList.contains('hidden');
-                    
-                    if (isHidden) {
-                        menu.classList.remove('hidden');
-                        // Change to X icon
-                        menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
-                    } else {
+            if (!button || !menu) {
+                console.log('Mobile menu elements not found');
+                return;
+            }
+
+            const menuIcon = button.querySelector('svg');
+
+            if (!menuIcon) {
+                console.log('Menu icon not found');
+                return;
+            }
+
+            button.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent any default behavior
+
+                const isHidden = menu.classList.contains('hidden');
+
+                if (isHidden) {
+                    menu.classList.remove('hidden');
+                    menu.classList.add('block'); // Explicitly add block class
+                    // Change to X icon
+                    menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+                } else {
+                    menu.classList.add('hidden');
+                    menu.classList.remove('block'); // Explicitly remove block class
+                    // Change back to hamburger icon
+                    menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+                }
+            });
+
+            // Close mobile menu when clicking on links
+            const mobileLinks = menu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    menu.classList.remove('block');
+                    menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!button.contains(e.target) && !menu.contains(e.target)) {
+                    if (!menu.classList.contains('hidden')) {
                         menu.classList.add('hidden');
-                        // Change back to hamburger icon
+                        menu.classList.remove('block');
                         menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
                     }
-                });
-
-                // Close mobile menu when clicking on links
-                const mobileLinks = menu.querySelectorAll('a');
-                mobileLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        menu.classList.add('hidden');
-                        menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
-                    });
-                });
-            }
+                }
+            });
         };
 
         // Enhanced dropdown behavior for desktop
         const setupDesktopDropdowns = () => {
             const dropdownTriggers = document.querySelectorAll('[data-dropdown-trigger]');
             let hoverDisabled = false; // Flag to temporarily disable hover
-            
+
             dropdownTriggers.forEach((trigger) => {
                 const triggerIndex = trigger.getAttribute('data-dropdown-trigger');
                 const dropdown = document.querySelector(`[data-dropdown-content="${triggerIndex}"]`);
                 const triggerLink = trigger.querySelector('a');
-                
+
                 if (dropdown && triggerLink) {
                     let timeoutId;
 
                     // Check if the link has a valid href (not just '#' or empty)
-                    const hasValidHref = triggerLink.getAttribute('href') && 
-                                       triggerLink.getAttribute('href') !== '#' && 
-                                       triggerLink.getAttribute('href') !== '';
+                    const hasValidHref = triggerLink.getAttribute('href') &&
+                        triggerLink.getAttribute('href') !== '#' &&
+                        triggerLink.getAttribute('href') !== '';
 
                     // Show dropdown on hover (only if hover is not disabled)
                     const showDropdown = () => {
@@ -83,7 +108,7 @@ const ClientNavbarEnhancer = () => {
                         clearTimeout(timeoutId);
                         // Hide all other dropdowns first
                         closeAllDropdowns();
-                        
+
                         dropdown.classList.remove('hidden');
                         dropdown.classList.add('block');
                     };
@@ -110,7 +135,7 @@ const ClientNavbarEnhancer = () => {
                         // If it has a valid href and no dropdown is visible, allow normal navigation
                         if (hasValidHref) {
                             const isDropdownVisible = !dropdown.classList.contains('hidden');
-                            
+
                             // If dropdown is not visible, allow the link to work normally
                             if (!isDropdownVisible) {
                                 return; // Allow normal link navigation
@@ -122,12 +147,12 @@ const ClientNavbarEnhancer = () => {
                         } else {
                             // No valid href, just toggle dropdown
                             e.preventDefault();
-                            
+
                             const isVisible = !dropdown.classList.contains('hidden');
-                            
+
                             // Hide all dropdowns first
                             closeAllDropdowns();
-                            
+
                             // Show this dropdown if it was hidden
                             if (!isVisible) {
                                 dropdown.classList.remove('hidden');
@@ -145,10 +170,10 @@ const ClientNavbarEnhancer = () => {
                 if (clickedLink) {
                     // Temporarily disable hover effects
                     hoverDisabled = true;
-                    
+
                     // Close all dropdowns immediately when any dropdown link is clicked
                     closeAllDropdowns();
-                    
+
                     // Force full page reload for dropdown links
                     const href = clickedLink.getAttribute('href');
                     if (href && href !== '#' && href !== '') {
@@ -156,7 +181,7 @@ const ClientNavbarEnhancer = () => {
                         window.location.href = href;
                         return;
                     }
-                    
+
                     // Re-enable hover after a short delay (in case link doesn't navigate)
                     setTimeout(() => {
                         hoverDisabled = false;
