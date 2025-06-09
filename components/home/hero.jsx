@@ -21,25 +21,21 @@ export default function HeroSection() {
             id: 2,
             tagline: "Edit. Inspire. Deliver.",
             subtitle: "Video Editing",
-            video: "/vdoEditing.mp4",
             description: "We turn raw footage into captivating stories, crafted with precision and creativity."
         },
         {
             id: 3,
             tagline: "Reach New Heights",
             subtitle: "Digital Marketing",
-            video: "/vdoMarketing.mp4",
             description: "Smart marketing strategies designed to boost your brand's reach, visibility, and success."
         }
     ];
 
-    // Fix for mobile viewport height and detect mobile devices
     useEffect(() => {
         const updateViewportHeight = () => {
             const isMobileView = window.innerWidth < 768;
             setIsMobile(isMobileView);
 
-            // Set shorter height on mobile
             if (isMobileView) {
                 setViewportHeight('70vh'); // Shorter height for mobile
             } else {
@@ -191,27 +187,6 @@ export default function HeroSection() {
                 </div>
             </div>
 
-            {/* Slider navigation buttons - These remain absolutely positioned
-            <div className="absolute top-1/2 w-full flex justify-between px-2 md:px-6 -translate-y-1/2">
-                <button
-                    onClick={goToPrevSlide}
-                    className="bg-purple-900/30 cursor-pointer text-white p-3 rounded-full hover:bg-purple-800/50 transition-all"
-                    aria-label="Previous slide"
-                >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                </button>
-                <button
-                    onClick={goToNextSlide}
-                    className="bg-purple-900/30 cursor-pointer text-white p-3 rounded-full hover:bg-purple-800/50 transition-all"
-                    aria-label="Next slide"
-                >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                </button>
-            </div> */}
         </div>
     );
 }
