@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from 'next.js';
 
 export default function TermsAndConditions() {
   return (
@@ -51,7 +51,7 @@ export default function TermsAndConditions() {
             <section>
               <h2 className="text-4xl font-bold mb-6">Acceptable Use</h2>
               <p className="text-xl leading-relaxed">
-                You agree to use FoxBeep only for lawful purposes and in accordance with these terms. You may not use our service to transmit harmful, offensive, or illegal content, engage in harassment or spam, attempt to gain unauthorized access to our systems, or interfere with other users' experience. We reserve the right to suspend or terminate accounts that violate these guidelines.
+                You agree to use FoxBeep only for lawful purposes and in accordance with these terms. You may not use our service to transmit harmful, offensive, or illegal content, engage in harassment or spam, attempt to gain unauthorized access to our systems, or interfere with other users&apos; experience. We reserve the right to suspend or terminate accounts that violate these guidelines.
               </p>
             </section>
 
@@ -65,7 +65,7 @@ export default function TermsAndConditions() {
             <section>
               <h2 className="text-4xl font-bold mb-6">Subscription and Billing</h2>
               <p className="text-xl leading-relaxed">
-                Some features of FoxBeep may require a paid subscription. Subscription fees are billed in advance and are non-refundable except as required by law or as specified in our refund policy. We may change our pricing with 30 days' notice to existing subscribers. Your subscription will automatically renew unless you cancel before the renewal date.
+                Some features of FoxBeep may require a paid subscription. Subscription fees are billed in advance and are non-refundable except as required by law or as specified in our refund policy. We may change our pricing with 30 days&apos; notice to existing subscribers. Your subscription will automatically renew unless you cancel before the renewal date.
               </p>
             </section>
 
@@ -86,7 +86,7 @@ export default function TermsAndConditions() {
             <section>
               <h2 className="text-4xl font-bold mb-6">Disclaimers and Limitations</h2>
               <p className="text-xl leading-relaxed">
-                FoxBeep is provided "as is" without warranties of any kind. We do not guarantee that our service will be uninterrupted, error-free, or completely secure. To the fullest extent permitted by law, we disclaim all warranties and limit our liability for any damages arising from your use of our service. Some jurisdictions may not allow these limitations.
+                FoxBeep is provided &ldquo;as is&rdquo; without warranties of any kind. We do not guarantee that our service will be uninterrupted, error-free, or completely secure. To the fullest extent permitted by law, we disclaim all warranties and limit our liability for any damages arising from your use of our service. Some jurisdictions may not allow these limitations.
               </p>
             </section>
 
@@ -107,7 +107,7 @@ export default function TermsAndConditions() {
             <section className="bg-gray-50 p-8 rounded-lg">
               <h2 className="text-4xl font-bold mb-6">Questions About These Terms</h2>
               <p className="text-xl leading-relaxed mb-4">
-                If you have any questions about these Terms and Conditions or need clarification on any provision, please don't hesitate to reach out.
+                If you have any questions about these Terms and Conditions or need clarification on any provision, please don&apos;t hesitate to reach out.
               </p>
               <div className="text-xl">
                 <p className="mb-2">Support: support@foxbeep.com</p>

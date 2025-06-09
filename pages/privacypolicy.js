@@ -44,12 +44,12 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-4xl font-bold mb-6">Information Sharing</h2>
               <p className="text-xl leading-relaxed">
-                We only share your information when necessary to provide our services (like with trusted service providers), comply with legal requirements, or protect our users' safety. Any third parties we work with are required to protect your information with the same care we do.
+                We only share your information when necessary to provide our services (like with trusted service providers), comply with legal requirements, or protect our users&apos; safety. Any third parties we work with are required to protect your information with the same care we do.
               </p>
             </section>
 
             <section>
-              <h2 className="text-4xl font-bold mb-6">Cookies & Tracking</h2>
+              <h2 className="text-4xl font-bold mb-6">Cookies &amp; Tracking</h2>
               <p className="text-xl leading-relaxed">
                 We use cookies and similar technologies to remember your preferences, analyze how our service is used, and provide personalized features. You can control cookie settings through your browser preferences.
               </p>
@@ -70,7 +70,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section>
-              <h2 className="text-4xl font-bold mb-6">Children's Privacy</h2>
+              <h2 className="text-4xl font-bold mb-6">Children&apos;s Privacy</h2>
               <p className="text-xl leading-relaxed">
                 FoxBeep is not intended for children under 13. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately.
               </p>
@@ -79,19 +79,19 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-4xl font-bold mb-6">Policy Updates</h2>
               <p className="text-xl leading-relaxed">
-                We may update this privacy policy from time to time to reflect changes in our practices or legal requirements. We'll notify you of significant changes by email or through our service. Your continued use of FoxBeep after changes take effect means you accept the updated policy.
+                We may update this privacy policy from time to time to reflect changes in our practices or legal requirements. We&apos;ll notify you of significant changes by email or through our service. Your continued use of FoxBeep after changes take effect means you accept the updated policy.
               </p>
             </section>
 
             <section className="bg-gray-50 p-8 rounded-lg">
               <h2 className="text-4xl font-bold mb-6">Contact Us</h2>
               <p className="text-xl leading-relaxed mb-4">
-                Have questions about this privacy policy or how we handle your information? We're here to help.
+                Have questions about this privacy policy or how we handle your information? We&apos;re here to help.
               </p>
               <div className="text-xl">
                 <p className="mb-2">Email: support@foxbeep.com</p>
                 <p className="mb-2">Website: www.foxbeep.com</p>
-                <p>Response time: We'll get back to you within 48 hours</p>
+                <p>Response time: We&apos;ll get back to you within 48 hours</p>
               </div>
             </section>
 
