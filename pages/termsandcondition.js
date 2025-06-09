@@ -1,4 +1,4 @@
-import Head from 'next.js';
+import Head from 'next/head';
 
 export default function TermsAndConditions() {
   return (
