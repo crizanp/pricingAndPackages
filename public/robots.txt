@@ -1,56 +1,131 @@
+# Robots.txt for FoxBeep.com
+# Generated based on sitemap analysis
+
 User-agent: *
+
+# Allow crawling of all main content
 Allow: /
 
-# Sitemap location
-Sitemap: https://foxbeep.com/sitemap.xml
+# Sitemap location for easy discovery
+Sitemap: https://www.foxbeep.com/sitemap.xml
 
-# Disallow crawling of admin areas (if any)
+# Disallow crawling of technical and private areas
 Disallow: /admin/
 Disallow: /api/
 Disallow: /_next/
 Disallow: /private/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/uploads/
+Disallow: /.well-known/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /cache/
 
-# Allow crawling of important pages
-Allow: /
-Allow: /company/about
-Allow: /company/careers
-Allow: /company/manifesto
-Allow: /company/pocess
-Allow: /company/testimonials
-Allow: /company/university
+# Explicitly allow important pages for better crawlability
 Allow: /services
-Allow: /services/ads-commercial-editing
-Allow: /services/ai-development
-Allow: /services/android-app-development
-Allow: /services/big-data-development
-Allow: /services/business-website
-Allow: /services/dapp-development
-Allow: /services/digital-marketing
-Allow: /services/ecommerce-development
-Allow: /services/education-website
-Allow: /services/healthcare-website
-Allow: /services/ios-app-development
-Allow: /services/manufacturing-website
-Allow: /services/news-media-website
-Allow: /services/nft-marketplace-development
-Allow: /services/telegram-mini-apps-development
-Allow: /services/video-editing
-Allow: /services/web3-development
-Allow: /services/wordpress-development
-
-Allow: /contact
+Allow: /services/
 Allow: /industries
-Allow: /industries/agriculture
-Allow: /industries/automotive
-Allow: /industries/b2b-software
-Allow: /industries/crm-development
-Allow: /industries/ecommerce
-Allow: /industries/education
-Allow: /industries/fashion-apparel
-Allow: /industries/healthcare
-Allow: /industries/legal
-Allow: /industries/logistics
-Allow: /industries/manufacturing
-Allow: /industries/travel
+Allow: /industries/
+Allow: /contact
 Allow: /blog
 Allow: /work
+Allow: /privacypolicy
+Allow: /termsandcondition
+
+# Allow all service pages
+Allow: /services/android-app-development
+Allow: /services/telegram-mini-apps-development
+Allow: /services/dapp-development
+Allow: /services/ai-development
+Allow: /services/wordpress-development
+Allow: /services/ecommerce-development
+Allow: /services/educational-website
+Allow: /services/healthcare-website
+Allow: /services/news-media-website
+Allow: /services/manufacturing-website
+Allow: /services/nft-marketplace-development
+Allow: /services/web3-development
+Allow: /services/ios-app-development
+Allow: /services/big-data-development
+Allow: /services/video-editing
+Allow: /services/event-video-editing
+Allow: /services/digital-marketing
+Allow: /services/ads-commercial-editing
+
+# Allow all industry pages
+Allow: /industries/finance
+Allow: /industries/travel
+Allow: /industries/education
+Allow: /industries/healthcare
+Allow: /industries/food
+Allow: /industries/ecommerce
+Allow: /industries/fashion-apparel
+Allow: /industries/logistics
+Allow: /industries/manufacturing
+Allow: /industries/legal
+Allow: /industries/agriculture
+
+# Allow case studies
+Allow: /case-study/
+Allow: /case-study/interview-preperation-app
+Allow: /case-study/work-in-europe
+Allow: /case-study/worth-your-website
+Allow: /case-study/dating-app
+
+# Allow company pages
+Allow: /company/
+Allow: /company/process
+
+# Crawl delay (optional - adjust based on server capacity)
+# Crawl-delay: 1
+
+# Disallow common file types that shouldn't be indexed
+Disallow: *.pdf$
+Disallow: *.doc$
+Disallow: *.docx$
+Disallow: *.xls$
+Disallow: *.xlsx$
+Disallow: *.ppt$
+Disallow: *.pptx$
+Disallow: *.zip$
+Disallow: *.rar$
+Disallow: *.tar$
+Disallow: *.gz$
+
+# Allow images and media files for better SEO
+Allow: /images/
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.png
+Allow: *.gif
+Allow: *.svg
+Allow: *.webp
+Allow: *.avif
+
+# Allow CSS and JS for proper rendering
+Allow: *.css
+Allow: *.js
+
+# Special instructions for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# Block aggressive crawlers (optional)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+User-agent: DotBot
+Disallow: /
