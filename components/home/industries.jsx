@@ -9,7 +9,8 @@ import {
   Building2,
   Utensils,
   GraduationCap,
-  Heart
+  Heart,
+  Plane
 } from 'lucide-react';
 import SoftwareTeamBanner from './SoftwareTeamBanner';
 
@@ -36,11 +37,12 @@ export default function IndustriesWeServe() {
       description: 'Our real estate solutions streamline operations, simplifying property management and sales.'
     },
     {
-      id: 'hospitality',
-      name: 'Hospitality',
-      icon: <Utensils />,
-      description: 'Get user-friendly solutions that enhance guest experiences and boost customer satisfaction.'
-    },
+      id: 'travel',
+      name: 'Travel',
+      icon: <Plane />,
+      description: 'Revolutionize travel with solutions that simplify trips and elevate experiences.'
+    }
+    ,
     {
       id: 'education',
       name: 'Education',
@@ -74,8 +76,8 @@ export default function IndustriesWeServe() {
             <Link href={`/industries/${industry.id}`} key={industry.id}>
               <div
                 className={`group p-5 sm:p-6 md:p-8 rounded-xl transition-all duration-300 cursor-pointer border border-white hover:border-white h-full flex flex-col justify-between ${activeIndustry === industry.id
-                    ? 'bg-gradient-to-br from-gray-900 to-gray-900 border-white'
-                    : 'bg-black hover:bg-gradient-to-br hover:from-gray-900 hover:to-gray-800'
+                  ? 'bg-gradient-to-br from-gray-900 to-gray-900 border-white'
+                  : 'bg-black hover:bg-gradient-to-br hover:from-gray-900 hover:to-gray-800'
                   }`}
                 onMouseEnter={() => setActiveIndustry(industry.id)}
                 onMouseLeave={() => setActiveIndustry('')}
@@ -84,16 +86,16 @@ export default function IndustriesWeServe() {
                 <div className="flex justify-between items-center mb-4 sm:mb-6">
                   <div
                     className={`p-2 sm:p-3 rounded-full ${activeIndustry === industry.id
-                        ? 'bg-purple-500 text-white'
-                        : 'bg-gray-800 text-purple-400 group-hover:bg-purple-500 group-hover:text-white'
+                      ? 'bg-purple-500 text-white'
+                      : 'bg-gray-800 text-purple-400 group-hover:bg-purple-500 group-hover:text-white'
                       } transition-colors duration-300`}
                   >
                     {industry.icon}
                   </div>
                   <ChevronRight
                     className={`w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 ${activeIndustry === industry.id
-                        ? 'text-white translate-x-1'
-                        : 'opacity-0 group-hover:opacity-100 group-hover:translate-x-1 text-white'
+                      ? 'text-white translate-x-1'
+                      : 'opacity-0 group-hover:opacity-100 group-hover:translate-x-1 text-white'
                       }`}
                   />
                 </div>

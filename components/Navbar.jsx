@@ -103,7 +103,9 @@ const Navbar = () => {
             hasDropdown: true,
             flatMenu: true,
             items: [
-                { name: 'Automotive', href: '/industries/automotive' },
+                { name: 'Automotive', href: '/industries/automotive' }, 
+                { name: 'Real Estate', href: '/industries/realestate' },
+                 { name: 'Finance', href: '/industries/finance' },
                 { name: 'B2B Software', href: '/industries/b2b-software' },
                 { name: 'Healthcare', href: '/industries/healthcare' },
                 { name: 'Education', href: '/industries/education' },

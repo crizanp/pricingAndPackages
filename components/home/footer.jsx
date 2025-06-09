@@ -21,7 +21,7 @@ export default function Footer() {
 
     return (
         <footer className="bg-black text-white py-8 px-4 md:px-8">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-auto  py-8 px-4 md:px-6 xl:px-8">
                 {/* Main Navigation - Desktop version */}
                 <div className="hidden md:grid md:grid-cols-4 gap-8 mb-12">
                     {/* Company Links */}
@@ -42,12 +42,12 @@ export default function Footer() {
                     <div>
                         <div className="flex items-center mb-6">
                             <div className="w-2 h-2 rounded-full bg-white mr-2"></div>
-                            <h3 className="text-gray-400 text-sm">Resources</h3>
+                            <h3 className="text-gray-400 text-sm">Resources and Tools</h3>
                         </div>
                         <ul className="space-y-4">
                             <li><a href="/blog" className="hover:text-gray-300 transition-colors">Blog</a></li>
-                            <li><a href="#" className="hover:text-gray-300 transition-colors">Events</a></li>
-                            <li><a href="#" className="hover:text-gray-300 transition-colors">Press Release</a></li>
+                            <li><a href="https://tools.foxbeep.com" className="hover:text-gray-300 transition-colors">Video Converter</a></li>
+                            <li><a href="https://shop.foxbeep.com" className="hover:text-gray-300 transition-colors">Shop</a></li>
                             <li><a href="/work" className="hover:text-gray-300 transition-colors">Work</a></li>
                         </ul>
                     </div>
@@ -97,10 +97,10 @@ export default function Footer() {
                         </button>
                         {menuOpen.company && (
                             <ul className="space-y-3 pb-4">
-                                <li><a href="#" className="hover:text-gray-300">About Us</a></li>
-                                <li><a href="#" className="hover:text-gray-300">Testimonials</a></li>
-                                <li><a href="#" className="hover:text-gray-300">Process</a></li>
-                                <li><a href="#" className="hover:text-gray-300">Contact</a></li>
+                                <li><a href="/company/university" className="hover:text-gray-300 transition-colors">University</a></li>
+                            <li><a href="/company/careers" className="hover:text-gray-300 transition-colors">Careers</a></li>
+                            <li><a href="/company/manifesto" className="hover:text-gray-300 transition-colors">Manifesto</a></li>
+                            <li><a href="/about" className="hover:text-gray-300 transition-colors">About Foxbeep</a></li>
                             </ul>
                         )}
                     </div>
@@ -119,10 +119,10 @@ export default function Footer() {
                         </button>
                         {menuOpen.resources && (
                             <ul className="space-y-3 pb-4">
-                                <li><a href="#" className="hover:text-gray-300">Blog</a></li>
-                                <li><a href="#" className="hover:text-gray-300">Events</a></li>
-                                <li><a href="#" className="hover:text-gray-300">Press Release</a></li>
-                                <li><a href="#" className="hover:text-gray-300">Work</a></li>
+                                <li><a href="/blog" className="hover:text-gray-300">Blog</a></li>
+                                <li><a href="https://tools.foxbeep.com" className="hover:text-gray-300">Video Converter</a></li>
+                                <li><a href="https://shop.foxbeep.com" className="hover:text-gray-300">Shop</a></li>
+                                <li><a href="/work" className="hover:text-gray-300">Work</a></li>
                             </ul>
                         )}
                     </div>
@@ -141,10 +141,10 @@ export default function Footer() {
                         </button>
                         {menuOpen.services && (
                             <ul className="space-y-3 pb-4">
-                                <li><a href="#" className="hover:text-gray-300">Mobile App</a></li>
-                                <li><a href="#" className="hover:text-gray-300">Game Development</a></li>
-                                <li><a href="#" className="hover:text-gray-300">Blockchain Development</a></li>
-                                <li><a href="#" className="hover:text-gray-300">AI Development</a></li>
+                                 <li><a href="/services/android-app-development" className="hover:text-gray-300 transition-colors">Mobile App</a></li>
+                            <li><a href="/services/telegram-mini-apps-development" className="hover:text-gray-300 transition-colors">Telegram Mini Apps</a></li>
+                            <li><a href="/services/dapp-development" className="hover:text-gray-300 transition-colors">Blockchain Development</a></li>
+                            <li><a href="/services/ai-development" className="hover:text-gray-300 transition-colors">AI Development</a></li>
                             </ul>
                         )}
                     </div>
@@ -163,10 +163,10 @@ export default function Footer() {
                         </button>
                         {menuOpen.insights && (
                             <ul className="space-y-3 pb-4">
-                                <li><a href="#" className="hover:text-gray-300">University</a></li>
-                                <li><a href="#" className="hover:text-gray-300">Careers</a></li>
-                                <li><a href="#" className="hover:text-gray-300">Manifesto</a></li>
-                                <li><a href="#" className="hover:text-gray-300">Culture Book</a></li>
+                                 <li><a href="/company/university" className="hover:text-gray-300 transition-colors">University</a></li>
+                            <li><a href="/company/careers" className="hover:text-gray-300 transition-colors">Careers</a></li>
+                            <li><a href="/company/manifesto" className="hover:text-gray-300 transition-colors">Manifesto</a></li>
+                            <li><a href="/about" className="hover:text-gray-300 transition-colors">About Foxbeep</a></li>
                             </ul>
                         )}
                     </div>
@@ -213,23 +213,23 @@ export default function Footer() {
                     {/* Social Links & Legal */}
                     <div className="col-span-1">
                         <div className="flex justify-center md:justify-end space-x-4 mb-4">
-                            <a href="#" className="hover:text-gray-300 transition-colors">
+                            <a href="https://np.linkedin.com/company/foxbeep" className="hover:text-gray-300 transition-colors">
                                 <Linkedin size={20} />
                             </a>
-                            <a href="#" className="hover:text-gray-300 transition-colors">
+                            <a href="https://x.com/foxbeeptech" className="hover:text-gray-300 transition-colors">
                                 <Twitter size={20} />
                             </a>
-                            <a href="#" className="hover:text-gray-300 transition-colors">
+                            <a href="https://www.facebook.com/foxbeeptech" className="hover:text-gray-300 transition-colors">
                                 <Facebook size={20} />
                             </a>
-                            <a href="#" className="hover:text-gray-300 transition-colors">
+                            <a href="https://foxbeep.com" className="hover:text-gray-300 transition-colors">
                                 <Globe size={20} />
                             </a>
                         </div>
                         <div className="flex justify-center md:justify-end text-gray-400 text-xs">
-                            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+                            <a href="/privacypolicy" className="hover:text-white transition-colors">Privacy Policy</a>
                             <span className="mx-2">|</span>
-                            <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
+                            <a href="/termsandcondition" className="hover:text-white transition-colors">Terms & Conditions</a>
                         </div>
                     </div>
                 </div>
